@@ -34,6 +34,14 @@
     },
     {
       "id": 1,
+      "name": "TCmove-太初电影",
+      "url": "https://www.tcmove.com/api.php/provide/vod/at/xml/",
+      "cate": "动漫,4&&电视剧,2&&综艺,3&&电影,1",
+      "click": true,
+      "wePlus": {}
+    },
+    {
+      "id": 1,
       "name": "OK云",
       "url": "https://cj.okzy.tv/inc/apickm3u8s_subname.php",
       "cate": "国产动漫,23&&日本动漫,24&&欧美动漫,26&&国产剧,12&&韩国剧,14&&美国剧,15&&日本剧,17&&内地综艺,26日韩综艺,28&&动作片,5&&喜剧片,6&&爱情片,7&&科幻片,8&&恐怖片,9",
