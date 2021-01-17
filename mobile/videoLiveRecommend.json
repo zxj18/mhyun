@@ -90,131 +90,132 @@
       "listData": [
         {
           "itemid": "uid0000",
-          "name":"三立Live FHD",
+          "name": "三立Live FHD",
           "num": "00001",
           "pic": "http://tv.sason.xyz/logo/blank.png",
           "url": "http://seb.sason.top/sc/sllive_fhd.m3u8"
         },
         {
           "itemid": "uid0000",
-          "name":"三立iNews FHD",
+          "name": "三立iNews FHD",
           "num": "00002",
           "pic": "http://tv.sason.xyz/logo/slxw.png",
           "url": "http://seb.sason.top/sc/slinews_fhd.m3u8"
         },
         {
           "itemid": "uid0000",
-          "name":"东森新闻 FHD",
+          "name": "东森新闻 FHD",
           "num": "00003",
           "pic": "http://tv.sason.xyz/logo/dsxw.png",
           "url": "http://seb.sason.top/sc/dsxw_fhd.m3u8"
         },
         {
           "itemid": "uid0000",
-          "name":"民视新闻 FHD",
+          "name": "民视新闻 FHD",
           "num": "00004",
           "pic": "http://tv.sason.xyz/logo/msxw.png",
           "url": "http://seb.sason.top/sc/msxw_fhd.m3u8"
         },
         {
           "itemid": "uid0000",
-          "name":"壹新闻 FHD",
+          "name": "壹新闻 FHD",
           "num": "00005",
           "pic": "http://tv.sason.xyz/logo/yxw.png",
           "url": "http://stream.nexttv.com.tw:80/n001/hd/live.m3u8"
         },
         {
           "itemid": "uid0000",
-          "name":"TVBS新闻 FHD",
+          "name": "TVBS新闻 FHD",
           "num": "00006",
           "pic": "http://tv.sason.xyz/logo/tvbsxw.png",
           "url": "http://seb.sason.top/sc/tvbsxw_fhd.m3u8"
         },
         {
           "itemid": "uid0000",
-          "name":"台视新闻 FHD",
+          "name": "台视新闻 FHD",
           "num": "00007",
           "pic": "http://tv.sason.xyz/logo/tsxw.png",
           "url": "http://seb.sason.top/sc/tsxw_fhd.m3u8"
         },
         {
           "itemid": "uid0000",
-          "name":"中视新闻 FHD",
+          "name": "中视新闻 FHD",
           "num": "00008",
           "pic": "http://tv.sason.xyz/logo/zsxw.png",
           "url": "http://seb.sason.top/sc/zsxw_fhd.m3u8"
         },
         {
           "itemid": "uid0000",
-          "name":"华视新闻 FHD",
+          "name": "华视新闻 FHD",
           "num": "00009",
           "pic": "http://tv.sason.xyz/logo/hsxw.png",
           "url": "http://seb.sason.top/sc/hsxw_fhd.m3u8"
         },
         {
           "itemid": "uid0000",
-          "name":"东森财经新闻 FHD",
+          "name": "东森财经新闻 FHD",
           "num": "00010",
           "pic": "http://tv.sason.xyz/logo/dscjxw.png",
           "url": "http://seb.sason.top/sc/dscjxw_fhd.m3u8"
         },
         {
           "itemid": "uid0000",
-          "name":"中天新闻 FHD",
+          "name": "中天新闻 FHD",
           "num": "00011",
           "pic": "http://tv.sason.xyz/logo/ztxw.png",
           "url": "http://seb.sason.top/sc/ztxw_fhd.m3u8"
         },
         {
           "itemid": "uid0000",
-          "name":"民视",
+          "name": "民视",
           "num": "00012",
           "pic": "http://tv.sason.xyz/logo/ms.png",
           "url": "http://seb.sason.top/ptv/ftv.php?id=ms"
         },
         {
           "itemid": "uid0000",
-          "name":"民视第一",
+          "name": "民视第一",
           "num": "00013",
           "pic": "http://tv.sason.xyz/logo/msdyt.png",
           "url": "http://seb.sason.top/ptv/ftv.php?id=dy"
         },
         {
           "itemid": "uid0000",
-          "name":"民视台湾",
+          "name": "民视台湾",
           "num": "00014",
           "pic": "http://tv.sason.xyz/logo/mstwt.png",
           "url": "http://seb.sason.top/ptv/ftv.php?id=tw"
         },
         {
           "itemid": "uid0000",
-          "name":"民视影剧",
+          "name": "民视影剧",
           "num": "00015",
           "pic": "http://tv.sason.xyz/logo/msyj.png",
           "url": "http://seb.sason.top/ptv/ftv.php?id=yj"
         },
         {
           "itemid": "uid0000",
-          "name":"民视综艺",
+          "name": "民视综艺",
           "num": "00016",
           "pic": "http://tv.sason.xyz/logo/mszy.png",
           "url": "http://seb.sason.top/ptv/ftv.php?id=zy"
         },
         {
           "itemid": "uid0000",
-          "name":"民视旅游",
+          "name": "民视旅游",
           "num": "00017",
           "pic": "http://tv.sason.xyz/logo/msly.png",
           "url": "http://seb.sason.top/ptv/ftv.php?id=ly"
         },
         {
           "itemid": "uid0000",
-          "name":"纬来精采",
+          "name": "纬来精采",
           "num": "00018",
           "pic": "http://tv.sason.xyz/logo/wljc.png",
           "url": "https://usb.bozztv.com/ttvbHD/index.m3u8"
         }
       ]
     }
- ]
+
+  ]
 }
