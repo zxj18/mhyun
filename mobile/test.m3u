@@ -1,25 +1,25 @@
 #EXTM3U
-#EXTINF:-1,TVBS新闻 FHD
+#EXTINF:-1,TVBS新闻FHD
 http://seb.sason.top/sc/tvbsxw_fhd.m3u8
-#EXTINF:-1,东森财经新闻 FHD
+#EXTINF:-1,东森财经新闻FHD
 http://seb.sason.top/sc/dscjxw_fhd.m3u8
-#EXTINF:-1,东森新闻 FHD
+#EXTINF:-1,东森新闻FHD
 http://seb.sason.top/sc/dsxw_fhd.m3u8
-#EXTINF:-1,华视新闻 FHD
+#EXTINF:-1,华视新闻FHD
 http://seb.sason.top/sc/hsxw_fhd.m3u8
-#EXTINF:-1,民视新闻 FHD
+#EXTINF:-1,民视新闻FHD
 http://seb.sason.top/sc/msxw_fhd.m3u8
-#EXTINF:-1,三立iNews FHD
+#EXTINF:-1,三立iNewsFHD
 http://seb.sason.top/sc/slinews_fhd.m3u8
-#EXTINF:-1,三立Live FHD
+#EXTINF:-1,三立LiveFHD
 http://seb.sason.top/sc/sllive_fhd.m3u8
-#EXTINF:-1,台视新闻 FHD
+#EXTINF:-1,台视新闻FHD
 http://seb.sason.top/sc/tsxw_fhd.m3u8
-#EXTINF:-1,中视新闻 FHD
+#EXTINF:-1,中视新闻FHD
 http://seb.sason.top/sc/zsxw_fhd.m3u8
-#EXTINF:-1,中天新闻 FHD
+#EXTINF:-1,中天新闻FHD
 http://seb.sason.top/sc/ztxw_fhd.m3u8
-#EXTINF:-1,壹新闻 FHD
+#EXTINF:-1,壹新闻FHD
 http://stream.nexttv.com.tw:80/n001/hd/live.m3u8
 #EXTINF:-1,民视
 http://seb.sason.top/ptv/ftv.php?id=ms
