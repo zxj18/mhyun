@@ -31,6 +31,15 @@
         "show": true
       }, 
       {
+        "id": 3,
+        "name": "电视直播",
+        "pic": "https://img9.doubanio.com/view/activity_page/raw/public/p2166.jpg",
+        "url": "https://gitee.com/shuncaigao/sourceShare/raw/master/live/new.m3u",
+        "color": "11",
+        "type": "app://m3u",
+        "show": true
+      },
+      {
         "id": 4,
         "name": "24小时轮播",
         "pic": "https://img9.doubanio.com/view/activity_page/raw/public/p2166.jpg",
