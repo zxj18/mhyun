@@ -23,7 +23,7 @@
       },
       {
         "id": 2,
-        "name": "電視頻道",
+        "name": "LiveTV",
         "pic": "https://img9.doubanio.com/view/activity_page/raw/public/p2166.jpg",
         "url": "https://github.com/YuanHsing/freed/raw/master/mobile/test.m3u",
         "color": "11",
