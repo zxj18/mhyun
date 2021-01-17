@@ -2,7 +2,7 @@
   "data": {
     "banner": [
       {
-        "id": 1,
+        "id": 5,
         "name": "717",
         "pic": "https://img.alicdn.com/imgextra/i4/913168420/O1CN018FpU8s2C4PVB9ZNKP_!!913168420.png",
         "url": "https://s.click.ele.me/svfrCuu",
@@ -13,7 +13,7 @@
     ],
     "activity": [
       {
-        "id": 1,
+        "id": 5,
         "name": "往期分享",
         "pic": "https://img1.doubanio.com/view/activity_page/raw/public/p4187.jpg",
         "url": "https://gitee.com/shuncaigao/sourceShare/raw/master/tv/day_movies.json",
@@ -31,7 +31,7 @@
         "show": true
       },
       {
-        "id": 1,
+        "id": 5,
         "name": "更新日志",
         "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p2170.jpg",
         "url": "https://gitee.com/shuncaigao/sourceShare/raw/master/update.html",
@@ -73,18 +73,18 @@
         "url": "https://gitee.com/shuncaigao/sourceShare/raw/master/tv/donghuadianying.json",
         "color": "1",
         "type": "app://gitJson",
-        "show": false
+        "show": true
       },
 
 
       {
         "id": 1,
         "name": "",
-        "pic": "http://img-haodanku-com.cdn.fudaiapp.com/FlorCl6BGl2H9IbVyLZSz47iQHqc",
-        "url": "https://gitee.com/shuncaigao/sourceShare/raw/master/html/jd_activity.html",
+        "pic": "https://img9.doubanio.com/view/activity_page/raw/public/p2166.jpg",
+        "url": "https://github.com/YuanHsing/freed/blob/master/tv/test.m3u",
         "color": "11",
-        "type": "app://updateInfo",
-        "show": false
+        "type": "app://m3u",
+        "show": true
       }
     ]
   }
