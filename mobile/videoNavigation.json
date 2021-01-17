@@ -16,12 +16,6 @@
           "url": "http://www.baidu.com"
         },
         {
-          "name": "口令查券",
-          "type": "app://chaquan",
-          "pic": "",
-          "url": "http://www.baidu.com"
-        },
-        {
           "name": "自定义网址",
           "type": "app://custom",
           "pic": "",
@@ -33,12 +27,6 @@
           "pic": "",
           "url": "http://www.baidu.com"
         },
-        {
-          "name": "历史记录",
-          "type": "app://history",
-          "pic": "",
-          "url": "http://www.baidu.com"
-        }
       ]
     },
     {
