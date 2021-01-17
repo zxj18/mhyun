@@ -37,7 +37,7 @@
         "url": "https://gitee.com/shuncaigao/sourceShare/raw/master/live/new.m3u",
         "color": "11",
         "type": "app://m3u",
-        "show": true
+        "show": false
       },
       {
         "id": 4,
@@ -55,7 +55,7 @@
         "url": "https://s.click.taobao.com/kNqATyu",
         "color": "1",
         "type": "app://webPlug",
-        "show": true
+        "show": false
       },
       {
         "id": 6,
@@ -64,7 +64,7 @@
         "url": "https://gitee.com/shuncaigao/sourceShare/raw/master/tv/donghuadianying.json",
         "color": "1",
         "type": "app://gitJson",
-        "show": true
+        "show": false
       },
       {
         "id": 7,
@@ -73,7 +73,7 @@
         "url": "https://gitee.com/shuncaigao/sourceShare/raw/master/tv/day_movies.json",
         "color": "11",
         "type": "app://gitJson",
-        "show": true
+        "show": false
       },
      {
         "id": 8,
@@ -82,7 +82,7 @@
         "url": "https://gitee.com/shuncaigao/sourceShare/raw/master/update.html",
         "color": "11",
         "type": "app://updateInfo",
-        "show": true
+        "show": false
       }
     ]
   }
