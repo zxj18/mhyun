@@ -304,7 +304,7 @@
       "useragent": "default",
       "videoscontainer":{"selector":"ul.new-list li.item","attrName":"", "filter": "" },
       "title":{"selector":"a.thumb","attrName":"title","filter": "" },
-      "thumb":{"selector":"img.lazy-load-img show","attrName":"_src","filter": "" },
+      "thumb":{"selector":"img","attrName":"_src","filter": "" },
       "link":{"selector":"a.thumb","attrName":"href","filter": "" }
     },
     "detail": {
