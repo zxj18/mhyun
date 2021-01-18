@@ -33,6 +33,12 @@
       "name": "在线影视",
       "data": [
         {
+          "name": "阿房影視",
+          "type": "app://customWeb",
+          "pic": "https://www.bwl87.com/template/mytheme/statics/image/20201226/c48780b3c.ico",
+          "url": "https://www.bwl87.com/"
+        },
+        {
           "name": "虎牙一起看",
           "type": "app://customWeb",
           "pic": "https://www.huya.com/favicon.ico",
