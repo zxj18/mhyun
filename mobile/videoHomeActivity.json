@@ -47,42 +47,6 @@
         "color": "11",
         "type": "app://gitJson",
         "show": true
-      },
-      {
-        "id": 5,
-        "name": "云插件",
-        "pic": "https://img1.doubanio.com/view/activity_page/raw/public/p3728.jpg",
-        "url": "https://s.click.taobao.com/kNqATyu",
-        "color": "1",
-        "type": "app://webPlug",
-        "show": false
-      },
-      {
-        "id": 6,
-        "name": "动画电影",
-        "pic": "https://img1.doubanio.com/view/activity_page/raw/public/p2648.jpg",
-        "url": "https://gitee.com/shuncaigao/sourceShare/raw/master/tv/donghuadianying.json",
-        "color": "1",
-        "type": "app://gitJson",
-        "show": false
-      },
-      {
-        "id": 7,
-        "name": "往期分享",
-        "pic": "https://img1.doubanio.com/view/activity_page/raw/public/p4187.jpg",
-        "url": "https://gitee.com/shuncaigao/sourceShare/raw/master/tv/day_movies.json",
-        "color": "11",
-        "type": "app://gitJson",
-        "show": false
-      },
-     {
-        "id": 8,
-        "name": "更新日志",
-        "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p2170.jpg",
-        "url": "https://gitee.com/shuncaigao/sourceShare/raw/master/update.html",
-        "color": "11",
-        "type": "app://updateInfo",
-        "show": false
       }
     ]
   }
