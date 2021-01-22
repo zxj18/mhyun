@@ -10,16 +10,16 @@
       "click": true
     },
     {
-      "name": "央卫(选IKJ解码)",
+      "name": "央卫(已修复)",
       "pic": "https://img1.doubanio.com/view/activity_page/raw/public/p4187.jpg",
       "url": "https://gitee.com/freedTV/freed/raw/master/tv/live.m3u",
-      "type": "m3u",
+      "type": "txt",
       "subTitle": "经典动画电影整理中",
       "click": true,
       "webPlus": {}
     },
     {
-      "name": "iHOT(选IKJ解码)",
+      "name": "iHOT系列",
       "pic": "https://img1.doubanio.com/view/activity_page/raw/public/p4191.jpg",
       "url": "https://gitee.com/freedTV/freed/raw/master/tv/ihot.m3u",
       "type": "m3u",
@@ -28,10 +28,10 @@
       "webPlus": {}
     },
     {
-      "name": "NewTV(选IKJ解码)",
+      "name": "NewTV(已修复)",
       "pic": "https://img1.doubanio.com/view/activity_page/raw/public/p4192.jpg",
       "url": "https://gitee.com/freedTV/freed/raw/master/tv/newtv.m3u",
-      "type": "m3u",
+      "type": "txt",
       "subTitle": "经典动画电影整理中",
       "click": true,
       "webPlus": {}
@@ -51,7 +51,7 @@
       "url": "https://gitee.com/freedTV/freed/raw/master/tv/youku.m3u",
       "type": "m3u",
       "subTitle": "经典动画电影整理中",
-      "click": true,
+      "click": false,
       "webPlus": {}
     },
     {
@@ -120,6 +120,14 @@
       "type": "gitJson",
       "subTitle": "综艺轮播",
       "click": false
+    },
+    {
+      "name": "测试",
+      "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
+      "url": "https://gitee.com/freedTV/freed/raw/master/tv/live.m3u",
+      "type": "m3u",
+      "subTitle": "测试",
+      "click": true
     }
   ]
 }
