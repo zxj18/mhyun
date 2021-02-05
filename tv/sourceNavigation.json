@@ -7,7 +7,7 @@
       "url": "https://github.com/YuanHsing/freed/raw/master/tv/test.m3u",
       "type": "m3u",
       "subTitle": "测试",
-      "click": true
+      "click": true,
       "autoNext": false,
       "decoder": 1,
       "webPlus": {}
