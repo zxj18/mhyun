@@ -51,7 +51,7 @@
     "download": "",
     "jiexiUrl": "https://jx.9ki.cc/vip/?url=",
     "group": "官方解析类",
-    "isActive": true,
+    "isActive": false,
     "status": "可用"
   },
   {
@@ -337,8 +337,8 @@
     "download": "",
     "jiexiUrl": "https://jx.9ki.cc/vip/?url=",
     "group": "综合类",
-    "isActive": true,
-    "status": "可用"
+    "isActive": false,
+    "status": "失效"
   },
   {
     "id": 32,
@@ -811,7 +811,7 @@
     "jiexiUrl": "",
     "group": "切片类",
     "isActive": false,
-    "status": "失效"
+    "status": "可用"
   },
   {
     "id": 75,
@@ -832,8 +832,8 @@
     "download": "",
     "jiexiUrl": "",
     "group": "切片类",
-    "isActive": true,
-    "status": "可用"
+    "isActive": false,
+    "status": "失效"
   },
   {
     "id": 77,
@@ -909,8 +909,8 @@
     "download": "",
     "jiexiUrl": "",
     "group": "切片类",
-    "isActive": true,
-    "status": "可用"
+    "isActive": false,
+    "status": "失效"
   },
   {
     "id": 84,
@@ -1184,8 +1184,8 @@
     "download": "",
     "jiexiUrl": "",
     "group": "18+",
-    "isActive": true,
-    "status": "可用"
+    "isActive": false,
+    "status": "失效"
   },
   {
     "id": 109,
