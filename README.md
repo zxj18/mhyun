@@ -1,7 +1,7 @@
 # Freed
 
 #### 介绍
-FREED
+FreeDTV
 https://gitee.com/freedTV/freed
 
 ZY-Player-PC
