@@ -21,5 +21,5 @@ https://gitee.com/vpq/yd#https://wwi.lanzous.com/b05hl9sf
 异次元｜APP
 https://wwx.lanzoux.com/b04b0nxna 提取码：4uv4
 
-异次元｜大整合图源更新（2021.3月）｜图标版本
-https://sheng6364.gitee.io/1234/67432496.json
+异次元｜大整合图源更新
+https://mp.weixin.qq.com/s/_nTI2KLeQwexmyp0KHcF5g
