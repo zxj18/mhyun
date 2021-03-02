@@ -1,6 +1,6 @@
 # Freed
 
-#### 介绍
+#### 影视
 FreeDTV
 https://gitee.com/freedTV/freed
 
@@ -10,10 +10,16 @@ https://github.com/cuiocean/ZY-Player
 ZY-Player-Android
 https://github.com/vicedev/ZY-Player-Android
 
-#### 
-阅读｜APK
+#### 阅读
+阅读｜APP
 https://github.com/gedoor/legado/releases/
 
 阅读｜书源分享
 https://gitee.com/vpq/yd#https://wwi.lanzous.com/b05hl9sf
 
+#### 漫画
+异次元｜APP
+https://wwx.lanzoux.com/b04b0nxna 提取码：4uv4
+
+异次元｜大整合图源更新（2021.3月）｜图标版本
+https://sheng6364.gitee.io/1234/67432496.json
