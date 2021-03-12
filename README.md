@@ -8,6 +8,7 @@ ZY-Player-PC</br>
 https://github.com/cuiocean/ZY-Player
 
 ZY-Player-Android</br>
+https://github.com/cuiocean/ZY-Player-APP
 https://github.com/vicedev/ZY-Player-Android
 
 #### 阅读
