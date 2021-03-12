@@ -60,8 +60,8 @@ url:arrr+"?ac=videolist&ids="+url+`@rule=js:eval(fetch('hiker://files/rules/zywc
 col_type:"text_1"
 })
     }
-    }
   }
+}
 } catch(e) {}
 };
 //二级规则函数
@@ -112,7 +112,7 @@ listfun();\
 res.data=items;setHomeResult(res);`,
 col_type:"text_3"});
   }
-  }
+ }
 } catch(e) {}
 items.push({
 col_type: 'line'});
@@ -132,6 +132,7 @@ items.push({
 col_type: 'line'});
 }
 //结束第一页分类处理
+
 //对列表处理开始
 eval(fetch('hiker://files/rules/zywcj.js'));
 listfun();
@@ -174,6 +175,7 @@ col_type: 'text_1'
 var conts=parseDomForArray(html,'rss&&dl&&dd');
 var url=parseDomForHtml(html,'rss&&id&&Text');
 for(var i = 0;i<conts.length;i++){
+
 if (getVar('zywlsort','1')=='1') {
 var list=conts[i].split(">\n")[1].split("\n<")[0].split("#");
   }else{
@@ -251,9 +253,7 @@ return meiju.match(/url:.*?[\'\"](.*?)[\'\"]/)[1];
 }else if(src.indexOf("leduotv")!=-1){
 var pla=request(src,{}).split("var url=\'")[1].split("\'")[0];
 if(pla.indexOf("m3u8")!=-1){
-return pla.split("=")[1];
-}else{
-return src};
+return pla.split("=")[1];}else{return src};
 }else if(src.indexOf("aHR0c")!=-1){
 return decodeURIComponent(base64Decode(src.split("&")[0]));
 }else if(src.indexOf("haodanxia")!=-1||src.indexOf("cqzyw")!=-1){
@@ -261,14 +261,14 @@ var ul=JSON.parse(fetch(src, {headers:{"User-Agent":"Dalvik/2.1.0"}, redirect:fa
 if(ul.statusCode=="302"){
 var play=ul.headers.location[0];
 }else{
-var play=src};
+var play=src+"#isVideo=true#"};
 return play;
 }else if(src.indexOf("shenma4480")!=-1){
 var sm="https://www.shenma4480.com/"+fetch(src,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://www.shenma4480.com"}}).match(/var u=\"(.*?)\"/)[1];
 return fetch(sm,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://www.shenma4480.com"}}).match(/url:.*?[\'\"](.*?)[\'\"]/)[1].replace(/[+]/g,"%20");
 }else if(src.indexOf("mlkioiy")!=-1){
 if(src.indexOf("ShowVideo")!=-1){
-var mlki=parseDomForHtml(request(src,{}),"body&&#dplayer&&result");
+var mlki=parseDomForHtml(fetch(src,{}),"body&&#dplayer&&result");
 var fileUrl ="https://cdn.jsdelivr.net/gh/lzk23559/rulehouse/pako-min.js";
 eval(request(fileUrl,{}));
 return realUrl;
@@ -280,10 +280,11 @@ refreshX5WebView(src);
 return "toast://请等待加载选集！";
 }else{
 var fileUrl="hiker://files/rules/js/kem.js";
-eval(fetch(fileUrl,{}));
+var ddjs=fetch(fileUrl,{});
+eval(ddjs);
 return tools.DdyunPlayer.toUrl(src).replace("ddyunp.com","90mm.me")};
 }else if(src.indexOf("xsp1")!=-1){
-var pli=parseDomForHtml(fetch(src,{headers:{"Referer":"https://zz22x.com"}}),"body&&iframe&&src").split("url=")[1];
+var pli=parseDomForHtml(fetch(src,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://zz22x.com"}}),"body&&iframe&&src").split("url=")[1];
 var fileUrl="https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
 eval(fetch(fileUrl,{}));
 var play=yqjx.toUrl(pli);
