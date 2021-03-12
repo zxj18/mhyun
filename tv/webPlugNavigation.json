@@ -41,6 +41,14 @@
       "click": true
     },    
     {
+      "name": "想看剧",
+      "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p3190.jpg",
+      "ads": "",
+      "webUrl": "https://www.xiangkanju.cc/",
+      "webOpen": true,
+      "click": true
+    },     
+    {
       "name": "今日热榜 (网址播放)",
       "pic": "https://tva4.sinaimg.cn/large/a15b4afely1fnt9plhh8oj21hc0u0dxy.jpg",
       "ads": "",
