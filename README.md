@@ -16,6 +16,7 @@ https://github.com/vicedev/ZY-Player-Android
 https://github.com/gedoor/legado/releases/
 
 阅读｜书源</br>
+https://github.com/XIU2/Yuedu</br>
 https://gitee.com/vpq/yd#https://wwi.lanzous.com/b05hl9sf
 
 #### 漫画
