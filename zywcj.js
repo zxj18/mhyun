@@ -229,7 +229,11 @@ setHomeResult(res);
 function lazyRu() {
 var src=input.replace(/amp;/g,"").replace(/^\s*/,"");
 if(src.indexOf("html")!=-1){
-var fileUrl="https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
+if (!fetch("hiker://files/rules/parse.js", {})) {
+var fileUrl = "https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
+} else {
+var fileUrl = "hiker://files/rules/parse.js";
+};
 eval(fetch(fileUrl,{}));
 var play=vodkey.toUrl(src.split('"')[0]);
 return play!=""?play:getUrl(src.split('"')[0]);
@@ -289,7 +293,11 @@ eval(ddjs);
 return tools.DdyunPlayer.toUrl(src).replace("ddyunp.com","90mm.me")};
 }else if(src.indexOf("xsp1")!=-1){
 var pli=parseDomForHtml(fetch(src,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://zz22x.com"}}),"body&&iframe&&src").split("url=")[1];
-var fileUrl="https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
+if (!fetch("hiker://files/rules/parse.js", {})) {
+var fileUrl = "https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
+} else {
+var fileUrl = "hiker://files/rules/parse.js";
+};
 eval(fetch(fileUrl,{}));
 var play=yqjx.toUrl(pli);
 return play!=""?play:getUrl(pli);
@@ -300,7 +308,11 @@ return html.match(/url\":.*?[\'\"](.*?)[\'\"]/)[1];
 refreshX5WebView(src);
 return "toast://请等待加载选集！";
 }else if(src.indexOf("www.bilibili.com")!=-1){
-var fileUrl="https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
+if (!fetch("hiker://files/rules/parse.js", {})) {
+var fileUrl = "https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
+} else {
+var fileUrl = "hiker://files/rules/parse.js";
+};
 eval(fetch(fileUrl,{}));
 var play=llqplay.toUrl(src);
 return play==''?getUrl(src):play;
