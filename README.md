@@ -2,6 +2,7 @@
 
 #### 影视
 FreeDTV</br>
+https://github.com/FreeDTV/FreeD</br>
 https://gitee.com/freedTV/freed
 
 ZY-Player-PC</br>
