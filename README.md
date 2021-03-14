@@ -1,6 +1,6 @@
 # Freed
 
-#### 影视
+#### [影视]
 <ul>FreeDTV
   <li>https://github.com/FreeDTV/FreeD</br>
   TV自建接口：https://github.com/FreeDTV/FreeD/raw/master/tv/</br>
@@ -16,7 +16,7 @@ ZY-Player-Android</br>
 https://github.com/cuiocean/ZY-Player-APP</br>
 https://github.com/vicedev/ZY-Player-Android
 
-#### 阅读
+#### [阅读]
 阅读｜APP</br>
 https://github.com/gedoor/legado/releases/
 
@@ -24,7 +24,7 @@ https://github.com/gedoor/legado/releases/
 https://github.com/XIU2/Yuedu</br>
 https://gitee.com/vpq/yd#https://wwi.lanzous.com/b05hl9sf
 
-#### 漫画
+#### [漫画]
 异次元｜APP</br>
 https://wwx.lanzoux.com/b04b0nxna 提取码：4uv4
 
