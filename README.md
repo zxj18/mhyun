@@ -1,10 +1,10 @@
 # XXXXX
 
 #### [影视]
-FreeDTV｜接口
+FreeDTV｜接口</br>
 https://github.com/FreeDTV/FreeD</br>
-  TV自建接口：https://github.com/FreeDTV/FreeD/raw/master/tv/</br>
-  手机自建接口：https://github.com/FreeDTV/FreeD/raw/master/mobile/</br>
+　TV自建接口：https://github.com/FreeDTV/FreeD/raw/master/tv/</br>
+　手机自建接口：https://github.com/FreeDTV/FreeD/raw/master/mobile/</br>
 https://gitee.com/freedTV/freed
 
 ZY-Player-PC｜APP</br>
