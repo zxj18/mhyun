@@ -3,6 +3,8 @@
 #### 影视
 FreeDTV</br>
 https://github.com/FreeDTV/FreeD</br>
+▼TV自建接口：https://github.com/FreeDTV/FreeD/raw/master/tv/</br>
+▼手机自建接口：https://github.com/FreeDTV/FreeD/raw/master/mobile/</br>
 https://gitee.com/freedTV/freed
 
 ZY-Player-PC</br>
