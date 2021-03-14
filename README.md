@@ -25,7 +25,7 @@ https://gitee.com/vpq/yd#https://wwi.lanzous.com/b05hl9sf
 #### [漫画]
 异次元｜APP</br>
 https://wwx.lanzoux.com/b04b0nxna 提取码：4uv4</br>
-全是漫畫｜APP</br>
+全是漫画｜APP</br>
 https://github.com/hongchacha/cartoon
 
 漫画｜图源</br>
