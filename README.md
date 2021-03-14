@@ -24,7 +24,9 @@ https://gitee.com/vpq/yd#https://wwi.lanzous.com/b05hl9sf
 
 #### [漫画]
 异次元｜APP</br>
-https://wwx.lanzoux.com/b04b0nxna 提取码：4uv4
+https://wwx.lanzoux.com/b04b0nxna 提取码：4uv4</br>
+全是漫畫｜APP</br>
+https://github.com/hongchacha/cartoon
 
-异次元｜图源</br>
+漫画｜图源</br>
 https://github.com/wanglabk/hub/tree/c2099
