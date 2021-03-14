@@ -1,11 +1,13 @@
 # Freed
 
 #### 影视
-FreeDTV</br>
-https://github.com/FreeDTV/FreeD</br>
-▼TV自建接口：https://github.com/FreeDTV/FreeD/raw/master/tv/</br>
-▼手机自建接口：https://github.com/FreeDTV/FreeD/raw/master/mobile/</br>
-https://gitee.com/freedTV/freed
+<ul>FreeDTV
+  <li>https://github.com/FreeDTV/FreeD</br>
+  TV自建接口：https://github.com/FreeDTV/FreeD/raw/master/tv/</br>
+  手机自建接口：https://github.com/FreeDTV/FreeD/raw/master/mobile/</li>
+  <li>https://gitee.com/freedTV/freed</li>
+</ul>
+
 
 ZY-Player-PC</br>
 https://github.com/cuiocean/ZY-Player
