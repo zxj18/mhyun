@@ -1,9 +1,32 @@
+function cuphome(){
+var spl=MY_URL.split('##');
+var lin='https://api.jackeriss.com/api/v1/recommend/?subject='+spl[1]+'&page_start='+spl[2]+'&page_limit=10';
+var json=JSON.parse(request(lin,{}));
+var self=JSON.parse(getRule()).title;
+//setError(self);
+for (var i = 0; i < json.subjects.length; i++) {
+
+    var r = {};
+
+    var j = json.subjects[i];
+
+    r.title = j.title;
+    r.url ='hiker://search?s='+j.title+'&rule='+self+'&simple=false';
+    r.pic_url = j.cover+'@Referer='+j.cover;
+
+    r.desc = j.rate;
+
+    if (r.title !== null && r.title !== undefined && r.title !== '') d.push(r);
+
+}
+
+}
 function cupss(){
 var spl=MY_URL.split('##');
 var lin='https://api2.jackeriss.com/api/v1/search/?text='+spl[1]+'&type=0&from='+spl[2]+'&size=20';
 var pn=spl[2]/20+1;
-var urlo=JSON.parse(request(lin));
-var urlt=JSON.parse(fetch(lin.replace('type=0','type=1')));
+var urlo=JSON.parse(request(lin,{}));
+var urlt=JSON.parse(fetch(lin.replace('type=0','type=1'),{}));
 
 if(urlo.resources.length > 0){
 d.push({
