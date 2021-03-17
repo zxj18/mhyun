@@ -1,0 +1,21 @@
+#EXTM3U
+#EXTINF:-1,TVBS新闻 FHD ★
+http://seb.sason.top/sc/tvbsxw_fhd.m3u8
+#EXTINF:-1,东森财经新闻 FHD ★
+http://seb.sason.top/sc/dscjxw_fhd.m3u8
+#EXTINF:-1,东森新闻 FHD ★
+http://seb.sason.top/sc/dsxw_fhd.m3u8
+#EXTINF:-1,华视新闻 FHD ★
+http://seb.sason.top/sc/hsxw_fhd.m3u8
+#EXTINF:-1,民视新闻 FHD ★
+http://seb.sason.top/sc/msxw_fhd.m3u8
+#EXTINF:-1,三立iNews FHD ★
+http://seb.sason.top/sc/slinews_fhd.m3u8
+#EXTINF:-1,三立Live FHD ★
+http://seb.sason.top/sc/sllive_fhd.m3u8
+#EXTINF:-1,台视新闻 FHD ★
+http://seb.sason.top/sc/tsxw_fhd.m3u8
+#EXTINF:-1,中视新闻 FHD ★
+http://seb.sason.top/sc/zsxw_fhd.m3u8
+#EXTINF:-1,壹新闻 FHD ★
+http://stream.nexttv.com.tw:80/n001/hd/live.m3u8
