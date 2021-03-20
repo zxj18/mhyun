@@ -283,14 +283,13 @@ return realUrl;
 }else{
 return src+"#isVideo=true#"};
 }else if(src.indexOf("ddyunp")!=-1||src.indexOf("90mm.me")!=-1){
-if(!fetch("hiker://files/rules/js/kem.js",{})){
-refreshX5WebView(src);
-return "toast://请等待加载选集！";
-}else{
-var fileUrl="hiker://files/rules/js/kem.js";
-var ddjs=fetch(fileUrl,{});
-eval(ddjs);
-return tools.DdyunPlayer.toUrl(src).replace("ddyunp.com","90mm.me")};
+if (!fetch("hiker://files/rules/ddyun.js", {})) {
+var fileUrl = "https://codeberg.org/lzk23559/PublicRule/raw/branch/master/ddyun.js";
+} else {
+var fileUrl = "hiker://files/rules/ddyun.js";
+};
+eval(fetch(fileUrl,{}));
+return ddyun.toUrl(src);
 }else if(src.indexOf("xsp1")!=-1){
 var pli=parseDomForHtml(fetch(src,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://zz22x.com"}}),"body&&iframe&&src").split("url=")[1];
 if (!fetch("hiker://files/rules/parse.js", {})) {
