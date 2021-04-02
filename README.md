@@ -25,6 +25,8 @@ https://gitee.com/vpq/yd#https://wwi.lanzous.com/b05hl9sf
 #### [漫画]
 异次元｜APP</br>
 https://wwx.lanzoux.com/b04b0nxna 提取码：4uv4</br>
+Tachiyomi｜APP</br>
+https://github.com/tachiyomiorg/tachiyomi
 全是漫画｜APP</br>
 https://github.com/hongchacha/cartoon
 
