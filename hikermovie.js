@@ -6,7 +6,7 @@ var spl = MY_URL.split('$$')[1];
 var pn = MY_URL.split('$$')[2];
 //var cook=getVar('hikernfcookie');
 //取主页源码
-//try{
+try{
 if(/cqzyw/.test(spl)){
 var link=spl+'/index.php/index/index/page/'+pn+'.html';
 var html=fetch(link,{headers:{'User-Agent':MOBILE_UA,'Referer':spl}});
@@ -132,7 +132,7 @@ var clsu=('0&1&2&3&4').split('&');}
 else if(/nangua55/.test(spl)){
 var clst=('电影&电视剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&国产剧&香港剧&台湾剧&日本剧&韩国剧&欧美剧&海外').split('&');
 var clsu=('1&2&3&4&5&6&7&8&9&10&11&14&15&16&17&18&19&20').split('&');}
-else if(/nangua55/.test(spl)){
+else if(/bddysf/.test(spl)){
 var clst=('电影&连续剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&奇幻片&犯罪片&武侠片&惊悚片&悬疑片&国产剧&港台剧').split('&');
 var clsu=('1&2&3&4&6&7&8&9&10&11&12&47&51&49&52&53&13&14').split('&');}
 else if(/jisuyswang/.test(spl)){
@@ -317,7 +317,7 @@ d.push({
 
  }//for j
 }//for i
-//} catch(e) {}
+} catch(e) {}
 res.data = d;setHomeResult(res);
 
 }
@@ -341,8 +341,8 @@ else if(/subaibai|qianoo/.test(MY_URL)){
 var list=parseDomForArray(html,'.bt_img&&li');}
 else if(/myui-vodlist/.test(html)&&/pic-tag/.test(html)){
 var list = parseDomForArray(html,".myui-vodlist&&li:has(.pic-tag)");}
-else if(/stui-vodlist/.test(html)&&/pic-text|pic-tag/.test(html)){
-var list = parseDomForArray(html,".stui-vodlist&&li:has(.stui-vodlist__detail)");}
+else if(/stui-vodlist/.test(html)&&/pic-text|pic-tag|<\/em>/.test(html)){
+var list = parseDomForArray(html,".stui-vodlist&&li:has(a)");}
 else if(/vodlist/.test(html)&&/pack-ykpack/.test(html)){
 var list=parseDomForArray(html,'.vodlist&&.pack-ykpack');}
 else if(/vodlist/.test(html)&&/vodlist_item/.test(html)){
