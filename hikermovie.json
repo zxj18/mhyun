@@ -72,10 +72,6 @@
 "ico":"https://www.nfmovies.com/templets/default/images/logos/06.png",
 "url":"https://www.nfmovies.com"
 },{
-"title":"nice影视",
-"ico":"https://www.nicemov2.com/favicon.ico",
-"url":"https://www.nicemov2.com"
-},{
 "title":"追剧吧",
 "ico":"http://zju8.cc/statics/img/logo_f.png",
 "url":"http://zju8.cc"
@@ -120,6 +116,10 @@
 "ico":"https://auete.com/static/picture/logo.png",
 "url":"https://auete.com"
 },{
+"title":"墨鱼影视",
+"ico":"http://www.moyuyingshi.com/down/mjk/picture/icon.png",
+"url":"http://www.moyuyingshi.com"
+},{
 "title":"1090影视",
 "ico":"http://1090ys2.com/statics/img/logo.png",
 "url":"http://1090ys2.com"
@@ -136,6 +136,10 @@
 "ico":"http://cokemv.cn/template/mytheme/statics/image/20210304/340fe0974.png",
 "url":"http://cokemv.cn"
 },{
+"title":"看一看影视",
+"ico":"https://v.kyikan.com/template/blank/Images/logo.png",
+"url":"https://v.kyikan.com"
+},{
 "title":"乐多资源网",
 "ico":"http://www.leduozy.com/template/35zy/images/logo.png",
 "url":"http://www.leduozy.com/inc/seacmsapi.php"
@@ -143,10 +147,6 @@
 "title":"人人资源网",
 "ico":"https://www.rrzyw.cc/favicon.ico",
 "url":"https://www.rrzyw.cc/api.php/provide/vod/from/rrm3u8/at/xml"
-},{
-"title":"步步高资源",
-"ico":"http://www.bbkdj.com/packs/static/images/logo-m.png",
-"url":"http://api.bbkdj.com/api/m3u8"
 },{
 "title":"789盘",
 "ico":"http://wei.789pan.cn/template/xz/images/logo.jpg",
