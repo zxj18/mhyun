@@ -80,15 +80,15 @@ if(urll.indexOf('html')!=-1){
   if(urll.indexOf('mgtv')!=-1){
 var html=request('https://jx.renrenmi.cc/?url='+urll,{});
   }else{
-var jiek='https://xcx.4v0r.cn/jx/index.php?url='+urll;
+var jiek='https://xcx.4v0r.cn/m3u8.php?url='+urll;
 var html=request(jiek,{headers:{"Referer":"https://4v0r.cn/"}})
   };
 }else{
-var jiek='https://xcx.4v0r.cn/jx/index.php?url='+urll;
+var jiek='https://xcx.4v0r.cn/m3u8.php?url='+urll;
 var html=request(jiek,{headers:{"Referer":"https://4v0r.cn/"}})
 };
 if(html.indexOf('片源无法解析')!=-1){
-'toast://片源无法解析也无法播放哦~';
+return 'toast://片源无法解析也无法播放哦~';
 }else{
 if(!fetch("hiker://files/rules/xyq/token.js",{})){
 var fileUrl=fetch("https://gitee.com/lzk23559/public_folder/raw/master/token.js",{});
