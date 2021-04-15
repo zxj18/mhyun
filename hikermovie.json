@@ -97,8 +97,8 @@
 "url":"http://saohuotv.com"
 },{
 "title":"扛把子影视",
-"ico":"https://www.8bazi.com/favicon.ico",
-"url":"http://www.8bazi.com"
+"ico":"https://www.46nb.com/favicon.ico",
+"url":"http://www.46nb.com"
 },{
 "title":"电影淘淘",
 "ico":"https://thumb624.jfcdns.com/n131531i23g22/16f5fd32a6c540a6.png",
@@ -172,6 +172,14 @@
 "ico":"http://ok.888hyk.com/template/m1938pc/static/picture/logo.png",
 "url":"https://api.apibdzy.com/api.php/Seacms/vod"
 },{
+"title":"八戒资源",
+"ico":"",
+"url":"http://cj.bajiecaiji.com/inc/seacmsapi.php"
+},{
+"title":"蓝光资源",
+"ico":"",
+"url":"https://api.languang.wfss100.com/api.php/provide/vod/at/xml"
+},{
 "title":"迪迪影院",
 "ico":"https://app.4ytv.com/m/static/picture/logo.png",
 "url":"https://www.4ytv.com"
@@ -179,10 +187,6 @@
 "title":"肖先生影视",
 "ico":"http://cs.syg520.cn/upload/site/20210412-1/3895cc4954f7d5905aee6d7b208066bf.png",
 "url":"http://cs.syg520.cn"
-},{
-"title":"Coke影视",
-"ico":"https://static.dbqapp.com/icon/92/41/92419eb7b26543a44c9f4bb2a6feff20.png",
-"url":"https://klysw.cn"
 },{
 "title":"COCO漫画",
 "ico":"https://www.cocomanhua.com/static/logo.png",

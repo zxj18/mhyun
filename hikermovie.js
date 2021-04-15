@@ -1,6 +1,19 @@
 //新方圆小棉袄公众号特供版
 //规则编辑By香雅情。2021/04/03
 function omhmerj() {
+var res = {};
+var items = [];
+items.push({
+title:'该版本有更新，点击更新最新版',
+desc:'请更新新规则',
+url:'rule://5rW36ZiU6KeG55WM6KeE5YiZ5YiG5Lqr77yM5b2T5YmN5YiG5Lqr55qE5piv77ya6aaW6aG16aKR6YGT77+laG9tZV9ydWxl77+leyJ0aXRsZSI6IummmeaDheW9seinhiIsImF1dGhvciI6IummmembheaDhSIsInVybCI6ImZpbGU6Ly8vc3RvcmFnZS9lbXVsYXRlZC8wL0FuZHJvaWQvZGF0YS9jb20uZXhhbXBsZS5oaWtlcnZpZXcvZmlsZXMvRG9jdW1lbnRzL3J1bGVzL3h5cS9oaWtlcm1vdmllLmpzb24iLCJ2ZXJzaW9uIjoyLCJjb2xfdHlwZSI6Imljb25fNF9jYXJkIiwiY2xhc3NfbmFtZSI6IiIsImNsYXNzX3VybCI6IiIsImFyZWFfbmFtZSI6IiIsImFyZWFfdXJsIjoiIiwic29ydF9uYW1lIjoiIiwieWVhcl9uYW1lIjoiIiwic29ydF91cmwiOiIiLCJ5ZWFyX3VybCI6IiIsImZpbmRfcnVsZSI6ImpzOiB2YXIganNvbiA9IEpTT04ucGFyc2UoZ2V0UmVzQ29kZSgpKTtcbnZhciByZXMgPSB7fTtcbnZhciBkID0gW107XG5cbmZvciAodmFyIGkgPSAwOyBpIDwganNvbi5sZW5ndGg7IGkrKykge1xudmFyIGogPSBqc29uW2ldO1xuICAgIGQucHVzaCh7XG4gICAgdGl0bGUgOiBqLnRpdGxlLFxuICAgIGltZyA6IGouaWNvKydAUmVmZXJlcj0nLFxuICAgIHVybCA6ICdoaWtlcjovL2VtcHR5JCQnK2oudXJsKyckJGZ5cGFnZSQkJ1xufSlcbiBcbn1cbnJlcy5kYXRhID0gZDtcbnNldEhvbWVSZXN1bHQocmVzKTsiLCJzZWFyY2hfdXJsIjoiaGlrZXI6Ly9lbXB0eSQkJGZpbGU6Ly8vc3RvcmFnZS9lbXVsYXRlZC8wL0FuZHJvaWQvZGF0YS9jb20uZXhhbXBsZS5oaWtlcnZpZXcvZmlsZXMvRG9jdW1lbnRzL3J1bGVzL3h5cS9oaWtlcm1vdmllLmpzb24kJCQqKiQkJCIsInRpdGxlQ29sb3IiOiIiLCJncm91cCI6IuKRoeW9seaQnCIsInNlYXJjaEZpbmQiOiJqczpcbmV2YWwoZmV0Y2goJ2hpa2VyOi8vZmlsZXMvcnVsZXMveHlxL2hpa2VybW92aWUuanMnKSk7aGlrc2VhcmNoKCk7IiwiZGV0YWlsX2NvbF90eXBlIjoibW92aWVfMSIsImRldGFpbF9maW5kX3J1bGUiOiJqczpcbmV2YWwoZmV0Y2goJ2hpa2VyOi8vZmlsZXMvcnVsZXMveHlxL2hpa2VybW92aWUuanMnKSk7aGlraG1lcmooKTsiLCJzZGV0YWlsX2NvbF90eXBlIjoibW92aWVfMSIsInNkZXRhaWxfZmluZF9ydWxlIjoianM6XG5ldmFsKGZldGNoKCdoaWtlcjovL2ZpbGVzL3J1bGVzL3h5cS9oaWtlcm1vdmllLmpzJykpO2hpa3NlYWVyamkoKTsiLCJ1YSI6Im1vYmlsZSIsInByZVJ1bGUiOiIvL+ajgOa1i+aYr+WQpuacieWGmeWFpeaXtumXtOS4juinhOWImeeahGpz5o+S5Lu25paH5Lu2XG5pZighZmV0Y2goXCJoaWtlcjovL2ZpbGVzL3J1bGVzL3h5cS9oaWtlcnVwZGF0ZS50eHRcIix7fSl8fCFmZXRjaChcImhpa2VyOi8vZmlsZXMvcnVsZXMveHlxL2hpa2VybW92aWUuanNcIix7fSl8fCFmZXRjaChcImhpa2VyOi8vZmlsZXMvcnVsZXMveHlxL2hpa2VybW92aWUuanNvblwiLHt9KSl7XG5sZXQgcnVsZWpzID0gZmV0Y2goJ2h0dHBzOi8vY29kZWJlcmcub3JnL2x6azIzNTU5L2Nsb3VkcnVsZS9yYXcvYnJhbmNoL21hc3Rlci9oaWtlcm1vdmllLmpzJyx7fSk7XG53cml0ZUZpbGUoXCJoaWtlcjovL2ZpbGVzL3J1bGVzL3h5cS9oaWtlcm1vdmllLmpzXCIscnVsZWpzKTtcbmxldCBydWxlanNvbiA9IGZldGNoKCdodHRwczovL2NvZGViZXJnLm9yZy9semsyMzU1OS9jbG91ZHJ1bGUvcmF3L2JyYW5jaC9tYXN0ZXIvaGlrZXJtb3ZpZS5qc29uJyx7fSk7XG53cml0ZUZpbGUoXCJoaWtlcjovL2ZpbGVzL3J1bGVzL3h5cS9oaWtlcm1vdmllLmpzb25cIixydWxlanNvbik7XG53cml0ZUZpbGUoXCJoaWtlcjovL2ZpbGVzL3J1bGVzL3h5cS9oaWtlcnVwZGF0ZS50eHRcIixuZXcgRGF0ZSgpKycnKVxufVxuXG4vL+iuoeeul+aXtumXtOmXtOmalFxudmFyIHN0YXJ0ID0gbmV3IERhdGUoZmV0Y2goXCJoaWtlcjovL2ZpbGVzL3J1bGVzL3h5cS9oaWtlcnVwZGF0ZS50eHRcIix7fSkpOyBcbnZhciBub3cgPSBuZXcgRGF0ZSgpOyBcbnZhciBEX1QgPSBub3cuZ2V0VGltZSgpIC0gc3RhcnQuZ2V0VGltZSgpOyBcbnZhciBEX0QgPSBEX1QgLyAoMTAwMCAqIDM2MDAgKiAyNCk7XG52YXIgdGRpZj1wYXJzZUludChEX0QpKycnO1xuXG4vL+m7mOiupOmXtOmalOi2hei/hzHlpKnlsLHlj5bkuIDmrKHkupHnq6/mlofku7ZcbmlmKHRkaWY+PTEpe1xubGV0IHJ1bGVqcyA9IGZldGNoKCdodHRwczovL2NvZGViZXJnLm9yZy9semsyMzU1OS9jbG91ZHJ1bGUvcmF3L2JyYW5jaC9tYXN0ZXIvaGlrZXJtb3ZpZS5qcycse30pO1xud3JpdGVGaWxlKFwiaGlrZXI6Ly9maWxlcy9ydWxlcy94eXEvaGlrZXJtb3ZpZS5qc1wiLHJ1bGVqcyk7XG5sZXQgcnVsZWpzb24gPSBmZXRjaCgnaHR0cHM6Ly9jb2RlYmVyZy5vcmcvbHprMjM1NTkvY2xvdWRydWxlL3Jhdy9icmFuY2gvbWFzdGVyL2hpa2VybW92aWUuanNvbicse30pO1xud3JpdGVGaWxlKFwiaGlrZXI6Ly9maWxlcy9ydWxlcy94eXEvaGlrZXJtb3ZpZS5qc29uXCIscnVsZWpzb24pO1xud3JpdGVGaWxlKFwiaGlrZXI6Ly9maWxlcy9ydWxlcy94eXEvaGlrZXJ1cGRhdGUudHh0XCIsbmV3IERhdGUoKSsnJyk7XG59XG5cbi8v5omn6KGM6ZyA6KaB6aKE5aSE55CG55qE56uZ54K5XG5pZihmZXRjaCgnaGlrZXI6Ly9maWxlcy9ydWxlcy94eXEvaGlrZXJtb3ZpZS5qcycpKXtcbmV2YWwoZmV0Y2goJ2hpa2VyOi8vZmlsZXMvcnVsZXMveHlxL2hpa2VybW92aWUuanMnKSk7aGlrZXJwcmUoKTt9In0=',
+col_type: 'text_center_1'
+});
+res.data=items;
+setHomeResult(res);
+}
+
+function hikhmerj() {
 var res = {};var d = [];
 var spl = MY_URL.split('$$')[1];
 var pn = MY_URL.split('$$')[2];
@@ -15,9 +28,9 @@ var link=spl+'/?m=vod-index-pg-'+pn+'.html';
 var html=fetch(link,{headers:{'User-Agent':MOBILE_UA,'Referer':spl}});
 }else if(/kunyu77/.test(spl)){
 var html=fetch(spl+'/searchFilter?type_id=0&pagenum='+pn+'&pagesize=24',{headers:{'User-Agent':'Dalvik/2.1.0'}});
-}else if(/789pan/.test(spl)){
+}else if(/789pan|apibdzy|rrzyw|bajiecaiji|wfss100/.test(spl)){
 var html=request(spl+'?ac=videolist&pg='+pn,{});
-}else if(/bbkdj|apibdzy|rrzyw/.test(spl)){
+}else if(/bbkdj/.test(spl)){
 var html=request(spl+'?ac=list&pg='+pn,{});
 }else{
  if(pn==1){
@@ -42,7 +55,7 @@ var clsu=('dianying&lianxuju&zongyi&dongman').split('&');}
 else if(/ganfantv/.test(spl)){
 var clst=('电影&电视剧&综艺&动漫').split('&');
 var clsu=('dianying&dianshiju&zongyi&dongman').split('&');}
-else if(/kunyu77|dxys|zz.ci|ysftv|8bazi/.test(spl)){
+else if(/kunyu77|dxys|zz.ci|ysftv|46nb/.test(spl)){
 var clst=('电影&电视剧&综艺&动漫').split('&');
 var clsu=('1&2&3&4').split('&');}
 else if(/siguyy/.test(spl)){
@@ -168,17 +181,25 @@ var clsu=('1&2&3&4&6&7&8&9&10&11&12&20&21&13&14&15&16&22').split('&');}
 else if(/4ytv/.test(spl)){
 var clst=('奈飞Netflix蓝光&电影&连续剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&动画片&国产剧&港台剧&日韩剧&欧美剧&纪录片').split('&');
 var clsu=('42&1&2&3&4&6&7&8&9&10&11&12&37&13&14&15&16&35').split('&');}
+else if(/bajiecaiji/.test(spl)){
+var clst=('综艺&动漫&国产动漫&日本动漫&欧美动漫&其他动漫&韩国美女&写真美女&展会美女&主播美女&动作片&喜剧片&爱情片&科幻片&恐怖片&奇幻片&动画片&战争片&剧情片&微电影&国产剧&香港剧&台湾剧&韩国剧&日本剧&欧美剧&海外剧&纪录片&大陆综艺&国外综艺&港台综艺').split('&');
+var clsu=('3&4&91&92&93&94&53&47&48&95&5&6&7&8&9&10&100&101&11&19&12&13&14&15&16&17&42&99&96&97&98').split('&');}
+else if(/wfss100/.test(spl)){
+var clst=('电影&连续剧&综艺&动漫&国产剧&港台剧&日韩剧&欧美剧&奇幻片&动画片&犯罪片&古装片&记录片&悬疑片&惊悚片&武侠片&冒险片&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&其他剧').split('&');
+var clsu=('1&2&3&4&13&14&15&16&20&21&22&23&24&25&26&28&29&30&31&32&33&34&35&36&37').split('&');}
 
 for(var i=0;i<clst.length;i++){
 //分类链接
-if(/jpysvip|zhaikan|gudanys|moyuy/.test(spl)){var url=spl+'/vodtype/'+clsu[i]+'-fypage.html';}
+if(/<rss/.test(html)&&/<video>/.test(html)&&/<pic>/.test(html)){var url=spl+'?ac=videolist&pg=fypage&t='+clsu[i];}
+else if(/<rss/.test(html)&&/<video>/.test(html)){var url=spl+'?ac=list&pg=fypage&t='+clsu[i];}
+else if(/jpysvip|zhaikan|gudanys|moyuy/.test(spl)){var url=spl+'/vodtype/'+clsu[i]+'-fypage.html';}
 else if(/nfstar|nfxtv|nfxhd|zhenbuka|cokemv/.test(spl)){var url=spl+'/vodtype/'+clsu[i]+'-fypage/';}
 else if(/ak1080|hxys/.test(spl)){var url=spl+'/vodshow/'+clsu[i]+'--------fypage---.html';}
 else if(/zju8/.test(spl)){var url=spl+'/vodshow/'+clsu[i]+'--------fypage---/';}
 else if(/80ysm/.test(spl)){var url=spl+'/vodshow/'+clsu[i]+'/page/fypage.html';}
 else if(/bddysf/.test(spl)){var url=spl+'/vodshow/id/'+clsu[i]+'/page/fypage.html';}
 else if(/7xiady|bwl87/.test(spl)){var url=spl+'/type/'+clsu[i]+'-fypage/';}
-else if(/8bazi/.test(spl)){var url=spl+'/type/'+clsu[i]+'/fypage.html';}
+else if(/46nb/.test(spl)){var url=spl+'/type/'+clsu[i]+'/fypage.html';}
 else if(/saohuotv/.test(spl)){var url=spl+'/list/'+clsu[i]+'-fypage.html';}
 else if(/siguyy/.test(spl)){var url=spl+'/type/'+clsu[i]+'-fypage.html';}
 else if(/subaibai|qianoo/.test(spl)){var url=spl+'/'+clsu[i]+'/page/fypage[firstPage='+spl+'/'+clsu[i]+']';}
@@ -195,9 +216,7 @@ else if(/agefan/.test(spl)){var url=spl+'/catalog/'+clsu[i]+'-all-all-all-all-ti
 else if(/1090ys/.test(spl)){var url=spl+'/whole/'+clsu[i]+'/page/fypage.html';}
 else if(/bde4/.test(spl)){var url=spl+'/s/'+clsu[i]+'/fypage';}
 else if(/kunyu77/.test(spl)){var url=spl+'/searchFilter?type_id='+clsu[i]+'&pagenum=fypage&pagesize=24;get;utf-8;{User-Agent@Dalvik/2.1.0}';}
-else if(/789pan/.test(spl)){var url=spl+'?ac=videolist&pg=fypage&t='+clsu[i];}
 else if(/leduozy/.test(spl)){var url=spl+'/?m=vod-type-id-'+clsu[i]+'-pg-fypage.html';}
-else if(/bbkdj|apibdzy|rrzyw/.test(spl)){var url=spl+'?ac=list&pg=fypage&t='+clsu[i];}
 else if(/nfmovies/.test(spl)){var url=spl+'/search.php?page=fypage&searchtype=5&order=time&'+clsu[i]+';get;utf-8;{User-Agent@Mozilla/5.0&&Cookie@.js:getVar("hikernfcookie")}';}
 else if(/yanetflix/.test(spl)){var url=spl+'/index.php/vod/show/id/'+clsu[i]+'/page/fypage.html[firstPage='+spl+'/index.php/vod/show/id/'+clsu[i]+'.html]';}
 else if(/nicemov/.test(spl)){var url=spl+'/search.php?page=fypage&searchtype=5&tid='+clsu[i]+'[firstPage='+spl+'/search.php?searchtype=5&tid='+clsu[i]+']';}
@@ -217,8 +236,8 @@ d.push({
 d.push({col_type: 'line'});}
 
 //首页推荐开始,取首页推荐列表
-if(/kunyu77/.test(spl)){var conts = '[]';}
-else if(/<rss/.test(html)&&/<video>/.test(html)){var conts=parseDomForArray(html,'body&&rss');}
+if(/<rss/.test(html)&&/<video>/.test(html)){var conts=parseDomForArray(html,'body&&rss');}
+else if(/kunyu77/.test(spl)){var conts = '[]';}
 else if(/saohuotv/.test(spl)){var conts=parseDomForArray(html,'body&&.v_list');}
 else if(/agefan/.test(spl)){var conts=parseDomForArray(html,'body&&.ul_li_a5');}
 else if(/bde4/.test(spl)){var conts=parseDomForArray(html,'body&&.cards');}
@@ -249,10 +268,10 @@ else if(/tbox_t/.test(html)&&/tbox_m/.test(html)){var conts=parseDomForArray(htm
 //setError(conts);
 for(var i = 0;i<conts.length;i++){
 //主页片单列表
-if(/kunyu77/.test(spl)){
-var list=JSON.parse(html).data.result;}
-else if(/<rss/.test(html)&&/<video>/.test(html)){
+if(/<rss/.test(html)&&/<video>/.test(html)){
 var list=parseDomForArray(conts[i],"body&&video");}
+else if(/kunyu77/.test(spl)){
+var list=JSON.parse(html).data.result;}
 else if(/bde4/.test(spl)){
 var list=parseDomForArray(conts[i],"body&&.card");}
 else if(html.indexOf('mo-part-round')!=-1){
@@ -279,14 +298,14 @@ var list=parseDomForArray(conts[i],'body&&li:has(a)')}
 for(var j = 0;j<list.length;j++){
 //图片
 try{
-if(/agefan|klysw|auete|moyuy|ysftv/.test(spl)){
+if(/<rss/.test(html)&&/<video>/.test(html)&&/<pic>/.test(html)){
+var img=parseDomForHtml(list[j],"body&&pic&&Text");}
+else if(/agefan|klysw|auete|moyuy|ysftv/.test(spl)){
 var img=parseDomForHtml(list[j], 'img&&src');}
 else if(/bde4/.test(spl)){
 var img=parseDomForHtml(list[j], 'img&&data-src');}
 else if(/kunyu77/.test(spl)){
 var img=list[j].videoCover;}
-else if(/<rss/.test(html)&&/<video>/.test(html)&&/<pic>/.test(html)){
-var img=parseDomForHtml(list[j],"body&&pic&&Text");}
 else if(/module-list/.test(html)&&/module-item/.test(html)){
 var img=parseDomForHtml(list[j],".lazyloaded&&data-src");}
 else if(/vbox_t/.test(html)&&/vbox/.test(html)){
@@ -298,41 +317,41 @@ if(img.substring(0,4)=='http'){img=img;}else{img=spl+img}
 } catch(e) {}
 
 //描述
-if(/subaibai|qianoo/.test(spl)){
-var desc=parseDomForHtml(list[j], '.jidi||.hdinfo&&span&&Text');
-}else if(/cokemv|klysw/.test(spl)){
-var desc=parseDomForHtml(list[j], '.pic-tag||.leo-video-remark&&Text');
-}else if(/cqzyw/.test(spl)){
-var typ=parseDomForHtml(list[j], '.type&&Text');
-var tim=parseDomForHtml(list[j], '.time&&Text');
-var desc=typ+' '+tim;
-}else if(!img&&/<rss/.test(html)&&/<video>/.test(html)){
+if(!img&&/<rss/.test(html)&&/<video>/.test(html)){
 var typ = parseDomForHtml(list[j],"body&&type&&Text");
 var last = parseDomForHtml(list[j],"body&&last&&Text");
 var dt = parseDomForHtml(list[j],"body&&dt&&Text");
-var desc=last+' '+typ+' '+dt;
-}else if(img&&/<rss/.test(html)&&/<video>/.test(html)){
-var desc = parseDomForHtml(list[j],"body&&note&&Text");
-}else if(/leduozy/.test(spl)){
+var desc=last+' '+typ+' '+dt;}
+else if(img&&/<rss/.test(html)&&/<video>/.test(html)){
+var desc = parseDomForHtml(list[j],"body&&note&&Text");}
+else if(/subaibai|qianoo/.test(spl)){
+var desc=parseDomForHtml(list[j], '.jidi||.hdinfo&&span&&Text');}
+else if(/cokemv|klysw/.test(spl)){
+var desc=parseDomForHtml(list[j], '.pic-tag||.leo-video-remark&&Text');}
+else if(/cqzyw/.test(spl)){
+var typ=parseDomForHtml(list[j], '.type&&Text');
+var tim=parseDomForHtml(list[j], '.time&&Text');
+var desc=typ+' '+tim;}
+else if(/leduozy/.test(spl)){
 var desc='更新时间：'+parseDomForHtml(list[j], 'font,-1&&Text')+' '+parseDomForHtml(list[j], 'a,-1&&Text');}
 else if(/bde4/.test(spl)){
-var desc = parseDomForHtml(list[j],".ep||.rate||.meta&&Text");
-}else if(/kunyu77/.test(spl)){
-var desc=list[j].msg;
-}else{
+var desc = parseDomForHtml(list[j],".ep||.rate||.meta&&Text");}
+else if(/kunyu77/.test(spl)){
+var desc=list[j].msg;}
+else{
 var desc=parseDomForHtml(list[j], '.pic-text||.pic_text||.mo-situ-rema||.fed-list-remarks||.continu||.anime_icon1_name1||.v_note||.pack-prb||.note||.pic-tag-left||.hl-pic-text||.hdtag||.tag-mark||.other||.zhuangtai||span&&Text')}
 
 //标题
-if(/subaibai|qianoo|cqzyw/.test(spl)){
-var title=parseDomForHtml(list[j], 'h3&&Text');}
-else if(/leduozy/.test(spl)){
-var title=parseDomForHtml(list[j], 'a&&Text');}
-else if(!img&&/<rss/.test(html)&&/<video>/.test(html)){
+if(!img&&/<rss/.test(html)&&/<video>/.test(html)){
 var name = parseDomForHtml(list[j],"body&&name&&Text").split('<')[0];
 var note = parseDomForHtml(list[j],"body&&note&&Text");
 var title = name+"  状态:"+note;}
 else if(img&&/<rss/.test(html)&&/<video>/.test(html)){
 var title = parseDomForHtml(list[j],"body&&name&&Text").split('<')[0];}
+else if(/subaibai|qianoo|cqzyw/.test(spl)){
+var title=parseDomForHtml(list[j], 'h3&&Text');}
+else if(/leduozy/.test(spl)){
+var title=parseDomForHtml(list[j], 'a&&Text');}
 else if(/kunyu77/.test(spl)){
 var title=list[j].title;}
 else if(/bde4/.test(spl)){
@@ -351,11 +370,11 @@ else{
 var title=parseDomForHtml(list[j], 'a&&title')}
 
 //链接
-if(/kunyu77/.test(spl)){
-var url=spl+'/videoPlaylist?ids='+list[j].id+';get;utf-8;{User-Agent@Dalvik/2.1.0}';}
-else if(/<rss/.test(html)&&/<video>/.test(html)){
+if(/<rss/.test(html)&&/<video>/.test(html)){
 var urlid = parseDomForHtml(list[j],"body&&id&&Text");
 var url=spl+'?ac=videolist&ids='+urlid;}
+else if(/kunyu77/.test(spl)){
+var url=spl+'/videoPlaylist?ids='+list[j].id+';get;utf-8;{User-Agent@Dalvik/2.1.0}';}
 else if(/nfmovies/.test(spl)){
 var nfurl = parseDomForHtml(list[j],"a&&href");
 var url=spl+nfurl+';get;utf-8;{User-Agent@Mozilla/5.0&&Cookie@.js:getVar("hikernfcookie")}';}
@@ -375,9 +394,9 @@ d.push({
    url:(url.substring(0,4)=='http'?url:spl+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie.js'));omerj();`,
    desc:desc,
    col_type: 'text_center_1'
-});
+});}
 //首页有图的
-}else{
+else{
 d.push({
    title:title,
    url:(url.substring(0,4)=='http'?url:spl+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie.js'));omerj();`,
@@ -408,7 +427,9 @@ var spl=MY_URL.split("?")[0];
 var spl = MY_URL.match(/([\S]*?:\/\/[\S]*?)\//)[1];}
 
 //取分类片单列表
-if(/kunyu77/.test(MY_URL)){var list = JSON.parse(html).data.result;}
+if(/<rss/.test(html)&&/<video>/.test(html)){
+var list=parseDomForArray(html,"rss&&video");}
+else if(/kunyu77/.test(MY_URL)){var list = JSON.parse(html).data.result;}
 else if(/subaibai|qianoo/.test(MY_URL)){
 var list=parseDomForArray(html,'.bt_img&&li');}
 else if(/myui-vodlist/.test(html)&&/pic-tag|pic-text/.test(html)){
@@ -433,8 +454,6 @@ else if(/v_list/.test(html)&&/grid_box/.test(html)){
 var list=parseDomForArray(html,'.v_list&&li:has(a)');}
 else if(/leo-video-item/.test(html)){
 var list=parseDomForArray(html,'body&&.leo-video-item');}
-else if(/<rss/.test(html)&&/<video>/.test(html)){
-var list=parseDomForArray(html,"rss&&video");}
 else if(/hy-video-list/.test(html)&&/col-sm-3/.test(html)){
 var list=parseDomForArray(html,'.hy-video-list&&.col-sm-3');}
 else if(/hl-vod-list/.test(html)&&/hl-list-item/.test(html)){
@@ -454,11 +473,11 @@ else if(/tbox_m/.test(html)&&/tbox_t/.test(html)){var list=parseDomForArray(html
 for(var i=0;i<list.length;i++){
 //图片
 try{
-if(/agefan|klysw|bde4|auete|moyuy|ysftv/.test(MY_URL)){
+if(/<rss/.test(html)&&/<video>/.test(html)&&/<pic>/.test(html)){
+var img=parseDomForHtml(list[i],"body&&pic&&Text");}
+else if(/agefan|klysw|bde4|auete|moyuy|ysftv/.test(MY_URL)){
 var img=parseDomForHtml(list[i], 'img&&src');}
 else if(/kunyu77/.test(MY_URL)){var img = list[i].videoCover;}
-else if(/<rss/.test(html)&&/<video>/.test(html)&&/<pic>/.test(html)){
-var img=parseDomForHtml(list[i],"body&&pic&&Text");}
 else if(/module-list/.test(html)&&/module-item/.test(html)){
 var img=parseDomForHtml(list[i],".lazyloaded&&data-src");}
 else if(/vbox/.test(list[i])&&/vbox_t/.test(list[i])){
@@ -469,11 +488,18 @@ if(img.substring(0,4)=='http'){img=img;}else{img=spl+img}
 
 //描述
 try{
-if(/qianoo|subaibai/.test(MY_URL)){
-var desc=parseDomForHtml(list[i], '.jidi||.hdinfo&&Text');
-}else if(/cokemv|klysw/.test(MY_URL)){
-var desc=parseDomForHtml(list[i], '.pic-tag||.leo-video-remark&&Text');
-}else if(/kunyu77/.test(MY_URL)){
+if(img&&/<rss/.test(html)&&/<video>/.test(html)){
+var desc = parseDomForHtml(list[i],"body&&note&&Text");}
+else if(!img&&/<rss/.test(html)&&/<video>/.test(html)){
+var typ = parseDomForHtml(list[i],"body&&type&&Text");
+var last = parseDomForHtml(list[i],"body&&last&&Text");
+var dt = parseDomForHtml(list[i],"body&&dt&&Text");
+var desc=last+' '+typ+' '+dt;}
+else if(/qianoo|subaibai/.test(MY_URL)){
+var desc=parseDomForHtml(list[i], '.jidi||.hdinfo&&Text');}
+else if(/cokemv|klysw/.test(MY_URL)){
+var desc=parseDomForHtml(list[i], '.pic-tag||.leo-video-remark&&Text');}
+else if(/kunyu77/.test(MY_URL)){
 var desc = list[i].msg;}
 else if(/bde4/.test(MY_URL)){
 var desc = parseDomForHtml(list[i],".ep||.rate||.meta&&Text");}
@@ -482,29 +508,21 @@ var desc='更新时间：'+parseDomForHtml(list[i], 'font,-1&&Text')+' '+parseDo
 else if(/cqzyw/.test(MY_URL)){
 var typ=parseDomForHtml(list[i], '.type&&Text');
 var tim=parseDomForHtml(list[i], '.time&&Text');
-var desc=typ+' '+tim;
-}else if(img&&/<rss/.test(html)&&/<video>/.test(html)){
-var desc = parseDomForHtml(list[i],"body&&note&&Text");
-}
-else if(!img&&/<rss/.test(html)&&/<video>/.test(html)){
-var typ = parseDomForHtml(list[i],"body&&type&&Text");
-var last = parseDomForHtml(list[i],"body&&last&&Text");
-var dt = parseDomForHtml(list[i],"body&&dt&&Text");
-var desc=last+' '+typ+' '+dt;
-}else{
+var desc=typ+' '+tim;}
+else{
 var desc=parseDomForHtml(list[i], '.pic-text||.pic_text||.mo-situ-rema||.fed-list-remarks||.continu||.newname||.v_note||.pack-prb||.note||.pic-tag-left||.hl-pic-text||.hdtag||.other||.zhuangtai||span&&Text');}
 } catch(e) {}
 
 //标题
-if(/subaibai|qianoo|cqzyw/.test(MY_URL)){
-var title=parseDomForHtml(list[i], "h3&&Text");}
-else if(img&&/<rss/.test(html)&&/<video>/.test(html)){
-var title = parseDomForHtml(list[i],"body&&name&&Text").split('<')[0];
-}else if(!img&&/<rss/.test(html)&&/<video>/.test(html)){
+if(img&&/<rss/.test(html)&&/<video>/.test(html)){
+var title = parseDomForHtml(list[i],"body&&name&&Text").split('<')[0];}
+else if(!img&&/<rss/.test(html)&&/<video>/.test(html)){
 var name = parseDomForHtml(list[i],"body&&name&&Text").split('<')[0];
 var note = parseDomForHtml(list[i],"body&&note&&Text");
-var title = name+'  '+note;
-}else if(/kunyu77/.test(MY_URL)){
+var title = name+'  '+note;}
+else if(/subaibai|qianoo|cqzyw/.test(MY_URL)){
+var title=parseDomForHtml(list[i], "h3&&Text");}
+else if(/kunyu77/.test(MY_URL)){
 var title = list[i].title;}
 else if(/bde4/.test(MY_URL)){
 var title=parseDomForHtml(list[i], '.content&&Text');}
@@ -526,7 +544,10 @@ var title=parseDomForHtml(list[i], 'a&&title');
 }
 
 //链接
-if(/kunyu77/.test(MY_URL)){
+if(/<rss/.test(html)&&/<video>/.test(html)){
+var urlid = parseDomForHtml(list[i],"body&&id&&Text");
+var url=spl+'?ac=videolist&ids='+urlid;}
+else if(/kunyu77/.test(MY_URL)){
 var url='http://api.kunyu77.com/api.php/provide/videoPlaylist?ids='+list[i].id;}
 else if(/moyuy/.test(spl)){
 var mourl = parseDomForHtml(list[i],"a&&href");
@@ -534,9 +555,7 @@ var url=spl+mourl.replace('/vod/','/play/').replace('.html','-1-1.html');}
 else if(/ganfantv/.test(spl)){
 var deturl = parseDomForHtml(list[i],"a&&href");
 var url=spl+deturl.replace('/detail/','/play/').replace('.html','-1-1.html');}
-else if(/<rss/.test(html)&&/<video>/.test(html)){
-var urlid = parseDomForHtml(list[i],"body&&id&&Text");
-var url=spl+'?ac=videolist&ids='+urlid;}else{ 
+else{ 
 var url=parseDom(list[i], 'a&&href');}
 
 //分类片单无图的
@@ -546,8 +565,7 @@ d.push({
    url:(url.substring(0,4)=='http'?url:spl+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie.js'));omerj();`,
    desc:desc,
    col_type: 'text_center_1'
-});
-}
+});}
 //分类片单有图的
 else{
 d.push({
@@ -556,15 +574,15 @@ d.push({
    desc:desc,
    url:url+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie.js'));omerj();`,
    col_type:'movie_3_marquee'
-});
-}
+});}
+
 }
 res.data = d;setHomeResult(res);
 
 }
 
 //搜索解析规则函数
-function omsearch() {
+function hiksearch() {
 var spl = MY_URL.split('$$$');
 var json = JSON.parse(fetch(spl[1],{}));
 var res = {};var d = [];
@@ -581,17 +599,17 @@ else if(/7xiady|bwl87/.test(url)){url=url+'/search/'+spl[2]+'----------fypage---
 else if(/1090ys/.test(url)){url=url+'/search/wd/'+spl[2]+'/page/fypage.html';}
 else if(/bowang/.test(url)){url=url+'/search/page/fypage/wd/'+spl[2]+'.html';}
 else if(/subaibai|qianoo/.test(url)){url=url+'/page/fypage?s='+spl[2];}
-else if(/8bazi/.test(url)){url=url+'/s/'+spl[2]+'/fypage.html';}
+else if(/46nb/.test(url)){url=url+'/s/'+spl[2]+'/fypage.html';}
 else if(/bde4/.test(url)){url=url+'/search/'+spl[2]+'/fypage';}
 else if(/hktvyb/.test(url)){url=url+'/vod/search/page/fypage/wd/'+spl[2]+'.html';}
-else if(/qkan8|cqzyw|klysw|yanetflix|jisuyswang|dxys|syg520|4ytv/.test(url)){url=url+'/index.php/vod/search/page/fypage/wd/'+spl[2]+'.html';}
+else if(/qkan8|cqzyw|klysw|yanetflix|jisuyswang|dxys|syg520|4ytv|zz.ci/.test(url)){url=url+'/index.php/vod/search/page/fypage/wd/'+spl[2]+'.html';}
 else if(/mjtvs|saohuotv|nicemov/.test(url)){url=url+'/search.php?page=fypage&searchword='+spl[2]+'&searchtype=';}
 else if(/auete/.test(url)){url=url+'/search.php?searchword='+spl[2];}
 else if(/nfmovies/.test(url)){url=url+'/search.php?page=fypage&searchword='+spl[2]+'&searchtype='+';get;utf-8;{User-Agent@Mozilla/5.0&&Cookie@.js:getVar("hikernfcookie")}';}
 else if(/nicotv/.test(url)){url=url+'/vod-search-wd-'+spl[2]+'-p-fypage.html';}
 else if(/kyikan|ysftv/.test(url)){url=url+'/index.php?m=vod-search-pg-fypage-wd-'+spl[2]+'.html';}
 else if(/agefans/.test(url)){url=url+'/search?query='+spl[2]+'&page=fypage';}
-else if(/789pan|bbkdj|apibdzy|rrzyw/.test(url)){url=url+'?wd='+spl[2]+'&pg=fypage&ac=list';}
+else if(/789pan|bbkdj|apibdzy|rrzyw|bajiecaiji|wfss100/.test(url)){url=url+'?wd='+spl[2]+'&pg=fypage&ac=list';}
 else if(/leduozy/.test(url)){url=url+'/index.php？？m=vod-search?wd='+spl[2]+';post;utf-8';}
 else if(/kunyu77/.test(url)){url=url+'/searchVideo?searchName='+spl[2]+'&pg=fypage;get;utf-8;{User-Agent@Dalvik/2.1.0}';}
 else if(/nangua/.test(url)){url=url+'/index.php?s=home-search-index-wd-'+spl[2]+'-sid-1-p-fypage;get;utf-8;{User-Agent@Mozilla/5.0&&Referer@http://www.nangua55.com/search/&&X-Requested-With@XMLHttpRequest}';}
@@ -615,7 +633,7 @@ res.data = d;setSearchResult(res);
 }
 
 //搜索二级解析函数
-function omseaerji() {
+function hikseaerji() {
 var res={};var d=[];
 var html=getResCode().replace(/\\/g,"");
 //过宝塔检测
@@ -628,7 +646,8 @@ var spl=MY_URL.split("?")[0];
 var spl = MY_URL.match(/([\S]*?:\/\/[\S]*?)\//)[1];}
 
 //取搜索结果列表
-if(/kunyu77/.test(MY_URL)){var list = JSON.parse(html).data;}
+if(/<rss/.test(html)&&/<video>/.test(html)){var list=parseDomForArray(html,"rss&&video");}
+else if(/kunyu77/.test(MY_URL)){var list = JSON.parse(html).data;}
 else if(/agefans|klysw/.test(MY_URL)){var list = parseDomForArray(html,'body&&.cell||.leo-detail-wrap');}
 else if(/search_list/.test(html)){var list = parseDomForArray(html,'.search_list&&li');}
 else if(/list-unstyled/.test(html)&&/justify-content-between/.test(html)){var list = parseDomForArray(html,'body&&.list-unstyled');}
@@ -646,7 +665,6 @@ else if(/mo-main-info/.test(html)){var list = parseDomForArray(html,'.mo-main-in
 else if(/fed-main-info/.test(html)){var list = parseDomForArray(html,'.fed-main-info&&.fed-deta-info');}
 else if(/long-list/.test(html)&&/long-result/.test(html)){var list = parseDomForArray(html,'.long-result&&li');}
 else if(/index-area/.test(html)&&/link-hover/.test(html)&&/sy-nav-down/.test(html)){var list=parseDomForArray(html,'body&&.main&&li:has(.link-hover)');}
-else if(/<rss/.test(html)&&/<video>/.test(html)){var list=parseDomForArray(html,"rss&&video");}
 else if(/box-main-content/.test(html)&&/col-sm-4/.test(html)){var list=parseDomForArray(html,'.box-main-content&&.col-sm-4');}
 else if(/module-list/.test(html)&&/module-search-item/.test(html)){var list=parseDomForArray(html,'body&&.module-search-item');}
 else if(/data_list/.test(html)&&/DianDian/.test(html)){var list=parseDomForArray(html,'body&&#data_list&&.DianDian');}
@@ -658,15 +676,15 @@ else if(/tbox_m/.test(html)&&/tbox_t/.test(html)){var list=parseDomForArray(html
 for (var i = 0; i < list.length; i++) {
 
 //标题
-if(/agefans|klysw|moyuy|ysftv/.test(MY_URL)){var title = parseDomForHtml(list[i], 'img&&alt');}
+if(/<rss/.test(html)&&/<video>/.test(html)){
+var name = parseDomForHtml(list[i],"body&&name&&Text").split('<')[0];
+var note = parseDomForHtml(list[i],"body&&note&&Text");
+var title = name+'  '+note;}
+else if(/agefans|klysw|moyuy|ysftv/.test(MY_URL)){var title = parseDomForHtml(list[i], 'img&&alt');}
 else if(/bde4/.test(MY_URL)){var title = parseDomForHtml(list[i], '.header&&title');}
 else if(/kunyu77/.test(MY_URL)){var title = list[i].videoName;}
 else if(/leduozy/.test(MY_URL)){var title=parseDomForHtml(list[i], 'a&&Text');}
 else if(/h2|h3|h1/.test(list[i])){var title = parseDomForHtml(list[i], 'h1||h3||h2&&a&&Text');}
-else if(/<rss/.test(html)&&/<video>/.test(html)){
-var name = parseDomForHtml(list[i],"body&&name&&Text").split('<')[0];
-var note = parseDomForHtml(list[i],"body&&note&&Text");
-var title = name+'  '+note;}
 else{var title = parseDomForHtml(list[i], 'a&&title||Text');}
 
 
@@ -699,7 +717,11 @@ var desc = parseDomForHtml(list[i], '.pic-text||.pic_text||.mo-situ-rema||.fed-l
 
 //简介
 try{
-if(/aidi/.test(MY_URL)){
+if(/<rss/.test(html)&&/<video>/.test(html)){
+var typ = parseDomForHtml(list[i],'body&&type&&Text');
+var dt = parseDomForHtml(list[i],'body&&dt&&Text');
+var cont=typ+' · '+dt;}
+else if(/aidi/.test(MY_URL)){
 var cont = parseDomForHtml(list[i], 'p,-1&&Text');}
 else if(/cqzyw/.test(MY_URL)){
 var typ=parseDomForHtml(list[i], '.type&&Text');
@@ -709,16 +731,15 @@ else if(/kunyu77/.test(MY_URL)){
 var cont = list[i].briefContext;}
 else if(/leduozy/.test(MY_URL)){
 var cont='更新时间：'+parseDomForHtml(list[i], 'font,-1&&Text');}
-else if(/<rss/.test(html)&&/<video>/.test(html)){
-var typ = parseDomForHtml(list[i],'body&&type&&Text');
-var dt = parseDomForHtml(list[i],'body&&dt&&Text');
-var cont=typ+' · '+dt;}
 else{
 var cont = parseDomForHtml(list[i], '.detail||dd||.fed-deta-content||.cell_imform_kv_desc||.leo-detail-media||.description||.ecitem-desc||.hl-item-content||.list-detail||.actor||.video-info-main||.stui-vodlist__detail&&Text');}
 } catch(e) {}
 
 //链接
-if(/kunyu77/.test(MY_URL)){
+if(/<rss/.test(html)&&/<video>/.test(html)){
+var urlid = parseDomForHtml(list[i],"body&&id&&Text");
+var url=spl+'?ac=videolist&ids='+urlid;}
+else if(/kunyu77/.test(MY_URL)){
 var url='http://api.kunyu77.com/api.php/provide/videoPlaylist?ids='+list[i].id;}
 else if(/moyuy/.test(MY_URL)){
 var mourl = parseDomForHtml(list[i],"a&&href");
@@ -726,9 +747,6 @@ var url=spl+mourl.replace('/vod/','/play/').replace('.html','-1-1.html');}
 else if(/ganfantv/.test(MY_URL)){
 var deturl = parseDomForHtml(list[i],"a&&href");
 var url=spl+deturl.replace('/detail/','/play/').replace('.html','-1-1.html');}
-else if(/<rss/.test(html)&&/<video>/.test(html)){
-var urlid = parseDomForHtml(list[i],"body&&id&&Text");
-var url=spl+'?ac=videolist&ids='+urlid;}
 else{       
 var url = parseDom(list[i], 'a&&href');}
 
@@ -739,17 +757,17 @@ d.push({
    url:(url.substring(0,4)=='http'?url:spl[1]+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie.js'));omerj();`,
    desc:cont,
    col_type: 'text_1'
-});
+});}
 //有图的显示
-}else{
+else{
         d.push({
             title: '““'+title+'””'+'\n'+desc,
             pic_url:/nfmovies/.test(spl)?img+'@Referer=':img+'@Referer='+img,
             url:url+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie.js'));omerj();`,
             desc: cont,
             col_type: 'movie_1_vertical_pic'
-        });
-     }
+        });}
+        
    }
 
 res.data = d;setHomeResult(res);
@@ -778,11 +796,17 @@ var omdomin = MY_URL.match(/([\S]*?:\/\/[\S]*?)\//)[1];}
 
 //setError(html);
 //线路统计
-if(/kunyu77/.test(MY_URL)){
+if(/<rss/.test(html)&&/<video>/.test(html)){
+var tabs = parseDomForArray(html,'rss&&dl&&dd');
+var conts = parseDomForArray(html,'rss&&dl&&dd');}
+else if(/kunyu77/.test(MY_URL)){
 var tabs = JSON.parse(html).data.episodes;
 var conts=tabs;}
 else if(/cqzyw/.test(MY_URL)){
 var tabs = parseDomForArray(html,"body&&#playlist");}
+else if(/agefan/.test(MY_URL)){
+var tabs = parseDomForArray(html, '.menu0&&li');
+var conts=parseDomForArray(html,'body&&.movurl:has(a)');}
 else if(/hy-play-list/.test(html)&&/tab-content/.test(html)){
 var tabs = parseDomForArray(html, '.tab-content&&.option');
 var conts = parseDomForArray(html, '.tab-content&&.playlist');}
@@ -812,9 +836,6 @@ else if(html.indexOf('play_source_tab')!=-1){
 var tabs = parseDomForArray(html,'.play_source_tab&&a');}
 else if(/fed-tabs-item/.test(html)){
 var tabs = parseDomForArray(html, '.fed-tabs-item&&ul&&li');}
-else if(/agefan/.test(MY_URL)){
-var tabs = parseDomForArray(html, '.menu0&&li');
-var conts=parseDomForArray(html,'body&&.movurl:has(a)');}
 else if(/leo-source-cho/.test(html)){
 var tabs = parseDomForArray(html, 'body&&.leo-source-cho&&li');}
 else if(/player_list/.test(html)&&/justify-content-center/.test(html)){
@@ -863,21 +884,18 @@ var conts = parseDomForArray(html,'body&&.scroll-content');}
 else if(/tabs_block/.test(html)&&/list_block/.test(html)){
 var tabs = parseDomForArray(html,'body&&.tabs');
 var conts = parseDomForArray(html,'body&&.list_block');}
-else if(/<rss/.test(html)&&/<video>/.test(html)){
-var tabs = parseDomForArray(html,'rss&&dl&&dd');
-var conts = parseDomForArray(html,'rss&&dl&&dd');}
 
 //setError(conts);
 //-----华丽的分割线-----
 if(conts||tabs){
 for(var i = 0;i<conts.length;i++){
 //取各列表
-if(/kunyu77/.test(MY_URL)){
+if(/<rss/.test(html)&&/<video>/.test(html)){
+var list=conts[i].split(">\n")[1].split("\n<")[0].split("#");}
+else if(/kunyu77/.test(MY_URL)){
 var list=conts[i].playurls;}
 else if(/bde4/.test(MY_URL)){
 var list=parseDomForArray(conts[i],'body&&.secondary');}
-else if(/<rss/.test(html)&&/<video>/.test(html)){
-var list=conts[i].split(">\n")[1].split("\n<")[0].split("#");}
 else if(/contentURL/.test(html)&&/movievod/.test(html)){
 var list=conts[i].match(/name=\"copy_sel[\s\S]*?<span>/g);}
 else if(/fed-btns-info/.test(conts[i])){
@@ -896,7 +914,9 @@ list=list.reverse();
   
  //需要显示线路名的
 if(tabs){
-if(/<\/h3>/.test(tabs[i])){
+ if(/<rss/.test(html)&&/<video>/.test(html)){
+  	var tabt=parseDomForHtml(tabs[i], "body&&dd&&flag");}
+ else if(/<\/h3>/.test(tabs[i])){
   	var tabt=parseDomForHtml(tabs[i], "h3&&Text");}
   else if(/aidi|zz.ci/.test(MY_URL)){
   	var tabt=parseDomForHtml(tabs[i], "a&&alt");}
@@ -904,9 +924,7 @@ if(/<\/h3>/.test(tabs[i])){
   	var tabt=parseDomForHtml(tabs[i], ".laiyuan&&Text");}
   else if(/kunyu77/.test(MY_URL)){
   	var tabt=tabs[i].episode+'';}
- else if(/<rss/.test(html)&&/<video>/.test(html)){
-  	var tabt=parseDomForHtml(tabs[i], "body&&dd&&flag");}
- else{
+else{
   	var tabt=parseDomForHtml(tabs[i], "body&&Text");}
   
 //显示线路
@@ -914,8 +932,8 @@ if(/<\/h3>/.test(tabs[i])){
 			title:tabt+"    🔗"+[i+1]+'/'+conts.length+"““点击切换选集排序””",
 			url:"hiker://empty@lazyRule=.js:putVar('hikermsort', getVar('hikermsort','1')=='1'?'0':'1');refreshPage(false);'toast://切换成功！'",
 			col_type: 'text_1'
-		});
-	}else if(conts){
+		});}
+else if(conts){
 		d.push({
 			title:'在线播放'+"    🔗"+[i+1]+'/'+conts.length+"““点击切换选集排序””",
 			url:"hiker://empty@lazyRule=.js:putVar('hikermsort', getVar('hikermsort','1')=='1'?'0':'1');refreshPage(false);'toast://切换成功！'",
@@ -926,27 +944,25 @@ if(/<\/h3>/.test(tabs[i])){
 var link={};
 for(var j = 0; j<list.length; j++){
 //选集标题与链接
-if(/kunyu77/.test(MY_URL)){
-var title=tabs[i].episode+'-'+list[j].playfrom;
-var link=list[j].playurl;}
-else if(/cqzyw/.test(MY_URL)){
-var title=list[j].split('copy_text\">')[1].split('<')[0];
-var link=list[j].split('$')[1].split('<')[0].replace('amp;','');}
-else if(/leduozy/.test(MY_URL)){
-var title=list[j].split('$')[0].split('value="')[1];
-var link=list[j].split('$')[1].split('"')[0];}
-
-else if(/<rss/.test(html)&&/<video>/.test(html)){
-if(list[j].split('$')[1]!=null){
-link=list[j].split('$')[1].replace(/\n*/g,'').replace(/amp;/g,"").replace(/^\s*/,"");}
-else{
-link=list[j].split('$')[0].replace(/\n*/g,'').replace(/amp;/g,"").replace(/^\s*/,"");}
+if(/<rss/.test(html)&&/<video>/.test(html)){
+if(list[j].split('$')[1]!=null){link=list[j].split('$')[1].replace(/\n*/g,'').replace(/amp;/g,"").replace(/^\s*/,"");}
+else{link=list[j].split('$')[0].replace(/\n*/g,'').replace(/amp;/g,"").replace(/^\s*/,"");}
 if(tabt=='789pan'){link='https://play.789pan.cn/player/tm.php?url='+link}
+if(tabt=='languang'){link='https://j.languang.wfss100.com/jx/md5.php?d='+link}
 if(/bbkdj/.test(MY_URL)){link='http://jx.yparse.com/index.php?url='+link}
 if(/rrm3u8/.test(MY_URL)){link='https://www.meiju11.com/ckplayerx/m3u8.php?url='+link}
 
-var title=(list[j].split('$')[0].indexOf('http')!=-1?[j+1]:list[j].split('$')[0]);
-}
+var title=(list[j].split('$')[0].indexOf('http')!=-1?[j+1]:list[j].split('$')[0]);}
+
+else if(/kunyu77/.test(MY_URL)){
+var title=tabs[i].episode+'-'+list[j].playfrom;
+var link=list[j].playurl;}
+else if(/leduozy/.test(MY_URL)){
+var title=list[j].split('$')[0].split('value="')[1];
+var link=list[j].split('$')[1].split('"')[0];}
+else if(/cqzyw/.test(MY_URL)){
+var title=list[j].split('copy_text\">')[1].split('<')[0];
+var link=list[j].split('$')[1].split('<')[0].replace('amp;','');}
 
 else{
 var title=parseDomForHtml(list[j], "a&&Text");
@@ -981,7 +997,7 @@ for (var i = 0; i < dnli.length; i++) {
     });
   }
  }
-}
+}//end 下载
 
 res.data=d;setHomeResult(res);
 }
@@ -1002,8 +1018,8 @@ var fc=fetch(srcurl,{}).replace("var purl","var main");
 if(fc.indexOf("main")!=-1){
 var mat=fc.match(/var main.*?;/)[0];
 eval(mat);
-var play=(main.indexOf("http")!=-1?main:link+main);
-}else{
+var play=(main.indexOf("http")!=-1?main:link+main);}
+else{
 var main=fc.match(/url:.*?[\'\"](.*?)[\'\"]/)[1];
 var play=(main.indexOf("http")!=-1?main:link+main)};
 return play;
@@ -1055,11 +1071,12 @@ return "toast://请等待加载选集！";
 }
 //乐多资源网
 else if(/leduozy/.test(myurl)){
-var pla=request(srcurl,{}).split("var url=\'")[1].split("\'")[0];
+var ldlink='https://api.leduotv.com/wp-api/glid.php?vid='+srcurl;
+var pla=request(ldlink,{}).split("var url=\'")[1].split("\'")[0];
 if(pla.indexOf("m3u8")!=-1){
 return pla.split("=")[1];
 }else{
-return srcurl};
+return ldlink};
 }
 //解b64链接
 else if(srcurl.indexOf("aHR0c")!=-1){
@@ -1226,8 +1243,8 @@ var playlink=JSON.parse(fc).url;
 return playlink.indexOf('http')!=-1?playlink:'http://play.hhplayer.com'+playlink
 }
 //扛把子
-else if(/8bazi/.test(myurl)){
-var srclink =fetch(parseDom(fetch(srcurl,{headers:{'User-Agent':MOBILE_UA,'Referer':'https://www.8bazi.com/'}}),".mplayer&&script&&src"),{headers:{'User-Agent':MOBILE_UA,'Referer':'https://www.8bazi.com/'}});
+else if(/46nb/.test(myurl)){
+var srclink =fetch(parseDom(fetch(srcurl,{headers:{'User-Agent':MOBILE_UA,'Referer':'https://www.46nb.com/'}}),".mplayer&&script&&src"),{headers:{'User-Agent':MOBILE_UA,'Referer':'https://www.46nb.com/'}});
 if(srclink.indexOf('iframe')==-1){var cc=parseDomForHtml(srclink,'body&&video&&src');}else{var cc=parseDomForHtml(srclink,'body&&iframe&&src')}
 /*代码开始-蛊惑解析*/
 if(cc.indexOf('gg.79da')!=-1){
@@ -1242,7 +1259,7 @@ var play=fetch(link,{});
 return JSON.parse(play).url;}
 /*快快解析*/
 else if(cc.indexOf('play.79da')!=-1){
-var da = fetch(cc,{headers:{'Referer':'http://www.8bazi.com/'}});
+var da = fetch(cc,{headers:{'Referer':'http://www.46nb.com/'}});
 if(/api.php/.test(da)){
 var purl=da.match(/\'url\':\'(.*?)\'/)[1];
 var pref=da.match(/\'referer\':\'(.*?)\'/)[1];
@@ -1263,14 +1280,15 @@ else{return cc.indexOf('godsong')!=-1?cc+'#.mp4':cc}
 //肖先生&干饭&回响&淘淘&大师兄&BD电影&思古&爱迪&极品&播王&迪迪
 else if(/syg520|ganfantv|hxys|jisuyswang|zz.ci|bddysf|siguyy|aidi|jpysvip|bowang|4ytv/.test(myurl)){
 var phtml =request(srcurl,{});
-var scrpt = parseDomForHtml(phtml,".embed-responsive||.stui-player__video||.myui-player__video||.myui-player__item&&script&&Html").replace(/player_.*?={/,'player_data={');
+try{
+var scrpt = parseDomForHtml(phtml,".embed-responsive||.stui-player__video||.myui-player__video||.myui-player__item||#bofang_box&&script&&Html").replace(/player_.*?={/,'player_data={');
 eval(scrpt);var fro=player_data.from;var urll=player_data.url;var nxt=player_data.url_next;
 if(/zz.ci|bddysf/.test(myurl)){urll=unescape(base64Decode(urll));nxt=unescape(base64Decode(nxt));}
 else if(/siguyy/.test(myurl)){urll=unescape(urll);nxt=unescape(nxt);}
 if(/.m3u8|.mp4/.test(urll)&&/http/.test(urll)){return urll;}
 else if(/aidi/.test(myurl)){return srcurl;}
 else{
-var jconf = parseDom(phtml,".embed-responsive||.stui-player__video||.myui-player__video||.myui-player__item&&script,1&&src");
+var jconf = parseDom(phtml,".embed-responsive||.stui-player__video||.myui-player__video||.myui-player__item||#bofang_box&&script,1&&src");
 var jso=request(jconf,{}).match(/player_list=(.*?),MacPlayerConfig/)[1];
 eval("json="+jso);
 var jiek=eval("json['"+fro+"'].parse");
@@ -1279,11 +1297,16 @@ if(jiek!=''){
 else if(jiek.substring(0,2)=='\/\/'){jiek='https:'+jiek;}
 else{jiek=myurl+jiek}
 }
-return (jiek+urll+"&next="+nxt)}
+if(/ganfan/.test(myurl)&&/html/.test(urll)){
+return ('https://jx.zui.cm/?url='+urll);}
+else{
+return (jiek+urll+"&next="+nxt)}}
+}catch(e){return srcurl}
 }
 //墨鱼&孤单&TVB云播&追剧
 else if(/moyuy|gudanys|hktvyb|zju8/.test(myurl)){
 var phtml =request(srcurl,{});
+try{
 var scrpt = parseDomForHtml(phtml,".dt-info-header-wap||.embed-responsive||.myui-player__item||.stui-player__video&&script&&Html").replace(/player_.*?={/,'player_data={');
 eval(scrpt);var fro=player_data.from;var urll=player_data.url;var nxt=player_data.url_next;
 if(/zju8/.test(myurl)){urll=unescape(base64Decode(urll));nxt=unescape(base64Decode(nxt));}
@@ -1297,6 +1320,7 @@ else if(jiek.substring(0,2)=='\/\/'){jiek='https:'+jiek;}
 else{jiek=myurl+jiek}
 }
 return (jiek+urll+"&next="+nxt)}
+}catch(e){return srcurl}
 }
 //南瓜
 else if(/nangua/.test(myurl)){
@@ -1335,10 +1359,18 @@ else{jiek=myurl+jiek}
 return (jiek+now)
  }
 }
+//蓝光资源
+else if(/wfss100/.test(myurl)){
+var phtml =request(srcurl,{});
+var urll=phtml.match(/vodurl = \'(.*?)\'/)[1];
+return urll
+}
+
 
 //打开源链接
 else{return srcurl}
 }
+
 
 //预处理代码
 function hikerpre(){
