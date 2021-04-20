@@ -91,7 +91,7 @@ if(html.indexOf('片源无法解析')!=-1){
 return 'toast://片源无法解析也无法播放哦~';
 }else{
 if(!fetch("hiker://files/rules/xyq/token.js",{})){
-var fileUrl=fetch("https://gitee.com/lzk23559/public_folder/raw/master/token.js",{});
+var fileUrl=fetch("https://cdn.jsdelivr.net/gh/lzk23559/Public_folder/token.js",{});
 writeFile("hiker://files/rules/xyq/token.js",fileUrl);
 eval(fileUrl);
 }else{
