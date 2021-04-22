@@ -1,9 +1,9 @@
 {
- "note":"",
+ "note":"恭喜，你用上了新版呦。",
  "content":"",
  "version":"2",
  "data":"2021/04/15",
- "uplink":"",
+ "uplink":"hiker://home@我的主页",
 "data":[
 {"type":"影视",
   "list":[{
@@ -212,8 +212,8 @@
 "url":"https://www.rrzyw.cc/api.php/provide/vod/from/rrm3u8/at/xml"},
 {
 "title":"789盘",
-"ico":"http://wei.789pan.cn/template/xz/images/logo.jpg",
-"url":"http://wei.789pan.cn/api.php/provide/vod/at/xml"},
+"ico":"http://cms.789pan.cn/template/xz/images/logo.jpg",
+"url":"http://cms.789pan.cn/api.php/provide/vod/at/xml"},
 {
 "title":"百度资源",
 "ico":"http://ok.888hyk.com/template/m1938pc/static/picture/logo.png",
