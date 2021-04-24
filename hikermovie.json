@@ -1,8 +1,8 @@
 {
- "note":"恭喜，你用上了新版呦。",
+ "note":"规则如果有问题记得到群里反馈哟。",
  "content":"",
  "version":"2",
- "data":"2021/04/15",
+ "data":"2021/04/22",
  "uplink":"hiker://home@我的主页",
 "data":[
 {"type":"影视",
@@ -63,6 +63,10 @@
 "ico":"http://www.80ysm.com/upload/site/logo.png",
 "url":"http://www.80ysm.com"},
 {
+"title":"80影视",
+"ico":"https://www.5180s.com/static/images/logo.png",
+"url":"https://www.5180s.com"},
+{
 "title":"哔嘀影视",
 "ico":"https://cdn.jsdelivr.net/gh/bde4admin/v3/images/favicon.png",
 "url":"https://bde4.cc"},
@@ -70,6 +74,10 @@
 "title":"奈菲影视",
 "ico":"https://www.nfmovies.com/templets/default/images/logos/06.png",
 "url":"https://www.nfmovies.com"},
+{
+"title":"袋鼠电影",
+"ico":"http://daishudy.com/favicon.ico",
+"url":"http://daishudy.com"},
 {
 "title":"追剧吧",
 "ico":"http://zju8.cc/statics/img/logo_f.png",
