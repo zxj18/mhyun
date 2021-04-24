@@ -71,30 +71,38 @@ var js=parseDomForHtml(get,".embed-responsive&&script&&Html").replace(/player_.*
 eval(js);
 var fro=player_data.from;
 var urll=player_data.url;
-if(urll.indexOf('m3u8')!=-1){
-return urll;
-}else if(fro=='bilibili'){
-return urll;
-}else{
-if(urll.indexOf('html')!=-1){
-  if(urll.indexOf('mgtv')!=-1){
-var html=request('https://jx.renrenmi.cc/?url='+urll,{});
-  }else{
-var jiek='https://xcx.4v0r.cn/m3u8.php?url='+urll;
+//m3u8直链
+if(/m3u8/.test(urll)){
+return urll;}
+//哔哩
+else if(fro=='bilibili'){
+return 'https://www.murl.us/?url='+urll;}
+//需要解析的
+else{
+	try{
+//取html网页
+if(/html/.test(urll)&&/http/.test(urll)){
+var jk=request('https://4v0r.cn/static/player/'+fro+'.js',{}).match(/src=\"(.*?)\'/)[1];
+var jiek=jk+urll;
 var html=request(jiek,{headers:{"Referer":"https://4v0r.cn/"}})
-  };
 }else{
-var jiek='https://xcx.4v0r.cn/m3u8.php?url='+urll;
+var jvs = parseDom(get,".embed-responsive&&script,1&&src");
+var jso=request(jvs,{}).match(/player_list=(.*?),MacPlayerConfig/)[1];
+eval("json="+jso);
+var pl=eval("json."+fro+".parse");
+var jiek=pl+urll;
 var html=request(jiek,{headers:{"Referer":"https://4v0r.cn/"}})
-};
+};//结束取html网页
+//处理无法解析的
 if(html.indexOf('片源无法解析')!=-1){
-return 'toast://片源无法解析也无法播放哦~';
-}else{
+return 'toast://片源无法解析也无法播放哦~';}
+//取播放
+else{
 if(!fetch("hiker://files/rules/xyq/token.js",{})){
-var fileUrl=fetch("https://cdn.jsdelivr.net/gh/lzk23559/Public_folder/token.js",{});
+var fileUrl=fetch("https://gitee.com/lzk23559/public_folder/raw/master/token.js",{});
 writeFile("hiker://files/rules/xyq/token.js",fileUrl);
-eval(fileUrl);
-}else{
+eval(fileUrl);}
+else{
 var fileUrl=fetch("hiker://files/rules/xyq/token.js",{});
 eval(fileUrl)
 };
@@ -104,8 +112,10 @@ return tkurl.split('url=')[1];
 return tkurl+';{Referer@https://www.mgtv.com/}';
 }else{
 return tkurl}
-}
-}
+}//结束取播放
+}catch(e){return urll}
+}//结束需要解析
+
 };
 function lekanycl(){
 var login=JSON.parse(fetchCookie('https://4v0r.cn/user/login.html', {headers:{'User-Agent':MOBILE_UA,'Content-Type':'application/x-www-form-urlencoded','Origin':'https://4v0r.cn'},body:cs,method:'POST',withHeaders:true})).join(';');
