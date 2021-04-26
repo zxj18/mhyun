@@ -13,17 +13,13 @@
 	box-sizing:border-box;
 }
    
-   #container {
-	width:500px;
-	height:820px;
-	margin:0 auto;
 }
    div.search {
 	padding:10px 0;
 }
   form {
 	position:relative;
-	width:100%;
+	width:96%;
 	margin:0 auto;
 }
   input,button {
@@ -45,15 +41,15 @@
         /*搜索框1*/
         .bar1 {background: #FFFFFF;}
         .bar1 input {
-            border: 2px solid #7BA7AB;
+            border: 2px solid #1db69a;
             border-radius: 5px;
-            background: #F9F0DA;
-            color: #9E9C9C;
+            background: #FFFFFF;
+            color: #000000;
         }
         .bar1 button {
             top: 0;
             right: 0;
-            background: #7BA7AB;
+            background: #1db69a;
             border-radius: 0 5px 5px 0;
         }
         .bar1 button:before {
@@ -148,14 +144,14 @@
         /*搜索框6*/
         .bar6 {background: #FFFFFF;}
         .bar6 input {
-            border: 2px solid #c5464a;
+            border: 2px solid  #1db69a;
             border-radius: 5px;
             background: transparent;
             top: 0;
             right: 0;
         }
         .bar6 button {
-            background: #c5464a;
+            background:  #1db69a;
             border-radius: 0 5px 5px 0;
             width: 60px;
             top: 0;
@@ -164,7 +160,7 @@
         .bar6 button:before {
             content: "搜索";
             font-size: 13px;
-            color: #F9F0DA;
+            color: #FFFFFF;
         }
 
 
@@ -174,7 +170,7 @@
             height: 42px;
         }
         .bar7 input {
-            width: 100%;
+            width: 250px;
             border-radius: 42px;
             border: 2px solid #324B4E;
             background: #F9F0DA;
@@ -182,7 +178,7 @@
             float: right;
         }
         .bar7 input:focus {
-            width: 100%;
+            width: 300px;
         }
         .bar7 button {
             background: none;
@@ -212,7 +208,7 @@
             z-index: 2;
         }
         .bar8 input:focus {
-            width: 100%;
+            width: 300px;
             z-index: 1;
             border-bottom: 2px solid #F9F0DA;
         }
@@ -232,7 +228,7 @@
  <body style="overflow:hidden;"> 
   <div class="search bar1"> 
   <form>
-    <input type="text" class="input" id="search-input" placeholder="搜索内容 . . ." onkeydown="if(event.keyCode==13){up()}">
+    <input type="text" autocomplete="off" class="input" id="search-input" placeholder="搜索内容 . . ." onkeydown="if(event.keyCode==13){up()}">
     <button type="submit" id="search-ok"></button>
     </form>
    </div> 
@@ -250,16 +246,14 @@
          if(work.length<11&&k){
              work.unshift(k);
              work=Array.from(new Set(work))
-             //alert(work)
              fy_bridge_app.writeFile("hiker://files/searchwork.json",JSON.stringify(work));
          }
          fy_bridge_app.putVar("searchKeyword",k);
          fy_bridge_app.refreshPage(true);
-         //fy_bridge_app.putVar("searchKeyword",k);
      }
      document.getElementById("search-ok").onclick=up
      if(fy_bridge_app.getVar("searchKeyword")!=""){
-         document.getElementById("search-input").value=fy_bridge_app.getVar("searchKeyword");
+         document.getElementById("search-input").placeholder="点击搜索返回首页";
      }
      </script>  
  </body>
