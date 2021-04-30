@@ -12,7 +12,7 @@ https://github.com/cuiocean/ZY-Player
 
 ZY-Player-Android｜APP</br>
 https://github.com/cuiocean/ZY-Player-APP</br>
-https://github.com/vicedev/ZY-Player-Android
+
 
 #### [阅读]
 阅读｜APP</br>
