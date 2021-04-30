@@ -31,6 +31,6 @@ https://github.com/tachiyomiorg/tachiyomi</br>
 https://github.com/hongchacha/cartoon
 
 漫画｜图源</br>
-https://raw.githubusercontent.com/YuanHsing/freed/master/2021%E5%B9%B44%E6%9C%88%E6%95%B4%E7%90%86.json</br>
+https://cdn.jsdelivr.net/gh/YuanHsing/freed/2021%E5%B9%B44%E6%9C%88%E6%95%B4%E7%90%86.json</br>
 https://github.com/wanglabk/hub/tree/c2099</br>
 http://yck.mumuceo.com/yiciyuan/tuyuan/index.html
