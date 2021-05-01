@@ -1,6 +1,12 @@
 # XXXXX
 
 #### [影视]
+海阔视界｜APP</br>
+https://www.lanzous.com/u/GoldRiver
+
+FreeDTV｜APP</br>
+https://www.lanzoui.com/b025mpw7e</br>
+
 FreeDTV｜接口</br>
 https://github.com/FreeDTV/FreeD</br>
 　TV自建接口：https://github.com/FreeDTV/FreeD/raw/master/tv/</br>
