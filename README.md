@@ -43,7 +43,7 @@ https://github.com/wanglabk/hub/tree/c2099</br>
 http://yck.mumuceo.com/yiciyuan/tuyuan/index.html
 
 
-#### [WebDav＆数据备份]
+#### [WebDav＆数据备份与同步]
 申请网站｜https://www.jianguoyun.com/</br>
 设定步骤｜账户信息 > 安全选项 > 添加应用 > 名称 > 生成密码</br>
 WebDav地址｜https://dav.jianguoyun.com/dav/
