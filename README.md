@@ -2,7 +2,13 @@
 
 #### [影视]
 海阔视界｜APP</br>
-https://www.lanzous.com/u/GoldRiver
+https://www.lanzous.com/u/GoldRiver</br>
+海阔视界｜规则名：道长仓库</br>
+http://netcut.cn/p/0efcb30db3bb8420</br>
+海阔视界｜规则名：香情影视</br>
+http://netcut.cn/p/a2c22ce690d3117a</br>
+
+
 
 FreeDTV｜APP</br>
 https://www.lanzoui.com/b025mpw7e</br>
