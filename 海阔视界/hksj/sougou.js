@@ -1,3 +1,65 @@
+function EJ() {
+
+    var d = [];
+
+    var config = fetch('hiker://files/cache/MyParseSet.json');
+    var jsUrl = 'https://code.aliyun.com/AI957/Hiker/raw/master/v/CloudParse-V2_Dn.js';
+    if (config && fetch(JSON.parse(config).cj)) {
+        jsUrl = JSON.parse(config).cj;
+    } eval(fetch(jsUrl));
+
+    var lazy = `@lazyRule=.js:var input = fetch(input).match(/window.open\\('(.*?)'/)[1];` + lazy + ``;
+
+    var html = JSON.parse(getResCode().split('window.__INITIAL_STATE__=')[1].split(';(function(){var s;')[0]).detail.itemData;
+    var conts = html.play.item_list;
+    d.push({
+        title: html.zone + '\n' + html.style + '\n' + html.score,
+        desc: html.release_time,
+        img: html.v_picurl,
+        url: setUrl,
+        col_type: 'movie_1_vertical_pic'
+    });
+
+    for (var i in conts) {
+        var list = conts[i].info;
+        if (conts[i].info) {
+            d.push({
+                title: conts[i].sitename[0],
+                col_type: "text_1"
+            })
+            for (var j in list) {
+                if (!list[j].index == '0') {
+                    d.push({
+                        title: list[j].index,
+                        url: 'https://v.sogou.com' + list[j].url + lazy,
+                        col_type: "text_4"
+                    });
+                }
+            }
+        } else
+            if (conts[i].latest) {
+                var list = conts[i].latest;
+                for (var j in list) {
+                    d.push({
+                        title: list[j].title,
+                        img: list[j].picurl,
+                        url: 'https://v.sogou.com' + list[j].playurl + lazy,
+                        col_type: "movie_2"
+                    });
+                }
+            } else {
+                d.push({
+                    title: conts[i].sitename[0],
+                    img: conts[i].picurl,
+                    url: 'https://v.sogou.com' + conts[i].url + lazy,
+                    col_type: "movie_2"
+                })
+            }
+    }
+
+    setResult(d)
+}
+
 function SYYJ() {
     var d = [];
     d.push({
@@ -40,30 +102,35 @@ function SYYJ() {
         }
     } else {
         var html = fetch('https://v.sogou.com/v?query=' + getVar('searchKeyword'));
-        var list = parseDomForArray(html, 'body&&.srch-result-box');
-        var list2 = parseDomForArray(html, '.result-lst&&li');
-
+        var list = JSON.parse(html.split('window.__INITIAL_STATE__=')[1].split(';(function(){var s;')[0]).result.longVideo.results;
         for (var i in list) {
 
             d.push({
-                title: parseDomForHtml(list[i], '.srch-result-tit&&a&&Text'),
-                desc: parseDomForHtml(list[i], 'a&&Text'),
-                img: parseDom(list[i], 'img&&src'),
-                url: parseDom(list[i], 'a&&href')
+                title: list[i].alais_name || list[i].original_name,
+                desc: list[i].docname,
+                content: list[i].introduction,
+                img: list[i].v_picurl,
+                url: 'https://v.sogou.com' + list[i].tiny_url
             });
         }
-        for (var j in list2) {
 
-            d.push({
-                title: parseDomForHtml(list2[j], '.srch-result-tit&&a&&Text'),
-                desc: parseDomForHtml(list2[j], 'a&&Text'),
-                img: parseDom(list2[j], 'img&&src'),
-                url: parseDom(list2[j], 'a&&href')
-            });
-        }
         d.push({ col_type: 'line_blank' });
         d.push({ title: "<h4 style='text-align:center'>到底了呢！</h4>", col_type: "rich_text" });
 
     }
     setResult(d)
+}
+function SSYJ() {
+    var d = [];
+    var list = JSON.parse(getResCode().split('window.__INITIAL_STATE__=')[1].split(';(function(){var s;')[0]).result.longVideo.results;
+    for (var i in list) {
+        d.push({
+            title: list[i].alais_name || list[i].original_name,
+            desc: list[i].docname,
+            content: list[i].introduction,
+            img: list[i].v_picurl,
+            url: 'https://v.sogou.com' + list[i].tiny_url
+        });
+    }
+    setResult(d);
 }
