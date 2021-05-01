@@ -232,7 +232,6 @@
     <button type="submit" id="search-ok"></button>
     </form>
    </div> 
-  </div> 
   <script>
       function up(){
          var k=document.getElementById("search-input").value
