@@ -56,6 +56,7 @@ http://yck.mumuceo.com/yiciyuan/tuyuan/index.html
 
 #### [WebDav＆数据备份与同步]
 ```
+授权教程｜https://help.jianguoyun.com/?p=2064
 申请网站｜https://www.jianguoyun.com/
 设定步骤｜账户信息 > 安全选项 > 第三方应用管理 > 添加应用 > 名称 > 生成密码
 WebDav地址｜https://dav.jianguoyun.com/dav/
