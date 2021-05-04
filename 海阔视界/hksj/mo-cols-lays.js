@@ -20,7 +20,7 @@ function EJ() {
         title: '分类：' + parseDomForHtml(html, '.mo-cols-lays&&li,2--span&&Text') + ' | ' + parseDomForHtml(html, '.mo-cols-lays&&li,3--span&&Text') + ' | ' + parseDomForHtml(html, '.mo-cols-lays&&li,4--span&&Text') + '\n' + parseDomForHtml(html, '.mo-cols-lays&&li&&Text').substring(0, 15) + '\n' + parseDomForHtml(html, '.mo-cols-lays&&li,1&&Text').substring(0, 15),
         desc: '更新时间：' + parseDomForHtml(html, '.mo-cols-lays&&li,5&&Text').substring(0, 15),
         pic_url: parseDom(html, '.mo-situ-pics&&data-original'),
-        url: "hiker://empty$fypage$" + title + `@rule=js:eval(request('https://gitee.com/zbaolin/hksj/raw/master/SS.js'));jusou()`,
+        url: "hiker://empty$fypage$" + title + `@rule=js:eval(request('https://github.com/YuanHsing/freed/raw/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hksj/SS.js'));jusou()`,
         col_type: 'movie_1_vertical_pic'
     });
     try {
