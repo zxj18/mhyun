@@ -3,7 +3,7 @@
     {
       "name": "新聞直播",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/test.m3u",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/test.m3u",
       "type": "m3u",
       "subTitle": "测试",
       "click": true,
@@ -25,7 +25,7 @@
     {
       "name": "(新增)hy电影(选IJK解码)",
       "pic": "https://tva1.sinaimg.cn/large/a15b4afegy1fmvjekvk6yj21hc0u0h7x.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/电影轮播.txt",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/%E7%94%B5%E5%BD%B1%E8%BD%AE%E6%92%AD.txt",
       "type": "txt",
       "subTitle": "",
       "click": true,
@@ -36,7 +36,7 @@
     {
       "name": "(新增)hy电视(选IJK解码)",
       "pic": "https://tva1.sinaimg.cn/large/0072Vf1pgy1foxkc6qp2sj31hc0u0k1p.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/电视轮播.txt",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/%E7%94%B5%E8%A7%86%E8%BD%AE%E6%92%AD.txt",
       "type": "txt",
       "subTitle": "",
       "click": true,
@@ -47,7 +47,7 @@
     {
       "name": "(新增)hy综艺(选IJK解码)",
       "pic": "https://tva4.sinaimg.cn/large/a15b4afely1fnt9plhh8oj21hc0u0dxy.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/综艺轮播.txt",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/%E7%BB%BC%E8%89%BA%E8%BD%AE%E6%92%AD.txt",
       "type": "txt",
       "subTitle": "",
       "click": true,
@@ -58,7 +58,7 @@
     {
       "name": "yk(新增/IJK解码)",
       "pic": "https://tva1.sinaimg.cn/large/a15b4afely1fmvj6ly1yqj21hc0u00vv.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/youku.m3u",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/youku.m3u",
       "type": "txt",
       "subTitle": "经典动画电影整理中",
       "click": false,
@@ -69,7 +69,7 @@
     {
       "name": "央卫(更新:20210205)",
       "pic": "https://tva1.sinaimg.cn/large/0072Vf1pgy1fodqgoyhkrj31hc0u0khb.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/live.m3u",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/live.m3u",
       "type": "txt",
       "subTitle": "经典动画电影整理中",
       "click": true,
@@ -80,7 +80,7 @@
     {
       "name": "iHOT系列",
       "pic": "https://tva3.sinaimg.cn/large/a15b4afegy1fmvjkpglf3j21hc0u0h59.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/ihot.m3u",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/ihot.m3u",
       "type": "m3u",
       "subTitle": "经典动画电影整理中",
       "click": true,
@@ -91,7 +91,7 @@
     {
       "name": "YY轮播(选IKJ解码)",
       "pic": "https://tva3.sinaimg.cn/large/0072Vf1pgy1foxkipc63ij31hc0u0wv2.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/yy.m3u",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/yy.m3u",
       "type": "m3u",
       "subTitle": "经典动画电影整理中",
       "click": true,
@@ -201,7 +201,7 @@
     {
       "name": "11# 音乐",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
-      "url": "https://github.com/YuanHsing/freed/blob/master/tv/11%23%20%E9%9F%B3%E4%B9%90.txt",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/11%23%20%E9%9F%B3%E4%B9%90.txt",
       "type": "txt",
       "subTitle": "经典动画电影整理中",
       "click": true,
@@ -212,7 +212,7 @@
     {
       "name": "12# 体育频道",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
-      "url": "https://github.com/YuanHsing/freed/blob/master/tv/12%23%20%E4%BD%93%E8%82%B2%E9%A2%91%E9%81%93.txt",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/12%23%20%E4%BD%93%E8%82%B2%E9%A2%91%E9%81%93.txt",
       "type": "txt",
       "subTitle": "经典动画电影整理中",
       "click": true,
