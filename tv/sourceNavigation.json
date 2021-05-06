@@ -100,14 +100,14 @@
       "webPlus": {}
     },
     {
-      "name": "1#CCTV",
+      "name": "1#CCTV(选IJK解码)",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
       "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/1%23CCTV.txt",
       "type": "txt",
       "subTitle": "经典动画电影整理中",
       "click": true,
       "autoNext": false,
-      "decoder": 0,
+      "decoder": 1,
       "webPlus": {}
     },
     {
