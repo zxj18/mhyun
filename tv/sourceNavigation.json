@@ -102,7 +102,7 @@
     {
       "name": "1#CCTV",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/1#CCTV.txt",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/1%23CCTV.txt",
       "type": "m3u",
       "subTitle": "经典动画电影整理中",
       "click": true,
@@ -113,7 +113,7 @@
     {
       "name": "2#卫视",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/2#卫视.txt",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/2%23%E5%8D%AB%E8%A7%86.txt",
       "type": "m3u",
       "subTitle": "经典动画电影整理中",
       "click": true,
@@ -124,7 +124,7 @@
     {
       "name": "3#4K",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/3#4K.txt",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/3%234K.txt",
       "type": "m3u",
       "subTitle": "经典动画电影整理中",
       "click": true,
@@ -135,7 +135,7 @@
     {
       "name": "4# 港澳台",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/4# 港澳台.txt",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/4%23%20%E6%B8%AF%E6%BE%B3%E5%8F%B0.txt",
       "type": "m3u",
       "subTitle": "经典动画电影整理中",
       "click": true,
@@ -146,7 +146,7 @@
     {
       "name": "5# 韩国女团",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/5# 韩国女团.txt",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/5%23%20%E9%9F%A9%E5%9B%BD%E5%A5%B3%E5%9B%A2.txt",
       "type": "txt",
       "subTitle": "经典动画电影整理中",
       "click": true,
@@ -157,7 +157,7 @@
     {
       "name": "6# 轮播电影",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/6# 轮播电影.txt",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/6%23%20%E8%BD%AE%E6%92%AD%E7%94%B5%E5%BD%B1.txt",
       "type": "m3u",
       "subTitle": "经典动画电影整理中",
       "click": true,
@@ -168,7 +168,7 @@
     {
       "name": "7#NewTV",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/7#NewTV.txt",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/7%23NewTV.txt",
       "type": "txt",
       "subTitle": "经典动画电影整理中",
       "type": "m3u",
@@ -179,7 +179,7 @@
     {
       "name": "8#IHOT",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/8#IHOT.txt",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/8%23IHOT.txt",
       "type": "m3u",
       "subTitle": "经典动画电影整理中",
       "click": true,
@@ -190,7 +190,7 @@
     {
       "name": "9# 少儿",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/9# 少儿.txt",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/9%23%20%E5%B0%91%E5%84%BF.txt",
       "type": "m3u",
       "subTitle": "经典动画电影整理中",
       "click": true,
@@ -201,7 +201,7 @@
     {
       "name": "11# 音乐",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/11# 音乐.txt",
+      "url": "https://github.com/YuanHsing/freed/blob/master/tv/11%23%20%E9%9F%B3%E4%B9%90.txt",
       "type": "m3u",
       "subTitle": "经典动画电影整理中",
       "click": true,
@@ -212,7 +212,7 @@
     {
       "name": "12# 体育频道",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/12# 体育频道.txt",
+      "url": "https://github.com/YuanHsing/freed/blob/master/tv/12%23%20%E4%BD%93%E8%82%B2%E9%A2%91%E9%81%93.txt",
       "type": "m3u",
       "subTitle": "经典动画电影整理中",
       "click": true,
@@ -223,7 +223,7 @@
     {
       "name": "13# 世界",
       "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p4191.jpg",
-      "url": "https://github.com/YuanHsing/freed/raw/master/tv/13# 世界.txt",
+      "url": "https://raw.githubusercontent.com/YuanHsing/freed/master/tv/13%23%20%E4%B8%96%E7%95%8C.txt",
       "type": "m3u",
       "subTitle": "经典动画电影整理中",
       "click": true,
