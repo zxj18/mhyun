@@ -271,7 +271,7 @@ var clsu=('1&2&3&4&13&14&15&16').split('&');}
 else if(/aiyy/.test(spl)){
 var clst=('电影&连续剧&综艺&动漫&纪录片&动画片&悬疑片&犯罪片&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&国产剧&香港剧&韩国剧&欧美剧&台湾剧&日本剧&海外剧&泰国剧&印度剧&港台综艺&大陆综艺&韩国综艺&欧美综艺&国产动漫&欧美动漫&日本动漫&海外动漫').split('&');
 var clsu=('1&2&3&4&26&27&36&37&6&7&8&9&10&11&12&13&20&21&16&22&23&24&34&35&31&32&33&38&28&29&30&39').split('&');}
-else if(/zz.ci/.test(spl)){
+else if(/tv.ci/.test(spl)){
 var clst=('电影&动作片&喜剧片&爱情片&科幻片&奇幻片&恐怖片&剧情片&战争片&记录片&悬疑片&冒险片&犯罪片&连续剧&国产剧&港台剧&日韩剧&欧美剧&海外剧&动画片&综艺&内地综艺&港台综艺&日韩综艺&欧美综艺&动漫&国产动漫&日韩动漫&欧美动漫&港台动漫&海外动漫&动漫电影&番剧&国创').split('&');
 var clsu=('1&6&7&8&9&38&10&11&12&22&44&45&46&2&13&14&15&16&23&50&3&29&30&31&32&4&33&34&35&36&37&39&60&61').split('&');}
 else if(/o8tv/.test(spl)){
@@ -304,7 +304,7 @@ else if(/bowang/.test(spl)){var url=spl+'/show/'+clsu[i]+'/page/fypage.html';}
 else if(/paofan|dianyingim/.test(spl)){var url=spl+'/pianku-'+clsu[i]+'--------fypage---/';}
 else if(/hktvyb/.test(spl)){var url=spl+'/vod/type/id/'+clsu[i]+'/page/fypage.html';}
 else if(/qkan8|cqzyw|vdxj|o8tv/.test(spl)){var url=spl+'/index.php/vod/type/id/'+clsu[i]+'/page/fypage.html';}
-else if(/klysw|dxys|jisuyswang|zz.ci|syg520|4ytv|521x5/.test(spl)){var url=spl+'/index.php/vod/show/id/'+clsu[i]+'/page/fypage.html';}
+else if(/klysw|dxys|jisuyswang|tv.ci|syg520|4ytv|521x5/.test(spl)){var url=spl+'/index.php/vod/show/id/'+clsu[i]+'/page/fypage.html';}
 else if(/nicotv/.test(spl)){var url=spl+'/video/type3/'+clsu[i]+'-------fypage.html';}
 else if(/agefan/.test(spl)){var url=spl+'/catalog/'+clsu[i]+'-all-all-all-all-time-fypage';}
 else if(/1090ys/.test(spl)){var url=spl+'/whole/'+clsu[i]+'/page/fypage.html';}
@@ -702,7 +702,7 @@ else if(/subaibai|qianoo/.test(url)){url=url+'/page/fypage?s='+spl[2];}
 else if(/46nb/.test(url)){url=url+'/s/'+spl[2]+'/fypage.html';}
 else if(/bde4/.test(url)){url=url+'/search/'+spl[2]+'/fypage';}
 else if(/hktvyb/.test(url)){url=url+'/vod/search/page/fypage/wd/'+spl[2]+'.html';}
-else if(/qkan8|cqzyw|klysw|yanetflix|jisuyswang|dxys|syg520|4ytv|zz.ci|vdxj|521x5|o8tv/.test(url)){url=url+'/index.php/vod/search/page/fypage/wd/'+spl[2]+'.html';}
+else if(/qkan8|cqzyw|klysw|yanetflix|jisuyswang|dxys|syg520|4ytv|tv.ci|vdxj|521x5|o8tv/.test(url)){url=url+'/index.php/vod/search/page/fypage/wd/'+spl[2]+'.html';}
 else if(/mjtvs|saohuotv|nicemov/.test(url)){url=url+'/search.php?page=fypage&searchword='+spl[2]+'&searchtype=';}
 else if(/auete/.test(url)){url=url+'/search.php?searchword='+spl[2];}
 else if(/nfmovies/.test(url)){url=url+'/search.php?page=fypage&searchword='+spl[2]+'&searchtype='+';get;utf-8;{User-Agent@Mozilla/5.0&&Cookie@.js:getVar("hikernfcookie")}';}
@@ -1170,7 +1170,7 @@ if(tabs){
   	var tabt=parseDomForHtml(tabs[i], "span&&Text");}
  else if(/pull-left/.test(tabs[i])){
   	var tabt=parseDomForHtml(tabs[i], ".pull-left&&Text");}
- else if(/aidi|zz.ci/.test(omdomin)){
+ else if(/aidi/.test(omdomin)){
   	var tabt=parseDomForHtml(tabs[i], "a&&alt");}
  else if(/kunyu77/.test(omdomin)){
   	var tabt=tabs[i].episode+'';}
@@ -1584,7 +1584,7 @@ return JSON.parse(json).url;}
 else{return cc.indexOf('godsong')!=-1?cc+'#.mp4':cc}
 }
 //肖先生&干饭&回响&淘淘&大师兄&BD电影&思古&爱迪&极品&播王&迪迪&九州&饭团
-else if(/syg520|ganfantv|hxys|jisuyswang|zz.ci|bddysf|siguyy|aidi|jpysvip|bowang|4ytv|unss|fantuan|paofan|klysw|zhaikanys|nkdyw|juhaokan|vdxj|kanju77|o8tv|jushetv|dtjos|dikotv/.test(myurl)){
+else if(/syg520|ganfantv|hxys|jisuyswang|tv.ci|bddysf|siguyy|aidi|jpysvip|bowang|4ytv|unss|fantuan|paofan|klysw|zhaikanys|nkdyw|juhaokan|vdxj|kanju77|o8tv|jushetv|dtjos|dikotv/.test(myurl)){
 var phtml =fetch(srcurl,{headers:{"User-Agent":MOBILE_UA,"Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-User":"?1","Sec-Fetch-Dest":"document"}});
 //var scrpt = parseDomForHtml(phtml,".leo-player||.embed-responsive||.stui-player__video||.myui-player__video||.myui-player__item||#bofang_box||.player-box-main&&script&&Html").replace(/player_.*?={/,'player_data={');
 var scrpt=phtml.match(/var player_.*?\}/)[0].replace(/player_.*?={/,'player_data={');
