@@ -11,7 +11,7 @@
     {
     "id": 1,
     "name": "789盘",
-    "url": "http://wei.789pan.cn/api.php/provide/vod/at/xml",
+    "url": "http://cms.789pan.cn/api.php/provide/vod/at/xml",
     "cate": "国产剧,13&&日韩剧,15&&欧美剧,16&&港台剧,14&&动漫,4&&综艺,3&&动作片,6&&喜剧片,7&&爱情片,8&&科幻片,9&&恐怖片,10&&剧情片,11&&战争片,12",
     "click": true,
     "wePlus": {}
