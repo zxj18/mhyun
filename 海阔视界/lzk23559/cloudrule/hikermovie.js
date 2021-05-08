@@ -1285,7 +1285,11 @@ function parwix(html){
 var dom=jiek.split('?')[0];
 var aly=parseDomForHtml(html,"body&&iframe&&src");
 var html=fetch(dom+aly,{headers:{"User-Agent":MOBILE_UA,"Referer":myurl}});
-if(!fetch("hiker://files/rules/xyq/vodkey.js",{})){var fileUrl=fetch("https://cdn.jsdelivr.net/gh/lzk23559/Public_folder/vodkey.js",{});writeFile("hiker://files/rules/xyq/vodkey.js",fileUrl);eval(fileUrl);}else{var fileUrl=fetch("hiker://files/rules/xyq/vodkey.js",{});eval(fileUrl)};if(fro=='bilibili'){return vodurl+';{Referer@https://www.bilibili.com&&User-Agent@Mozilla/5.0}';}else if(fro=='mgtv'){return vodurl+'#isVideo=true#'+';{Referer@'+urll+'&&User-Agent@Mozilla/5.0}';}else{return vodurl};}
+if(/vod_\w{10}/.test(html)){
+if(!fetch("hiker://files/rules/xyq/vodkey.js",{})){var fileUrl=fetch("https://cdn.jsdelivr.net/gh/lzk23559/Public_folder/vodkey.js",{});writeFile("hiker://files/rules/xyq/vodkey.js",fileUrl);eval(fileUrl);}else{var fileUrl=fetch("hiker://files/rules/xyq/vodkey.js",{});eval(fileUrl)};if(fro=='bilibili'){return vodurl+';{Referer@https://www.bilibili.com&&User-Agent@Mozilla/5.0}';}else if(fro=='mgtv'){return vodurl+'#isVideo=true#'+';{Referer@'+urll+'&&User-Agent@Mozilla/5.0}';}else{return vodurl};}else{
+return html.match(/var url = \"(.*?)\"/)[1]
+}
+}
 //结束PAR
 //资源网yun
 function zywyun(srcurl){
