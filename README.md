@@ -45,7 +45,7 @@ http://yuedu.miaogongzi.net/gx.html
 #### [漫画]
 ```
 异次元｜APP
-https://wwx.lanzoux.com/b04b0nxna 提取码：4uv4
+https://zntx.lanzoux.com/iFcChjsjcjc
 Tachiyomi｜APP
 https://github.com/tachiyomiorg/tachiyomi
 全是漫画｜APP
