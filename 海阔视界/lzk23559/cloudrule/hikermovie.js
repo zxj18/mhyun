@@ -423,10 +423,10 @@ var dt = parseDomForHtml(list[j],"body&&dt&&Text");
 var desc=last+' '+typ+' '+dt;}
 else if(img&&/<rss/.test(html)&&/<video>/.test(html)){
 var desc = parseDomForHtml(list[j],"body&&note&&Text");}
-else if(/subaibai|qianoo/.test(spl)){
-var desc=parseDomForHtml(list[j], '.jidi||.hdinfo&&span&&Text');}
-else if(/cokemv|klysw|nkdyw/.test(spl)){
-var desc=parseDomForHtml(list[j], '.pic-tag||.leo-video-remark&&Text');}
+else if(/class="jidi"|class="hdinfo"/.test(list[j])){
+var desc=parseDomForHtml(list[j], '.jidi||.hdinfo&&Text');}
+else if(/leo-video-remark/.test(list[j])&&/leo-video-sitem/.test(list[i])){
+var desc=parseDomForHtml(list[j], '.leo-video-remark&&Text');}
 else if(/cqzyw/.test(spl)){
 var typ=parseDomForHtml(list[j], '.type&&Text');
 var tim=parseDomForHtml(list[j], '.time&&Text');
