@@ -276,7 +276,7 @@ var clst=('电影&动作片&喜剧片&爱情片&科幻片&奇幻片&恐怖片&�
 var clsu=('1&6&7&8&9&38&10&11&12&22&44&45&46&2&13&14&15&16&23&50&3&29&30&31&32&4&33&34&35&36&37&39&60&61').split('&');}
 else if(/o8tv/.test(spl)){
 var clst=('Netflix蓝光4k&蓝光电影&蓝光连续剧&蓝光动漫&蓝光综艺&蓝光纪录片&电影&精品推荐&喜剧片&爱情片&科幻片&犯罪片&动作片&恐怖片&战争片&剧情片&日韩电影&连续剧&热剧推荐&国产剧&港台剧&日韩剧&欧美剧&动漫&热漫推荐&国产动漫&日本动漫&欧美动漫&综艺&热综推荐&内地综艺&日韩综艺&港台综艺&欧美综艺&纪录片&纪录片&热片推荐').split('&');
-var clsu=('RSCCCS&KSCCCS&8SCCCS&ESCCCS&JSCCCS&OSCCCS&SCCCCS&ZSCCCS&dSCCCS&DSCCCS&uSCCCS&0SCCCS&HSCCCS&PSCCCS&aSCCCS&iSCCCS&lSCCCS&qCCCCS&tSCCCS&vCCCCS&9CCCCS&KCCCCS&8CCCCS&ICCCCS&NSCCCS&eSCCCS&nSCCCS&rSCCCS&xCCCCS&MSCCCS&9SCCCS&oCCCCS&CSCCCS&zCCCCS&TSCCCS&USCCCS&hSCCCS').split('&');}
+var clsu=('RSS&KSS&8SS&ESS&JSS&OSS&SCS&ZSS&dSS&DSS&uSS&0SS&HSS&PSS&aSS&iSS&lSS&qCS&tSS&vCS&9CS&KCS&8CS&ICS&NSS&eSS&nSS&rSS&xCS&MSS&9SS&oCS&CSS&zCS&TSS&USS&hSS').split('&');}
 else if(/dianyingim/.test(spl)){
 var clst=('电影&电视剧&动漫&综艺&预告&动作片&喜剧片&剧情片&动画片&爱情片&恐怖片&科幻片&奇幻片&战争片&纪录片&微电影&国产剧&欧美剧&韩剧&日剧&台湾剧&港剧&泰剧&海外剧&日韩动漫&国产动漫&欧美动漫&其他动漫').split('&');
 var clsu=('dianying&dianshiju&dongman&zongyi&yugao&dongzuopian&xijupian&juqingpian&donghuapian&aiqingpian&kongbupian&kehuanpian&qihuanpian&zhanzhengpian&jilupian&weidianying&guochanju&oumeiju&hanju&riju&taiwanju&gangju&taiju&haiwai&rihandongman&guochandongman&oumeidongman&qita').split('&');}
@@ -290,6 +290,7 @@ else if(/jpysvip|zhaikan|gudanys|moyuy|unss|juhaokan/.test(spl)){var url=spl+'/v
 else if(/nfstar|nfxtv|nfxhd|zhenbuka|cokemv/.test(spl)){var url=spl+'/vodtype/'+clsu[i]+'-fypage/';}
 else if(/ak1080|hxys|aiyy/.test(spl)){var url=spl+'/vodshow/'+clsu[i]+'--------fypage---.html';}
 else if(/zju8|nkdyw/.test(spl)){var url=spl+'/vodshow/'+clsu[i]+'--------fypage---/';}
+else if(/o8tv/.test(spl)){var url=spl+'/index.php/vodshow/'+clsu[i]+'--------fypage---/';}
 else if(/80ysm/.test(spl)){var url=spl+'/vodshow/'+clsu[i]+'/page/fypage.html';}
 else if(/bddysf|fantuan/.test(spl)){var url=spl+'/vodshow/id/'+clsu[i]+'/page/fypage.html';}
 else if(/7xiady|bwl87/.test(spl)){var url=spl+'/type/'+clsu[i]+'-fypage/';}
@@ -303,7 +304,7 @@ else if(/aidi|ganfantv|5180s/.test(spl)){var url=spl+'/show/'+clsu[i]+'--------f
 else if(/bowang/.test(spl)){var url=spl+'/show/'+clsu[i]+'/page/fypage.html';}
 else if(/paofan|dianyingim/.test(spl)){var url=spl+'/pianku-'+clsu[i]+'--------fypage---/';}
 else if(/hktvyb/.test(spl)){var url=spl+'/vod/type/id/'+clsu[i]+'/page/fypage.html';}
-else if(/qkan8|cqzyw|vdxj|o8tv/.test(spl)){var url=spl+'/index.php/vod/type/id/'+clsu[i]+'/page/fypage.html';}
+else if(/qkan8|cqzyw|vdxj/.test(spl)){var url=spl+'/index.php/vod/type/id/'+clsu[i]+'/page/fypage.html';}
 else if(/klysw|dxys|jisuyswang|tv.ci|syg520|4ytv|521x5/.test(spl)){var url=spl+'/index.php/vod/show/id/'+clsu[i]+'/page/fypage.html';}
 else if(/nicotv/.test(spl)){var url=spl+'/video/type3/'+clsu[i]+'-------fypage.html';}
 else if(/agefan/.test(spl)){var url=spl+'/catalog/'+clsu[i]+'-all-all-all-all-time-fypage';}
@@ -702,7 +703,8 @@ else if(/subaibai|qianoo/.test(url)){url=url+'/page/fypage?s='+spl[2];}
 else if(/46nb/.test(url)){url=url+'/s/'+spl[2]+'/fypage.html';}
 else if(/bde4/.test(url)){url=url+'/search/'+spl[2]+'/fypage';}
 else if(/hktvyb/.test(url)){url=url+'/vod/search/page/fypage/wd/'+spl[2]+'.html';}
-else if(/qkan8|cqzyw|klysw|yanetflix|jisuyswang|dxys|syg520|4ytv|tv.ci|vdxj|521x5|o8tv/.test(url)){url=url+'/index.php/vod/search/page/fypage/wd/'+spl[2]+'.html';}
+else if(/qkan8|cqzyw|klysw|yanetflix|jisuyswang|dxys|syg520|4ytv|tv.ci|vdxj|521x5/.test(url)){url=url+'/index.php/vod/search/page/fypage/wd/'+spl[2]+'.html';}
+else if(/o8tv/.test(url)){url=url+'/index.php/vodsearch/'+spl[2]+'----------fypage---/';}
 else if(/mjtvs|saohuotv|nicemov/.test(url)){url=url+'/search.php?page=fypage&searchword='+spl[2]+'&searchtype=';}
 else if(/auete/.test(url)){url=url+'/search.php?searchword='+spl[2];}
 else if(/nfmovies/.test(url)){url=url+'/search.php?page=fypage&searchword='+spl[2]+'&searchtype='+';get;utf-8;{User-Agent@Mozilla/5.0&&Cookie@.js:getVar("hikernfcookie")}';}
