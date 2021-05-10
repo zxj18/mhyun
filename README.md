@@ -36,7 +36,7 @@ https://apps.apple.com/cn/app/id1546631588
 阅读｜书源
 https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E9%98%85%E8%AF%BB%EF%BD%9C%E4%B9%A6%E6%BA%90%EF%BD%9C2021%E5%B9%B44%E6%9C%88%E6%95%B4%E7%90%86.txt
 https://github.com/XIU2/Yuedu
-https://gitee.com/vpq/yd#https://wwi.lanzous.com/b05hl9sf
+https://gitee.com/vpq/yd
 http://yck.mumuceo.com/yuedu/shuyuan/index.html
 http://yuedu.miaogongzi.net/gx.html
 ```
@@ -52,7 +52,7 @@ https://github.com/tachiyomiorg/tachiyomi
 https://github.com/hongchacha/cartoon
 
 漫画｜图源
-https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E6%BC%AB%E7%94%BB%EF%BD%9C%E5%9B%BE%E6%BA%90%EF%BD%9C2021%E5%B9%B44%E6%9C%88%E6%95%B4%E7%90%86.json
+https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E6%BC%AB%E7%94%BB%EF%BD%9C%E5%9B%BE%E6%BA%90%EF%BD%9C2021%E5%B9%B45%E6%9C%88%E6%95%B4%E7%90%86.json
 https://github.com/wanglabk/hub/tree/c2099
 http://yck.mumuceo.com/yiciyuan/tuyuan/index.html
 ```
