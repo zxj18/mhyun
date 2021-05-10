@@ -12,9 +12,11 @@ function EJ() {
     }
     eval(fetch(jsUrl));
 
-    var lazy = `@lazyRule=.js:var html = fetch(input).match(/window.open\\('(.*?)'/)[1];if(html.indexOf('sa.sogou')!=-1){parseDomForHtml(fetch(html),'video&&src')}else if(html.indexOf('xigua')!=-1){html}else{var input = html;` + lazy + `}`;
+    var lazy = `@lazyRule=.js:var html = fetch(input).match(/window.open\\('(.*?)'/)[1];if(html.indexOf('sa.sogou')!=-1){parseDomForHtml(fetch(html),'video&&src')}else{var input = html;` + lazy + `}`;
 
     var html = JSON.parse(getResCode().split('window.__INITIAL_STATE__=')[1].split(';(function(){var s;')[0]).detail.itemData;
+
+
 
     d.push({
         title: ((html.score ? '评分：' + html.score + '\t\t\t' : html.emcee ? '主持：' + html.emcee : '') + (html.year ? '年代：' + html.year : '') + '\n' + (html.zone + '\t' + html.style).substring(0, 15) + '\n' + (html.starring ? '主演：' + html.starring.substring(0, 15) : '')).replace(/undefined/g, ''),
@@ -35,27 +37,18 @@ function EJ() {
         }
 
         function setTabs(tabs, vari) {
-            /*
-            d.push({
-                title: '‘‘线路’’',
-                url: `#noLoading#@lazyRule=.js:let conf = getVar('折叠');if(conf=='关'){putVar({key:'折叠', value:'开'});}else{putVar({key:'折叠', value:'关'})};refreshPage(false);'toast://切换成功';'#noHistory#hiker://empty'`,
-                col_type: 'text_center_1'
-            })
-            if (getVar('折叠') == '开' || getVar('折叠') == '') {
-*/
             for (var i in tabs) {
                 var url = "#noLoading#@lazyRule=.js:putVar('" + vari + "', '" + i + "');refreshPage(false);'toast://切换成功！';'#noHistory#hiker://empty'";
                 d.push({
                     title: getVar(vari, '0') == i ? '‘‘' + tabs[i] + '’’' : tabs[i],
-                    //     title: tabs[i] + (getVar(vari, '0') == i ? '✅' : ''),
                     url: url,
                     col_type: 'text_3'
                 })
             }
-            d.push({ col_type: 'line_blank' })
-            //         }
+            d.push({
+                col_type: 'line_blank'
+            })
         }
-
         function setLists(lists, index) {
             d.push({
                 title: '‘‘选集’’',
@@ -73,7 +66,7 @@ function EJ() {
                                     title: list[j].index,
                                     url: 'https://v.sogou.com' + list[j].url + lazy,
                                     col_type: "text_4"
-                                })
+                                });
                             }
                         }
                     } else {
@@ -83,7 +76,7 @@ function EJ() {
                                     title: list[j].index,
                                     url: 'https://v.sogou.com' + list[j].url + lazy,
                                     col_type: "text_4"
-                                })
+                                });
                             }
                         }
                     }
@@ -155,38 +148,6 @@ function SYYJ() {
 
     if (getVar('searchKeyword') == "") {
 
-        var conts = parseDomForArray(getResCode(), '#container&&.section');
-        for (var i in conts) {
-            var list = parseDomForArray(conts[i], '.sort_lst&&li');
-            d.push({
-                title: '‘‘’’' + parseDomForHtml(conts[i], '.sort_nav_tit&&Text') + " <small><small><font color='#1db69a'>更多></font></small></small>",
-                url: $(parseDom(conts[i], '.sort_nav_more&&href') + '&page=fypage').rule(() => {
-                    var d = [];
-                    var list = parseDomForArray(getResCode(), '.sort_lst&&li');
-                    for (var i in list) {
-                        d.push({
-                            title: parseDomForHtml(list[i], 'img&&alt'),
-                            img: parseDom(list[i], 'img&&src'),
-                            desc: parseDomForHtml(list[i], 'a&&Text'),
-                            url: $(parseDom(list[i], 'a&&href')).rule(() => { eval(fetch('hiker://files/jiexi/sougou.js')); EJ() }),
-                            col_type: 'movie_3'
-                        })
-                    }
-                    setResult(d)
-                }),
-                col_type: "text_1"
-            });
-            for (var j in list) {
-                d.push({
-                    title: parseDomForHtml(list[j], 'img&&alt'),
-                    img: parseDom(list[j], 'img&&src'),
-                    desc: parseDomForHtml(list[j], 'a&&Text'),
-                    url: parseDom(list[j], 'a&&href'),
-                    col_type: "movie_3"
-                })
-            }
-        }
-        /*
         var tabs = [];
         var lists = [];
 
@@ -204,27 +165,15 @@ function SYYJ() {
                 d.push({
                     title: getVar(vari, '0') == i ? '‘‘' + tabs[i] + '’’' : tabs[i],
                     url: url,
-                    col_type: 'text_4'
+                    col_type: 'flex_button'
                 })
             }
-            //         d.push({col_type: 'line_blank'})
         }
-
         function setLists(lists, index) {
 
             var list = lists[index];
-
-            for (var j in list) {
-                d.push({
-                    title: parseDomForHtml(list[j], 'img&&alt'),
-                    img: parseDom(list[j], 'img&&src'),
-                    desc: parseDomForHtml(list[j], 'a&&Text'),
-                    url: parseDom(list[j], 'a&&href'),
-                    col_type: "movie_3"
-                });
-            }
             d.push({
-                //         title: '‘‘加载更多’’',
+                title: '更多',
                 img: 'https://gitee.com/zbaolin/hksj/raw/master/logo.png',
                 url: $(parseDom(conts[index], '.sort_nav_more&&href') + '&page=fypage').rule(() => {
                     var d = [];
@@ -240,14 +189,27 @@ function SYYJ() {
                     }
                     setResult(d)
                 }),
-                col_type: "movie_3"
+                col_type: "flex_button"
             })
+            d.push({
+                title: '更新',
+                img: 'https://gitee.com/zbaolin/hksj/raw/master/logo.png',
+                url: '',
+                col_type: "flex_button"
+            })
+            for (var j in list) {
+                d.push({
+                    title: parseDomForHtml(list[j], 'img&&alt'),
+                    img: parseDom(list[j], 'img&&src'),
+                    desc: parseDomForHtml(list[j], 'a&&Text'),
+                    url: parseDom(list[j], 'a&&href'),
+                    col_type: "movie_3"
+                });
+            }
         }
         setTabs(tabs, MY_URL);
         setLists(lists, getVar(MY_URL, '0'));
-        */
     } else {
-
         var html = fetch('https://v.sogou.com/v?query=' + getVar('searchKeyword'), { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0)' } });
         var list = JSON.parse(html.split('window.__INITIAL_STATE__=')[1].split(';(function(){var s;')[0]).result.longVideo.results;
         for (var i in list) {
@@ -258,12 +220,8 @@ function SYYJ() {
                 content: list[i].introduction,
                 img: list[i].v_picurl,
                 url: 'https://v.sogou.com' + list[i].tiny_url
-            })
+            });
         }
-        /*
-        d.push({ col_type: 'line_blank' });
-        d.push({ title: "<h4 style='text-align:center'>到底了呢！</h4>", col_type: "rich_text" });
-        */
     }
     setResult(d)
 }
@@ -278,7 +236,7 @@ function SSYJ() {
             content: list[i].introduction,
             img: list[i].v_picurl,
             url: 'https://v.sogou.com' + list[i].tiny_url
-        })
+        });
     }
     setResult(d)
 }
