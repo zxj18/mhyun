@@ -1327,7 +1327,7 @@ try{
 function btoken(html){
 if(!fetch("hiker://files/rules/xyq/token.js",{})){var fileUrl=fetch("https://cdn.jsdelivr.net/gh/lzk23559/Public_folder/token.js",{});writeFile("hiker://files/rules/xyq/token.js",fileUrl);eval(fileUrl);}else{var fileUrl=fetch("hiker://files/rules/xyq/token.js",{});eval(fileUrl)};
 var play=(tkurl.indexOf('url=') > -1 ? tkurl.split('url=')[1] : tkurl);
-if(play.indexOf('titan.mgtv.com')!=-1){return play+'#isVideo=true#'+';{Referer@'+urll+'&&User-Agent@Mozilla/5.0}';}else{return play};}
+if(fro=='bilibili'){return play+';{Referer@https://www.bilibili.com&&User-Agent@Mozilla/5.0}';}else if(play.indexOf('titan.mgtv.com')!=-1){return play+'#isVideo=true#'+';{Referer@'+urll+'&&User-Agent@Mozilla/5.0}';}else{return play};}
 //结束bt_token
 //开始阿里
 function alizy(srcurl){
