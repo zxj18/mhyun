@@ -303,6 +303,14 @@ return play!=""?play:getUrl(pli);
 }else if(src.indexOf("kudian6.com")!=-1||src.indexOf("789pan.cn")!=-1){
 var html=request(src);
 return html.match(/url\":.*?[\'\"](.*?)[\'\"]/)[1];
+}else if(src.indexOf("789pan")!=-1){
+var html=request(src);
+eval(getCryptoJS());
+var id = html.match(/var id=\"(.*?)\"/)[1];
+var times=(new Date()).getTime()+'';
+var sh= CryptoJS.MD5(base64Encode(id+times)).toString();
+var purl='http://play.zk132.cn/new/play1/'+id+'%7C'+times+'%7C'+sh+'%7C'+'1'+'%7C'+'index.m3u8';
+return purl;
 }else if(src.indexOf("baipiaozy")!=-1||src.indexOf("bowang")!=-1){
 refreshX5WebView(src);
 return "toast://请等待加载选集！";
