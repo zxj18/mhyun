@@ -22,7 +22,7 @@ var list = tab.list[k];
     d.push({
     title : list.title,
     img : list.ico+'@Referer=',
-    url : 'hiker://empty$$'+list.url+'$$fypage$$',
+    url : 'hiker://empty$$'+list.url+'$$fypage$$'+list.vodtype+'$$'+list.vodhref+'$$',
     col_type:'icon_4_card'
 })
 len.push({title:list.title});
@@ -39,14 +39,26 @@ d.unshift({
     desc : json.content,
     url : json.uplink,
     col_type:'text_center_1'
-})
+			})
     res.data = d;setHomeResult(res);
     },json),
-    col_type:'text_2'
+    col_type:'text_3'
 });
 }
 d.unshift({
-    title : '搜索模式切换'+'('+(ssmd==1?'聚':'列')+')',
+    title : '获取云端',
+    url:$('hiker://empty').lazyRule(()=>{
+	var rulejs = fetch('https://code.aliyun.com/lzk23559/CloudRule/raw/master/hikermovie.js',{});
+	writeFile("hiker://files/rules/xyq/hikermovie.js",rulejs);
+	var rulejson = fetch('https://code.aliyun.com/lzk23559/CloudRule/raw/master/hikermovie.json',{});
+	writeFile("hiker://files/rules/xyq/hikermovie.json",rulejson);
+	writeFile("hiker://files/rules/xyq/hikerupdate.txt",new Date()+'')
+	refreshPage(false);return 'toast://应该是获取最新了吧。'
+    }),
+    col_type:'text_3'
+});
+d.unshift({
+    title : '🔍模式'+'('+(ssmd==1?'聚':'列')+')',
     url : $('hiker://empty').lazyRule((json)=>{
     var md=json.ssmode;
     if(md==1){
@@ -60,7 +72,7 @@ d.unshift({
     refreshPage(false);return 'toast://切换为聚合搜索模式成功！'
     }
     },json),
-    col_type:'text_2'
+    col_type:'text_3'
 })
 
 res.data = d;
@@ -71,6 +83,8 @@ function hikhmerj() {
 var res = {};var d = [];
 var spl = MY_URL.split('$$')[1];
 var pn = MY_URL.split('$$')[2];
+var vtype=MY_URL.split('$$')[3];
+var vhref=MY_URL.split('$$')[4];
 //var cook=getVar('hikernfcookie');
 //取主页源码
 try{
@@ -107,189 +121,21 @@ html=request(spl + '?btwaf'+ html.match(/btwaf(.*?)\"/)[1], {});
 //第一页要显示分类
 if(pn==1){
 //分类标题与替换词
-if(/7xiady/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫').split('&');
-var clsu=('dianying&lianxuju&zongyi&dongman').split('&');}
-else if(/ganfantv/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫').split('&');
-var clsu=('dianying&dianshiju&zongyi&dongman').split('&');}
-else if(/kunyu77|dxys|ysftv|46nb|paofan/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫').split('&');
-var clsu=('1&2&3&4').split('&');}
-else if(/521x5/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫&哔哩').split('&');
-var clsu=('1&2&3&4&34').split('&');}
-else if(/siguyy/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫').split('&');
-var clsu=('m&tv&va&ct').split('&');}
-else if(/moyuy/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫').split('&');
-var clsu=('dianying&guoju&zongyi&dongman').split('&');}
-else if(/cqzyw/.test(spl)){
-var clst=('电影&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&动漫电影&纪录片&连续剧&国产剧&港台剧&日韩剧&欧美剧&海外剧&综艺&动漫&国产动漫&日韩动漫').split('&');
-var clsu=('1&6&7&8&9&10&11&12&20&21&2&13&14&15&16&35&3&4&36&37').split('&');}
-else if(/ak1080/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&犯罪片&冒险片&奇幻片&悬疑片&记录片&动画片&预告片&国产剧&港台剧&日韩剧&欧美剧&海外剧').split('&');
-var clsu=('1&2&3&4&6&7&8&9&10&11&12&20&21&22&23&24&25&44&13&14&15&16&26').split('&');}
-else if(/gudanys/.test(spl)){
+if(/gudanys/.test(spl)){
 var clst=('电影&电视剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&国产剧&港台剧&欧美剧').split('&');
 var clsu=('1&2&3&4&6&7&8&9&10&11&12&13&14&16').split('&');}
-else if(/jpysvip/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&国产剧&香港剧&韩国剧&欧美剧&日本剧&台湾剧').split('&');
-var clsu=('1&2&3&4&6&7&8&9&10&11&12&13&14&15&16&20&21').split('&');}
-else if(/zhenbuka/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&动画片&纪录片&国产剧&港台剧&日韩剧&欧美剧&海外剧&纪录片').split('&');
-var clsu=('1&2&3&4&6&7&8&9&10&11&12&23&25&13&14&15&16&20&24').split('&');}
-else if(/bwl87/.test(spl)){
-var clst=('电影&连续剧&综艺&动漫&纪录片&动漫电影&国产剧&韩日剧&欧美剧&泰国剧&日本剧').split('&');
-var clsu=('1&2&3&4&20&26&13&15&16&21&27').split('&');}
-else if(/aidi/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&传记&国产剧&港台剧&韩剧&美剧&日剧&英剧&泰剧&日韩动漫&国产动漫&欧美动漫&动漫电影').split('&');
-var clsu=('dianying&lianxuju&zongyi&dongman&dongzuopian&xijupian&aiqingpian&kehuanpian&kongbupian&juqingpian&zhanzhengpian&zhuanji&guochanju&gangtaiju&hanju&meiju&riju&yingju&taiju&rihan&guoman&oumei&cartoon').split('&');}
-else if(/zhaikanys/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&国产剧&港台剧&欧美剧&日韩剧&动漫电影').split('&');
-var clsu=('1&2&4&3&6&7&8&9&10&11&12&13&14&16&15&22').split('&');}
-else if(/klysw|789pan|hktvyb|syg520/.test(spl)){
+else if(/klysw/.test(spl)){
 var clst=('电影&电视剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&国产剧&港台剧&日韩剧&欧美剧').split('&');
 var clsu=('1&2&3&4&6&7&8&9&10&11&12&13&14&15&16').split('&');}
-else if(/nfstar|nfxtv|nfxhd/.test(spl)){
-var clst=('电影&美剧&国语&日韩&动漫&纪录&油管&综艺').split('&');
-var clsu=('mAAAAAAH&sAAAAAAH&0AAAAAAH&DAAAAAAH&kAAAAAAH&fAAAAAAH&bAAAAAAH&RAAAAAAH').split('&');}
-else if(/subaibai/.test(spl)){
-var clst=('全部&电影&电视剧&热门电影&动漫电影&高分电影&动漫剧&动漫电影&国产剧&国产电影&日剧&日韩电影&欧美剧&欧美电影&泰国电影&港剧&港台电影&纪录片&综艺&韩剧&香港经典电影').split('&');
-var clsu=('movie_bt&new-movie&dianshiju&hot-month&movie_bt_series/dongmandy&gf&movie_bt_series/dongmanju&movie_bt_series/dongmandy&movie_bt_series/guochanju&movie_bt_series/guochandy&movie_bt_series/riju&movie_bt_series/rihandy&movie_bt_series/oumeiju&movie_bt_series/oumeidy&movie_bt_series/thaidy&movie_bt_series/gangju&movie_bt_series/gangtaidy&movie_bt_series/documentary&movie_bt_series/zongyi&movie_bt_series/hanju&movie_bt_series/xianggangdy').split('&');}
-else if(/qianoo/.test(spl)){
-var clst=('高分影视&最新电影&电视剧&动漫&全部&俄罗斯电影&加拿大电影&印度电影&日剧&日本电影&欧美电影&法国电影&海外剧&港台电影&电影&美剧&英国电影&韩剧&韩国电影').split('&');
-var clsu=('zuixindianying/gaofenyingshi&zuixindianying&dsj&dm&movie_bt&movie_bt_series/eluosidianying&movie_bt_series/jianadadianying&movie_bt_series/yindudianying&movie_bt_series/rj&movie_bt_series/ribendianying&movie_bt_series/meiguodianying&movie_bt_series/faguodianying&movie_bt_series/hwj&movie_bt_series/xianggangdianying&movie_bt_series/dyy&movie_bt_series/mj&movie_bt_series/yingguodianying&movie_bt_series/hj&movie_bt_series/hanguodianying').split('&');}
-else if(/mjhd/.test(spl)){
-var clst=('都市&惊悚&犯罪&动漫&科幻&综艺&电影').split('&');
-var clsu=('2&20&3&4&1&21&23').split('&');}
-else if(/qkan8/.test(spl)){
-var clst=('高清原碟&日漫&女频&劇場&漫画&国漫&美漫').split('&');
-var clsu=('33&21&50&24&55&51&22').split('&');}
-else if(/nicotv/.test(spl)){
-var clst=('全部&热血&恋爱&科幻&奇幻&百合&后宫&励志&搞笑&冒险&校园&战斗&机战&运动&战争&萝莉').split('&');
-var clsu=('&热血&恋爱&科幻&奇幻&百合&后宫&励志&搞笑&冒险&校园&战斗&机战&运动&战争&萝莉').split('&');}
-else if(/agefan/.test(spl)){
-var clst=('全部&TV&剧场版&OVA').split('&');
-var clsu=('all&TV&剧场版&OVA').split('&');}
-else if(/1090ys/.test(spl)){
-var clst=('电影&国产剧&韩剧&美剧&日剧&综艺&动漫').split('&');
-var clsu=('1&2&3&4&5&22&23').split('&');}
-else if(/cokemv/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫&抖音电影&动作片&科幻片&喜剧片&爱情片&恐怖片&剧情片&战争片&犯罪片&奇幻片&悬疑片&微电影&纪录片&国产剧&香港剧&台湾剧&日本剧&韩国剧&欧美剧&泰国剧').split('&');
-var clsu=('1&2&3&4&5&6&9&7&8&10&11&12&23&24&25&26&27&13&14&21&20&15&16&22').split('&');}
-else if(/80ysm/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫&蓝光片&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&动画片&犯罪片&国产剧&港台剧&日韩剧&欧美剧&海外剧&国产动漫&日本动漫&欧美动漫&其他动漫&B站资源&好看番剧（B站）&好看国创（B站）&好看电影（B站）&电视剧（B站）').split('&');
-var clsu=('1&2&3&4&47&6&7&8&9&10&11&26&21&13&14&15&16&28&22&23&24&25&34&35&38&39&40').split('&');}
 else if(/bbkdj/.test(spl)){
 var clst=('综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&国产剧&台湾剧&韩国剧&欧美剧&微电影&香港剧&日本剧&海外剧&泰国剧&纪录片&动画片').split('&');
 var clsu=('3&4&6&7&8&9&10&11&12&13&14&15&16&20&21&22&23&24&25&26').split('&');}
-else if(/apibdzy/.test(spl)){
-var clst=('动作片&喜剧片&爱情片&科幻片&恐怖片&犯罪片&战争片&动画电影&剧情片&记录片&国产剧&香港剧&日本剧&欧美剧&大陆综艺&日韩综艺&港台综艺&欧美综艺&国产动漫&日本动漫&欧美动漫&海外动漫&海外剧&台湾剧&韩国剧').split('&');
-var clsu=('21&22&23&24&25&26&27&28&29&30&32&33&34&35&37&38&39&40&42&43&44&45&57&58&59').split('&');}
-else if(/leduozy/.test(spl)){
-var clst=('电影&连续剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&国产剧&港剧&日剧&欧美剧&台剧&韩剧&海外剧&纪录片').split('&');
-var clsu=('1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16&17&21&22').split('&');}
-else if(/rrzyw/.test(spl)){
-var clst=('电影&美剧&科幻动作&欧美片&综艺选秀&悬疑烧脑&喜剧青春&日韩片&科幻片&动作片&动漫卡通&精英文艺&喜剧片&恐怖片&爱情片&剧情片&韩剧&国产剧').split('&');
-var clsu=('1&2&5&6&9&10&11&12&14&15&16&18&19&20&21&22&24&26').split('&');}
-else if(/zju8/.test(spl)){
-var clst=('Netflix自建&电影&连续剧&动漫&综艺&日韩剧&欧美剧').split('&');
-var clsu=('25&1&2&4&3&15&16').split('&');}
-else if(/bde4/.test(spl)){
-var clst=('不限&动作&爱情&喜剧&科幻&恐怖&战争&武侠&魔幻&剧情&动画&惊悚&3D&灾难&悬疑&警匪&文艺&青春&冒险&犯罪&纪录&古装&奇幻&国语&综艺&历史&运动&原创压制&美剧&韩剧&国产电视剧&日剧&英剧&德剧&俄剧&巴剧&加剧&西剧&意大利剧&泰剧&港台剧&法剧&澳剧').split('&');
-var clsu=('all&dongzuo&aiqing&xiju&kehuan&kongbu&zhanzheng&wuxia&mohuan&juqing&donghua&jingsong&3D&zainan&xuanyi&jingfei&wenyi&qingchun&maoxian&fanzui&jilu&guzhuang&qihuan&guoyu&zongyi&lishi&yundong&yuanchuang&meiju&hanju&guoju&riju&yingju&deju&eju&baju&jiaju&spanish&yidaliju&taiju&gangtaiju&faju&aoju').split('&');}
-else if(/nfmovies/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫&奈菲独家&动作片&爱情片&科幻片&恐怖片&战争片&喜剧片&纪录片&剧情片&大陆剧&港台剧&欧美剧&日韩剧').split('&');
-var clsu=('tid=1&tid=2&tid=3&tid=4&player=奈菲独家&tid=5&tid=6&tid=7&tid=8&tid=9&tid=10&tid=11&tid=12&tid=13&tid=14&tid=15&tid=16').split('&');}
-else if(/daishudy/.test(spl)){
-var clst=('全部&电影&连续剧&综艺&动漫&动作片&喜剧片&科幻片&恐怖片&大陆剧&欧美剧&港台剧&日韩剧').split('&');
-var clsu=('0&1&2&3&4&5&10&7&8&13&15&14&16').split('&');}
-else if(/yanetflix/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&悬疑片&冒险片&犯罪片&奇幻片&惊悚片&青春片&纪录片&灾难片&古装片&动画片&国产剧&港台剧&日韩剧&欧美剧&泰国剧&海外剧').split('&');
-var clsu=('1&2&3&4&6&7&8&9&10&11&12&20&21&22&23&24&25&26&27&28&29&13&14&15&16&30&31').split('&');}
-else if(/saohuotv/.test(spl)){
-var clst=('电影&电视剧&动漫&喜剧&爱情&恐怖&动作&科幻&战争&犯罪&动画&奇幻&剧情&冒险&悬疑&惊悚&其它片&大陆&TVB&韩剧&美剧&日剧&英剧&台剧&其它剧').split('&');
-var clsu=('1&2&4&6&7&8&9&10&11&12&13&14&15&16&17&18&19&20&21&22&23&24&25&26&27').split('&');}
 else if(/nicemov/.test(spl)){
 var clst=('全部&电影&电视剧&综艺&动漫').split('&');
 var clsu=('0&1&2&3&4').split('&');}
-else if(/nangua55/.test(spl)){
-var clst=('电影&电视剧&动漫&综艺&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&国产剧&香港剧&台湾剧&日本剧&韩国剧&欧美剧&海外').split('&');
-var clsu=('1&2&3&4&5&6&7&8&9&10&11&14&15&16&17&18&19&20').split('&');}
-else if(/bddysf/.test(spl)){
-var clst=('电影&连续剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&奇幻片&犯罪片&武侠片&惊悚片&悬疑片&国产剧&港台剧').split('&');
-var clsu=('1&2&3&4&6&7&8&9&10&11&12&47&51&49&52&53&13&14').split('&');}
-else if(/jisuyswang/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&记录片&国产剧&港台剧&日韩剧&欧美剧&泰国剧').split('&');
-var clsu=('1&2&3&4&6&7&8&9&10&11&12&32&13&14&15&16&38').split('&');}
-else if(/5180s/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&记录片&国产剧&港台剧&日韩剧&欧美剧').split('&');
-var clsu=('1&2&3&4&6&7&8&9&10&11&12&21&13&14&15&16').split('&');}
-else if(/hxys/.test(spl)){
-var clst=('电影&动作&喜剧&爱情&科幻&恐怖&剧情&战争&悬疑&冒险&犯罪&奇幻&惊悚&纪录&灾难&古装&动画&剧集&国产剧&欧美剧&日韩剧&港台剧&动漫&国产动漫&日本动漫&海外动漫&综艺').split('&');
-var clsu=('1&6&7&8&9&10&11&12&20&21&22&23&24&25&26&27&28&2&13&16&15&14&4&31&32&33&3').split('&');}
-else if(/auete/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫&其它&喜剧片&动作片&爱情片&科幻片&恐怖片&战争片&剧情片&美剧&韩剧&日剧&泰剧&网剧&台剧&国产&港剧').split('&');
-var clsu=('Movie&Tv&Zy&Dm&qita&Movie/xjp&Movie/dzp&Movie/aqp&Movie/khp&Movie/kbp&Movie/zzp&Movie/jqp&Tv/oumei&Tv/hanju&Tv/riju&Tv/yataiju&Tv/wangju&Tv/taiju&Tv/neidi&Tv/tvbgj').split('&');}
-else if(/kyikan/.test(spl)){
-var clst=('电影&连续剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&国产剧&港台剧&日韩剧&欧美剧&纪录片&微电影&泰剧&惊悚片&悬疑片&TV版&电影版&剧场版&TV综艺&国语经典&音乐MV&海外剧&4K电影').split('&');
-var clsu=('1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16&18&19&20&21&23&24&25&26&36&31&32&40').split('&');}
-else if(/cocoman/.test(spl)){
-var clst=('全部&玄幻&热血&恋爱&都市&古风&冒险&穿越&其他&爆笑&搞笑&修真&少女&少男&校园&霸总&动作&奇幻&后宫&少年&生活&武侠&科幻&悬疑&魔幻&恐怖&战斗&重生&连载&总裁&励志').split('&');
-var clsu=('&mainCategoryId=10024&mainCategoryId=10023&mainCategoryId=10126&mainCategoryId=10124&mainCategoryId=10143&mainCategoryId=10210&mainCategoryId=10129&mainCategoryId=10560&mainCategoryId=10201&mainCategoryId=10122&mainCategoryId=10133&mainCategoryId=10301&mainCategoryId=10641&mainCategoryId=10131&mainCategoryId=10127&mainCategoryId=10125&mainCategoryId=10242&mainCategoryId=10138&mainCategoryId=10321&mainCategoryId=10142&mainCategoryId=10139&mainCategoryId=10181&mainCategoryId=10183&mainCategoryId=10227&mainCategoryId=10185&mainCategoryId=10309&mainCategoryId=10461&mainCategoryId=11062&mainCategoryId=10306&mainCategoryId=10207').split('&');}
-else if(/bowang/.test(spl)){
-var clst=('電影&劇集&綜藝&動漫&動作片&喜劇片&愛情片&科幻片&恐怖片&劇情片&戰爭片&紀録片&微電影&國產劇&港台劇&日韓劇&歐美劇&海外劇').split('&');
-var clsu=('1&2&3&4&6&7&8&9&10&11&12&20&21&13&14&15&16&22').split('&');}
-else if(/4ytv/.test(spl)){
-var clst=('奈飞Netflix蓝光&电影&连续剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&动画片&国产剧&港台剧&日韩剧&欧美剧&纪录片').split('&');
-var clsu=('42&1&2&3&4&6&7&8&9&10&11&12&37&13&14&15&16&35').split('&');}
-else if(/bajiecaiji/.test(spl)){
-var clst=('综艺&动漫&国产动漫&日本动漫&欧美动漫&其他动漫&韩国美女&写真美女&展会美女&主播美女&动作片&喜剧片&爱情片&科幻片&恐怖片&奇幻片&动画片&战争片&剧情片&微电影&国产剧&香港剧&台湾剧&韩国剧&日本剧&欧美剧&海外剧&纪录片&大陆综艺&国外综艺&港台综艺').split('&');
-var clsu=('3&4&91&92&93&94&53&47&48&95&5&6&7&8&9&10&100&101&11&19&12&13&14&15&16&17&42&99&96&97&98').split('&');}
-else if(/wfss100/.test(spl)){
-var clst=('电影&连续剧&综艺&动漫&国产剧&港台剧&日韩剧&欧美剧&奇幻片&动画片&犯罪片&古装片&记录片&悬疑片&惊悚片&武侠片&冒险片&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&其他剧').split('&');
-var clsu=('1&2&3&4&13&14&15&16&20&21&22&23&24&25&26&28&29&30&31&32&33&34&35&36&37').split('&');}
-else if(/unss/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&犯罪片&动画电影&国产剧&港台剧&日韩剧&欧美剧&大陆综艺&港台综艺').split('&');
-var clsu=('1&2&3&4&6&7&8&9&10&11&12&20&21&13&14&15&16&22&23').split('&');}
-else if(/kanju77/.test(spl)){
-var clst=('电影&连续剧&综艺&动漫&直播&动作片&爱情片&科幻片&恐怖片&剧情片&战争片&音乐片&记录片&动漫电影&国产剧&香港剧&欧美剧&海外剧').split('&');
-var clsu=('1&2&3&4&22&6&7&8&9&10&11&12&13&14&15&16&20&21').split('&');}
-else if(/fantuan/.test(spl)){
-var clst=('电影&电视剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&微电影&灾难片&国产剧&港剧&韩剧&美剧&日剧&泰剧&台剧&英剧&大陆综艺&台湾综艺&韩国综艺').split('&');
-var clsu=('1&2&3&4&6&7&8&9&10&11&12&21&22&13&14&15&16&24&25&26&27&29&30&31').split('&');}
-else if(/juhaokan/.test(spl)){
-var clst=('电影&连续剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&犯罪片&纪录片&国产剧&港台剧&日韩剧&欧美剧&海外剧').split('&');
-var clsu=('1&2&3&4&6&7&8&9&10&11&12&20&21&13&14&15&16&22').split('&');}
-else if(/nkdyw/.test(spl)){
-var clst=('电影&连续剧&综艺&动漫&哔哩哔哩&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&国产剧&港台剧&欧美剧&日韩剧&其他剧&番剧&国创').split('&');
-var clsu=('1&2&3&4&26&6&7&8&9&10&11&12&13&14&21&16&25&27&28').split('&');}
-else if(/vdxj/.test(spl)){
-var clst=('电影&连续剧&综艺&动漫&国产剧&港台剧&日韩剧&欧美剧').split('&');
-var clsu=('1&2&3&4&13&14&15&16').split('&');}
-else if(/aiyy/.test(spl)){
-var clst=('电影&连续剧&综艺&动漫&纪录片&动画片&悬疑片&犯罪片&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&国产剧&香港剧&韩国剧&欧美剧&台湾剧&日本剧&海外剧&泰国剧&印度剧&港台综艺&大陆综艺&韩国综艺&欧美综艺&国产动漫&欧美动漫&日本动漫&海外动漫').split('&');
-var clsu=('1&2&3&4&26&27&36&37&6&7&8&9&10&11&12&13&20&21&16&22&23&24&34&35&31&32&33&38&28&29&30&39').split('&');}
-else if(/tv.ci/.test(spl)){
-var clst=('电影&动作片&喜剧片&爱情片&科幻片&奇幻片&恐怖片&剧情片&战争片&记录片&悬疑片&冒险片&犯罪片&连续剧&国产剧&港台剧&日韩剧&欧美剧&海外剧&动画片&综艺&内地综艺&港台综艺&日韩综艺&欧美综艺&动漫&国产动漫&日韩动漫&欧美动漫&港台动漫&海外动漫&动漫电影&番剧&国创').split('&');
-var clsu=('1&6&7&8&9&38&10&11&12&22&44&45&46&2&13&14&15&16&23&50&3&29&30&31&32&4&33&34&35&36&37&39&60&61').split('&');}
-else if(/o8tv/.test(spl)){
-var clst=('Netflix蓝光4k&蓝光电影&蓝光连续剧&蓝光动漫&蓝光综艺&蓝光纪录片&电影&精品推荐&喜剧片&爱情片&科幻片&犯罪片&动作片&恐怖片&战争片&剧情片&日韩电影&连续剧&热剧推荐&国产剧&港台剧&日韩剧&欧美剧&动漫&热漫推荐&国产动漫&日本动漫&欧美动漫&综艺&热综推荐&内地综艺&日韩综艺&港台综艺&欧美综艺&纪录片&纪录片&热片推荐').split('&');
-var clsu=('RSS&KSS&8SS&ESS&JSS&OSS&SCS&ZSS&dSS&DSS&uSS&0SS&HSS&PSS&aSS&iSS&lSS&qCS&tSS&vCS&9CS&KCS&8CS&ICS&NSS&eSS&nSS&rSS&xCS&MSS&9SS&oCS&CSS&zCS&TSS&USS&hSS').split('&');}
-else if(/dianyingim/.test(spl)){
-var clst=('电影&电视剧&动漫&综艺&预告&动作片&喜剧片&剧情片&动画片&爱情片&恐怖片&科幻片&奇幻片&战争片&纪录片&微电影&国产剧&欧美剧&韩剧&日剧&台湾剧&港剧&泰剧&海外剧&日韩动漫&国产动漫&欧美动漫&其他动漫').split('&');
-var clsu=('dianying&dianshiju&dongman&zongyi&yugao&dongzuopian&xijupian&juqingpian&donghuapian&aiqingpian&kongbupian&kehuanpian&qihuanpian&zhanzhengpian&jilupian&weidianying&guochanju&oumeiju&hanju&riju&taiwanju&gangju&taiju&haiwai&rihandongman&guochandongman&oumeidongman&qita').split('&');}
-else if(/4kyima/.test(spl)){
-var clst=('电影&连续剧&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&国产剧&港台剧&日韩剧&欧美剧&国产动漫&日本动漫&动漫片').split('&');
-var clsu=('1&2&4&6&7&8&9&10&11&12&13&14&15&16&21&22&30').split('&');}
-else if(/77diany/.test(spl)){
-var clst=('电影&连续剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&悬疑片&冒险片&犯罪片&奇幻片&惊悚片&青春片&纪录片&灾难片&古装片&微电影&其他片&国产剧&港台剧&日韩剧&欧美剧&泰国剧&海外剧').split('&');
-var clsu=('1&2&3&4&6&7&8&9&10&11&12&20&21&22&25&26&27&28&29&30&32&33&13&14&15&16&23&24').split('&');}
-else if(/lekkan/.test(spl)){
-var clst=('电影&连续剧&综艺&动漫&动作片&喜剧片&爱情片&科幻片&恐怖片&剧情片&战争片&国产剧&港台剧&日韩剧&美剧&国创&番剧').split('&');
-var clsu=('1&2&3&4&6&7&8&9&10&11&12&13&14&15&16&20&21').split('&');}
+else{
+var clst=vtype.split('&');
+var clsu=vhref.split('&');}
 
 
 for(var i=0;i<clst.length;i++){
@@ -300,7 +146,7 @@ else if(/jpysvip|zhaikan|gudanys|moyuy|unss|juhaokan|mjhd/.test(spl)){var url=sp
 else if(/nfstar|nfxtv|nfxhd|zhenbuka|cokemv|lekkan/.test(spl)){var url=spl+'/vodtype/'+clsu[i]+'-fypage/';}
 else if(/ak1080|hxys|aiyy/.test(spl)){var url=spl+'/vodshow/'+clsu[i]+'--------fypage---.html';}
 else if(/zju8|nkdyw/.test(spl)){var url=spl+'/vodshow/'+clsu[i]+'--------fypage---/';}
-else if(/o8tv/.test(spl)){var url=spl+'/index.php/vodshow/'+clsu[i]+'--------fypage---/';}
+//else if(/o8tv/.test(spl)){var url=spl+'/index.php/vodshow/'+clsu[i]+'--------fypage---/';}
 else if(/80ysm|77diany/.test(spl)){var url=spl+'/vodshow/'+clsu[i]+'/page/fypage.html';}
 else if(/bddysf|fantuan/.test(spl)){var url=spl+'/vodshow/id/'+clsu[i]+'/page/fypage.html';}
 else if(/7xiady|bwl87/.test(spl)){var url=spl+'/type/'+clsu[i]+'-fypage/';}
@@ -314,7 +160,7 @@ else if(/aidi|ganfantv|5180s/.test(spl)){var url=spl+'/show/'+clsu[i]+'--------f
 else if(/bowang/.test(spl)){var url=spl+'/show/'+clsu[i]+'/page/fypage.html';}
 else if(/dianyingim/.test(spl)){var url=spl+'/pianku-'+clsu[i]+'--------fypage---/';}
 else if(/hktvyb/.test(spl)){var url=spl+'/vod/type/id/'+clsu[i]+'/page/fypage.html';}
-else if(/qkan8|cqzyw|vdxj/.test(spl)){var url=spl+'/index.php/vod/type/id/'+clsu[i]+'/page/fypage.html';}
+else if(/qkan8|cqzyw|vdxj|o8tv/.test(spl)){var url=spl+'/index.php/vod/type/id/'+clsu[i]+'/page/fypage.html';}
 else if(/klysw|dxys|jisuyswang|tv.ci|syg520|4ytv|521x5/.test(spl)){var url=spl+'/index.php/vod/show/id/'+clsu[i]+'/page/fypage.html';}
 else if(/nicotv/.test(spl)){var url=spl+'/video/type3/'+clsu[i]+'-------fypage.html';}
 else if(/agefan/.test(spl)){var url=spl+'/catalog/'+clsu[i]+'-all-all-all-all-time-fypage';}
@@ -733,8 +579,8 @@ else if(/subaibai|qianoo/.test(url)){url=url+'/page/fypage?s='+spl[2];}
 else if(/46nb/.test(url)){url=url+'/s/'+spl[2]+'/fypage.html';}
 else if(/bde4/.test(url)){url=url+'/search/'+spl[2]+'/fypage';}
 else if(/hktvyb/.test(url)){url=url+'/vod/search/page/fypage/wd/'+spl[2]+'.html';}
-else if(/qkan8|cqzyw|klysw|yanetflix|jisuyswang|dxys|syg520|4ytv|tv.ci|vdxj|521x5/.test(url)){url=url+'/index.php/vod/search/page/fypage/wd/'+spl[2]+'.html';}
-else if(/o8tv/.test(url)){url=url+'/index.php/vodsearch/'+spl[2]+'----------fypage---/';}
+else if(/qkan8|cqzyw|klysw|yanetflix|jisuyswang|dxys|syg520|4ytv|tv.ci|vdxj|521x5|o8tv/.test(url)){url=url+'/index.php/vod/search/page/fypage/wd/'+spl[2]+'.html';}
+//else if(/o8tv/.test(url)){url=url+'/index.php/vodsearch/'+spl[2]+'----------fypage---/';}
 else if(/saohuotv|nicemov/.test(url)){url=url+'/search.php?page=fypage&searchword='+spl[2]+'&searchtype=';}
 else if(/auete/.test(url)){url=url+'/search.php?searchword='+spl[2];}
 else if(/nfmovies/.test(url)){url=url+'/search.php?page=fypage&searchword='+spl[2]+'&searchtype='+';get;utf-8;{User-Agent@Mozilla/5.0&&Cookie@.js:getVar("hikernfcookie")}';}
@@ -1771,9 +1617,10 @@ return (jiek+urll+"&next="+nxt)}
 }
 //南瓜
 else if(/nangua/.test(myurl)){
-var phtml =request(srcurl,{});
-var scrpt = parseDomForHtml(phtml,".embed-responsive&&script&&Html");
-eval(scrpt);var urll=zanpiancms_player.apiurl+zanpiancms_player.url;return urll
+//var phtml =request(srcurl,{});
+//var scrpt = parseDomForHtml(phtml,".embed-responsive&&script&&Html");
+//eval(scrpt);var urll=zanpiancms_player.apiurl+zanpiancms_player.url;
+return srcurl
 }
 //闪电&80影视
 else if(/ak1080|80ysm/.test(myurl)){
