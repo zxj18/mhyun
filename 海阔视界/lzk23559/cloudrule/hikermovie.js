@@ -1617,10 +1617,25 @@ return (jiek+urll+"&next="+nxt)}
 }
 //南瓜
 else if(/nangua/.test(myurl)){
-//var phtml =request(srcurl,{});
-//var scrpt = parseDomForHtml(phtml,".embed-responsive&&script&&Html");
-//eval(scrpt);var urll=zanpiancms_player.apiurl+zanpiancms_player.url;
-return srcurl
+var phtml =request(srcurl,{});
+var scrpt = parseDomForHtml(phtml,".embed-responsive&&script&&Html");
+eval(scrpt);var urll=zanpiancms_player.apiurl+zanpiancms_player.url;
+var jxhtml=fetch(urll,{headers:{"User-Agent":MOBILE_UA,"Referer":srcurl}});
+eval('data='+jxhtml.match(/api.php\", ({[\s\S]*?})/)[1]);
+var ph='url='+data.url+'&time='+data.time+'&key='+data.key;
+var pjson=fetch('https://api.taoxiaoma.vip/parse/api.php', {headers:{'X-Requested-With':'XMLHttpRequest','Referer':urll,'origin':'https://api.taoxiaoma.vip'},body:ph,method:'POST'});
+var code=JSON.parse(pjson).code;var play=JSON.parse(pjson).url;
+
+if(code==200){
+refreshX5WebView('');
+if(play.indexOf('http')!=-1){
+return decodeURIComponent(play);}
+else if(play.indexOf('hls.php')!=-1){
+return 'x5Play://'+urll.split('?url')[0]+play;}else{return srcurl}
+;}
+else if(play.indexOf('?v=')!=-1){return play;}
+else if(play.indexOf('php?')!=-1){return urll.split('/parse')[0]+play;}
+else{return srcurl}
 }
 //闪电&80影视
 else if(/ak1080|80ysm/.test(myurl)){
