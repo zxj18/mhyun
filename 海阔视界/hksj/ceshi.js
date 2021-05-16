@@ -42,22 +42,22 @@ function EJ() {
                 d.push({
                     title: getVar(vari, '0') == i ? '‘‘' + tabs[i] + '’’' : tabs[i],
                     url: url,
-                    col_type: 'text_3'
+                    col_type: 'flex_button'
                 })
             }
-            d.push({
-                col_type: 'line_blank'
-            })
         }
         function setLists(lists, index) {
+            /*
             d.push({
                 title: '‘‘选集’’',
                 url: `#noLoading#@lazyRule=.js:let conf = getVar('shsort');if(conf==' - 逆序'){putVar({key:'shsort', value:' - 正序'});}else{putVar({key:'shsort', value:' - 逆序'})};refreshPage(false);'toast://切换排序成功';'#noHistory#hiker://empty'`,
                 col_type: 'text_center_1'
             })
+            */
             if (conts[i].info || html.play_from_open_index) {
                 var list = lists[index];
                 if (list) {
+                    /*
                     if (getVar('shsort') == ' - 逆序') {
 
                         for (var j = list.length - 1; j >= 0; j--) {
@@ -70,16 +70,17 @@ function EJ() {
                             }
                         }
                     } else {
-                        for (var j = 0; j < list.length; j++) {
-                            if (!list[j].index == '0') {
-                                d.push({
-                                    title: list[j].index,
-                                    url: 'https://v.sogou.com' + list[j].url + lazy,
-                                    col_type: "text_4"
-                                });
-                            }
+                        */
+                    for (var j = 0; j < list.length; j++) {
+                        if (!list[j].index == '0') {
+                            d.push({
+                                title: list[j].index,
+                                url: 'https://v.sogou.com' + list[j].url + lazy,
+                                col_type: "text_4"
+                            });
                         }
                     }
+                    //   }
                 }
                 if (html.play_from_open_index) {
                     var arr = [];
@@ -172,9 +173,25 @@ function SYYJ() {
         function setLists(lists, index) {
 
             var list = lists[index];
+
             d.push({
-                title: '更多',
-                img: 'https://gitee.com/zbaolin/hksj/raw/master/logo.png',
+                title: '更新',
+                url: '',
+                col_type: "flex_button"
+            })
+            for (var j in list) {
+                d.push({
+                    title: parseDomForHtml(list[j], 'img&&alt'),
+                    img: parseDom(list[j], 'img&&src'),
+                    desc: parseDomForHtml(list[j], 'a&&Text'),
+                    url: parseDom(list[j], 'a&&href'),
+                    col_type: "movie_3"
+                });
+            }
+            d.push({
+                title: '加载更多',
+                // img: 'https://gitee.com/zbaolin/hksj/raw/master/logo.png',
+                img: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F00%2F92%2F44%2F5656f2215b62616.jpg&refer=http%3A%2F%2Fbpic.588ku.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1623746146&t=b50e1895dcd1e8d1254c57934eef5bf1',
                 url: $(parseDom(conts[index], '.sort_nav_more&&href') + '&page=fypage').rule(() => {
                     var d = [];
                     var list = parseDomForArray(getResCode(), '.sort_lst&&li');
@@ -189,23 +206,8 @@ function SYYJ() {
                     }
                     setResult(d)
                 }),
-                col_type: "flex_button"
+                col_type: "movie_3"
             })
-            d.push({
-                title: '更新',
-                img: 'https://gitee.com/zbaolin/hksj/raw/master/logo.png',
-                url: '',
-                col_type: "flex_button"
-            })
-            for (var j in list) {
-                d.push({
-                    title: parseDomForHtml(list[j], 'img&&alt'),
-                    img: parseDom(list[j], 'img&&src'),
-                    desc: parseDomForHtml(list[j], 'a&&Text'),
-                    url: parseDom(list[j], 'a&&href'),
-                    col_type: "movie_3"
-                });
-            }
         }
         setTabs(tabs, MY_URL);
         setLists(lists, getVar(MY_URL, '0'));
