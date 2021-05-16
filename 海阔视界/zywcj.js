@@ -114,7 +114,8 @@ col_type: 'line'});}\
 eval(fetch('hiker://files/rules/zywcj.js'));\
 listfun();\
 res.data=items;setHomeResult(res);`,
-col_type:"text_3"});
+//col_type:"text_3"
+col_type:'flex_button'});
   }
  }
 } catch(e) {}
