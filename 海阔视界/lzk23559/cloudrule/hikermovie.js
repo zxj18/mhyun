@@ -6,7 +6,7 @@ function hikhmrule() {
 var json = JSON.parse(getResCode());
 var res = {};
 var d = [];
-var ssmd=json.ssmode;
+var ssmd=JSON.parse(fetch('hiker://files/rules/xyq/hikerset.json',{})).ssmode;
 d.push({col_type: 'line'});
 var len=[];
 for (var i = 0; i < json.data.length; i++) {
@@ -59,19 +59,19 @@ d.unshift({
 });
 d.unshift({
     title : '🔍模式'+'('+(ssmd==1?'聚':'列')+')',
-    url : $('hiker://empty').lazyRule((json)=>{
-    var md=json.ssmode;
+    url : $('hiker://empty').lazyRule(()=>{
+    var md=JSON.parse(fetch('hiker://files/rules/xyq/hikerset.json',{})).ssmode;
     if(md==1){
-    var fileUrl=fetch("hiker://files/rules/xyq/hikermovie.json",{}).replace('\"ssmode\":\"1\"','\"ssmode\":\"0\"');
-    writeFile("hiker://files/rules/xyq/hikermovie.json",fileUrl);
+    var fileUrl=fetch("hiker://files/rules/xyq/hikerset.json",{}).replace('\"ssmode\":\"1\"','\"ssmode\":\"0\"');
+    writeFile("hiker://files/rules/xyq/hikerset.json",fileUrl);
     refreshPage(false);return 'toast://切换为搜索引擎列表单选模式成功！';
     }
     else{
-    var fileUrl=fetch("hiker://files/rules/xyq/hikermovie.json",{}).replace('\"ssmode\":\"0\"','\"ssmode\":\"1\"');
-    writeFile("hiker://files/rules/xyq/hikermovie.json",fileUrl);
+    var fileUrl=fetch("hiker://files/rules/xyq/hikerset.json",{}).replace('\"ssmode\":\"0\"','\"ssmode\":\"1\"');
+    writeFile("hiker://files/rules/xyq/hikerset.json",fileUrl);
     refreshPage(false);return 'toast://切换为聚合搜索模式成功！'
     }
-    },json),
+    }),
     col_type:'text_3'
 })
 
@@ -182,8 +182,8 @@ else if(/paofan/.test(spl)){var url=spl+'/video/filter?JsonBody={"packageName":"
 d.push({
    title:clst[i],
    url:url+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie.js'));clsrule();`,
-   col_type:clst[i].length>=4?'text_3':'text_4'
-   //col_type:'flex_button'
+   //col_type:clst[i].length>=4?'text_3':'text_4'
+   col_type:'flex_button'
 })
 }//for结束
 
@@ -605,7 +605,7 @@ var le = num*5;
 var json=JSON.parse(fetch(spl[1],{}));
 //正文开始
 var ssph=[];
-var ssmd=json.ssmode;
+var ssmd=JSON.parse(fetch('hiker://files/rules/xyq/hikerset.json',{})).ssmode;
 for (var m = 0; m < json.data.length; m++) {
 for (var i = 0; i < json.data[m].list.length; i++) {
 var url=json.data[m].list[i].url;
@@ -861,7 +861,7 @@ function hikseaerji() {
 var res={};var d=[];
 var html=getResCode().replace(/\\/g,"");
 var json=JSON.parse(fetch('hiker://files/rules/xyq/hikermovie.json',{}));
-var ssmd=json.ssmode;
+var ssmd=JSON.parse(fetch('hiker://files/rules/xyq/hikerset.json',{})).ssmode;
 //过宝塔检测
 if (html.indexOf('检测中') != -1) {
 html=request(MY_URL + '?btwaf'+ html.match(/btwaf(.*?)\"/)[1], {});}
@@ -1436,7 +1436,9 @@ var scrpt = parseDom(phtml,".hy-player&&script&&Html");eval(scrpt);
 
 if(/daishudy/.test(myurl)){
 if(pn=='alizy'){
-return alizy(now);
+var jxapi=fetch('http://daishudy.com/js/play.js',{}).match(/jxAapi=\"(.*?)\"/)[1];
+return jxapi+now;
+//return alizy(now);
 }
 else if(/.m3u8|.mp4|obj\/tos/.test(now)&&/http/.test(now)){return now;}
 else{return now}
@@ -1507,8 +1509,8 @@ else if(urll.substring(0,1)=='%'){urll=unescape(urll);nxt=unescape(nxt);}
 //打开直链
 if(/.m3u8|.mp4|obj\/tos/.test(urll)&&/http/.test(urll)){return urll+'#isVideo=true#';}
 //阿里资源
-else if(/alizy-/.test(urll)){
-return alizy(urll);}
+//else if(/alizy-/.test(urll)){
+//return alizy(urll);}
 //爱迪
 else if(/aidi/.test(urll)&&/93eS5/.test(urll)){
 var durl =urll.split('date=')[1];var qz = durl.substr(0, 20);
@@ -1579,8 +1581,8 @@ else if(urll.substring(0,1)=='%'){urll=unescape(urll);nxt=unescape(nxt);}
 //直链
 if(/.m3u8|.mp4|obj\/tos/.test(urll)&&/http/.test(urll)){if(urll.indexOf('cqzyw')!=-1){var ul=JSON.parse(fetch(urll, {headers:{"User-Agent":"Dalvik/2.1.0"}, redirect:false, withHeaders:true}));if(ul.statusCode=="302"){return ul.headers.location[0];}else{return urll};}else{return urll+'#isVideo=true#'};}
 //阿里资源
-else if(/alizy-/.test(urll)){
-return alizy(urll);}
+//else if(/alizy-/.test(urll)){
+//return alizy(urll);}
 //TVB云播直链
 else if(/hktvyb/.test(myurl)&&/hkm3u8/.test(fro)){return srcurl;}
 else{
@@ -1762,6 +1764,10 @@ else{return srcurl}
 
 //预处理代码
 function hikerpre(){
+	if(!fetch('hiker://files/rules/xyq/hikerset.json',{})){
+let set=`{"ssmode":"0"}`;
+writeFile("hiker://files/rules/xyq/hikerset.json",set);  
+ }
 	try{
 if(!getVar('hikersbbmfwaf')){
 putVar('hikersbbmfwaf','1');
