@@ -305,6 +305,9 @@ refreshX5WebView(src);
 return "toast://请等待加载选集！";
 }else if(src.indexOf("www.bilibili.com")!=-1){
 return src;
+}else if(src.indexOf("alizy-")!=-1){
+refreshX5WebView('http://hong.1ren.ren/?url='+src);
+return "toast://请等待加载选集！";
 }else if(src.indexOf("47api")!=-1){
 refreshX5WebView(src);
 return "toast://请等待加载选集！";
