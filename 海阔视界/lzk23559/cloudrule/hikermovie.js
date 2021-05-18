@@ -1507,7 +1507,10 @@ eval(scrpt);var fro=player_data.from;var urll=player_data.url;var nxt=player_dat
 if(urll.substring(0,2)=='JT'){urll=unescape(base64Decode(urll));nxt=unescape(base64Decode(nxt));}
 else if(urll.substring(0,1)=='%'){urll=unescape(urll);nxt=unescape(nxt);}
 //打开直链
-if(/.m3u8|.mp4|obj\/tos/.test(urll)&&/http/.test(urll)){return urll+'#isVideo=true#';}
+if(/.m3u8|.mp4|obj\/tos/.test(urll)&&/http/.test(urll)){
+if(/bigmao/.test(urll)){return urll+';{Referer@'+myurl+'}'+'#isVideo=true#';}
+else{return urll+'#isVideo=true#'}
+}
 //阿里资源
 //else if(/alizy-/.test(urll)){
 //return alizy(urll);}
