@@ -316,9 +316,13 @@ return purl;
 refreshX5WebView(src);
 return "toast://请等待加载选集！";
 }else if(src.indexOf("www.bilibili.com")!=-1){
-var cc=parseDomForHtml(request('https://api.10dy.net/?url='+src,{}),'body&&iframe&&src');
-var html=request('https://api.10dy.net/'+cc,{}).match(/url\": \"(.*?)\"/)[1];
-return html+';{Referer@https://www.bilibili.com&&User-Agent@Mozilla/5.0\}';
+//var cc=parseDomForHtml(request('https://api.10dy.net/?url='+src,{}),'body&&iframe&&src');
+//var html=request('https://api.10dy.net/'+cc,{}).match(/url\": \"(.*?)\"/)[1];
+//return html+';{Referer@https://www.bilibili.com&&User-Agent@Mozilla/5.0\}';
+return src;
+}else if(src.indexOf("alizy-")!=-1){
+refreshX5WebView('http://hong.1ren.ren/?url='+src);
+return "toast://请等待加载选集！";
 }else if(src.indexOf("47api")!=-1){
 refreshX5WebView(src);
 return "toast://请等待加载选集！";
