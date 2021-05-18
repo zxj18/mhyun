@@ -213,7 +213,7 @@ if(flag=='pll'){url='https://jx.baipiaozy.com/player/?url='+url}
 if(flag=='languang'){url='https://j.languang.wfss100.com/?url='+url}
 if(flag=='msp'){url='https://titan.mgtv.com.bowang.tv/player/?url='+url}
 if(flag=='kdyx'||flag=='kdsx'){url='http://api.kudian6.com/jm/pdplayer.php?url='+url}
-if(flag=='789pan'){url='http://101.37.76.245:8183/79/?url='+url}
+if(flag=='789pan'){url='http://789pan.hd8.pw/?url='+url}
 var title=(list[j].split('$')[0].indexOf('http')!=-1?[j+1]:list[j].split('$')[0]);
 items.push({
 title:list[j].split('$')[0].indexOf('http')!=-1?[j+1]:list[j].split('$')[0],
@@ -306,13 +306,12 @@ var html=request(src);
 return html.match(/url\":.*?[\'\"](.*?)[\'\"]/)[1];
 }else if(src.indexOf("789pan")!=-1){
 var html=request(src);
-//eval(getCryptoJS());
-//var id = html.match(/var id=\"(.*?)\"/)[1];
-//var times=(new Date()).getTime()+'';
-//var sh= CryptoJS.MD5(base64Encode(id+times)).toString();
-//var purl='http://play.zk132.cn/new/play1/'+id+'%7C'+times+'%7C'+sh+'%7C'+'1'+'%7C'+'index.m3u8';
-return JSON.parse(html).url
-//return purl;
+eval(getCryptoJS());
+var id = html.match(/var id=\"(.*?)\"/)[1];
+var times=(new Date()).getTime()+'';
+var sh= CryptoJS.MD5(base64Encode(id+times)).toString();
+var purl='http://play.zk132.cn/new/play1/'+id+'%7C'+times+'%7C'+sh+'%7C'+'1'+'%7C'+'index.m3u8';
+return purl;
 }else if(src.indexOf("baipiaozy")!=-1||src.indexOf("bowang")!=-1){
 refreshX5WebView(src);
 return "toast://请等待加载选集！";
