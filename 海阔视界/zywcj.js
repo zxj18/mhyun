@@ -239,7 +239,7 @@ var le = num*ssxc;
 //setError(le);
 if(num=='1'){
 putVar({key:'zyfany', value:''});
-var src=fetch('hiker://files/rules/资源网采集.txt',{});
+var src=fetch('hiker://files/rules/ZYWCJ.txt',{});
 putVar({key:'zyfany', value:src});
 }//end
 
