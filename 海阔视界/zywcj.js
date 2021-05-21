@@ -112,7 +112,7 @@ var url = parseDomForHtml(list[j],"body&&id&&Text");
 var note = parseDomForHtml(list[j],"body&&note&&Text"); 
 var typ = parseDomForHtml(list[j],"body&&type&&Text");
 var last = parseDomForHtml(list[j],"body&&last&&Text");
-if(!filter(typ)){
+if(!filter(word)){
 if(html.indexOf("</pic>")!=-1){
 var pic=parseDomForHtml(list[j],"body&&pic&&Text").replace("http://t.8kmm.com","https://www.wxtv.net");
 eval(fetch("hiker://files/rules/zywcj.js"));
@@ -158,7 +158,7 @@ var type = parseDomForHtml(rescod,"class&&Html").match(/<ty[\s]id[\s\S]*?<\/ty>/
 for(var i=0;i<type.length;i++){
 var title = parseDomForHtml(type[i],"body&&Text").split('{')[0];
 var url = parseDomForHtml(type[i],"body&&ty&&id");
-if(!filter(title)){
+if(!filter(word)){
 items.push({
 title:title,
 url:$(arrr+"?ac=list&pg=fypage&t="+url).rule(()=>{
@@ -392,7 +392,7 @@ var pic = parseDomForHtml(html,"rss&&pic&&Text").replace("http://t.8kmm.com","ht
 eval(fetch('hiker://files/rules/zywcj.js'));
 picfun();
 var typ = parseDomForHtml(html,"body&&type&&Text");
-if(!filter(typ)){
+if(!filter(word)){
 var des=parseDomForHtml(html, "rss&&des&&Text");
 items.push({
 title:'演员：'+'\n'+parseDomForHtml(html, "rss&&actor&&Text"),
@@ -462,7 +462,7 @@ setHomeResult(res);
 function lazyRu() {
 var src=input.replace(/amp;/g,"").replace(/^\s*/,"");
 if(src.indexOf("html")!=-1){
-var fileUrl="https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
+var fileUrl="hiker://files/rules/parse.js";
 eval(fetch(fileUrl,{}));
 var play=vodkey.toUrl(src.split('"')[0]);
 return play!=""?play:getUrl(src.split('"')[0]);
@@ -506,7 +506,7 @@ return fetch(sm,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://www.shenma44
 }else if(src.indexOf("mlkioiy")!=-1){
 if(src.indexOf("ShowVideo")!=-1){
 var mlki=parseDomForHtml(fetch(src,{}),"body&&#dplayer&&result");
-var fileUrl ="https://cdn.jsdelivr.net/gh/lzk23559/rulehouse/pako-min.js";
+var fileUrl ="hiker://files/rules/pako-min.js";
 eval(request(fileUrl,{}));
 return realUrl;
 }else{
@@ -519,7 +519,7 @@ var purl='https://hls.90mm.me/ddyun/' + src + '/l/' + dat + '/playlist.m3u8';
 return purl;
 }else if(src.indexOf("xsp1")!=-1){
 var pli=parseDomForHtml(fetch(src,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://zz22x.com"}}),"body&&iframe&&src").split("url=")[1];
-var fileUrl="https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
+var fileUrl="hiker://files/rules/parse.js";
 eval(fetch(fileUrl,{}));
 var play=yqjx.toUrl(pli);
 return play!=""?play:getUrl(pli);
