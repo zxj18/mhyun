@@ -19,22 +19,22 @@ function filter(key) {
 function zywhm() {
 var html = getResCode();
 var arr = html.indexOf('http')!=-1?html.match(/#[\s\S]*?#/g):base64Decode(html).match(/#[\s\S]*?#/g);
-var ssmd=JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).ssmode;
+var ssmd=JSON.parse(fetch('hiker://files/rules/zywset.json',{})).ssmode;
 var res = {};
 var items = [];
 
 items.push({
     title : '🔍模式'+'('+(ssmd==1?'聚':'列')+')',
     url : $('hiker://empty').lazyRule(()=>{
-    var md=JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).ssmode;
+    var md=JSON.parse(fetch('hiker://files/rules/zywset.json',{})).ssmode;
     if(md==1){
-    var fileUrl=fetch("hiker://files/rules/xyq/zywset.json",{}).replace('\"ssmode\":\"1\"','\"ssmode\":\"0\"');
-    writeFile("hiker://files/rules/xyq/zywset.json",fileUrl);
+    var fileUrl=fetch("hiker://files/rules/zywset.json",{}).replace('\"ssmode\":\"1\"','\"ssmode\":\"0\"');
+    writeFile("hiker://files/rules/zywset.json",fileUrl);
     refreshPage(false);return 'toast://切换为搜索引擎列表单选模式成功！';
     }
     else{
-    var fileUrl=fetch("hiker://files/rules/xyq/zywset.json",{}).replace('\"ssmode\":\"0\"','\"ssmode\":\"1\"');
-    writeFile("hiker://files/rules/xyq/zywset.json",fileUrl);
+    var fileUrl=fetch("hiker://files/rules/zywset.json",{}).replace('\"ssmode\":\"0\"','\"ssmode\":\"1\"');
+    writeFile("hiker://files/rules/zywset.json",fileUrl);
     refreshPage(false);return 'toast://切换为聚合搜索模式成功！'
     }
     }),
@@ -143,7 +143,7 @@ var res = {};
 var items = [];
 var arrr = MY_URL.split("?")[0];
 var pn = MY_URL.split("=")[2];
-var listmod=JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).listmod;
+var listmod=JSON.parse(fetch('hiker://files/rules/zywset.json',{})).listmod;
 if (listmod=='1') {
 html = getResCode();}else{html = request(MY_URL.replace('ac=list','ac=videolist'))}
 //对第一页分类进行处理
@@ -164,7 +164,7 @@ title:title,
 url:$(arrr+"?ac=list&pg=fypage&t="+url).rule(()=>{
 var arrr = MY_URL.split("?")[0];
 var pn = MY_URL.split("pg=")[1].split("&t=")[0];
-var listmod=JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).listmod;
+var listmod=JSON.parse(fetch('hiker://files/rules/zywset.json',{})).listmod;
 if (listmod=='1') {html = getResCode();}else{html = request(MY_URL.replace('ac=list','ac=videolist'))}
 var res = {};var items = [];
 if(pn=='1'){
@@ -172,16 +172,16 @@ items.push({
 	title: '‘‘’’<strong><font color="#ffaa64">纯文本列表</front></strong>',
     desc:'',
     url:$('hiker://empty').lazyRule(()=>{
-var fileUrl=fetch("hiker://files/rules/xyq/zywset.json",{}).replace('\"listmod\":\"0\"','\"listmod\":\"1\"');
-    writeFile("hiker://files/rules/xyq/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
+var fileUrl=fetch("hiker://files/rules/zywset.json",{}).replace('\"listmod\":\"0\"','\"listmod\":\"1\"');
+    writeFile("hiker://files/rules/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
     col_type: 'text_2'
 });
 items.push({
 	title: '‘‘’’<strong><font color="#ffaa64">图文列表</front></strong>',
     desc:'',
     url:$('hiker://empty').lazyRule(()=>{
-var fileUrl=fetch("hiker://files/rules/xyq/zywset.json",{}).replace('\"listmod\":\"1\"','\"listmod\":\"0\"');
-    writeFile("hiker://files/rules/xyq/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
+var fileUrl=fetch("hiker://files/rules/zywset.json",{}).replace('\"listmod\":\"1\"','\"listmod\":\"0\"');
+    writeFile("hiker://files/rules/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
     col_type: 'text_2'
 });
 items.push({
@@ -199,16 +199,16 @@ items.push({
 	title: '‘‘’’<strong><font color="#ffaa64">纯文本列表</front></strong>',
     desc:'',
     url:$('hiker://empty').lazyRule(()=>{
-var fileUrl=fetch("hiker://files/rules/xyq/zywset.json",{}).replace('\"listmod\":\"0\"','\"listmod\":\"1\"');
-    writeFile("hiker://files/rules/xyq/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
+var fileUrl=fetch("hiker://files/rules/zywset.json",{}).replace('\"listmod\":\"0\"','\"listmod\":\"1\"');
+    writeFile("hiker://files/rules/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
     col_type: 'text_2'
 });
 items.push({
 	title: '‘‘’’<strong><font color="#ffaa64">图文列表</front></strong>',
     desc:'',
     url:$('hiker://empty').lazyRule(()=>{
-var fileUrl=fetch("hiker://files/rules/xyq/zywset.json",{}).replace('\"listmod\":\"1\"','\"listmod\":\"0\"');
-    writeFile("hiker://files/rules/xyq/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
+var fileUrl=fetch("hiker://files/rules/zywset.json",{}).replace('\"listmod\":\"1\"','\"listmod\":\"0\"');
+    writeFile("hiker://files/rules/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
     col_type: 'text_2'
 });
 items.push({col_type: 'line'});
@@ -227,14 +227,14 @@ function zywsea() {
 var res = {};
 var items = [];
 //获取搜索线程数量
-var ssxc = JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).sscount;;
+var ssxc = JSON.parse(fetch('hiker://files/rules/zywset.json',{})).sscount;;
 
 //设置超时时间，越小越快，单位毫秒
 var timeou = 5000;
 
 var ss = MY_URL.split('$$$')[1];
 var num= MY_URL.split('$$$')[2];
-var ssmode=JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).ssmode;
+var ssmode=JSON.parse(fetch('hiker://files/rules/zywset.json',{})).ssmode;
 var le = num*ssxc;
 //setError(le);
 if(num=='1'){
@@ -329,7 +329,7 @@ setSearchResult(res);
 }
 
 function zywerj() {
-var ssmode=JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).ssmode;
+var ssmode=JSON.parse(fetch('hiker://files/rules/zywset.json',{})).ssmode;
 if(ssmode=='0'){
 var res = {};var items = [];
 var domain = MY_URL.split('?wd')[0];
@@ -559,9 +559,9 @@ return "toast://请等待加载选集！";
 
 //预处理代码
 function zywpre(){
-	if(!fetch('hiker://files/rules/xyq/zywset.json',{})){
+	if(!fetch('hiker://files/rules/zywset.json',{})){
 var set=`{"ssmode":"0","listmod":"0","sscount":"5"}`;
-writeFile("hiker://files/rules/xyq/zywset.json",set);  
+writeFile("hiker://files/rules/zywset.json",set);  
  }
  
 }
