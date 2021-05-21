@@ -8,11 +8,11 @@ setHomeResult(res);
 function filter(key) {
   //var word = ["伦理","写真","福利","VIP","美女","里番","性感","倫理","论理","成人","情色","无码","有码","妻","诱","乳","红主","莉","品推","文字","三级","美少","HEY","骑兵","产自","性爱","裸聊","乱伦","偷","AV","av","淫","妖","男同","女同","人","妇","丝","私","盗","虚拟","交","SM","慰","精品","学生","射","3P","大秀","精品","口味","高潮","极品","DMM","首次","辣椒","家擂","色情","主播","名优","幼","眉","女","阴","奸","轨","师","情侣","激","态","控","飞机","推","潮","麻豆","ey"];
   var word=[];
-  for (var i = 0; i <word.length; i++){
-    if(key.indexOf(word[i])>-1){
-    	return true;
-    	}
-      }
+  //for (var i = 0; i <word.length; i++){
+  //  if(key.indexOf(word[i])>-1){
+  //  	return true;
+  //  	}
+  //    }
   return false;
 };
 
@@ -112,7 +112,7 @@ var url = parseDomForHtml(list[j],"body&&id&&Text");
 var note = parseDomForHtml(list[j],"body&&note&&Text"); 
 var typ = parseDomForHtml(list[j],"body&&type&&Text");
 var last = parseDomForHtml(list[j],"body&&last&&Text");
-if(!filter(word)){
+if(!filter(typ)){
 if(html.indexOf("</pic>")!=-1){
 var pic=parseDomForHtml(list[j],"body&&pic&&Text").replace("http://t.8kmm.com","https://www.wxtv.net");
 eval(fetch("hiker://files/rules/zywcj.js"));
@@ -158,7 +158,7 @@ var type = parseDomForHtml(rescod,"class&&Html").match(/<ty[\s]id[\s\S]*?<\/ty>/
 for(var i=0;i<type.length;i++){
 var title = parseDomForHtml(type[i],"body&&Text").split('{')[0];
 var url = parseDomForHtml(type[i],"body&&ty&&id");
-if(!filter(word)){
+if(!filter(title)){
 items.push({
 title:title,
 url:$(arrr+"?ac=list&pg=fypage&t="+url).rule(()=>{
@@ -392,7 +392,7 @@ var pic = parseDomForHtml(html,"rss&&pic&&Text").replace("http://t.8kmm.com","ht
 eval(fetch('hiker://files/rules/zywcj.js'));
 picfun();
 var typ = parseDomForHtml(html,"body&&type&&Text");
-if(!filter(word)){
+if(!filter(typ)){
 var des=parseDomForHtml(html, "rss&&des&&Text");
 items.push({
 title:'演员：'+'\n'+parseDomForHtml(html, "rss&&actor&&Text"),
@@ -462,7 +462,7 @@ setHomeResult(res);
 function lazyRu() {
 var src=input.replace(/amp;/g,"").replace(/^\s*/,"");
 if(src.indexOf("html")!=-1){
-var fileUrl="hiker://files/rules/parse.js";
+var fileUrl="https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
 eval(fetch(fileUrl,{}));
 var play=vodkey.toUrl(src.split('"')[0]);
 return play!=""?play:getUrl(src.split('"')[0]);
@@ -506,7 +506,7 @@ return fetch(sm,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://www.shenma44
 }else if(src.indexOf("mlkioiy")!=-1){
 if(src.indexOf("ShowVideo")!=-1){
 var mlki=parseDomForHtml(fetch(src,{}),"body&&#dplayer&&result");
-var fileUrl ="hiker://files/rules/pako-min.js";
+var fileUrl ="https://cdn.jsdelivr.net/gh/lzk23559/rulehouse/pako-min.js";
 eval(request(fileUrl,{}));
 return realUrl;
 }else{
@@ -519,7 +519,7 @@ var purl='https://hls.90mm.me/ddyun/' + src + '/l/' + dat + '/playlist.m3u8';
 return purl;
 }else if(src.indexOf("xsp1")!=-1){
 var pli=parseDomForHtml(fetch(src,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://zz22x.com"}}),"body&&iframe&&src").split("url=")[1];
-var fileUrl="hiker://files/rules/parse.js";
+var fileUrl="https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
 eval(fetch(fileUrl,{}));
 var play=yqjx.toUrl(pli);
 return play!=""?play:getUrl(pli);
