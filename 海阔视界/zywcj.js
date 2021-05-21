@@ -24,7 +24,7 @@ var res = {};
 var items = [];
 
 items.push({
-    title : '🔍模式'+'('+(ssmd==1?'聚':'列')+')',
+    title : '🗄'+'('+(ssmd==1?'聚':'列')+')',
     url : $('hiker://empty').lazyRule(()=>{
     var md=JSON.parse(fetch('hiker://files/rules/zywset.json',{})).ssmode;
     if(md==1){
@@ -41,7 +41,7 @@ items.push({
     col_type:'flex_button'
 });
 items.push({
-    title : '获取云端',
+    title : '  🌩  ',
     url:$('hiker://empty').lazyRule(()=>{
 	var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/zywcj.js',{});
 	writeFile("hiker://files/rules/zywcj.js",rulejs);
@@ -173,7 +173,7 @@ items.push({
     desc:'',
     url:$('hiker://empty').lazyRule(()=>{
 var fileUrl=fetch("hiker://files/rules/zywset.json",{}).replace('\"listmod\":\"0\"','\"listmod\":\"1\"');
-    writeFile("hiker://files/rules/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
+    writeFile("hiker://files/rules/zywset.json",fileUrl);refreshPage();return 'toast://切换成功！'}),
     col_type: 'text_2'
 });
 items.push({
@@ -181,7 +181,7 @@ items.push({
     desc:'',
     url:$('hiker://empty').lazyRule(()=>{
 var fileUrl=fetch("hiker://files/rules/zywset.json",{}).replace('\"listmod\":\"1\"','\"listmod\":\"0\"');
-    writeFile("hiker://files/rules/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
+    writeFile("hiker://files/rules/zywset.json",fileUrl);refreshPage();return 'toast://切换成功！'}),
     col_type: 'text_2'
 });
 items.push({
@@ -200,7 +200,7 @@ items.push({
     desc:'',
     url:$('hiker://empty').lazyRule(()=>{
 var fileUrl=fetch("hiker://files/rules/zywset.json",{}).replace('\"listmod\":\"0\"','\"listmod\":\"1\"');
-    writeFile("hiker://files/rules/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
+    writeFile("hiker://files/rules/zywset.json",fileUrl);refreshPage();return 'toast://切换成功！'}),
     col_type: 'text_2'
 });
 items.push({
@@ -208,7 +208,7 @@ items.push({
     desc:'',
     url:$('hiker://empty').lazyRule(()=>{
 var fileUrl=fetch("hiker://files/rules/zywset.json",{}).replace('\"listmod\":\"1\"','\"listmod\":\"0\"');
-    writeFile("hiker://files/rules/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
+    writeFile("hiker://files/rules/zywset.json",fileUrl);refreshPage();return 'toast://切换成功！'}),
     col_type: 'text_2'
 });
 items.push({col_type: 'line'});
