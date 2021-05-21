@@ -253,19 +253,19 @@ function lazyRule_1() {
             eval(parseDom(rescode, "body&&.stui-player__video&&script&&Html"));
             if (player_data["from"] == "qqpic") {
                 let _domin_zbk = 'https://cq.mmiyue.com/';
-                // play = 'x5WebView://' + _domin_zbk + 'zhenbuka/player/resourceServerPlayer.php?id=' + player_data["url"];
-                let resCodeQqpic = fetch(_domin_zbk + "zhenbuka/api/resMid.php?id=" + player_data["url"], {
-                    headers: {
-                        "Referer": _domin_zbk
-                    },
-                    method: "GET"
-                });
+                play = 'x5://' + _domin_zbk + 'zhenbuka/player/resourceServerPlayer.php?id=' + player_data["url"];
+                // let resCodeQqpic = fetch(_domin_zbk + "zhenbuka/api/resMid.php?id=" + player_data["url"], {
+                //     headers: {
+                //         "Referer": _domin_zbk
+                //     },
+                //     method: "GET"
+                // });
 
-                const key = CryptoJS.enc.Utf8.parse('1234567898882222');
-                const iv = CryptoJS.enc.Utf8.parse('8NONwyJtHesysWpM');
-                let decrypted = CryptoJS.AES.decrypt(resCodeQqpic, key, { iv: iv, padding: CryptoJS.pad.Pkcs7 });
-                writeFile('hiker://files/tmp/tmp.m3u8', decrypted.toString(CryptoJS.enc.Utf8));
-                play = 'file:///storage/emulated/0/Android/data/com.example.hikerview/files/Documents/tmp/tmp.m3u8#'+player_data["url"];
+                // const key = CryptoJS.enc.Utf8.parse('1234567898882222');
+                // const iv = CryptoJS.enc.Utf8.parse('8NONwyJtHesysWpM');
+                // let decrypted = CryptoJS.AES.decrypt(resCodeQqpic, key, { iv: iv, padding: CryptoJS.pad.Pkcs7 });
+                // writeFile('hiker://files/tmp/tmp.m3u8', decrypted.toString(CryptoJS.enc.Utf8));
+                // play = 'file:///storage/emulated/0/Android/data/com.example.hikerview/files/Documents/tmp/tmp.m3u8#'+player_data["url"];
             } else if (player_data["from"].search(/qq|qiyi|youku|mgtv/) >= 0) {
                 refreshX5WebView('');
                 play = vip.parwix(player_data["url"]);
