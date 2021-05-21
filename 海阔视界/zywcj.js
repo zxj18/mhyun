@@ -1,21 +1,90 @@
 function updata() {
 var res = {};
 var items = [];
-items.push({
-title:'该版本已停用，点击更新最新版',
-desc:'请更新新规则',
-url:'',
-col_type: 'text_center_1'
-});
+
 res.data=items;
 setHomeResult(res);
 };
-
-//var _0xodp='jsjiami.com.v6',_0x1e01=[_0xodp,'w6PDtcOqwp3CkFXDgg==','w5pzFw==','wqXDm8OI','RWLClE3CpA==','ISITOVk=','wpDDlULDtSc=','CcOuw5N/woc=','bsOkD1/Cmw==','jsjiaumuhiD.cfeomSduz.SOKv6Dz=='];(function(_0x16a335,_0x5af828,_0x32b63d){var _0x5b2b8b=function(_0x382f7c,_0x160992,_0x3b9294,_0x484366,_0x414ffe){_0x160992=_0x160992>>0x8,_0x414ffe='po';var _0x1ae998='shift',_0x24485e='push';if(_0x160992<_0x382f7c){while(--_0x382f7c){_0x484366=_0x16a335[_0x1ae998]();if(_0x160992===_0x382f7c){_0x160992=_0x484366;_0x3b9294=_0x16a335[_0x414ffe+'p']();}else if(_0x160992&&_0x3b9294['replace'](/[uuhDfeSduzSOKDz=]/g,'')===_0x160992){_0x16a335[_0x24485e](_0x484366);}}_0x16a335[_0x24485e](_0x16a335[_0x1ae998]());}return 0x77c93;};return _0x5b2b8b(++_0x5af828,_0x32b63d)>>_0x5af828^_0x32b63d;}(_0x1e01,0x199,0x19900));var _0x5d66=function(_0x3909c7,_0x4b6078){_0x3909c7=~~'0x'['concat'](_0x3909c7);var _0xd0ba0e=_0x1e01[_0x3909c7];if(_0x5d66['ULAlPd']===undefined){(function(){var _0x3eafb5=typeof window!=='undefined'?window:typeof process==='object'&&typeof require==='function'&&typeof global==='object'?global:this;var _0x378afd='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';_0x3eafb5['atob']||(_0x3eafb5['atob']=function(_0x2c17af){var _0x854d0=String(_0x2c17af)['replace'](/=+$/,'');for(var _0xa9218c=0x0,_0x1a3861,_0x389e52,_0x3d7e71=0x0,_0x313f69='';_0x389e52=_0x854d0['charAt'](_0x3d7e71++);~_0x389e52&&(_0x1a3861=_0xa9218c%0x4?_0x1a3861*0x40+_0x389e52:_0x389e52,_0xa9218c++%0x4)?_0x313f69+=String['fromCharCode'](0xff&_0x1a3861>>(-0x2*_0xa9218c&0x6)):0x0){_0x389e52=_0x378afd['indexOf'](_0x389e52);}return _0x313f69;});}());var _0xf8bd49=function(_0x33cd7c,_0x4b6078){var _0x3f0da3=[],_0x2407ef=0x0,_0x2d9da3,_0x5dffe9='',_0x40c51f='';_0x33cd7c=atob(_0x33cd7c);for(var _0x1d3fa5=0x0,_0xc3e6c3=_0x33cd7c['length'];_0x1d3fa5<_0xc3e6c3;_0x1d3fa5++){_0x40c51f+='%'+('00'+_0x33cd7c['charCodeAt'](_0x1d3fa5)['toString'](0x10))['slice'](-0x2);}_0x33cd7c=decodeURIComponent(_0x40c51f);for(var _0x504aa0=0x0;_0x504aa0<0x100;_0x504aa0++){_0x3f0da3[_0x504aa0]=_0x504aa0;}for(_0x504aa0=0x0;_0x504aa0<0x100;_0x504aa0++){_0x2407ef=(_0x2407ef+_0x3f0da3[_0x504aa0]+_0x4b6078['charCodeAt'](_0x504aa0%_0x4b6078['length']))%0x100;_0x2d9da3=_0x3f0da3[_0x504aa0];_0x3f0da3[_0x504aa0]=_0x3f0da3[_0x2407ef];_0x3f0da3[_0x2407ef]=_0x2d9da3;}_0x504aa0=0x0;_0x2407ef=0x0;for(var _0xb3ad3c=0x0;_0xb3ad3c<_0x33cd7c['length'];_0xb3ad3c++){_0x504aa0=(_0x504aa0+0x1)%0x100;_0x2407ef=(_0x2407ef+_0x3f0da3[_0x504aa0])%0x100;_0x2d9da3=_0x3f0da3[_0x504aa0];_0x3f0da3[_0x504aa0]=_0x3f0da3[_0x2407ef];_0x3f0da3[_0x2407ef]=_0x2d9da3;_0x5dffe9+=String['fromCharCode'](_0x33cd7c['charCodeAt'](_0xb3ad3c)^_0x3f0da3[(_0x3f0da3[_0x504aa0]+_0x3f0da3[_0x2407ef])%0x100]);}return _0x5dffe9;};_0x5d66['LPvnQn']=_0xf8bd49;_0x5d66['INsigF']={};_0x5d66['ULAlPd']=!![];}var _0x396644=_0x5d66['INsigF'][_0x3909c7];if(_0x396644===undefined){if(_0x5d66['ordAvn']===undefined){_0x5d66['ordAvn']=!![];}_0xd0ba0e=_0x5d66['LPvnQn'](_0xd0ba0e,_0x4b6078);_0x5d66['INsigF'][_0x3909c7]=_0xd0ba0e;}else{_0xd0ba0e=_0x396644;}return _0xd0ba0e;};function filter(_0x34e0da){var _0x5818ff={'Kqakd':'VIP','oPJDE':_0x5d66('0','FrS$'),'hXgPP':_0x5d66('1','[F]g'),'VmsZK':function(_0x3fd324,_0x3951e5){return _0x3fd324<_0x3951e5;},'qBhua':function(_0x49156a,_0x143146){return _0x49156a>_0x143146;}};var _0x5a4014=['伦理','写真','福利',_0x5818ff[_0x5d66('2','lynu')],'美女','里番','性感','倫理','论理','成人','情色','无码','有码','妻','诱','乳','红主','莉','品推','文字','三级','美少',_0x5818ff[_0x5d66('3','bAzS')],'骑兵','产自','性爱','裸聊','乱伦','偷','AV','av','淫','妖','男同','女同','人','妇','丝','私','盗','虚拟','交','SM','慰','精品','学生','射','3P','大秀','精品','口味','高潮','极品',_0x5818ff[_0x5d66('4','@CkB')],'首次','辣椒','家擂','色情','主播','名优','幼','眉','女','阴','奸','轨','师','情侣','激','态','控','飞机','推','潮','麻豆','ey'];for(var _0x4594ce=0x0;_0x5818ff[_0x5d66('5','9!TD')](_0x4594ce,_0x5a4014['length']);_0x4594ce++){if(_0x5818ff[_0x5d66('6','p60x')](_0x34e0da[_0x5d66('7','qHP0')](_0x5a4014[_0x4594ce]),-0x1)){return!![];}}return![];};_0xodp='jsjiami.com.v6';
-function filter() {
-var typ = [];
-var title = [];
+function filter(key) {
+  //var word = ["伦理","写真","福利","VIP","美女","里番","性感","倫理","论理","成人","情色","无码","有码","妻","诱","乳","红主","莉","品推","文字","三级","美少","HEY","骑兵","产自","性爱","裸聊","乱伦","偷","AV","av","淫","妖","男同","女同","人","妇","丝","私","盗","虚拟","交","SM","慰","精品","学生","射","3P","大秀","精品","口味","高潮","极品","DMM","首次","辣椒","家擂","色情","主播","名优","幼","眉","女","阴","奸","轨","师","情侣","激","态","控","飞机","推","潮","麻豆","ey"];
+  var word=[];
+  for (var i = 0; i <word.length; i++){
+    if(key.indexOf(word[i])>-1){
+    	return true;
+    	}
+      }
+  return false;
 };
+
+function zywhm() {
+var html = getResCode();
+var arr = html.indexOf('http')!=-1?html.match(/#[\s\S]*?#/g):base64Decode(html).match(/#[\s\S]*?#/g);
+var ssmd=JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).ssmode;
+var res = {};
+var items = [];
+
+items.push({
+    title : '🔍模式'+'('+(ssmd==1?'聚':'列')+')',
+    url : $('hiker://empty').lazyRule(()=>{
+    var md=JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).ssmode;
+    if(md==1){
+    var fileUrl=fetch("hiker://files/rules/xyq/zywset.json",{}).replace('\"ssmode\":\"1\"','\"ssmode\":\"0\"');
+    writeFile("hiker://files/rules/xyq/zywset.json",fileUrl);
+    refreshPage(false);return 'toast://切换为搜索引擎列表单选模式成功！';
+    }
+    else{
+    var fileUrl=fetch("hiker://files/rules/xyq/zywset.json",{}).replace('\"ssmode\":\"0\"','\"ssmode\":\"1\"');
+    writeFile("hiker://files/rules/xyq/zywset.json",fileUrl);
+    refreshPage(false);return 'toast://切换为聚合搜索模式成功！'
+    }
+    }),
+    col_type:'flex_button'
+});
+items.push({
+    title : '获取云端',
+    url:$('hiker://empty').lazyRule(()=>{
+	var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/zywcj.js',{});
+	writeFile("hiker://files/rules/zywcj.js",rulejs);
+	refreshPage(false);return 'toast://应该是获取最新了吧。'
+    }),
+    col_type:'flex_button'
+});
+items.push({
+    title : '香情影视',
+    url:'hiker://home@香情影视',
+    col_type:'flex_button'
+});
+items.push({col_type: 'line'});
+for (var i = 0; i < arr.length; i++) {
+var tabs = arr[i].match(/#.*?[\s]/g)[0].split('#')[1].replace(/\n/,'');
+var list = arr[i].match(/[\S]*?,.*?[\s]/g);
+
+items.push({
+
+            title: tabs,
+            col_type: 'text_1'
+
+        });
+
+for (var j = 0; j < list.length; j++) {
+
+items.push({
+
+            title: list[j].split(',')[0],
+
+            url: list[j].split(',')[1]+'?ac=list&pg=fypage',
+            col_type: 'text_3'
+
+        });
+ }
+
+}
+
+res.data = items;
+
+setHomeResult(res);
+};
+
 
 //图片替换函数
 function picfun() {
@@ -74,7 +143,8 @@ var res = {};
 var items = [];
 var arrr = MY_URL.split("?")[0];
 var pn = MY_URL.split("=")[2];
-if (getVar('zywmsort','1')=='1') {
+var listmod=JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).listmod;
+if (listmod=='1') {
 html = getResCode();}else{html = request(MY_URL.replace('ac=list','ac=videolist'))}
 //对第一页分类进行处理
 if(pn=='1'){
@@ -91,50 +161,57 @@ var url = parseDomForHtml(type[i],"body&&ty&&id");
 if(!filter(title)){
 items.push({
 title:title,
-url:arrr+"?ac=list&pg=fypage&t="+url+`@rule=js:\
-var arrr = MY_URL.split("?")[0];\
-var pn = MY_URL.split("pg=")[1].split("&t=")[0];\
-if (getVar('zywmsort','1')=='1') {html = getResCode();}else{html = request(MY_URL.replace('ac=list','ac=videolist'))}\
-var res = {};var items = [];\
-if(pn=='1'){\
-items.push({\
-	title: '‘‘’’<strong><font color="#ffaa64">纯文本列表</front></strong>',\
-    desc:'',\
-    url:"hiker://empty@lazyRule=.js:putVar('zywmsort','1');refreshPage();'toast://切换成功！'",\
-    col_type: 'text_2'\
-});\
-items.push({\
-	title: '‘‘’’<strong><font color="#ffaa64">图文列表</front></strong>',\
-    desc:'',\
-    url:"hiker://empty@lazyRule=.js:putVar('zywmsort','0');refreshPage();'toast://切换成功！'",\
-    col_type: 'text_2'\
-});\
-items.push({\
-col_type: 'line'});}\
-eval(fetch('hiker://files/rules/zywcj.js'));\
-listfun();\
-res.data=items;setHomeResult(res);`,
-//col_type:"text_3"
-col_type:'flex_button'});
-  }
- }
-} catch(e) {}
-items.push({
-col_type: 'line'});
+url:$(arrr+"?ac=list&pg=fypage&t="+url).rule(()=>{
+var arrr = MY_URL.split("?")[0];
+var pn = MY_URL.split("pg=")[1].split("&t=")[0];
+var listmod=JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).listmod;
+if (listmod=='1') {html = getResCode();}else{html = request(MY_URL.replace('ac=list','ac=videolist'))}
+var res = {};var items = [];
+if(pn=='1'){
 items.push({
 	title: '‘‘’’<strong><font color="#ffaa64">纯文本列表</front></strong>',
     desc:'',
-    url:"hiker://empty@lazyRule=.js:putVar('zywmsort','1');refreshPage();'toast://切换成功！'",
+    url:$('hiker://empty').lazyRule(()=>{
+var fileUrl=fetch("hiker://files/rules/xyq/zywset.json",{}).replace('\"listmod\":\"0\"','\"listmod\":\"1\"');
+    writeFile("hiker://files/rules/xyq/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
     col_type: 'text_2'
 });
 items.push({
 	title: '‘‘’’<strong><font color="#ffaa64">图文列表</front></strong>',
     desc:'',
-    url:"hiker://empty@lazyRule=.js:putVar('zywmsort','0');refreshPage();'toast://切换成功！'",
+    url:$('hiker://empty').lazyRule(()=>{
+var fileUrl=fetch("hiker://files/rules/xyq/zywset.json",{}).replace('\"listmod\":\"1\"','\"listmod\":\"0\"');
+    writeFile("hiker://files/rules/xyq/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
     col_type: 'text_2'
 });
 items.push({
-col_type: 'line'});
+col_type: 'line'});}
+eval(fetch('hiker://files/rules/zywcj.js'));
+listfun();
+res.data=items;setHomeResult(res);}),
+//col_type:"text_3"
+col_type:'flex_button'});
+  }
+ }
+} catch(e) {}
+items.push({col_type: 'line'});
+items.push({
+	title: '‘‘’’<strong><font color="#ffaa64">纯文本列表</front></strong>',
+    desc:'',
+    url:$('hiker://empty').lazyRule(()=>{
+var fileUrl=fetch("hiker://files/rules/xyq/zywset.json",{}).replace('\"listmod\":\"0\"','\"listmod\":\"1\"');
+    writeFile("hiker://files/rules/xyq/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
+    col_type: 'text_2'
+});
+items.push({
+	title: '‘‘’’<strong><font color="#ffaa64">图文列表</front></strong>',
+    desc:'',
+    url:$('hiker://empty').lazyRule(()=>{
+var fileUrl=fetch("hiker://files/rules/xyq/zywset.json",{}).replace('\"listmod\":\"1\"','\"listmod\":\"0\"');
+    writeFile("hiker://files/rules/xyq/zywset.json",fileUrl);refreshPage();'toast://切换成功！'}),
+    col_type: 'text_2'
+});
+items.push({col_type: 'line'});
 }
 //结束第一页分类处理
 
@@ -145,7 +222,160 @@ listfun();
 res.data=items;
 setHomeResult(res);
 };
-//搜索二级函数
+
+function zywsea() {
+var res = {};
+var items = [];
+//获取搜索线程数量
+var ssxc = JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).sscount;;
+
+//设置超时时间，越小越快，单位毫秒
+var timeou = 5000;
+
+var ss = MY_URL.split('$$$')[1];
+var num= MY_URL.split('$$$')[2];
+var ssmode=JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).ssmode;
+var le = num*ssxc;
+//setError(le);
+if(num=='1'){
+putVar({key:'zyfany', value:''});
+var src=fetch('hiker://files/rules/资源网采集.txt',{});
+putVar({key:'zyfany', value:src});
+}//end
+
+if(num=='1'){src=src;}else{src=getVar('zyfany')};
+
+var cc = src.indexOf('http')!=-1?src.match(/[\S]*?,.*?[\s]/g):base64Decode(src).match(/[\S]*?,.*?[\s]/g);
+
+if(ssmode=='0'){
+for(var i=0; i<cc.length;i++){
+items.push({
+
+            title: cc[i].split(',')[0]+' 点击查看搜索结果',
+
+            url: cc[i].split(',')[1]+ss.replace(/pg=\d*/g,'pg=fypage')
+        });
+
+    };
+}else{
+var Data=[];
+var Tit=[];
+var Ost=[];
+for(var i=le-ssxc;i<le;i++){
+if(i<cc.length){
+var arr = cc[i].split(',')[1];
+var arrt = cc[i].split(',')[0];
+var link=cc[i].split(',')[1]+ss;
+
+//Data.push({url:link,options:{headers:{'User-Agent':MOBILE_UA},timeout:timeou}});
+Data.push({url:link,options:{headers:{'User-Agent':MOBILE_UA}}});
+Tit.push({tit:arrt});
+Ost.push({url:arr});
+}
+}
+
+//---------------代码分界线----------------
+
+//批量发送请求
+if(Data!=''){
+var html=batchFetch(Data);
+//setError(Tit);
+
+for(var k=0;k<html.length;k++){
+if(html[k]!=null){
+
+//搜索结果网页处理开始
+if(html[k].indexOf('<video>')==-1){
+
+items.push({
+			title: '““'+Tit[k].tit+'””'+'未搜索到相关资源',
+    url:Data[k].url,
+		col_type: 'text_center_1'
+});}else{
+
+
+var list = parseDomForArray(html[k], 'rss&&video');
+
+//setError(list[0]);
+for (var j = 0; j < list.length; j++) {
+
+
+        var title = parseDomForHtml(list[j],'body&&name&&Text');
+
+        var url = parseDomForHtml(list[j],'body&&id&&Text');
+        var note = parseDomForHtml(list[j],'body&&note&&Text');
+
+        var typ = parseDomForHtml(list[j],'body&&type&&Text');
+         var dt = parseDomForHtml(list[j],'body&&dt&&Text');
+items.push({
+
+            title: title+" "+' • '+note,
+            desc: Tit[k].tit+' · '+typ+' · '+dt,
+
+            url: Ost[k].url+"?ac=videolist&ids="+url
+
+        });
+
+    }
+  }
+}
+}
+}
+}
+
+res.data = items;
+
+setSearchResult(res);
+}
+
+function zywerj() {
+var ssmode=JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).ssmode;
+if(ssmode=='0'){
+var res = {};var items = [];
+var domain = MY_URL.split('?wd')[0];
+var html=getResCode();
+//setError(domain);
+
+if(html.indexOf('<video>')==-1){
+items.push({
+			title: '未搜索到相关资源',
+		col_type: 'text_center_1'
+   });
+;}else{
+var list = parseDomForArray(html, 'rss&&video');
+
+for (var j = 0; j < list.length; j++) {
+
+        var title = parseDomForHtml(list[j],'body&&name&&Text');
+
+        var ids = parseDomForHtml(list[j],'body&&id&&Text');
+        var note = parseDomForHtml(list[j],'body&&note&&Text');
+         var last = parseDomForHtml(list[j],"body&&last&&Text");
+
+        var typ = parseDomForHtml(list[j],'body&&type&&Text');
+         var dt = parseDomForHtml(list[j],'body&&dt&&Text');
+items.push({
+
+            title: '““'+title+'””'+" "+' • '+note,         
+            desc: last+' ·  '+typ+' ·  '+dt,
+
+            url: domain+"?ac=videolist&ids="+ids+`@rule=js:var erj=fetch("hiker://files/rules/zywcj.js",{});eval(erj);SSEJ();`,
+            col_type: 'text_center_1'
+
+        });
+
+    }
+}
+
+res.data = items;setHomeResult(res);
+}else{
+
+var net=fetch('hiker://files/rules/zywcj.js',{});
+eval(net);SSEJ();}
+}
+
+
+//选集与简介规则
 function SSEJ() {
 var res = {};
 var items = [];
@@ -232,11 +462,7 @@ setHomeResult(res);
 function lazyRu() {
 var src=input.replace(/amp;/g,"").replace(/^\s*/,"");
 if(src.indexOf("html")!=-1){
-if (!fetch("hiker://files/rules/parse.js", {})) {
-var fileUrl = "https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
-} else {
-var fileUrl = "hiker://files/rules/parse.js";
-};
+var fileUrl="https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
 eval(fetch(fileUrl,{}));
 var play=vodkey.toUrl(src.split('"')[0]);
 return play!=""?play:getUrl(src.split('"')[0]);
@@ -293,11 +519,7 @@ var purl='https://hls.90mm.me/ddyun/' + src + '/l/' + dat + '/playlist.m3u8';
 return purl;
 }else if(src.indexOf("xsp1")!=-1){
 var pli=parseDomForHtml(fetch(src,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://zz22x.com"}}),"body&&iframe&&src").split("url=")[1];
-if (!fetch("hiker://files/rules/parse.js", {})) {
-var fileUrl = "https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
-} else {
-var fileUrl = "hiker://files/rules/parse.js";
-};
+var fileUrl="https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
 eval(fetch(fileUrl,{}));
 var play=yqjx.toUrl(pli);
 return play!=""?play:getUrl(pli);
@@ -305,20 +527,19 @@ return play!=""?play:getUrl(pli);
 var html=request(src);
 return html.match(/url\":.*?[\'\"](.*?)[\'\"]/)[1];
 }else if(src.indexOf("789pan")!=-1){
+	/*
 var html=request(src);
 eval(getCryptoJS());
 var id = html.match(/var id=\"(.*?)\"/)[1];
 var times=(new Date()).getTime()+'';
 var sh= CryptoJS.MD5(base64Encode(id+times)).toString();
 var purl='http://play.zk132.cn/new/play1/'+id+'%7C'+times+'%7C'+sh+'%7C'+'1'+'%7C'+'index.m3u8';
-return purl;
+*/
+return src;
 }else if(src.indexOf("baipiaozy")!=-1||src.indexOf("bowang")!=-1){
 refreshX5WebView(src);
 return "toast://请等待加载选集！";
 }else if(src.indexOf("www.bilibili.com")!=-1){
-//var cc=parseDomForHtml(request('https://api.10dy.net/?url='+src,{}),'body&&iframe&&src');
-//var html=request('https://api.10dy.net/'+cc,{}).match(/url\": \"(.*?)\"/)[1];
-//return html+';{Referer@https://www.bilibili.com&&User-Agent@Mozilla/5.0\}';
 return src;
 }else if(src.indexOf("alizy-")!=-1){
 refreshX5WebView('http://hong.1ren.ren/?url='+src);
@@ -334,3 +555,13 @@ refreshX5WebView("https://titan.mgtv.com.o8tv.com/jiexi/?url="+src);
 return "toast://请等待加载选集！";
 }else{return src}
 };
+
+
+//预处理代码
+function zywpre(){
+	if(!fetch('hiker://files/rules/xyq/zywset.json',{})){
+var set=`{"ssmode":"0","listmod":"0","sscount":"5"}`;
+writeFile("hiker://files/rules/xyq/zywset.json",set);  
+ }
+ 
+}
