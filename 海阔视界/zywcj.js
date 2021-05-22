@@ -45,13 +45,15 @@ items.push({
     url:$('hiker://empty').lazyRule(()=>{
 	var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/zywcj.js',{});
 	writeFile("hiker://files/rules/zywcj.js",rulejs);
+	//var ruletxt = fetch('https://codeberg.org/lzk23559/PublicRule/raw/branch/master/ZYWCJ.txt',{});
+	//writeFile("hiker://files/rules/ZYWCJ.txt",ruletxt);
 	refreshPage(false);return 'toast://应该是获取最新了吧。'
     }),
     col_type:'flex_button'
 });
 items.push({
     title : '香情影视',
-    url:'hiker://home@香情影视',
+    url:'hiker://home@香情影视||https://mp.weixin.qq.com/s/XpUI3F1nBvlNgHXvY71t0g',
     col_type:'flex_button'
 });
 items.push({col_type: 'line'});
