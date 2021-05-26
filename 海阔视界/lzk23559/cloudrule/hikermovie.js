@@ -157,7 +157,7 @@ else if(/bowang/.test(spl)){var url=spl+'/show/'+clsu[i]+'/page/fypage.html';}
 else if(/dianyingim/.test(spl)){var url=spl+'/pianku-'+clsu[i]+'--------fypage---/';}
 else if(/hktvyb/.test(spl)){var url=spl+'/vod/type/id/'+clsu[i]+'/page/fypage.html';}
 else if(/qkan8|cqzyw|vdxj|o8tv/.test(spl)){var url=spl+'/index.php/vod/type/id/'+clsu[i]+'/page/fypage.html';}
-else if(/klysw|dxys|flvweb|tv.ci|syg520|4ytv|521x5|haimianys|90zyk/.test(spl)){var url=spl+'/index.php/vod/show/id/'+clsu[i]+'/page/fypage.html';}
+else if(/klysw|dxys|flvweb|tv.ci|syg520|4ytv|lengyue|haimianys|90zyk/.test(spl)){var url=spl+'/index.php/vod/show/id/'+clsu[i]+'/page/fypage.html';}
 else if(/nicotv/.test(spl)){var url=spl+'/video/type3/'+clsu[i]+'-------fypage.html';}
 else if(/agefan/.test(spl)){var url=spl+'/catalog/'+clsu[i]+'-all-all-all-all-time-fypage';}
 else if(/1090ys/.test(spl)){var url=spl+'/whole/'+clsu[i]+'/page/fypage.html';}
@@ -581,7 +581,7 @@ else if(/subaibai|qianoo/.test(url)){url=url+'/page/fypage?s='+spl[2];}
 else if(/46nb/.test(url)){url=url+'/s/'+spl[2]+'/fypage.html';}
 else if(/bde4/.test(url)){url=url+'/search/'+spl[2]+'/fypage';}
 else if(/hktvyb/.test(url)){url=url+'/vod/search/page/fypage/wd/'+spl[2]+'.html';}
-else if(/qkan8|cqzyw|klysw|yanetflix|flvweb|dxys|syg520|4ytv|tv.ci|vdxj|521x5|o8tv|haimianys|90zyk/.test(url)){url=url+'/index.php/vod/search/page/fypage/wd/'+spl[2]+'.html';}
+else if(/qkan8|cqzyw|klysw|yanetflix|flvweb|dxys|syg520|4ytv|tv.ci|vdxj|lengyue|o8tv|haimianys|90zyk/.test(url)){url=url+'/index.php/vod/search/page/fypage/wd/'+spl[2]+'.html';}
 //else if(/o8tv/.test(url)){url=url+'/index.php/vodsearch/'+spl[2]+'----------fypage---/';}
 else if(/saohuotv|nicemov/.test(url)){url=url+'/search.php?page=fypage&searchword='+spl[2]+'&searchtype=';}
 else if(/auete/.test(url)){url=url+'/search.php?searchword='+spl[2];}
@@ -1171,7 +1171,7 @@ var link='hiker://empty#'+tabt+'#'+list[j].split('$')[1];}
 else if(/cqzyw/.test(omdomin)){
 var title=list[j].split('copy_text\">')[1].split('<')[0];
 var link=list[j].split('$')[1].split('<')[0].replace('amp;','');}
-else if(/521x5/.test(omdomin)){
+else if(/lengyue/.test(omdomin)){
 var title=parseDomForHtml(list[j], "a&&Text");
 var link=omdomin+parseDomForHtml(list[j],"a&&href").replace('/play/','/player/');}
 else{
@@ -1835,7 +1835,7 @@ return 'x5WebView://'+jiex};
  }//结束影视饭
 }
 //冷月影视
-else if(/521x5/.test(myurl)){
+else if(/lengyue/.test(myurl)){
 var phtml =fetch(srcurl,{headers:{"User-Agent":MOBILE_UA,"Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-User":"?1","Sec-Fetch-Dest":"document"}});
 var scrpt = parseDomForHtml(phtml,"body&&script&&Html").replace(/player_.*?={/,'player_data={');
 eval(scrpt);var fro=player_data.from;var urll=decodeURIComponent(base64Decode(player_data.url));
