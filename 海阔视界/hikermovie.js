@@ -6,7 +6,7 @@ function hikhmrule() {
 var json = JSON.parse(getResCode());
 var res = {};
 var d = [];
-var ssmd=JSON.parse(fetch('hiker://files/rules/xyq/hikerset.json',{})).ssmode;
+var ssmd=JSON.parse(fetch('hiker://files/rules/xyq/hikerset2.json',{})).ssmode;
 d.push({col_type: 'line'});
 var len=[];
 for (var i = 0; i < json.data.length; i++) {
@@ -53,11 +53,11 @@ d.unshift({
 d.unshift({
     title : '  🌩  ',
     url:$('hiker://empty').lazyRule(()=>{
-	var rulejs = fetch('https://code.aliyun.com/lzk23559/CloudRule/raw/master/hikermovie.js',{});
-	writeFile("hiker://files/rules/xyq/hikermovie.js",rulejs);
-	var rulejson = fetch('https://code.aliyun.com/lzk23559/CloudRule/raw/master/hikermovie.json',{});
-	writeFile("hiker://files/rules/xyq/hikermovie.json",rulejson);
-	writeFile("hiker://files/rules/xyq/hikerupdate.txt",new Date()+'')
+	var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie.js',{});
+	writeFile("hiker://files/rules/xyq/hikermovie2.js",rulejs);
+	var rulejson = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie.json',{});
+	writeFile("hiker://files/rules/xyq/hikermovie2.json",rulejson);
+	writeFile("hiker://files/rules/xyq/hikerupdate2.txt",new Date()+'')
 	refreshPage(false);return 'toast://应该是获取最新了吧。'
     }),
     col_type:'flex_button'
@@ -65,15 +65,15 @@ d.unshift({
 d.unshift({
     title : '🗄'+'('+(ssmd==1?'聚':'列')+')',
     url : $('hiker://empty').lazyRule(()=>{
-    var md=JSON.parse(fetch('hiker://files/rules/xyq/hikerset.json',{})).ssmode;
+    var md=JSON.parse(fetch('hiker://files/rules/xyq/hikerset2.json',{})).ssmode;
     if(md==1){
-    var fileUrl=fetch("hiker://files/rules/xyq/hikerset.json",{}).replace('\"ssmode\":\"1\"','\"ssmode\":\"0\"');
-    writeFile("hiker://files/rules/xyq/hikerset.json",fileUrl);
+    var fileUrl=fetch("hiker://files/rules/xyq/hikerset2.json",{}).replace('\"ssmode\":\"1\"','\"ssmode\":\"0\"');
+    writeFile("hiker://files/rules/xyq/hikerset2.json",fileUrl);
     refreshPage(false);return 'toast://切换为搜索引擎列表单选模式成功！';
     }
     else{
-    var fileUrl=fetch("hiker://files/rules/xyq/hikerset.json",{}).replace('\"ssmode\":\"0\"','\"ssmode\":\"1\"');
-    writeFile("hiker://files/rules/xyq/hikerset.json",fileUrl);
+    var fileUrl=fetch("hiker://files/rules/xyq/hikerset2.json",{}).replace('\"ssmode\":\"0\"','\"ssmode\":\"1\"');
+    writeFile("hiker://files/rules/xyq/hikerset2.json",fileUrl);
     refreshPage(false);return 'toast://切换为聚合搜索模式成功！'
     }
     }),
@@ -179,7 +179,7 @@ else if(/paofan/.test(spl)){var url=spl+'/video/filter?JsonBody={"packageName":"
 //显示分类
 d.push({
    title:clst[i],
-   url:url+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie.js'));clsrule();`,
+   url:url+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie2.js'));clsrule();`,
    //col_type:clst[i].length>=4?'text_3':'text_4'
    col_type:'flex_button'
 })
@@ -373,7 +373,7 @@ var url=parseDomForHtml(list[j], 'a&&href')}
 if(!img){
 d.push({
    title:title,
-   url:(url.substring(0,4)=='http'?url:spl+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie.js'));omerj();`,
+   url:(url.substring(0,4)=='http'?url:spl+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie2.js'));omerj();`,
    desc:desc,
    col_type: 'text_center_1'
   });
@@ -382,7 +382,7 @@ d.push({
 else{
 d.push({
    title:title,
-   url:(url.substring(0,4)=='http'?url:spl+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie.js'));omerj();`,
+   url:(url.substring(0,4)=='http'?url:spl+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie2.js'));omerj();`,
    pic_url:/nfmovies|imgdb/.test(img)?img+'@Referer=':img+'@Referer='+img,
    desc:desc,
    col_type: 'movie_3_marquee'
@@ -564,7 +564,7 @@ var url=parseDom(list[i], 'a&&href');}
 if(!img){
 d.push({
    title:title,
-   url:(url.substring(0,4)=='http'?url:spl+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie.js'));omerj();`,
+   url:(url.substring(0,4)=='http'?url:spl+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie2.js'));omerj();`,
    desc:desc,
    col_type: 'text_center_1'
 });}
@@ -574,7 +574,7 @@ d.push({
    title:title,
    pic_url:/nfmovies|imgdb/.test(img)?img+'@Referer=':img+'@Referer='+img,
    desc:desc,
-   url:(url.substring(0,4)=='http'?url:spl+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie.js'));omerj();`,
+   url:(url.substring(0,4)=='http'?url:spl+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie2.js'));omerj();`,
    col_type:'movie_3_marquee'
 });}
 
@@ -627,7 +627,7 @@ var le = num*5;
 var json=JSON.parse(fetch(spl[1],{}));
 //正文开始
 var ssph=[];
-var ssmd=JSON.parse(fetch('hiker://files/rules/xyq/hikerset.json',{})).ssmode;
+var ssmd=JSON.parse(fetch('hiker://files/rules/xyq/hikerset2.json',{})).ssmode;
 for (var m = 0; m < json.data.length; m++) {
 for (var i = 0; i < json.data[m].list.length; i++) {
 var url=json.data[m].list[i].url;
@@ -693,7 +693,7 @@ Tit.push({tit:arrt});
 //---代码分界线---- 
 if(Data!=''){
 var bhtml=batchFetch(Data);
-//writeFile("hiker://files/rules/xyq/hikerError.json",JSON.stringify(bhtml));
+//writeFile("hiker://files/rules/xyq/hikerError2.json",JSON.stringify(bhtml));
 //setError(bhtml);
 
 for(var k=0;k<bhtml.length;k++){
@@ -727,7 +727,7 @@ var spl = Data[k].url.split("?")[0];
 }else{
 var spl = Data[k].url.match(/([\S]*?:\/\/[\S]*?)\//)[1];}
 //setError(spl);
-eval(fetch('hiker://files/rules/xyq/hikermovie.js'));
+eval(fetch('hiker://files/rules/xyq/hikermovie2.js'));
 ssjiex();
 }
 }//for k
@@ -881,7 +881,7 @@ if(!img){
 if(ssmd==0){
 d.push({
    title:'““'+title+'””',
-   url:(url.substring(0,4)=='http'?url:spl+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie.js'));omerj();`,
+   url:(url.substring(0,4)=='http'?url:spl+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie2.js'));omerj();`,
    desc:cont,
    col_type: 'text_1'
      });
@@ -889,7 +889,7 @@ d.push({
 else{
 d.push({
    title:title,
-   url:$((url.substring(0,4)=='http'?url:spl+url)).rule(()=>{eval(fetch('hiker://files/rules/xyq/hikermovie.js'));omerj();}),
+   url:$((url.substring(0,4)=='http'?url:spl+url)).rule(()=>{eval(fetch('hiker://files/rules/xyq/hikermovie2.js'));omerj();}),
    desc:cont+' '+Tit[k].tit,
    col_type: 'text_center_1'
       });
@@ -901,7 +901,7 @@ else{
         d.push({
             title: '““'+title+'””'+'\n'+desc,
             pic_url:/nfmovies|imgdb/.test(img)?img+'@Referer=':img+'@Referer='+img,
-            url:(url.substring(0,4)=='http'?url:spl+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie.js'));omerj();`,
+            url:(url.substring(0,4)=='http'?url:spl+url)+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie2.js'));omerj();`,
             desc: cont,
             col_type: 'movie_1_vertical_pic'
         });
@@ -910,7 +910,7 @@ else{
      d.push({
      title: title+' '+desc,
      pic_url:/nfmovies|imgdb/.test(img)?img+'@Referer=':img+'@Referer='+img,
-     url:$((url.substring(0,4)=='http'?url:spl+url)).rule(()=>{eval(fetch('hiker://files/rules/xyq/hikermovie.js'));omerj();}),
+     url:$((url.substring(0,4)=='http'?url:spl+url)).rule(()=>{eval(fetch('hiker://files/rules/xyq/hikermovie2.js'));omerj();}),
      desc: ' '+Tit[k].tit,
      content:cont,
      col_type: 'movie_1_vertical_pic'
@@ -932,8 +932,8 @@ var html=getResCode().replace(/\\/g,"");
 }else{
 var html=getResCode();}
 
-var json=JSON.parse(fetch('hiker://files/rules/xyq/hikermovie.json',{}));
-var ssmd=JSON.parse(fetch('hiker://files/rules/xyq/hikerset.json',{})).ssmode;
+var json=JSON.parse(fetch('hiker://files/rules/xyq/hikermovie2.json',{}));
+var ssmd=JSON.parse(fetch('hiker://files/rules/xyq/hikerset2.json',{})).ssmode;
 //过宝塔检测
 if (html.indexOf('检测中') != -1) {
 html=request(MY_URL + '?btwaf'+ html.match(/btwaf(.*?)\"/)[1], {});}
@@ -944,7 +944,7 @@ var spl=MY_URL.split("?")[0];
 var spl = MY_URL.match(/([\S]*?:\/\/[\S]*?)\//)[1];}
 
 //取搜索结果列表
-eval(fetch('hiker://files/rules/xyq/hikermovie.js'));
+eval(fetch('hiker://files/rules/xyq/hikermovie2.js'));
 ssjiex();
 res.data = d;setHomeResult(res);
 }
@@ -1229,7 +1229,7 @@ var link=parseDom(list[j], "a&&href");}
 if(list.length<=4){var clt='text_2';}else{var clt='flex_button'}
 			d.push({
 				title:title,
-                url:'hiker://empty$$$'+omdomin+'$$$'+link+`@lazyRule=.js:/*refreshX5WebView*/eval(fetch('hiker://files/rules/xyq/hikermovie.js'));omlazy();`,
+                url:'hiker://empty$$$'+omdomin+'$$$'+link+`@lazyRule=.js:/*refreshX5WebView*/eval(fetch('hiker://files/rules/xyq/hikermovie2.js'));omlazy();`,
                 col_type: clt
 			});
    }//for j
@@ -1919,9 +1919,9 @@ else{return srcurl}
 
 //预处理代码
 function hikerpre(){
-	if(!fetch('hiker://files/rules/xyq/hikerset.json',{})){
+	if(!fetch('hiker://files/rules/xyq/hikerset2.json',{})){
 let set=`{"ssmode":"0"}`;
-writeFile("hiker://files/rules/xyq/hikerset.json",set);  
+writeFile("hiker://files/rules/xyq/hikerset2.json",set);  
  }
 	try{
 if(!getVar('hikersbbmfwaf')){
