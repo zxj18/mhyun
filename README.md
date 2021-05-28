@@ -52,7 +52,7 @@ https://github.com/tachiyomiorg/tachiyomi
 https://github.com/hongchacha/cartoon
 
 漫画｜图源
-https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E6%BC%AB%E7%94%BB%EF%BD%9C%E5%9B%BE%E6%BA%90%EF%BD%9C2021%E5%B9%B45%E6%9C%88%E6%95%B4%E7%90%86.txt
+https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E6%BC%AB%E7%94%BB%EF%BD%9C%E5%9B%BE%E6%BA%90%EF%BD%9C2021%E5%B9%B45%E6%9C%88%E5%BA%95%E5%A4%A7%E6%95%B4%E5%90%88%E6%BA%90.txt
 https://github.com/wanglabk/hub/tree/c2099
 http://yck.mumuceo.com/yiciyuan/tuyuan/index.html
 ```
