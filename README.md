@@ -45,14 +45,14 @@ http://yuedu.miaogongzi.net/gx.html
 #### [漫画]
 ```
 异次元｜APP
-https://zntx.lanzoux.com/iFcChjsjcjc
+https://zxltwp.lanzoux.com/b092t45uf
 Tachiyomi｜APP
 https://github.com/tachiyomiorg/tachiyomi
 全是漫画｜APP
 https://github.com/hongchacha/cartoon
 
 漫画｜图源
-https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E6%BC%AB%E7%94%BB%EF%BD%9C%E5%9B%BE%E6%BA%90%EF%BD%9C2021%E5%B9%B45%E6%9C%88%E5%BA%95%E5%A4%A7%E6%95%B4%E5%90%88%E6%BA%90.txt
+https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E6%BC%AB%E7%94%BB%EF%BD%9C%E5%9B%BE%E6%BA%90%EF%BD%9C2021%E5%B9%B45%E6%9C%88%E5%BA%95%E5%A4%A7%E6%95%B4%E5%90%88%E6%BA%90%20%E6%9C%89%E5%9B%BE%E6%A0%87.txt
 https://github.com/wanglabk/hub/tree/c2099
 http://yck.mumuceo.com/yiciyuan/tuyuan/index.html
 ```
