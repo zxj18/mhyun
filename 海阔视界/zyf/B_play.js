@@ -64,9 +64,9 @@ var jx_taotao=()=>{
     var _img = parseDomForHtml(html, 'body&&.myui-content__thumb&&.lazyload&&data-original'); //图片
 
     var _title = parseDomForHtml(details[2], 'Text')+ '\n' + parseDomForHtml(details[3], 'Text') + '\n'; //电影信息 导演 + 主演
-    var _desc = parseDomForHtml(html,'#desc&&p,-1&&Text'); //简介
-    //var dataLine =parseDomForArray(details, '');
-    //dataLine.pop();
+    var _desc = parseDomForHtml(details[4], 'Text'); //简介
+    var dataLine = details;
+    dataLine.pop();
     setMovieDetail({
         _title: _title,
         _desc: _desc,
@@ -76,8 +76,8 @@ var jx_taotao=()=>{
 
 
     //线路
-    var conts = parseDomForArray(html,'body&&.myui-panel:contains(排序)');
-    var linelist = parseDomForArray(html, 'body&&.myui-panel:contains(排序)');
+    var conts = parseDomForArray(html,'body&&.myui-content__list');
+    var linelist = parseDomForArray(html, 'body&&.bottom-line:has(.sort-button)');
     var tabs = [];
     for (var i in linelist) {
     tabs.push(parseDomForHtml(linelist[i], 'h3&&Text').replace(/.*独家专用线路/,'') );
@@ -304,86 +304,12 @@ var jx_360 = ()=>{
 //JX360
 
 //JXDGDY
-var DGDYIndex = ()=>{
-    var d = [];
-    var router = [20, 21, 22, 23, 49];
-    var type = [ 
-                    [{type: '全部', id: 20}, {type: '动作片', id: 24}, {type: '喜剧片', id: 25}, {type: '爱情片', id: 26}, {type: '科幻片', id: 27}, {type: '恐怖片', id: 28}, {type: '剧情片', id: 29}, {type: '战争片', id: 30}, {type: '纪录片', id: 31}],
-                    [{type: '全部', id: 21}, {type: '国产剧', id: 33}, {type: '香港剧', id: 32}, {type: '韩国剧', id: 34}, {type: '欧美剧', id: 35}, {type: '台湾剧', id: 36}, {type: '日本剧', id: 37}, {type: '海外剧', id: 38}],
-                    [{type: '全部', id: 22}, {type: '内地综艺', id: 39}, {type: '港台综艺', id: 40}, {type: '日韩综艺', id: 41}, {type: '欧美综艺', id: 42}],    
-                    [{type: '全部', id: 23}, {type: '国产动漫', id: 43}, {type: '日韩动漫', id: 44}, {type: '欧美动漫', id: 45}, {type: '港台动漫', id: 46}, {type: '海外动漫', id: 47}]
-                ];
-    var baseUrl = 'https://www.dgyytv.com/vodshow-24/page/fypage.html';
-    var html=getResCode();
-    var conts = parseDomForArray(html, 'body&&.stui-pannel:contains(更多)'); 
-
-    for (var i =0; i<conts.length; i++) {
-        var list = parseDomForArray(conts[i], '.stui-vodlist&&li');
-        d.push({
-            title: '‘‘’’' + parseDomForHtml(conts[i], 'h3&&Text').replace("更多", "") + "<small><small><font color='#f9906f'>更多></font></small></small>",
-            url: $('https://www.dgyytv.com/vodshow-'+router[i]+'/page/fypage.html').rule((data) => {
-                var d = [];
-                var html;
-                var type = data[1];
-                var vari=data[0];
-                if(getVar('my_link_'+vari, 'kong')!='kong'){
-                    html = fetch(getVar('my_link_'+vari),{headers:{"User-Agent":"Mozilla/5.0","Referer":"https://www.dgyytv.com"}});
-                }else{
-                    html =getResCode();
-                }
-                
-                for(var j in type[vari]){
-                    var link = 'https://www.dgyytv.com/vodshow-'+type[vari][j].id+'/page/fypage.html';
-                    d.push({
-                      title: type[vari][j].type,
-                      url:'hiker://empty#' +link+'#'+vari+`@lazyRule=.js:var url=input.split('#')[1];var vari=input.split('#')[2];putVar('my_link_'+vari, url);refreshPage(false);'toast://切换成功'`,
-                      col_type: "text_4"
-                    })
-                } 
-                
-                d.push({
-                  col_type: "line"
-                });
-                var list = parseDomForArray(html, 'body&&.stui-vodlist&&li');
-                for (var j in list) {
-                    d.push({
-                        title: parseDomForHtml(list[j], '.stui-vodlist__thumb&&title'),
-                        desc: parseDomForHtml(list[j], '.pic-text&&Text'),
-                        pic_url: parseDom(list[j], '.stui-vodlist__thumb&&data-original'),
-                        url:$(parseDom(list[j],'.stui-vodlist__thumb&&href')).rule(() => { eval(fetch('hiker://files/rules/zyf/B_play.js').split('//JXDGDY')[1].split('//JXDGDY')[0]); jx_dgdy() }),
-                        col_type: "movie_3"
-                    })
-                }
-                setResult(d)
-            }, [i, type]),
-            col_type: "text_center_1"
-        });
-        for (var j in list) {
-            d.push({
-                title: parseDomForHtml(list[j], '.stui-vodlist__thumb&&title'),
-                desc: parseDomForHtml(list[j], '.pic-text&&Text'),
-                pic_url: parseDom(list[j], '.stui-vodlist__thumb&&data-original'),
-                url: parseDom(list[j],'.stui-vodlist__thumb&&href'),
-                col_type: "movie_3"
-            });
-        }
-    }
-
-    d.push({ col_type: 'line_blank' });
-    d.push({ title: "<h4 style='text-align:center;'><font color='#b36d61'>到底了呢！</font></h4>", col_type: "rich_text" });
-    setResult(d)
-}
-
 var jx_dgdy = ()=>{
     var res ,d ,html, jsUrl, setUrl; 
 
     eval(fetch('hiker://files/rules/zyf/black.js'));
-    init({
-    isDn:true
-    });
+    init({isDn:true});
     eval(fetch(jsUrl));
-
-    var lazy =  `@lazyRule=.stui-player__video&&script&&Html.js:eval(input.replace(/player_.*?={/,'player_aaaa={'));player_aaaa.url`;
 
     //影片详情
     var details = parseDomForHtml(html, 'body&&.stui-content__detail&&Html'); //影片信息
@@ -391,7 +317,7 @@ var jx_dgdy = ()=>{
 
     var _title = parseDomForHtml(details, 'p,1&&Text') + '\n' + parseDomForHtml(details, 'p,2&&Text') + '\n'; //电影信息 导演 + 主演
     var _desc = parseDomForHtml(details, 'p,-1&&Text'); //简介
-    var dataLine = details.match(/<p[\s\S]*?<\/p>/g)
+    var dataLine = details.match(/<p[\s\S]*?<\/p>/g);
     dataLine.pop();
     setMovieDetail({
         _title: _title,
@@ -402,10 +328,66 @@ var jx_dgdy = ()=>{
 
     //线路
     var conts = parseDomForArray(html,'body&&.playlist');
-    var linelist = parseDomForArray(html, 'body&&.playlist&&h3');
+    var linelist = parseDomForArray(html, 'body&&.playlist');
     var tabs = [];
     for (var i in linelist) {
-    tabs.push(parseDomForHtml(linelist[i], 'Text').replace(/.*独家专用线路/,'') );
+        tabs.push(parseDomForHtml(linelist[i], 'h3&&Text').replace(/.*独家专用线路/,''));
+    }
+    setTabs([tabs, 'my_line', setUrl]);
+
+    //选集
+    var lists =[];
+    for (var i in conts) {
+        lists.push(conts[i].match(/<li[\s\S]*?<\/li>/g));
+    }
+
+    setLists({
+        lists: lists,
+        index: getVar('my_line', '0'),
+        _dnPar: '.stui-player__video&&script&&Html'
+    });
+
+    d.push({title: '<br>', col_type: 'rich_text'});
+    //}catch(e){ }
+
+    res.data=d;
+    setHomeResult(res);
+}
+//JXDGDY
+//JXMJC
+var jx_mjc = (lazyRule)=>{
+    var res ,d ,html, jsUrl, setUrl; 
+
+    eval(fetch('hiker://files/rules/zyf/black.js'));
+    init({
+    isX5: true,
+    isDn: true
+    });
+    eval(fetch(jsUrl));
+
+    var lazy =lazyRule!=undefined? lazyRule: `@lazyRule=.player_video&&script&&Html.js:eval(input);var url=player_data.url;var pn=player_data.from;if(pn=='alizy'){var jurl= fetch('https://foubin.com/jiexi.php?url='+url,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://foubin.com"}}).match(/"url":"(.*?)"/)[1];refreshX5WebView('https://foubin.com/jiexi.php?url='+url);'toast://播放中'}else if(pn == 'xigua'){refreshX5WebView('https://vip.parwix.com:4433/player/?url='+url);'toast://播放中'}else{eval(fetch(getVar('jsUrl')));aytmParse(url);}`;
+
+    //影片详情
+    var details = parseDomForHtml(html, 'body&&.player&&Html'); //影片信息
+    var _img = parseDomForHtml(html, 'body&&.play_infobox&&.play_vlist_thumb,0&&data-original'); //图片
+
+    var _title = parseDomForHtml(details, 'p,2&&Text') + '\n' + parseDomForHtml(details, 'p,3&&Text') + '\n'; //电影信息 导演 + 主演
+    var _desc = parseDomForHtml(details, 'p,-1&&Text'); //简介
+    var dataLine = details.match(/<p[\s\S]*?<\/p>/g);
+    dataLine.pop();
+    setMovieDetail({
+        _title: _title,
+        _desc: _desc,
+        _img: _img + '@Referer=',
+        dataLine: dataLine
+    });
+
+    //线路
+    var conts = parseDomForArray(html,'body&&.playlist&&.playlist_full');
+    var linelist = parseDomForArray(html, '.play_source_tab&&a');
+    var tabs = [];
+    for (var i in linelist) {
+    tabs.push(parseDomForHtml(linelist[i], 'a&&Text').replace(/.*独家专用线路/,'') );
     }
     setTabs([tabs, 'my_line', setUrl]);
 
@@ -418,7 +400,7 @@ var jx_dgdy = ()=>{
     setLists({
     lists: lists,
     index: getVar('my_line', '0'),
-    _dnPar: '.stui-player__video&&script&&Html'
+    lazy:lazy
     });
 
     d.push({title: '<br>', col_type: 'rich_text'});
@@ -427,4 +409,114 @@ var jx_dgdy = ()=>{
     res.data=d;
     setHomeResult(res);
 }
-//JXDGDY
+//JXMJC
+//JXJPYS
+var jx_jpys = (lazyRule)=>{
+    var res ,d ,html, jsUrl, setUrl; 
+
+    eval(fetch('hiker://files/rules/zyf/black.js'));
+    init({
+      isDn: true
+    });
+    eval(fetch(jsUrl));
+
+    var lazy =lazyRule!=undefined? lazyRule: `@lazyRule=.js:var get =fetch(input,{headers:{"User-Agent":PC_UA,"Referer":"https://www.jpysvip.net"}});var js = parseDomForHtml(get,".myui-player__box&&script&&Html");eval(js);var url=player_data.url;var fro=player_data.from;if(url.indexOf('html')>0){var jsUrl=getVar('jsUrl');eval(fetch(jsUrl));aytmParse(url);}else if(fro=='xinm3u8'){var play=fetch('https://jxn.dxsdkw.cn/x2.php?id='+url,{}).match(/url: \'(.*?)\'/)[1];play;}else{url}`;
+
+    //影片详情
+    var details = parseDomForHtml(html, 'body&&.myui-content__detail&&Html'); //影片信息
+    var _img = parseDomForHtml(html, 'body&&.myui-vodlist__thumb,0&&img&&data-original'); //图片
+
+    var _title = parseDomForHtml(details, 'p,-2&&Text') + '\n' + parseDomForHtml(details, 'p,-3&&Text') + '\n'; //电影信息 导演 + 主演
+    var _desc = parseDomForHtml(details, 'p,-1&&Text'); //简介
+    var dataLine = details.match(/<p[\s\S]*?<\/p>/g);
+    dataLine.pop();
+    setMovieDetail({
+        _title: _title,
+        _desc: _desc,
+        _img: _img + '@Referer=',
+        dataLine: dataLine
+    });
+
+    //线路
+    var conts = parseDomForArray(html,'body&&.myui-content__list');
+    var linelist = parseDomForArray(html, '.nav&&li');
+    var tabs = [];
+    for (var i in linelist) {
+        tabs.push(parseDomForHtml(linelist[i], 'a&&Text').replace(/.*独家专用线路/,'') );
+    }
+    setTabs([tabs, 'jpys_line', setUrl]);
+
+    //选集
+    var lists =[];
+    for (var i in conts) {
+        lists.push(conts[i].match(/<li[\s\S]*?<\/li>/g));
+    }
+
+    setLists({
+        lists: lists,
+        index: getVar('jpys_line', '0'),
+        lazy:lazy
+    });
+
+    d.push({title: '<br>', col_type: 'rich_text'});
+    //}catch(e){ }
+
+    res.data=d;
+    setHomeResult(res);
+}
+//JXJPYS
+//JXLENGYUE
+var jx_lengyue = (lazyRule)=>{
+    var res ,d ,html, jsUrl, setUrl; 
+
+    eval(fetch('hiker://files/rules/zyf/black.js'));
+    init({
+    isDn: true,
+    });
+    eval(fetch(jsUrl));
+
+    //影片详情
+    var details = parseDomForHtml(html, 'body&&.myui-content__detail&&Html'); //影片信息
+    var _img = parseDomForHtml(html, 'body&&.myui-vodlist__thumb&&img&&data-original'); //图片
+
+    var _title = parseDomForHtml(details, 'p,-2&&Text') + '\n' + parseDomForHtml(details, 'p,-3&&Text') + '\n'; //电影信息 导演 + 主演
+    var _desc = parseDomForHtml(details, 'p,-1&&Text'); //简介
+    var dataLine = details.match(/<p[\s\S]*?<\/p>/g)
+    dataLine.pop();
+    setMovieDetail({
+        _title: _title,
+        _desc: _desc,
+        _img: _img,
+        dataLine: dataLine
+    });
+
+    //线路
+    var conts = parseDomForArray(html,'body&&.tab-content:has(.myui-content__list)&&ul');
+    var linelist = parseDomForArray(html, 'body&&.nav&&li');
+    var tabs = [];
+    for (var i in linelist) {
+    tabs.push(parseDomForHtml(linelist[i], 'a&&Text').replace(/.*独家专用线路/,'') );
+    }
+    setTabs([tabs, MY_URL, setUrl]);
+
+    var lazy =lazyRule!=undefined? lazyRule: `@lazyRule=iframe&&src.js:if(/m3u8/.test(input)){input;}else{var jsUrl=getVar('jsUrl');eval(fetch(jsUrl));var url= input.split('url=')[1]; aytmParse(url)}`;
+
+    //选集
+    var lists =[];
+    for (var i in conts) {
+    lists.push(conts[i].match(/<li[\s\S]*?<\/li>/g));
+    }
+
+    setLists({
+    lists: lists,
+    index: getVar(MY_URL, '0'),
+    lazy: lazy
+    });
+
+    d.push({title: '<br>', col_type: 'rich_text'});
+    //}catch(e){ }
+
+    res.data=d;
+    setHomeResult(res);
+}
+//JXLENGYUE
