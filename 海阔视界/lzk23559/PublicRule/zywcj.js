@@ -450,7 +450,8 @@ var title=(list[j].split('$')[0].indexOf('http')!=-1?[j+1]:list[j].split('$')[0]
 items.push({
 title:list[j].split('$')[0].indexOf('http')!=-1?[j+1]:list[j].split('$')[0],
 url:url.replace(/\n*/g,'')+`@lazyRule=.js:/*refreshX5WebView*/eval(fetch('hiker://files/rules/xyq/zywcj.js'));lazyRu();`,
-col_type: title.length>=6?'text_2':'text_3'});
+//col_type: title.length>=6?'text_2':'text_3'
+col_type: list.length>=3?'flex_button':'text_2'});
    }
   }
  }
@@ -538,6 +539,12 @@ var sh= CryptoJS.MD5(base64Encode(id+times)).toString();
 var purl='http://play.zk132.cn/new/play1/'+id+'%7C'+times+'%7C'+sh+'%7C'+'1'+'%7C'+'index.m3u8';
 */
 return src;
+}else if(/wfss100/.test(src)){
+var phtml =request(src,{});
+var ifsrc=src.split('/?url=')[0]+parseDomForHtml(phtml,"body&&iframe&&src");
+var ifsrct=ifsrc.split('?url=')[0]+parseDomForHtml(request(ifsrc,{}),"body&&iframe&&src");
+var urll=request(ifsrct,{}).match(/vodurl = \'(.*?)\'/)[1];
+return urll+';{Referer@https://j.languang.wfss100.com/}';
 }else if(src.indexOf("baipiaozy")!=-1||src.indexOf("bowang")!=-1){
 refreshX5WebView(src);
 return "toast://请等待加载选集！";
