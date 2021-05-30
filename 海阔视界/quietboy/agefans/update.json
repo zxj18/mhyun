@@ -1,17 +1,15 @@
 {
     "rule_version": "V4.0",
-    "js_version": "V4.6",
+    "js_version": "V4.7",
     "remote": "https://gitee.com/f11st/hiker/raw/master/agefans/main.js",
     "command": "https://gitee.com/f11st/hiker/raw/master/agefans/command.txt",
     "note": [
         "♥去点个赞叭，<a href=\"https://haikuoshijie.cn/topic/3316\">反馈地址</a>",
-        "增加 腾讯接口",
+        "修复 更换域名",
         "增加 isVideo标识",
         "增加 PPTV接口",
         "增加 目录重置选项",
-        "修复 翻页时目录显示问题",
-        "修复 分类太长显示溢出",
-        "新增 分类目录展示"
+        "修复 翻页时目录显示问题"
     ],
     "setting": [
         {

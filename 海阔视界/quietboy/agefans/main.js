@@ -1,5 +1,5 @@
 const _local_config_path = 'hiker://files/quietboy/agefans/config.json';
-const _domin = 'https://www.agefans.net/';
+const _domin = 'https://www.agefans.cc/';
 function getSettingObjByID(id) {
     let settings = JSON.parse(fetch(_local_config_path, {})).setting;
     let obj = {};
@@ -395,6 +395,9 @@ var vip = {
         return newUrl;
     }
 }
+function a() {
+    setError("a");
+}
 function erji() {
     let res = {};
     let d = [];
@@ -454,7 +457,14 @@ function erji() {
                         d.push(
                             {
                                 title: showNum ? ((i + 1) + ' - ' + parseDomForHtml(epiList[j], 'a&&Text')) : parseDomForHtml(epiList[j], 'a&&Text'),
-                                url: parseDom(epiList[j], 'a&&href') + lazy
+                                url: $(parseDom(epiList[j], 'a&&href')).lazyRule(() => {
+                                    eval(fetch('hiker://files/quietboy/agefans/main.js', {}));
+                                    try {
+                                        return lazyRuleGetPlayUrl();
+                                    } catch (e) {
+                                        return "toast://请重试";
+                                    }
+                                })
                             }
                         );
                     }
@@ -472,7 +482,14 @@ function erji() {
                     d.push(
                         {
                             title: showNum ? ((i + 1) + ' - ' + parseDomForHtml(epiList[j], 'a&&Text')) : parseDomForHtml(epiList[j], 'a&&Text'),
-                            url: parseDom(epiList[j], 'a&&href') + lazy
+                            url: $(parseDom(epiList[j], 'a&&href')).lazyRule(() => {
+                                eval(fetch('hiker://files/quietboy/agefans/main.js', {}));
+                                try {
+                                    return lazyRuleGetPlayUrl();
+                                } catch (e) {
+                                    return "toast://请重试";
+                                }
+                            })
                         }
                     );
                 }
@@ -504,7 +521,7 @@ function Rule_1() {
     res.data = d;
     setHomeResult(res);
 }
-function lazyRule_1() {
+function lazyRuleGetPlayUrl() {
     let online = (getSettingObjByID(2).value == 0) ? false : true;
     function getCookie() {
         let t1;
@@ -582,7 +599,7 @@ function lazyRule_1() {
     else {
         setError(playResCode);
     }
-    return play+'#isVideo=true#';
+    return play + '#isVideo=true#';
 }
 function refreshWeek() {
     let resCode = fetch(_domin, {});
