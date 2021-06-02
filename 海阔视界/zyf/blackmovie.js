@@ -460,7 +460,7 @@ var hikerHomePage = (lazyData)=>{
                 refreshPage(false);
                 return "hiker://empty"
                 }, movielists[i], data),
-            col_type:'flex_button'
+            col_type:'scroll_button'
         });
     }
     d.push({
