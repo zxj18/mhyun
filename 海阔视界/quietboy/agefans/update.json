@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
     "rule_version": "V4.0",
+=======
+    "rule_version": "V4.1",
+>>>>>>> 91181234780b555a203cae295aa9554b14dfdc12
     "js_version": "V4.7",
     "remote": "https://gitee.com/f11st/hiker/raw/master/agefans/main.js",
     "command": "https://gitee.com/f11st/hiker/raw/master/agefans/command.txt",
