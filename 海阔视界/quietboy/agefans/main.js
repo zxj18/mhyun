@@ -395,9 +395,6 @@ var vip = {
         return newUrl;
     }
 }
-function a() {
-    setError("a");
-}
 function erji() {
     let res = {};
     let d = [];
