@@ -1,6 +1,36 @@
 {
   "data": [
     {
+      "id": 1,
+      "name": "CK",
+      "ad": "no",
+      "url": "https://www.ckplayer.vip/jiexi/?url="
+    },
+    {
+      "id": 1,
+      "name": "大侠",
+      "ad": "no",
+      "url": "https://api.10dy.net/?url="
+    },
+    {
+      "id": 1,
+      "name": "ELW",
+      "ad": "no",
+      "url": "https://jx.elwtc.com/vip/?url="
+    },
+    {
+      "id": 1,
+      "name": "ckmov",
+      "ad": "no",
+      "url": "https://www.ckmov.vip/api.php?url="
+    },
+    {
+      "id": 1,
+      "name": "180",
+      "ad": "no",
+      "url": "https://jx.000180.top/jx/?url="
+    },
+    {
       "id": 19,
       "name": "线路8",
       "ad": "no",
