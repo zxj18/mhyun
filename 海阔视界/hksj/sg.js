@@ -2,18 +2,20 @@ function EJ() {
 
     var d = [];
 
-    var config = fetch('hiker://files/cache/MyParseSet.json');
+        var config = fetch('hiker://files/cache/MyParseSet.json');
 
-    var jsUrl = 'https://code.aliyun.com/AI957/Hiker/raw/master/v/CloudParse-V2_Dn.js';
+        var jsUrl = 'https://code.aliyun.com/AI957/Hiker/raw/master/v/CloudParse-V2_Dn.js';
 
-    if (config && fetch(JSON.parse(config).cj)) {
+        if (config && fetch(JSON.parse(config).cj)) {
 
-        jsUrl = JSON.parse(config).cj;
-    }
-    eval(fetch(jsUrl));
-
-    var lazy = `@lazyRule=.js:var html = fetch(input).match(/window.open\\('(.*?)'/)[1];if(html.indexOf('sa.sogou')!=-1){parseDomForHtml(fetch(html),'video&&src')}else if(html.indexOf('xigua')!=-1){html}else{var input = html;` + lazy + `}`;
-
+            jsUrl = JSON.parse(config).cj;
+        }
+        eval(fetch(jsUrl));
+//    if (!getVar('fftq')) {
+   //     var lazy = `@lazyRule=.js:var html = fetch(input).match(/window.open\\('(.*?)'/)[1];if(html.indexOf('sa.sogou')!=-1){parseDomForHtml(fetch(html),'video&&src')}else if(html.indexOf('xigua')!=-1){html}else{eval(fetch('hiker://files/rules/js/Messy-parsing.js'));player(html)}`;
+ //   } else {
+        var lazy = `@lazyRule=.js:var html = fetch(input).match(/window.open\\('(.*?)'/)[1];if(html.indexOf('sa.sogou')!=-1){parseDomForHtml(fetch(html),'video&&src')}else if(html.indexOf('xigua')!=-1){html}else{var input = html;` + lazy + `}`;
+ //   }
     var html = JSON.parse(getResCode().split('window.__INITIAL_STATE__=')[1].split(';(function(){var s;')[0]).detail.itemData;
 
     d.push({

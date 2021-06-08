@@ -11,9 +11,11 @@ function EJ() {
         jsUrl = JSON.parse(config).cj;
     }
     eval(fetch(jsUrl));
-
-    var lazy = `@lazyRule=.js:var html = fetch(input).match(/window.open\\('(.*?)'/)[1];if(html.indexOf('sa.sogou')!=-1){parseDomForHtml(fetch(html),'video&&src')}else{var input = html;` + lazy + `}`;
-
+    if (!getVar('fftq') || getVar('fftq') == '断插') {
+        var lazy = `@lazyRule=.js:var html = fetch(input).match(/window.open\\('(.*?)'/)[1];if(html.indexOf('sa.sogou')!=-1){parseDomForHtml(fetch(html),'video&&src')}else if(html.indexOf('xigua')!=-1){html}else{var input = html;` + lazy + `}`;
+    } else if (getVar('fftq') == '努插') {
+        var lazy = `@lazyRule=.js:var html = fetch(input).match(/window.open\\('(.*?)'/)[1];if(html.indexOf('sa.sogou')!=-1){parseDomForHtml(fetch(html),'video&&src')}else if(html.indexOf('xigua')!=-1){html}else{eval(fetch('hiker://files/rules/js/Messy-parsing.js'));player(html)}`;
+    }
     var html = JSON.parse(getResCode().split('window.__INITIAL_STATE__=')[1].split(';(function(){var s;')[0]).detail.itemData;
 
 
@@ -141,6 +143,9 @@ function EJ() {
 
 function SYYJ() {
     var d = [];
+    if (!getVar('fftq')) {
+        putVar('fftq', '断插')
+    }
     d.push({
         desc: '60&&float',
         url: 'file:///storage/emulated/0/Android/data/com.example.hikerview/files/Documents/tc.html',
@@ -175,8 +180,8 @@ function SYYJ() {
             var list = lists[index];
 
             d.push({
-                title: '更新',
-                url: '',
+                title: getVar('fftq'),
+                url: `#noLoading#@lazyRule=.js:let conf = getVar('fftq');if(conf=='断插'){putVar('fftq','努插')}else{putVar('fftq','断插')};refreshPage(false);'toast://切换成功';'#noHistory#hiker://empty'`,
                 col_type: "flex_button"
             })
             for (var j in list) {
