@@ -1,6 +1,6 @@
 {
     "rule_version": "V4.1",
-    "js_version": "V4.7",
+    "js_version": "V4.8",
     "remote": "https://gitee.com/f11st/hiker/raw/master/agefans/main.js",
     "command": "https://gitee.com/f11st/hiker/raw/master/agefans/command.txt",
     "note": [

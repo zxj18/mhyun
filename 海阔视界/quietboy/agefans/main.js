@@ -663,7 +663,7 @@ function jiexi() {
                 if (i.wd == curWeek) {
                     d.push({
                         title: i.name + '    ' + i.namefornew,
-                        url: 'https://www.agefans.net/detail/' + i.id,
+                        url: _domin + 'detail/' + i.id,
                         col_type: 'text_1'
                     })
                 }
@@ -702,28 +702,55 @@ function jiexi() {
                 ['time', 'name', '点击量']
             ];
             let menuIdx = loadMenu();
-            let rows = '';
-            let rowUrl = 'https://www.agefans.net/catalog/版本-年份-首字母-类型-资源-排序-' + xjjpage + '-地区-季度-状态';
+            let rowUrl = _domin + 'catalog/版本-年份-首字母-类型-资源-排序-' + xjjpage + '-地区-季度-状态';
             for (let i = 0; i < menuKey.length; i++) {
                 rowUrl = rowUrl.replace(menuKey[i], menuValue[i][menuIdx[i]]);
                 if (xjjpage == 1) {
-                    let row = `<strong>xjjkey</strong>&nbsp&nbsp&nbsp&nbsp`.replace('xjjkey', menuKey[i]);
+                    d.push({
+                        col_type: 'scroll_button',
+                        title: '““””<strong><font color="black">xjjkey：</font></strong>'.replace('xjjkey', menuKey[i]),
+                        url: $('hiker://empty#noLoading#').lazyRule(() => {
+                            return 'hiker://empty';
+                        })
+                    });
                     for (let j = 0; j < menuValue[i].length; j++) {
                         if (menuIdx[i] == j) {
-                            row = row + `<small><font color="red">xjjshow</font></small>&nbsp&nbsp`.replace('xjjshow', menuShow[i][j]);
+                            d.push({
+                                col_type: 'scroll_button',
+                                title: '““””<small><font color="red">xjjshow</font></small>'.replace('xjjshow', menuShow[i][j]),
+                                url: $('hiker://empty#noLoading#').lazyRule(() => {
+                                    return 'hiker://empty';
+                                })
+                            });
                         }
                         else {
-                            row = row + `<code><a href="hiker://empty@lazyRule=.js:let menuInfo = fetch('hiker://files/quietboy/agefans/menu.txt', {}).split('|');menuInfo[` + i + `]=` + j + `;writeFile('hiker://files/quietboy/agefans/menu.txt', menuInfo.join('|'));refreshPage();'toast://轻点~'">xjjshow</a></code>&ensp`.replace('xjjshow', menuShow[i][j]);
+                            d.push({
+                                col_type: 'scroll_button',
+                                title: '““””<code>xjjshow</code>'.replace('xjjshow', menuShow[i][j]),
+                                url: $('hiker://empty#noLoading#').lazyRule((obj) => {
+                                    let menuInfo = fetch('hiker://files/quietboy/agefans/menu.txt', {}).split('|');
+                                    menuInfo[obj.i] = obj.j;
+                                    writeFile('hiker://files/quietboy/agefans/menu.txt', menuInfo.join('|'));
+                                    refreshPage();
+                                    return 'hiker://empty';
+                                }, { i: i, j: j })
+                            });
                         }
                     }
-                    rows = rows + row + '<br>';
+                    d.push({
+                        col_type: 'blank_block'
+                    })
                 }
             }
             if (xjjpage == 1) {
-                rows += `<code><a href="hiker://empty@lazyRule=.js:writeFile('hiker://files/quietboy/agefans/menu.txt', new Array(9).fill(0).join('|'));refreshPage();'toast://重置成功~'">重置选项</a></code>`;
                 d.push({
-                    col_type: 'rich_text',
-                    title: rows
+                    col_type: 'flex_button',
+                    title: '重置选项',
+                    url: $("hiker://empty").lazyRule(() => {
+                        writeFile('hiker://files/quietboy/agefans/menu.txt', new Array(9).fill(0).join('|'));
+                        refreshPage();
+                        return 'toast://重置成功~'
+                    })
                 });
                 d.push({
                     col_type: 'line_blank'
