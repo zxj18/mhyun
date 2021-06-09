@@ -1,12 +1,14 @@
 //新方圆小棉袄公众号特供版
-//规则编辑By香雅情。2021/05/04
+//规则编辑By香雅情。2021/06/07
 
 //主页解析
 function hikhmrule() {
 var json = JSON.parse(getResCode());
 var res = {};
 var d = [];
-var ssmd=JSON.parse(fetch('hiker://files/rules/xyq/hikerset2.json',{})).ssmode;
+var setjson=JSON.parse(fetch('hiker://files/rules/xyq/hikerset2.json',{}));
+var ssmd=setjson.ssmode;
+var ssxc=setjson.sscount;
 d.push({col_type: 'line'});
 var len=[];
 for (var i = 0; i < json.data.length; i++) {
@@ -28,11 +30,7 @@ var list = tab.list[k];
 len.push({title:list.title});
 }
 }
-d.unshift({
-    title : '资源网',
-    url:'hiker://home@资源网采集.xyq||https://haikuoshijie.cn/topic/6033',
-    col_type:'flex_button'
-});
+
 if(json.note!=''){
 d.unshift({
     title : '““'+json.note+'””'+'('+len.length+')',
@@ -51,7 +49,12 @@ d.unshift({
 });
 }
 d.unshift({
-    title : '  🌩  ',
+    title : '资源网',
+    url:'hiker://home@资源网采集.xyq||https://haikuoshijie.cn/topic/6033',
+    col_type:'flex_button'
+});
+d.unshift({
+    title : '🌩更新',
     url:$('hiker://empty').lazyRule(()=>{
 	var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie.js',{});
 	writeFile("hiker://files/rules/xyq/hikermovie2.js",rulejs);
@@ -63,20 +66,69 @@ d.unshift({
     col_type:'flex_button'
 });
 d.unshift({
-    title : '🗄'+'('+(ssmd==1?'聚':'列')+')',
+    title : '🔍设置'+'('+(ssmd==1?'聚':'列')+')',
+    url:$('hiker://empty').rule(()=>{
+var d=[];
+var setjson=JSON.parse(fetch('hiker://files/rules/xyq/hikerset.json',{}));
+var ssmd=setjson.ssmode;
+var ssxc=setjson.sscount;
+d.push({
+    title:'规则看不到搜索的请转到海阔视界设置→UI界面自定义→开启底部搜索框或者显示首页悬浮图标。',
+    col_type:'text_1'
+});
+d.push({
+    title:'搜索模式设置',
+    col_type:'text_center_1'
+});
+d.push({
+    title : '当前：'+'('+(ssmd==1?'聚合结果':'站点列表')+')',
     url : $('hiker://empty').lazyRule(()=>{
     var md=JSON.parse(fetch('hiker://files/rules/xyq/hikerset2.json',{})).ssmode;
     if(md==1){
     var fileUrl=fetch("hiker://files/rules/xyq/hikerset2.json",{}).replace('\"ssmode\":\"1\"','\"ssmode\":\"0\"');
     writeFile("hiker://files/rules/xyq/hikerset2.json",fileUrl);
-    refreshPage(false);return 'toast://切换为搜索引擎列表单选模式成功！';
+    back(true);return 'toast://切换为搜索引擎列表单选模式成功！';
     }
     else{
     var fileUrl=fetch("hiker://files/rules/xyq/hikerset2.json",{}).replace('\"ssmode\":\"0\"','\"ssmode\":\"1\"');
     writeFile("hiker://files/rules/xyq/hikerset2.json",fileUrl);
-    refreshPage(false);return 'toast://切换为聚合搜索模式成功！'
+    back(true);return 'toast://切换为聚合搜索模式成功！'
     }
     }),
+    col_type:'text_2'
+})
+
+d.push({
+    title:'搜索线程设置',
+    col_type:'text_center_1'
+});
+d.push({
+    title:'当前线程'+ssxc+'  '+'你输入的是 '+parseInt(getVar('hikerssxcset','')),
+    col_type:'rich_text'
+});
+
+d.push({
+    title : '设置搜索线程',
+    url:"input://"+''+"////请输入一个整数数字，推荐不要大于15。.js:putVar('hikerssxcset',input);refreshPage()",
+    col_type:'text_2'
+});
+
+d.push({
+    title : '保存设置',
+    url:$().lazyRule(()=>{
+var num=parseInt(getVar('hikerssxcset')).toString();
+if(num=='NaN'){
+return 'toast://输入的值好像不正确。';}
+else{
+var fileUrl=fetch("hiker://files/rules/xyq/hikerset.json",{}).replace(/\"sscount\":\"[\S]*\"/,'\"sscount\":\"'+num+'\"');
+    writeFile("hiker://files/rules/xyq/hikerset.json",fileUrl);
+    refreshPage(true);return 'toast://保存设置搜索线程完成！';}
+
+}),
+    col_type:'text_2'
+});
+setResult(d)
+}),
     col_type:'flex_button'
 })
 
@@ -180,8 +232,8 @@ else if(/paofan/.test(spl)){var url=spl+'/video/filter?JsonBody={"packageName":"
 d.push({
    title:clst[i],
    url:url+`@rule=js:eval(fetch('hiker://files/rules/xyq/hikermovie2.js'));clsrule();`,
-   //col_type:clst[i].length>=4?'text_3':'text_4'
-   col_type:'flex_button'
+   col_type:clst.length>=16?'scroll_button':'flex_button'
+   //col_type:'flex_button'
 })
 }//for结束
 
@@ -550,9 +602,11 @@ else if(/bowang/.test(MY_URL)){
 var url=spl+'/api.php/app/video_detail?id='+list[i].vod_id+'&token=';}
 else if(/paofan/.test(spl)){
 var url=spl+'/video/info?JsonBody={"packageName":"com.meibai.yinzuan","token":"","marketChannel":"huawei","appId":"1","sysVer":"7.1.2","osType":"2","debug":"1","ver":"5.1.7","product":"1","video_id":"'+list[i].video_id+'"};post;utf-8;{User-Agent@okhttp/4.1.0}';}
+/*
 else if(/moyuy/.test(spl)){
 var mourl = parseDomForHtml(list[i],"a&&href");
 var url=spl+mourl.replace('/vod/','/play/').replace('.html','-1-1.html');}
+*/
 else if(/ganfantv/.test(spl)){
 var deturl = parseDomForHtml(list[i],"a&&href");
 var url=spl+deturl.replace('/detail/','/play/').replace('.html','-1-1.html');}
@@ -1298,7 +1352,7 @@ else if(/\+ urls \+/.test(html)){
 var purl=html.match(/var urls = \"(.*?)\"/)[1];}
 else{
 var purl=html.match(/var url = \"(.*?)\"/)[1]}
-if(fro=='bilibili'){return purl+';{Referer@https://www.bilibili.com&&User-Agent@Mozilla/5.0}';}else if(fro=='mgtv'){return purl+'#isVideo=true#'+';{Referer@'+urll+'&&User-Agent@Mozilla/5.0}';}else{return purl};
+if(fro=='bilibili'){return purl+';{Referer@https://www.bilibili.com&&User-Agent@Mozilla/5.0}';}else if(fro=='mgtv'){return purl+'#isVideo=true#'+';{Referer@'+urll+'&&User-Agent@Mozilla/5.0}';}else if(/yuns\.club/.test(purl)){return purl+';{Referer@'+dom+'}';}else{return purl};
 }
 //结束PAR
 //开始789盘
@@ -1627,7 +1681,7 @@ var phtml =fetch(srcurl,{headers:{"User-Agent":MOBILE_UA,"Sec-Fetch-Site":"none"
 //var scrpt = parseDomForHtml(phtml,".leo-player||.embed-responsive||.stui-player__video||.myui-player__video||.myui-player__item||#bofang_box||.player-box-main&&script&&Html").replace(/player_.*?={/,'player_data={');
 var scrpt=phtml.match(/var player_.*?\}/)[0].replace(/player_.*?={/,'player_data={');
 eval(scrpt);var fro=player_data.from;var urll=player_data.url;var nxt=player_data.url_next;
-if(urll.substring(0,2)=='JT'){urll=unescape(base64Decode(urll));nxt=unescape(base64Decode(nxt));}
+if(urll.substring(0,2)=='JT'||/kanju/.test(myurl)){urll=unescape(base64Decode(urll));nxt=unescape(base64Decode(nxt));}
 else if(urll.substring(0,1)=='%'){urll=unescape(urll);nxt=unescape(nxt);}
 //打开直链
 if(/.m3u8|.mp4|obj\/tos/.test(urll)&&/http/.test(urll)){
@@ -1685,7 +1739,7 @@ if(/bt_token/.test(html)){
 return btoken(html);}
 //结束bt_token
 //开始PAR
-else if(/my-loading/.test(html)&&/analysis/.test(html)){
+else if(/my-loading/.test(html)&&/analysis|myiframe/.test(html)){
 return parwix(html);
 }//结束PAR
 //开始789盘
