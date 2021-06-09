@@ -59,7 +59,7 @@ const data = {
             }
             
         ],
-        nav:[{},{title:'电影片库', url: 'https://qiu522.github.io/blog/img/dianying.png'},{title:'电视剧', url: 'https://qiu522.github.io/blog/img/dianshiju.png'},{title:'动漫', url: 'https://qiu522.github.io/blog/img/dongman.png'},{title:'综艺', url: 'https://qiu522.github.io/blog/img/zongyi.png'}]
+        nav:[{},{title:'电影片库', url: 'https://z3.ax1x.com/2021/06/09/2szetf.png'},{title:'电视剧', url: 'https://z3.ax1x.com/2021/06/09/2szu9S.png'},{title:'动漫', url: 'https://z3.ax1x.com/2021/06/09/2szZAP.png'},{title:'综艺', url: 'https://z3.ax1x.com/2021/06/09/2yS3xe.png'}]
     },
     taotao:{
         index:'http://www.flvwec.com/',
@@ -147,7 +147,7 @@ const data = {
             }
             
         ],
-        nav:[{},{},{},{title:'电视剧', url: 'https://qiu522.github.io/blog/img/dianshiju.png'},{title:'电影片库', url: 'https://qiu522.github.io/blog/img/dianying.png'},{title:'综艺', url: 'https://qiu522.github.io/blog/img/zongyi.png'},{title:'动漫', url: 'https://qiu522.github.io/blog/img/dongman.png'}]
+        nav:[{},{},{},{title:'电视剧', url: 'https://z3.ax1x.com/2021/06/09/2szu9S.png'},{title:'电影片库', url: 'https://z3.ax1x.com/2021/06/09/2szetf.png'},{title:'综艺', url: 'https://z3.ax1x.com/2021/06/09/2yS3xe.png'},{title:'动漫', url: 'https://z3.ax1x.com/2021/06/09/2szZAP.png'}]
     },
     fivefive:{
         index:'https://www.o8tv.com',
@@ -252,7 +252,7 @@ const data = {
                 index: 'five_6'
             }
         ],
-        nav:[{title:'蓝光片库', url: 'https://qiu522.github.io/blog/img/languang.png'},{title:'电影片库', url: 'https://qiu522.github.io/blog/img/dianying.png'},{title:'电视剧', url: 'https://qiu522.github.io/blog/img/dianshiju.png'},{title:'动漫', url: 'https://qiu522.github.io/blog/img/dongman.png'},{title:'综艺', url: 'https://qiu522.github.io/blog/img/zongyi.png'},{title:'纪录片', url: 'https://qiu522.github.io/blog/img/jilupian.png'}]
+        nav:[{title:'蓝光片库', url: 'https://z3.ax1x.com/2021/06/09/2szQXj.png'},{title:'电影片库', url: 'https://z3.ax1x.com/2021/06/09/2szetf.png'},{title:'电视剧', url: 'https://z3.ax1x.com/2021/06/09/2szu9S.png'},{title:'动漫', url: 'https://z3.ax1x.com/2021/06/09/2szZAP.png'},{title:'综艺', url: 'https://z3.ax1x.com/2021/06/09/2yS3xe.png'},{title:'纪录片', url: 'https://z3.ax1x.com/2021/06/09/2szK1g.png'}]
     },
     jpys:{
         index: 'https://www.jpysvip.net',
@@ -370,7 +370,7 @@ const data = {
                 index:'jpys_7'
             }
         ],
-        nav: [{},{},{},{title:'电视剧', url: 'https://qiu522.github.io/blog/img/dianshiju.png'},{title:'电影片库', url: 'https://qiu522.github.io/blog/img/dianying.png'},{title:'综艺', url: 'https://qiu522.github.io/blog/img/zongyi.png'},{title:'动漫', url: 'https://qiu522.github.io/blog/img/dongman.png'}]
+        nav: [{},{},{},{title:'电视剧', url: 'https://z3.ax1x.com/2021/06/09/2szu9S.png'},{title:'电影片库', url: 'https://z3.ax1x.com/2021/06/09/2szetf.png'},{title:'综艺', url: 'https://z3.ax1x.com/2021/06/09/2yS3xe.png'},{title:'动漫', url: 'https://z3.ax1x.com/2021/06/09/2szZAP.png'}]
     },
     lengyue:{
         index: 'https://www.lengyue.app/',
@@ -442,7 +442,7 @@ const data = {
                 index:'lengyue_5'
             }
         ],
-        nav: [{},{title:'电影片库', url: 'https://qiu522.github.io/blog/img/dianying.png'},{title:'电视剧', url: 'https://qiu522.github.io/blog/img/dianshiju.png'},{title:'综艺', url: 'https://qiu522.github.io/blog/img/zongyi.png'},{title:'动漫', url: 'https://qiu522.github.io/blog/img/dongman.png'},{title:'bilibili', url: 'https://qiu522.github.io/blog/img/bili.png'}]
+        nav: [{},{title:'电影片库', url: 'https://z3.ax1x.com/2021/06/09/2szetf.png'},{title:'电视剧', url: 'https://z3.ax1x.com/2021/06/09/2szu9S.png'},{title:'综艺', url: 'https://z3.ax1x.com/2021/06/09/2yS3xe.png'},{title:'动漫', url: 'https://z3.ax1x.com/2021/06/09/2szZAP.png'},{title:'bilibili', url: 'https://z3.ax1x.com/2021/06/09/2szmh8.png'}]
     },
     ge179:{
         index: 'http://www.179u.com',
@@ -513,7 +513,7 @@ const data = {
                 index:'ge179_4'
             }
         ],
-        nav: [{},{title:'电影片库', url: 'https://qiu522.github.io/blog/img/dianying.png'},{title:'电视剧', url: 'https://qiu522.github.io/blog/img/dianshiju.png'},{title:'综艺', url: 'https://qiu522.github.io/blog/img/zongyi.png'},{title:'动漫', url: 'https://qiu522.github.io/blog/img/dongman.png'}]
+        nav: [{},{title:'电影片库', url: 'https://z3.ax1x.com/2021/06/09/2szetf.png'},{title:'电视剧', url: 'https://z3.ax1x.com/2021/06/09/2szu9S.png'},{title:'综艺', url: 'https://z3.ax1x.com/2021/06/09/2yS3xe.png'},{title:'动漫', url: 'https://z3.ax1x.com/2021/06/09/2szZAP.png'}]
     },
     nfmovie:{
         index:'https://www.nfmovies.com',
@@ -616,7 +616,7 @@ const data = {
             },
             
         ],
-        nav: [{},{},{title:'电影片库', url: 'https://qiu522.github.io/blog/img/dianying.png'},{title:'电视剧', url: 'https://qiu522.github.io/blog/img/dianshiju.png'},{title:'综艺', url: 'https://qiu522.github.io/blog/img/zongyi.png'},{title:'动漫', url: 'https://qiu522.github.io/blog/img/dongman.png'}]
+        nav: [{},{},{title:'电影片库', url: 'https://z3.ax1x.com/2021/06/09/2szetf.png'},{title:'电视剧', url: 'https://z3.ax1x.com/2021/06/09/2szu9S.png'},{title:'综艺', url: 'https://z3.ax1x.com/2021/06/09/2yS3xe.png'},{title:'动漫', url: 'https://z3.ax1x.com/2021/06/09/2szZAP.png'}]
     },
     nfx:{
         index:'https://nfxhd.com/',
@@ -649,7 +649,7 @@ const data = {
                 index:'nfx_2'
             },
         ],
-        nav: [{title:'美剧', url: 'https://qiu522.github.io/blog/img/meiju.png'},{title:'电影', url: 'https://qiu522.github.io/blog/img/dianying.png'}]
+        nav: [{title:'美剧', url: 'https://z3.ax1x.com/2021/06/09/2sz3Bn.png'},{title:'电影', url: 'https://z3.ax1x.com/2021/06/09/2szetf.png'}]
     },
     mjhd:{
         index:'https://mjhd.tv/',
@@ -716,7 +716,7 @@ const data = {
                 index:'mjhd_4'
             } 
         ],
-        nav:[{},{title:'科幻', url: 'https://qiu522.github.io/blog/img/kehuan.png'},{title:'都市', url: 'https://qiu522.github.io/blog/img/dushi.png'},{title:'综艺', url: 'https://qiu522.github.io/blog/img/zongyi.png'},{title:'电影片库', url: 'https://qiu522.github.io/blog/img/dianying.png'}]
+        nav:[{},{title:'科幻', url: 'https://z3.ax1x.com/2021/06/09/2szMcQ.png'},{title:'都市', url: 'https://z3.ax1x.com/2021/06/09/2szE7t.png'},{title:'综艺', url: 'https://z3.ax1x.com/2021/06/09/2yS3xe.png'},{title:'电影片库', url: 'https://z3.ax1x.com/2021/06/09/2szetf.png'}]
     },
     xsj: {
         index: 'https://m.dm45.com/',
@@ -818,7 +818,7 @@ const data = {
                 index:'xsj_6'
             }
         ],
-        nav: [{},{},{},{},{title:'动漫', url: 'https://qiu522.github.io/blog/img/dongman.png'},{title:'动漫电影', url: 'https://qiu522.github.io/blog/img/dianying.png'},{title:'影视', url: 'https://qiu522.github.io/blog/img/languang.png'},{title:'日韩剧', url: 'https://qiu522.github.io/blog/img/dianshiju.png'}]
+        nav: [{},{},{},{},{title:'动漫', url: 'https://z3.ax1x.com/2021/06/09/2szZAP.png'},{title:'动漫电影', url: 'https://z3.ax1x.com/2021/06/09/2szetf.png'},{title:'影视', url: 'https://z3.ax1x.com/2021/06/09/2szQXj.png'},{title:'日韩剧', url: 'https://z3.ax1x.com/2021/06/09/2szu9S.png'}]
     }
 }
 //首页解析
