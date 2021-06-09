@@ -4,7 +4,7 @@
   <meta charset="UTF-8"> 
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"> 
-  <title>发粪涂墙</title> 
+  <title>发粪涂墙&black</title> 
   <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
@@ -18,6 +18,7 @@
 	padding:10px 0;
 }
   form {
+    display: flex;
 	position:relative;
 	width:96%;
 	margin:0 auto;
@@ -27,13 +28,13 @@
 	outline:none;
 }
   input {
-	width:100%;
+	width:78%;
 	height:42px;
 	padding-left:13px;
 }
   button {
 	height:42px;
-	width:42px;
+	width:12%;
 	cursor:pointer;
 	position:absolute;
 }
@@ -223,50 +224,82 @@
             font-size: 16px;
             color: #F9F0DA;
         }
+        .listwrap {
+            display:flex;
+
+        }
+        .listwrap img{
+            width:10%;
+            height: 30px;
+            margin: auto;
+        }
 
         #list{
-            width: 96%;
-            margin: 0 auto;
+            display:flex;
+            flex-flow:row nowrap;
+            overflow:hidden;
+            overflow-x: auto;
+            border: 1px solid #b6b6b6;
+            border-top: 0px;
+            width: 86%;
+            margin: 0 auto ;
+            margin-left:12%;
             list-style: none;
             padding: 3px;
         }
+        #list li {
+            display: inline-flex;
+            flex-direction:column;
+            width: 1em;
+            margin: 0 5px;
+            font-size: 12px;
+            word-wrap: break-word;
+        }
         li:hover {
-            background-color: rgb(168, 213, 252);
+            color: red;
             cursor: default;
         }
         ul li:first-child{
              margin-top: 0;
         }
-        ul{
-            border: 1px solid #b6b6b6;
-            border-top: 0px;
-            display: none;
+        #list .active {
+            color: red;
+        }
+        #update {
+            margin-top:4px;
+            width:10%;
+            height:30px;
+            display:inline-flex;
         }
     </style>
  </head>
  <body style="overflow:hidden;"> 
   <div class="search bar1"> 
     <form>
+        <img src="https://z3.ax1x.com/2021/06/08/2BcNlR.png" id="update"></img>
         <input type="text" autocomplete="off" class="input" id="search-input" placeholder="搜索内容 . . ." onkeydown="if(event.keyCode==13){up()}">
         <button type="submit" id="search-ok"></button>
     </form>
 
-    <ul id="list">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+    <div class="listwrap">
+        <ul id="list">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
    </div> 
   <script>
       function up(){
-         var k=document.getElementById("search-input").value
+         var k=document.getElementById("search-input").value;
+         var type = document.querySelector('.active').innerHTML;
 
          var work=fy_bridge_app.fetch("hiker://files/searchwork.json");
          if(work==""){
@@ -280,14 +313,73 @@
              fy_bridge_app.writeFile("hiker://files/searchwork.json",JSON.stringify(work));
          }
          fy_bridge_app.putVar("searchKeyword",k);
+         fy_bridge_app.putVar("searchTypeword",type);
          fy_bridge_app.refreshPage(true);
-     }
-     document.getElementById("search-ok").onclick=up
-     if(fy_bridge_app.getVar("searchKeyword")!=""){
-         document.getElementById("search-input").placeholder="点击搜索返回首页";
-     }
-     </script> 
+         
 
+     }
+     function update(){
+        var r=confirm("点击确认进行更新!");
+        if (r==true){
+            let localHtml = fy_bridge_app.fetch('hiker://files/rules/zyf/black.js');
+            let gitHtml = fy_bridge_app.fetch('https://cdn.jsdelivr.net/gh/Qiu522/blog/js/black.js');
+            if (!localHtml || localHtml != gitHtml) {
+                fy_bridge_app.writeFile("hiker://files/rules/zyf/black.js", gitHtml);
+            }
+
+            let B_play = fy_bridge_app.fetch('hiker://files/rules/zyf/B_play.js');
+            let git_play = fy_bridge_app.fetch('https://cdn.jsdelivr.net/gh/Qiu522/blog/js/B_play.js');
+            if (!B_play || B_play != git_play) {
+                fy_bridge_app.writeFile("hiker://files/rules/zyf/B_play.js", git_play); 
+            }
+
+            let blackmovie = fy_bridge_app.fetch('hiker://files/rules/zyf/blackmovie.js');
+            let git_movie = fy_bridge_app.fetch('https://cdn.jsdelivr.net/gh/Qiu522/blog/js/blackmovie.js');
+            if (!blackmovie || blackmovie != git_movie) {
+                fy_bridge_app.writeFile("hiker://files/rules/zyf/blackmovie.js", git_movie); 
+            }
+
+            let tc = fy_bridge_app.fetch('hiker://files/rules/zyf/tc-cdn.html');
+            let git_tc = fy_bridge_app.fetch('https://cdn.jsdelivr.net/gh/Qiu522/blog/html/search.html');
+            if (!tc || tc != git_tc) {
+                fy_bridge_app.writeFile("hiker://files/rules/zyf/tc-cdn.html", git_tc); 
+            }
+            fy_bridge_app.refreshPage(true);
+        }
+    }
+     
+     document.getElementById("search-ok").onclick=up;
+     document.querySelector('#update').onclick = update;
+     /*if(fy_bridge_app.getVar("searchKeyword")!=""){
+         document.getElementById("search-input").placeholder="点击搜索返回首页";
+     }*/
+    </script> 
+    
+    <script>
+        var keyLists = ['全部','影视', '美剧', '动漫', '极品', '淘淘', '555', '奈非', '奈非星', '美剧网', '新动漫','美剧虫', '冷月', '179'];
+        (()=>{
+            var list = document.getElementById('list');
+            list.innerHTML = '';
+            for(var i in keyLists){
+                list.innerHTML += `<li>${keyLists[i]}<li>` 
+            }
+            var lists = list.querySelectorAll('li');
+            lists[0].setAttribute('class', 'active');
+            for(var i in lists){
+                lists[i].onclick = handleClick;
+            }
+        })();
+
+        function handleClick() {
+            var list = document.getElementById('list');
+            var lists = list.querySelectorAll('li');
+            for(var i in lists){
+                lists[i].className="";
+            }
+            this.className="active";
+            //console.log(lists[0].innerHTML);
+        }
+    </script>
      
  </body>
 </html>
