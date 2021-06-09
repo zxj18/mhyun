@@ -285,14 +285,7 @@ var num= MY_URL.split('$$$')[2];
 var ssmode=JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).ssmode;
 var le = num*ssxc;
 //setError(le);
-if(num=='1'){
-putVar({key:'zyfany', value:''});
 var src=fetch('hiker://files/rules/xyq/ZYWCJ.txt',{});
-putVar({key:'zyfany', value:src});
-}//end
-
-if(num=='1'){src=src;}else{src=getVar('zyfany')};
-
 var cc = src.indexOf('http')!=-1?src.match(/[\S]*?,.*?[\s]/g):base64Decode(src).match(/[\S]*?,.*?[\s]/g);
 
 if(ssmode=='0'){
