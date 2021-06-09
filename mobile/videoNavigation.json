@@ -16,6 +16,12 @@
           "url": "http://www.baidu.com"
         },
         {
+          "name": "口令查券",
+          "type": "app://chaquan",
+          "pic": "",
+          "url": "http://www.baidu.com"
+        },
+        {
           "name": "自定义网址",
           "type": "app://custom",
           "pic": "",
@@ -24,6 +30,12 @@
         {
           "name": "我的收藏",
           "type": "app://collect",
+          "pic": "",
+          "url": "http://www.baidu.com"
+        },
+        {
+          "name": "历史记录",
+          "type": "app://history",
           "pic": "",
           "url": "http://www.baidu.com"
         }
@@ -211,12 +223,6 @@
           "type": "app://customWeb",
           "pic": "http://www.meijuniao.com/favicon.ico",
           "url": "http://m.meijuniao.com/&&&ae01.alicdn,app/"
-        },
-        {
-          "name": "阿房影视",
-          "type": "app://customWeb",
-          "pic": "https://www.bwl87.com/template/mytheme/statics/image/20201226/c48780b3c.ico",
-          "url": "https://www.bwl87.com/"
         }
       ]
     },
