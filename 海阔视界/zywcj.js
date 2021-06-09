@@ -19,29 +19,75 @@ function filter(key) {
 function zywhm() {
 var html = getResCode();
 var arr = html.indexOf('http')!=-1?html.match(/#[\s\S]*?#/g):base64Decode(html).match(/#[\s\S]*?#/g);
-var ssmd=JSON.parse(fetch('hiker://files/rules/xyq/zywset2.json',{})).ssmode;
-var res = {};
-var items = [];
+var setjson=JSON.parse(fetch('hiker://files/rules/xyq/zywset2.json',{}));
+var ssmd=setjson.ssmode;
+var ssxc=setjson.sscount;
+var res = {};var items = [];
 
 items.push({
-    title : '🗄'+'('+(ssmd==1?'聚':'列')+')',
+    title : '🔍设置'+'('+(ssmd==1?'聚':'列')+')',
+    url:$('hiker://empty').rule(()=>{
+var d=[];
+var setjson=JSON.parse(fetch('hiker://files/rules/xyq/zywset2.json',{}));
+var ssmd=setjson.ssmode;
+var ssxc=setjson.sscount;
+d.push({
+    title:'搜索模式设置',
+    col_type:'text_center_1'
+});
+d.push({
+    title : '当前：'+'('+(ssmd==1?'聚合结果':'引擎列表')+')',
     url : $('hiker://empty').lazyRule(()=>{
     var md=JSON.parse(fetch('hiker://files/rules/xyq/zywset2.json',{})).ssmode;
     if(md==1){
     var fileUrl=fetch("hiker://files/rules/xyq/zywset2.json",{}).replace('\"ssmode\":\"1\"','\"ssmode\":\"0\"');
     writeFile("hiker://files/rules/xyq/zywset2.json",fileUrl);
-    refreshPage(false);return 'toast://切换为搜索引擎列表单选模式成功！';
+    back(true);return 'toast://切换为搜索引擎列表单选模式成功！';
     }
     else{
     var fileUrl=fetch("hiker://files/rules/xyq/zywset2.json",{}).replace('\"ssmode\":\"0\"','\"ssmode\":\"1\"');
     writeFile("hiker://files/rules/xyq/zywset2.json",fileUrl);
-    refreshPage(false);return 'toast://切换为聚合搜索模式成功！'
+    back(true);return 'toast://切换为聚合搜索模式成功！'
     }
     }),
+    col_type:'text_2'
+})
+
+d.push({
+    title:'搜索线程设置',
+    col_type:'text_center_1'
+});
+d.push({
+    title:'当前线程'+ssxc+'  '+'你输入的是'+parseInt(getVar('zywssxcset','')),
+    col_type:'rich_text'
+});
+
+d.push({
+    title : '设置搜索线程',
+    url:"input://"+''+"////请输入一个整数数字，推荐最大不要超过15。.js:putVar('zywssxcset',input);refreshPage()",
+    col_type:'text_2'
+});
+
+d.push({
+    title : '保存设置',
+    url:$().lazyRule(()=>{
+var num=parseInt(getVar('zywssxcset')).toString();
+if(num=='NaN'){
+return 'toast://输入的值好像不正确。';}
+else{
+var fileUrl=fetch("hiker://files/rules/xyq/zywset.json",{}).replace(/\"sscount\":\"[\S]*\"/,'\"sscount\":\"'+num+'\"');
+    writeFile("hiker://files/rules/xyq/zywset.json",fileUrl);
+    refreshPage(true);return 'toast://保存设置搜索线程完成！';}
+
+}),
+    col_type:'text_2'
+});
+setResult(d)
+}),
     col_type:'flex_button'
 });
 items.push({
-    title : '  🌩  ',
+    title : '🌩更新',
     url:$('hiker://empty').lazyRule(()=>{
 	var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/zywcj.js',{});
 	writeFile("hiker://files/rules/xyq/zywcj2.js",rulejs);
@@ -82,9 +128,7 @@ items.push({
 
 }
 
-res.data = items;
-
-setHomeResult(res);
+res.data = items;setHomeResult(res);
 };
 
 
@@ -192,7 +236,9 @@ eval(fetch('hiker://files/rules/xyq/zywcj2.js'));
 listfun();
 res.data=items;setHomeResult(res);}),
 //col_type:"text_3"
-col_type:'flex_button'});
+   col_type:type.length>=16?'scroll_button':'flex_button'
+//col_type:'flex_button'
+   });
   }
  }
 } catch(e) {}
@@ -229,7 +275,7 @@ function zywsea() {
 var res = {};
 var items = [];
 //获取搜索线程数量
-var ssxc = JSON.parse(fetch('hiker://files/rules/xyq/zywset2.json',{})).sscount;;
+var ssxc = JSON.parse(fetch('hiker://files/rules/xyq/zywset2.json',{})).sscount;
 
 //设置超时时间，越小越快，单位毫秒
 var timeou = 5000;
@@ -239,14 +285,7 @@ var num= MY_URL.split('$$$')[2];
 var ssmode=JSON.parse(fetch('hiker://files/rules/xyq/zywset2.json',{})).ssmode;
 var le = num*ssxc;
 //setError(le);
-if(num=='1'){
-putVar({key:'zyfany', value:''});
-var src=fetch('hiker://files/rules/xyq/ZYWCJ2.txt',{});
-putVar({key:'zyfany', value:src});
-}//end
-
-if(num=='1'){src=src;}else{src=getVar('zyfany')};
-
+var src=fetch('hiker://files/rules/xyq/ZYWCJ.txt',{});
 var cc = src.indexOf('http')!=-1?src.match(/[\S]*?,.*?[\s]/g):base64Decode(src).match(/[\S]*?,.*?[\s]/g);
 
 if(ssmode=='0'){
@@ -280,14 +319,16 @@ Ost.push({url:arr});
 
 //批量发送请求
 if(Data!=''){
-var html=batchFetch(Data);
+var bfhtml=batchFetch(Data);
 //setError(Tit);
 
-for(var k=0;k<html.length;k++){
-if(html[k]!=null){
+for(var k=0;k<bfhtml.length;k++){
+var html=bfhtml[k];
+	
+//if(html[k]!=null||html[k]!=''){
 
 //搜索结果网页处理开始
-if(html[k].indexOf('<video>')==-1){
+if(html==null||html==''||!/\<video\>/.test(html)){
 
 items.push({
 			title: '““'+Tit[k].tit+'””'+'未搜索到相关资源',
@@ -296,7 +337,7 @@ items.push({
 });}else{
 
 
-var list = parseDomForArray(html[k], 'rss&&video');
+var list = parseDomForArray(html, 'rss&&video');
 
 //setError(list[0]);
 for (var j = 0; j < list.length; j++) {
@@ -312,18 +353,18 @@ for (var j = 0; j < list.length; j++) {
 items.push({
 
             title: title+" "+' • '+note,
-            desc: Tit[k].tit+' · '+typ+' · '+dt,
+            desc: ' '+Tit[k].tit+' · '+typ+' · '+dt,
 
             url: Ost[k].url+"?ac=videolist&ids="+url
 
         });
 
-    }
+    }//for j
   }
 }
-}
-}
-}
+}//for k
+//}
+}//聚/列
 
 res.data = items;
 
@@ -338,7 +379,7 @@ var domain = MY_URL.split('?wd')[0];
 var html=getResCode();
 //setError(domain);
 
-if(html.indexOf('<video>')==-1){
+if(!/\<video\>/.test(html)){
 items.push({
 			title: '未搜索到相关资源',
 		col_type: 'text_center_1'
@@ -446,10 +487,11 @@ if(flag=='languang'){url='https://j.languang.wfss100.com/?url='+url}
 if(flag=='msp'){url='https://titan.mgtv.com.bowang.tv/player/?url='+url}
 if(flag=='kdyx'||flag=='kdsx'){url='http://api.kudian6.com/jm/pdplayer.php?url='+url}
 if(flag=='789pan'){url='http://789pan.hd8.pw/?url='+url}
+if(flag=='fanqie'){url='https://jx.fqzy.cc/jx.php?url='+url}
 var title=(list[j].split('$')[0].indexOf('http')!=-1?[j+1]:list[j].split('$')[0]);
 items.push({
 title:list[j].split('$')[0].indexOf('http')!=-1?[j+1]:list[j].split('$')[0],
-url:url.replace(/\n*/g,'')+`@lazyRule=.js:/*refreshX5WebView*/eval(fetch('hiker://files/rules/xyq/zywcj2.js'));lazyRu();`,
+url:'hiker://empty##'+flag+'##'+url.replace(/\n*/g,'')+'##'+`@lazyRule=.js:/*refreshX5WebView*/eval(fetch('hiker://files/rules/xyq/zywcj2.js'));lazyRu();`,
 //col_type: title.length>=6?'text_2':'text_3'
 col_type: list.length>=3?'flex_button':'text_2'});
    }
@@ -463,12 +505,22 @@ setHomeResult(res);
 
 //动态解析
 function lazyRu() {
-var src=input.replace(/amp;/g,"").replace(/^\s*/,"");
-if(src.indexOf("html")!=-1){
+var flag=input.split('##')[1];
+var src=(input.split('##')[2]).replace(/amp;/g,"").replace(/^\s*/,"");
+if(flag=='qq'||flag=='qiyi'||flag=='youku'||flag=='mgtv'||flag=='letv'||flag=='sohu'||flag=='pptv'||flag=='m1905'){
 var fileUrl="https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
 eval(fetch(fileUrl,{}));
 var play=vodkey.toUrl(src.split('"')[0]);
 return play!=""?play:getUrl(src.split('"')[0]);
+}else if(src.indexOf("xmflv")!=-1){
+var html=request(src);
+var time=html.match(/var time = \'(.*?)\'/)[1];
+var url=html.match(/var url = \'(.*?)\'/)[1];
+var cip=html.match(/var cip = \'(.*?)\'/)[1];
+var vkey=html.match(/var vkey = \'(.*?)\'/)[1];
+var body='time='+time+'&url='+url+'&cip='+cip+'&wap=1&vkey='+vkey;
+var json=fetch('https://jx.xmflv.com/xmflv.SVG', {headers:{'content-type':'application/x-www-form-urlencoded'},body:body,method:'POST'});
+return JSON.parse(json).url;
 }else if(src.indexOf("135-cdn")!=-1){
 refreshX5WebView(src);
 return "toast://请等待加载选集！";
@@ -538,7 +590,12 @@ var times=(new Date()).getTime()+'';
 var sh= CryptoJS.MD5(base64Encode(id+times)).toString();
 var purl='http://play.zk132.cn/new/play1/'+id+'%7C'+times+'%7C'+sh+'%7C'+'1'+'%7C'+'index.m3u8';
 */
-return src;
+var html=request(src,{});
+var dom=src.split('?')[0];
+var aly=parseDomForHtml(html,"body&&iframe&&src");
+var html=fetch(dom+aly,{headers:{"User-Agent":MOBILE_UA,"Referer":dom}});
+var purl=html.match(/var urls = \"(.*?)\"/)[1];
+return purl+';{Referer@'+dom+'}';
 }else if(/wfss100/.test(src)){
 var phtml =request(src,{});
 var ifsrc=src.split('/?url=')[0]+parseDomForHtml(phtml,"body&&iframe&&src");
@@ -548,7 +605,7 @@ return urll+';{Referer@https://j.languang.wfss100.com/}';
 }else if(src.indexOf("baipiaozy")!=-1||src.indexOf("bowang")!=-1){
 refreshX5WebView(src);
 return "toast://请等待加载选集！";
-}else if(src.indexOf("www.bilibili.com")!=-1){
+}else if(flag=='bilibili'){
 return src;
 }else if(src.indexOf("alizy-")!=-1){
 refreshX5WebView('http://hong.1ren.ren/?url='+src);
