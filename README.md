@@ -39,7 +39,8 @@ https://github.com/XIU2/Yuedu
 https://gitee.com/vpq/yd
 http://yck.mumuceo.com/yuedu/shuyuan/index.html
 http://yuedu.miaogongzi.net/gx.html
-—
+
+阅读APP官方群📖 https://t.me/yueduguanfang
 namofree大佬的男频书源：http://shuyuan.miaogongzi.net/shuyuan/1617406392.json
 乃星大佬的女频书源：http://shuyuan.miaogongzi.site/shuyuan/1614660488.json
 关耳大佬的女频书源合集：https://guaner001125.coding.net/p/coding-code-guide/d/booksources/git/raw/master/sources/guaner.json
