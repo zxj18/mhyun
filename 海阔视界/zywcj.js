@@ -22,6 +22,7 @@ var arr = html.indexOf('http')!=-1?html.match(/#[\s\S]*?#/g):base64Decode(html).
 var setjson=JSON.parse(fetch('hiker://files/rules/xyq/zywset2.json',{}));
 var ssmd=setjson.ssmode;
 var ssxc=setjson.sscount;
+var self=JSON.parse(getRule()).title;
 var res = {};var items = [];
 
 items.push({
@@ -103,6 +104,11 @@ items.push({
     col_type:'flex_button'
 });
 items.push({col_type: 'line'});
+items.push({
+    url:"'hiker://search?s='+input+'&rule="+self+"&simple=false'",
+    desc:"请输入搜索关键词",
+    col_type:"input"
+});
 for (var i = 0; i < arr.length; i++) {
 var tabs = arr[i].match(/#.*?[\s]/g)[0].split('#')[1].replace(/\n/,'');
 var list = arr[i].match(/[\S]*?,.*?[\s]/g);
