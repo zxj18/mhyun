@@ -75,8 +75,8 @@ var num=parseInt(getVar('zywssxcset')).toString();
 if(num=='NaN'){
 return 'toast://输入的值好像不正确。';}
 else{
-var fileUrl=fetch("hiker://files/rules/xyq/zywset.json",{}).replace(/\"sscount\":\"[\S]*\"/,'\"sscount\":\"'+num+'\"');
-    writeFile("hiker://files/rules/xyq/zywset.json",fileUrl);
+var fileUrl=fetch("hiker://files/rules/xyq/zywset2.json",{}).replace(/\"sscount\":\"[\S]*\"/,'\"sscount\":\"'+num+'\"');
+    writeFile("hiker://files/rules/xyq/zywset2.json",fileUrl);
     refreshPage(true);return 'toast://保存设置搜索线程完成！';}
 
 }),
@@ -285,7 +285,7 @@ var num= MY_URL.split('$$$')[2];
 var ssmode=JSON.parse(fetch('hiker://files/rules/xyq/zywset2.json',{})).ssmode;
 var le = num*ssxc;
 //setError(le);
-var src=fetch('hiker://files/rules/xyq/ZYWCJ.txt',{});
+var src=fetch('hiker://files/rules/xyq/ZYWCJ2.txt',{});
 var cc = src.indexOf('http')!=-1?src.match(/[\S]*?,.*?[\s]/g):base64Decode(src).match(/[\S]*?,.*?[\s]/g);
 
 if(ssmode=='0'){
@@ -326,7 +326,7 @@ for(var k=0;k<bfhtml.length;k++){
 var html=bfhtml[k];
 	
 //if(html[k]!=null||html[k]!=''){
-
+	
 //搜索结果网页处理开始
 if(html==null||html==''||!/\<video\>/.test(html)){
 
@@ -516,7 +516,7 @@ return play!=""?play:getUrl(src.split('"')[0]);
 var html=request(src);
 var time=html.match(/var time = \'(.*?)\'/)[1];
 var url=html.match(/var url = \'(.*?)\'/)[1];
-var cip=html.match(/var cip = \'(.*?)\'/)[1];
+var cip='192.168.125.9';
 var vkey=html.match(/var vkey = \'(.*?)\'/)[1];
 var body='time='+time+'&url='+url+'&cip='+cip+'&wap=1&vkey='+vkey;
 var json=fetch('https://jx.xmflv.com/xmflv.SVG', {headers:{'content-type':'application/x-www-form-urlencoded'},body:body,method:'POST'});
@@ -601,7 +601,7 @@ var phtml =request(src,{});
 var ifsrc=src.split('/?url=')[0]+parseDomForHtml(phtml,"body&&iframe&&src");
 var ifsrct=ifsrc.split('?url=')[0]+parseDomForHtml(request(ifsrc,{}),"body&&iframe&&src");
 var urll=request(ifsrct,{}).match(/vodurl = \'(.*?)\'/)[1];
-return urll+';{Referer@https://j.languang.wfss100.com/}';	
+return urll+';{Referer@https://j.languang.wfss100.com/}';
 }else if(src.indexOf("baipiaozy")!=-1||src.indexOf("bowang")!=-1){
 refreshX5WebView(src);
 return "toast://请等待加载选集！";
