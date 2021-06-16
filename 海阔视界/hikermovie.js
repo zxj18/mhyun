@@ -1362,6 +1362,8 @@ var html=fetch(dom+aly,{headers:{"User-Agent":MOBILE_UA,"Referer":dom}});
 if(/vod_\w{10}/.test(html)){
 if(!fetch("hiker://files/rules/xyq/vodkey.js",{})){var fileUrl=fetch("https://cdn.jsdelivr.net/gh/lzk23559/Public_folder/vodkey.js",{});writeFile("hiker://files/rules/xyq/vodkey.js",fileUrl);eval(fileUrl);var purl=vodurl;}else{var fileUrl=fetch("hiker://files/rules/xyq/vodkey.js",{});eval(fileUrl);var purl=vodurl};
 }
+else if(/webkit-playsinline/.test(html)){
+var purl=parseDomForHtml(html,'#video&&source&&src');}
 else if(/\+ urls \+/.test(html)){
 var purl=html.match(/var urls = \"(.*?)\"/)[1];}
 else{
