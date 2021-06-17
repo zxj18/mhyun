@@ -284,7 +284,7 @@ var items = [];
 var ssxc = JSON.parse(fetch('hiker://files/rules/xyq/zywset2.json',{})).sscount;
 
 //设置超时时间，越小越快，单位毫秒
-var timeou = 5000;
+var timeou = 3000;
 
 var ss = MY_URL.split('$$$')[1];
 var num= MY_URL.split('$$$')[2];
@@ -314,8 +314,8 @@ var arr = cc[i].split(',')[1];
 var arrt = cc[i].split(',')[0];
 var link=cc[i].split(',')[1]+ss;
 
-//Data.push({url:link,options:{headers:{'User-Agent':MOBILE_UA},timeout:timeou}});
-Data.push({url:link,options:{headers:{'User-Agent':MOBILE_UA}}});
+Data.push({url:link,options:{headers:{'User-Agent':MOBILE_UA},timeout:timeou}});
+//Data.push({url:link,options:{headers:{'User-Agent':MOBILE_UA}}});
 Tit.push({tit:arrt});
 Ost.push({url:arr});
 }
