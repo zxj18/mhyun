@@ -492,7 +492,7 @@ if(flag=='pll'){url='https://jx.baipiaozy.com/player/?url='+url}
 if(flag=='languang'){url='https://j.languang.wfss100.com/?url='+url}
 if(flag=='msp'){url='https://titan.mgtv.com.bowang.tv/player/?url='+url}
 if(flag=='kdyx'||flag=='kdsx'){url='http://api.kudian6.com/jm/pdplayer.php?url='+url}
-if(flag=='789pan'){url='http://789pan.hd8.pw/?url='+url}
+if(flag=='789pan'){url='https://cache.yuns.club/m3u8.php?url='+url}
 if(flag=='fanqie'){url='https://jx.fqzy.cc/jx.php?url='+url}
 var title=(list[j].split('$')[0].indexOf('http')!=-1?[j+1]:list[j].split('$')[0]);
 items.push({
@@ -587,7 +587,7 @@ return play!=""?play:getUrl(pli);
 }else if(src.indexOf("kudian6.com")!=-1){
 var html=request(src);
 return html.match(/url\":.*?[\'\"](.*?)[\'\"]/)[1];
-}else if(src.indexOf("789pan")!=-1){
+}else if(src.indexOf("yuns.club")!=-1){
 	/*
 var html=request(src);
 eval(getCryptoJS());
@@ -596,12 +596,8 @@ var times=(new Date()).getTime()+'';
 var sh= CryptoJS.MD5(base64Encode(id+times)).toString();
 var purl='http://play.zk132.cn/new/play1/'+id+'%7C'+times+'%7C'+sh+'%7C'+'1'+'%7C'+'index.m3u8';
 */
-var html=request(src,{});
-var dom=src.split('?')[0];
-var aly=parseDomForHtml(html,"body&&iframe&&src");
-var html=fetch(dom+aly,{headers:{"User-Agent":MOBILE_UA,"Referer":dom}});
-var purl=html.match(/var urls = \"(.*?)\"/)[1];
-return purl+';{Referer@'+dom+'}';
+var html=fetch(src,{});
+return JSON.parse(html).url;
 }else if(/wfss100/.test(src)){
 var phtml =request(src,{});
 var ifsrc=src.split('/?url=')[0]+parseDomForHtml(phtml,"body&&iframe&&src");
