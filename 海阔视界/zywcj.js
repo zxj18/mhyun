@@ -549,9 +549,11 @@ return "toast://请等待加载选集！"};
 var meiju=fetch(src,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://www.meiju11.com"}});
 return meiju.match(/url:.*?[\'\"](.*?)[\'\"]/)[1];
 }else if(src.indexOf("leduotv")!=-1){
-var pla=request(src,{}).split("var url=\'")[1].split("\'")[0];
-if(pla.indexOf("m3u8")!=-1){
-return pla.split("=")[1];}else{return src};
+var purl=request(src,{}).split("var url=\'")[1].split("\'")[0];
+var pla=request("https://api.leduotv.com"+purl,{});
+return pla.match(/\"url\": \"(.*?)\"/)[1];
+//if(pla.indexOf("m3u8")!=-1){
+//return pla.split("=")[1];}else{return src};
 }else if(src.indexOf("aHR0c")!=-1){
 return decodeURIComponent(base64Decode(src.split("&")[0]));
 }else if(src.indexOf("haodanxia")!=-1||src.indexOf("cqzyw")!=-1){
