@@ -7,7 +7,7 @@ https://www.lanzoux.com/u/GoldRiver
 海阔视界｜规则名：道长仓库
 http://netcut.cn/p/0efcb30db3bb8420
 海阔视界｜规则名：香情影视
-http://netcut.cn/p/3cfaf5dbbde5434a
+https://pasteme.cn/121288
 
 FreeDTV｜APP
 https://www.lanzoui.com/b025mpw7e
