@@ -61,9 +61,9 @@ d.unshift({
 d.unshift({
     title : '🌩更新',
     url:$('hiker://empty').lazyRule(()=>{
-	var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie2.js',{});
+	var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie.js',{});
 	writeFile("hiker://files/rules/xyq/hikermovie2.js",rulejs);
-	var rulejson = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie2.json',{});
+	var rulejson = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie.json',{});
 	writeFile("hiker://files/rules/xyq/hikermovie2.json",rulejson);
 	writeFile("hiker://files/rules/xyq/hikerupdate2.txt",new Date()+'')
 	refreshPage(false);return 'toast://应该是获取最新了吧。'
