@@ -34,8 +34,7 @@ https://github.com/gedoor/legado/releases/
 https://apps.apple.com/cn/app/id1546631588
 
 阅读｜书源
-https://mp.weixin.qq.com/s/cHfh-7m91ByrtkSliHTg2w
-https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E6%BC%AB%E7%94%BB%EF%BD%9C%E5%9B%BE%E6%BA%90%EF%BD%9C2021%E5%B9%B46%E6%9C%88%E5%A4%A7%E6%95%B4%E5%90%88%E6%BA%90%E6%9B%B4%E6%96%B0%E3%80%906.28%E4%BF%AE%E6%AD%A3%E3%80%91%E6%9C%89%E5%9B%BE%E6%A0%87.txt
+https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E9%98%85%E8%AF%BB%EF%BD%9C%E4%B9%A6%E6%BA%90%EF%BD%9C2021%E5%B9%B46%E6%9C%88%E6%95%B4%E7%90%86.txt
 https://github.com/XIU2/Yuedu
 https://gitee.com/vpq/yd
 http://yck.mumuceo.com/yuedu/shuyuan/index.html
@@ -64,7 +63,8 @@ https://github.com/tachiyomiorg/tachiyomi
 https://github.com/hongchacha/cartoon
 
 漫画｜图源
-https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E6%BC%AB%E7%94%BB%EF%BD%9C%E5%9B%BE%E6%BA%90%EF%BD%9C2021%E5%B9%B46%E6%9C%88%E5%A4%A7%E6%95%B4%E5%90%88%E6%BA%90%E6%9B%B4%E6%96%B0%E3%80%906.12%E4%BF%AE%E6%AD%A3%E3%80%91%E6%97%A0%E5%9B%BE%E6%A0%87.txt
+https://mp.weixin.qq.com/s/cHfh-7m91ByrtkSliHTg2w
+https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E6%BC%AB%E7%94%BB%EF%BD%9C%E5%9B%BE%E6%BA%90%EF%BD%9C2021%E5%B9%B46%E6%9C%88%E5%A4%A7%E6%95%B4%E5%90%88%E6%BA%90%E6%9B%B4%E6%96%B0%E3%80%906.28%E4%BF%AE%E6%AD%A3%E3%80%91%E6%9C%89%E5%9B%BE%E6%A0%87.txt
 https://github.com/wanglabk/hub/tree/c2099
 http://yck.mumuceo.com/yiciyuan/tuyuan/index.html
 ```
