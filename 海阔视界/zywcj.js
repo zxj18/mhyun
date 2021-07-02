@@ -105,7 +105,7 @@ items.push({
 });
 items.push({col_type: 'line'});
 items.push({
-    url:"'hiker://search?s='+input+'&rule="+self+"&simple=false'",
+    url:"'hiker://search?s='+input+'&rule="+self+"'",
     desc:"请输入搜索关键词",
     col_type:"input"
 });
