@@ -12,7 +12,7 @@ var ssxc=setjson.sscount;
 var self=JSON.parse(getRule()).title;
 d.push({col_type: 'line'});
 d.push({
-    url:"'hiker://search?s='+input+'&rule="+self+"&simple=false'",
+    url:"'hiker://search?s='+input+'&rule="+self+"'",
     desc:"请输入搜索关键词",
     col_type:"input"
 });
