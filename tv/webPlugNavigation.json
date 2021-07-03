@@ -358,7 +358,7 @@
     },
     {
       "name": "9亿看看(规则)",
-      "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p2650.jpg",
+      "pic": "https://www.9ehao.com/template/mytheme/statics/image/20200524/5a457d73e.ico",
       "type": "webPlug",
       "subTitle": "",
       "subMobileTitle": "",
@@ -476,7 +476,7 @@
     },
     {
       "name": "大师兄影视(规则)",
-      "pic": "https://ae01.alicdn.com/kf/U6e42273cc75f48b3bffbc37817f80cf48.jpg",
+      "pic": "https://tv.ci/favicon.ico",
       "type": "webPlug",
       "subTitle": "高清无筛选(菜单键或上下键选集)",
       "subMobileTitle": "高清无筛选",
@@ -595,7 +595,7 @@
     },
     {
       "name": "NFXHD(规则)",
-      "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p2650.jpg",
+      "pic": "https://pic.imgdb.cn/item/607e57458322e6675cedc92a.png",
       "type": "webPlug",
       "subTitle": "",
       "subMobileTitle": "",
@@ -713,7 +713,7 @@
     },
     {
       "name": "爱迪(规则)",
-      "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p3190.jpg",
+      "pic": "https://aidi.tv/template/movie/asset/img/favicon.ico",
       "type": "webPlug",
       "subTitle": "",
       "subMobileTitle": "",
@@ -762,13 +762,13 @@
             "isListItemAttr": true,
             "isReg": false,
             "isRegNeedDecoder": false,
-            "listCss": "li",
+            "listCss": ".playlist_full li",
             "isMultiList": false,
             "listCssMulti": "",
             "listItemAttr": "href",
             "listItemCss": "a",
             "listItemIndex": 0,
-            "mainCss": "ul.content_playlist.clearfix",
+            "mainCss": "div.play_source",
             "mainIndex": 0,
             "regIndexList": [
               0
@@ -839,7 +839,7 @@
     },
     {
       "name": "一只鱼(规则)",
-      "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p3190.jpg",
+      "pic": "http://poco.4kyu.cc/qiangjunqhe/111107.png",
       "type": "webPlug",
       "subTitle": "",
       "subMobileTitle": "",
@@ -883,13 +883,13 @@
             "isListItemAttr": true,
             "isReg": false,
             "isRegNeedDecoder": false,
-            "listCss": "li",
+            "listCss": "ul > li",
             "isMultiList": false,
             "listCssMulti": "",
             "listItemAttr": "href",
             "listItemCss": "a",
             "listItemIndex": 0,
-            "mainCss": "ul.myui-content__list.sort-list.clearfix",
+            "mainCss": "div.tab-content.myui-panel_bd",
             "mainIndex": 0,
             "regIndexList": [
               0
@@ -959,7 +959,7 @@
     },
     {
       "name": "厂长资源(规则)",
-      "pic": "https://img3.doubanio.com/view/activity_page/raw/public/p2650.jpg",
+      "pic": "https://www.qianoo.cn/wp-content/uploads/2020/05/90b07fe57d6142.png",
       "type": "webPlug",
       "subTitle": "",
       "subMobileTitle": "",
@@ -1083,7 +1083,7 @@
     },
     {
       "name": "思古影视(规则)",
-      "pic": "http://saohuotv.com/favicon.ico",
+      "pic": "https://www.siguyy.com/app/image/img.png",
       "type": "webPlug",
       "subTitle": "高清无筛选(菜单键或上下键选集)",
       "subMobileTitle": "高清无筛选",
