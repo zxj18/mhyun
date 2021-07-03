@@ -2,6 +2,30 @@
   "data": [
     {
       "id": 1,
+      "name": "618g解析",
+      "ad": "no",
+      "url": "https://jx.618g.com/?url="
+    },
+    {
+      "id": 1,
+      "name": "人人迷解析",
+      "ad": "no",
+      "url": "https://mi.renrenmi.net/dp/?url="
+    },
+    {
+      "id": 1,
+      "name": "江湖解析",
+      "ad": "no",
+      "url": "https://v.jhdyw.vip/jhcs/?url="
+    },
+    {
+      "id": 1,
+      "name": "虾米解析",
+      "ad": "no",
+      "url": "https://jx.xmflv.com/?url="
+    },
+    {
+      "id": 1,
       "name": "线路1",
       "ad": "no",
       "url": "https://okjx.cc/?url="
@@ -11,12 +35,6 @@
       "name": "线路2",
       "ad": "no",
       "url": "http://jx.618ge.com/?url="
-    },
-    {
-      "id": 1,
-      "name": "线路3",
-      "ad": "no",
-      "url": "https://jx.618g.com/?url="
     },
     {
       "id": 1,
