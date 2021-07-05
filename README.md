@@ -4,9 +4,9 @@
 ```
 海阔视界｜APP
 https://www.lanzoux.com/u/GoldRiver
-海阔视界｜规则名：道长仓库
-http://netcut.cn/p/0efcb30db3bb8420
-海阔视界｜规则名：香情影视
+海阔视界｜小程序：道长仓库
+https://pasteme.cn/134841
+海阔视界｜小程序：香情影视
 https://pasteme.cn/121288
 
 FreeDTV｜APP
