@@ -495,6 +495,7 @@ if(flag=='kdyx'||flag=='kdsx'){url='http://api.kudian6.com/jm/pdplayer.php?url='
 if(flag=='789pan'){url='https://cache.yuns.club/m3u8.php?url='+url}
 if(flag=='fanqie'){url='https://jx.fqzy.cc/jx.php?url='+url}
 if(flag=='mysp'||flag=='xmzy'||flag=='tyun'){url='http://jiexi.sxmj.wang/jx.php?url='+base64Encode(url)}
+if(flag=='lekanzyw'){url='https://bak.ojbkjx.com/?url='+url}
 var title=(list[j].split('$')[0].indexOf('http')!=-1?[j+1]:list[j].split('$')[0]);
 items.push({
 title:list[j].split('$')[0].indexOf('http')!=-1?[j+1]:list[j].split('$')[0],
