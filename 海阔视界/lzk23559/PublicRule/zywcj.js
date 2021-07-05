@@ -22,6 +22,7 @@ var arr = html.indexOf('http')!=-1?html.match(/#[\s\S]*?#/g):base64Decode(html).
 var setjson=JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{}));
 var ssmd=setjson.ssmode;
 var ssxc=setjson.sscount;
+var self=JSON.parse(getRule()).title;
 var res = {};var items = [];
 
 items.push({
@@ -103,6 +104,11 @@ items.push({
     col_type:'flex_button'
 });
 items.push({col_type: 'line'});
+items.push({
+    url:"'hiker://search?s='+input+'&rule="+self+"'",
+    desc:"请输入搜索关键词",
+    col_type:"input"
+});
 for (var i = 0; i < arr.length; i++) {
 var tabs = arr[i].match(/#.*?[\s]/g)[0].split('#')[1].replace(/\n/,'');
 var list = arr[i].match(/[\S]*?,.*?[\s]/g);
@@ -278,7 +284,7 @@ var items = [];
 var ssxc = JSON.parse(fetch('hiker://files/rules/xyq/zywset.json',{})).sscount;
 
 //设置超时时间，越小越快，单位毫秒
-var timeou = 5000;
+var timeou = 3000;
 
 var ss = MY_URL.split('$$$')[1];
 var num= MY_URL.split('$$$')[2];
@@ -308,8 +314,8 @@ var arr = cc[i].split(',')[1];
 var arrt = cc[i].split(',')[0];
 var link=cc[i].split(',')[1]+ss;
 
-//Data.push({url:link,options:{headers:{'User-Agent':MOBILE_UA},timeout:timeou}});
-Data.push({url:link,options:{headers:{'User-Agent':MOBILE_UA}}});
+Data.push({url:link,options:{headers:{'User-Agent':MOBILE_UA},timeout:timeou}});
+//Data.push({url:link,options:{headers:{'User-Agent':MOBILE_UA}}});
 Tit.push({tit:arrt});
 Ost.push({url:arr});
 }
@@ -486,8 +492,10 @@ if(flag=='pll'){url='https://jx.baipiaozy.com/player/?url='+url}
 if(flag=='languang'){url='https://j.languang.wfss100.com/?url='+url}
 if(flag=='msp'){url='https://titan.mgtv.com.bowang.tv/player/?url='+url}
 if(flag=='kdyx'||flag=='kdsx'){url='http://api.kudian6.com/jm/pdplayer.php?url='+url}
-if(flag=='789pan'){url='http://789pan.hd8.pw/?url='+url}
+if(flag=='789pan'){url='https://cache.yuns.club/m3u8.php?url='+url}
 if(flag=='fanqie'){url='https://jx.fqzy.cc/jx.php?url='+url}
+if(flag=='mysp'||flag=='xmzy'||flag=='tyun'){url='http://jiexi.sxmj.wang/jx.php?url='+base64Encode(url)}
+if(flag=='lekanzyw'){url='https://bak.ojbkjx.com/?url='+url}
 var title=(list[j].split('$')[0].indexOf('http')!=-1?[j+1]:list[j].split('$')[0]);
 items.push({
 title:list[j].split('$')[0].indexOf('http')!=-1?[j+1]:list[j].split('$')[0],
@@ -516,7 +524,7 @@ return play!=""?play:getUrl(src.split('"')[0]);
 var html=request(src);
 var time=html.match(/var time = \'(.*?)\'/)[1];
 var url=html.match(/var url = \'(.*?)\'/)[1];
-var cip=html.match(/var cip = \'(.*?)\'/)[1];
+var cip='192.168.125.9';
 var vkey=html.match(/var vkey = \'(.*?)\'/)[1];
 var body='time='+time+'&url='+url+'&cip='+cip+'&wap=1&vkey='+vkey;
 var json=fetch('https://jx.xmflv.com/xmflv.SVG', {headers:{'content-type':'application/x-www-form-urlencoded'},body:body,method:'POST'});
@@ -543,9 +551,11 @@ return "toast://请等待加载选集！"};
 var meiju=fetch(src,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://www.meiju11.com"}});
 return meiju.match(/url:.*?[\'\"](.*?)[\'\"]/)[1];
 }else if(src.indexOf("leduotv")!=-1){
-var pla=request(src,{}).split("var url=\'")[1].split("\'")[0];
-if(pla.indexOf("m3u8")!=-1){
-return pla.split("=")[1];}else{return src};
+var purl=request(src,{}).split("var url=\'")[1].split("\'")[0];
+var pla=request("https://api.leduotv.com"+purl,{});
+return pla.match(/\"url\": \"(.*?)\"/)[1];
+//if(pla.indexOf("m3u8")!=-1){
+//return pla.split("=")[1];}else{return src};
 }else if(src.indexOf("aHR0c")!=-1){
 return decodeURIComponent(base64Decode(src.split("&")[0]));
 }else if(src.indexOf("haodanxia")!=-1||src.indexOf("cqzyw")!=-1){
@@ -581,7 +591,7 @@ return play!=""?play:getUrl(pli);
 }else if(src.indexOf("kudian6.com")!=-1){
 var html=request(src);
 return html.match(/url\":.*?[\'\"](.*?)[\'\"]/)[1];
-}else if(src.indexOf("789pan")!=-1){
+}else if(src.indexOf("yuns.club")!=-1){
 	/*
 var html=request(src);
 eval(getCryptoJS());
@@ -590,12 +600,8 @@ var times=(new Date()).getTime()+'';
 var sh= CryptoJS.MD5(base64Encode(id+times)).toString();
 var purl='http://play.zk132.cn/new/play1/'+id+'%7C'+times+'%7C'+sh+'%7C'+'1'+'%7C'+'index.m3u8';
 */
-var html=request(src,{});
-var dom=src.split('?')[0];
-var aly=parseDomForHtml(html,"body&&iframe&&src");
-var html=fetch(dom+aly,{headers:{"User-Agent":MOBILE_UA,"Referer":dom}});
-var purl=html.match(/var urls = \"(.*?)\"/)[1];
-return purl+';{Referer@'+dom+'}';
+var html=fetch(src,{});
+return JSON.parse(html).url;
 }else if(/wfss100/.test(src)){
 var phtml =request(src,{});
 var ifsrc=src.split('/?url=')[0]+parseDomForHtml(phtml,"body&&iframe&&src");
