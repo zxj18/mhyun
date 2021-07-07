@@ -11,7 +11,7 @@ for (var i = 0; i < json.subjects.length; i++) {
     var j = json.subjects[i];
 
     r.title = j.title;
-    r.url ='hiker://search?s='+j.title+'&rule='+self+'&simple=false';
+    r.url ='hiker://search?s='+j.title+'&rule='+self;
     r.pic_url = j.cover+'@Referer='+j.cover;
 
     r.desc = j.rate;
