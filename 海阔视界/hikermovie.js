@@ -1168,7 +1168,7 @@ else if(/contentURL/.test(html)&&/movievod/.test(html)){
 var conts = parseDomForArray(html, 'body&&.contentURL&&ul');}
 else if(/module-tab-item/.test(html)&&/scroll-content/.test(html)){
 var tabs = parseDomForArray(html,'body&&.module-tab-item');
-var conts = parseDomForArray(html,'body&&.scroll-content');}
+var conts = parseDomForArray(html,'body&&.scroll-content:not(:has(.tag-link))');}
 else if(/tabs_block/.test(html)&&/list_block/.test(html)){
 var tabs = parseDomForArray(html,'body&&.tabs');
 var conts = parseDomForArray(html,'body&&.list_block');}
