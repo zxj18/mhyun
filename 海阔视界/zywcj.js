@@ -300,7 +300,8 @@ items.push({
 
             title: cc[i].split(',')[0]+' 点击查看搜索结果',
 
-            url: cc[i].split(',')[1]+ss.replace(/pg=\d*/g,'pg=fypage')
+            url: cc[i].split(',')[1]+ss.replace(/pg=\d*/g,'pg=fypage')+`@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);zywerj();`,
+            col_type: 'text_center_1'
         });
 
     };
@@ -361,7 +362,8 @@ items.push({
             title: title+" "+' • '+note,
             desc: ' '+Tit[k].tit+' · '+typ+' · '+dt,
 
-            url: Ost[k].url+"?ac=videolist&ids="+url
+            url: Ost[k].url+"?ac=videolist&ids="+url+`@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
+            col_type: 'text_center_1'
 
         });
 
