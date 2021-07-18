@@ -490,11 +490,11 @@ if(flag=='niux'){url='https://www.shenma4480.com/jx.php?id='+url}
 if(flag=='hkm3u8'){url='https://pl.tcc-interiors.com/hls/'+url}
 if(flag=='xsp1'){url='https://jx.api.xhfhttc.cn/jx/?type=xsp1&url='+url}
 if(flag=='bb'){url='https://jx.api.xhfhttc.cn/jx/?url='+url}
-if(flag=='pll'){url='https://jx.baipiaozy.com/player/?url='+url}
+if(flag=='pll'){url='https://vip.gaotian.love/api/?key=930ys99g2M1crzLh7P&url='+url}
 if(flag=='languang'){url='https://j.languang.wfss100.com/?url='+url}
 if(flag=='msp'){url='https://titan.mgtv.com.bowang.tv/player/?url='+url}
 if(flag=='kdyx'||flag=='kdsx'){url='http://api.kudian6.com/jm/pdplayer.php?url='+url}
-if(flag=='789pan'){url='https://cache.yuns.club/m3u8.php?url='+url}
+if(flag=='789pan'){url='https://vip.gaotian.love/api/?key=930ys99g2M1crzLh7P&url='+url}
 if(flag=='fanqie'){url='https://jx.fqzy.cc/jx.php?url='+url}
 if(flag=='mysp'||flag=='xmzy'||flag=='tyun'){url='http://jiexi.sxmj.wang/jx.php?url='+base64Encode(url)}
 if(flag=='lekanzyw'){url='https://bak.ojbkjx.com/?url='+url}
@@ -593,7 +593,7 @@ return play!=""?play:getUrl(pli);
 }else if(src.indexOf("kudian6.com")!=-1){
 var html=request(src);
 return html.match(/url\":.*?[\'\"](.*?)[\'\"]/)[1];
-}else if(src.indexOf("yuns.club")!=-1){
+}else if(src.indexOf("gaotian.love")!=-1){
 	/*
 var html=request(src);
 eval(getCryptoJS());
