@@ -37,6 +37,7 @@ https://apps.apple.com/cn/app/id1546631588
 https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E9%98%85%E8%AF%BB%EF%BD%9C%E4%B9%A6%E6%BA%90%EF%BD%9C2021%E5%B9%B46%E6%9C%88%E6%95%B4%E7%90%86.txt
 https://github.com/XIU2/Yuedu
 https://gitee.com/vpq/yd
+https://gitee.com/namofree/yuedu3/raw/legado3booksource/legado3_booksource_by_Namo.json
 http://yck.mumuceo.com/yuedu/shuyuan/index.html
 http://yuedu.miaogongzi.net/gx.html
 
