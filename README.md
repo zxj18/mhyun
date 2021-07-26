@@ -32,6 +32,8 @@ https://github.com/cuiocean/ZY-Player-APP
 https://github.com/gedoor/legado/releases/
 花火阅读｜APP (ios版~支持阅读3.0书源导入)
 https://apps.apple.com/cn/app/id1546631588
+源阅读｜APP (ios13版~支持阅读3.0书源导入)
+https://github.com/kaich/Yuedu
 
 阅读｜书源
 https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E9%98%85%E8%AF%BB%EF%BD%9C%E4%B9%A6%E6%BA%90%EF%BD%9C2021%E5%B9%B46%E6%9C%88%E6%95%B4%E7%90%86.txt
