@@ -10,12 +10,39 @@ var setjson=JSON.parse(fetch('hiker://files/rules/xyq/hikerset2.json',{}));
 var ssmd=setjson.ssmode;
 var ssxc=setjson.sscount;
 var self=JSON.parse(getRule()).title;
-d.push({col_type: 'line'});
+//d.push({col_type: 'line'});
+
+//d.push({
+//    url:"'hiker://search?s='+input+'&rule="+self+"'",
+//    desc:"请输入搜索关键词",
+//    col_type:"input"
+//});
+var decText = getVar("xyqtext", "");
 d.push({
-    url:"'hiker://search?s='+input+'&rule="+self+"'",
-    desc:"请输入搜索关键词",
-    col_type:"input"
+    title: decText,
+    url: "input://" + '' + ".js:putVar('xyqtext',input);refreshPage()",
+    col_type: 'icon_1_search'
 });
+
+var ssyq = ['香情影视搜@@香情影视', '资源网采集搜@@资源网采集.xyq'];
+if(self!=='香情影视'){
+d.push({
+        title: '你的规则改过名，搜索框搜索功能将受影响。',
+        url: 'hiker://search?s='+getVar('xyqtext')+'&rule='+self,
+        col_type: 'flex_button'
+    });
+ }
+else{
+for (var yq in ssyq) {
+    var kj = ssyq[yq].split('@@');
+    d.push({
+        title: kj[0],
+        url: 'hiker://search?s=' + getVar('xyqtext') + '&rule=' + kj[1],
+        col_type: "flex_button"
+    });
+}
+}
+
 var len=[];
 for (var i = 0; i < json.data.length; i++) {
 var tab = json.data[i];
@@ -59,7 +86,7 @@ d.unshift({
     col_type:'flex_button'
 });
 d.unshift({
-    title : '🌩更新',
+    title : '🔄更新',
     url:$('hiker://empty').lazyRule(()=>{
 	var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie.js',{});
 	writeFile("hiker://files/rules/xyq/hikermovie2.js",rulejs);
@@ -71,7 +98,7 @@ d.unshift({
     col_type:'flex_button'
 });
 d.unshift({
-    title : '🔍设置'+'('+(ssmd==1?'聚':'列')+')',
+    title : '🔍设置'+'('+(ssmd==1?'聚'+ssxc:'列')+')',
     url:$('hiker://empty').rule(()=>{
 var d=[];
 var setjson=JSON.parse(fetch('hiker://files/rules/xyq/hikerset2.json',{}));
