@@ -33,8 +33,8 @@ items.push({
     col_type: 'icon_1_search'
 });
 
-var ssyq = ['资源网采集搜@@资源网采集.xyq','香情影视搜@@香情影视'];
-if(self!=='资源网采集.xyq'){
+var ssyq = ['资源网采集搜@@资源网采集.xyq2','香情影视搜@@香情影视.奈菲'];
+if(self!=='资源网采集.xyq2'){
 items.push({
         title: '你的规则改过名，搜索框搜索功能将受影响。',
         url: 'hiker://search?s='+getVar('xyqtext')+'&rule='+self,
