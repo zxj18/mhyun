@@ -34,6 +34,18 @@ https://github.com/gedoor/legado/releases/
 https://apps.apple.com/cn/app/id1546631588
 源阅读｜APP (ios13版~支持阅读3.0书源导入)
 https://github.com/kaich/Yuedu
+香色闺阁｜APP (ios版～支持书源导入～无广告、无内购)
+https://apps.apple.com/cn/app/id1521205149
+
+香色闺阁｜书源 (书源管理>同步>搜索书源) 或 (书源管理>同步>粘贴 新书源>同步)
+https://gitee.com/giovannyramsey/xiangse/raw/master/sourceModelList.xbs
+https://gitee.com/AliyaBatesBit/xiangseting/raw/master/sourceModelList.xbs
+https://gitee.com/xiangse/womeidejiayuan/raw/master/sourceModelList.xbs
+https://gitee.com/AlphonsoEstrada/xs/raw/master/sourceModelList.xbs
+https://gitee.com/weilaiok/xiangsemanhua/raw/master/sourceModelList.xbs
+https://github.com/weilai199/xiangseComic/raw/main/sourceModelList.xbs
+香色闺阁｜书源｜搬运备份
+https://github.com/zqzess/MyWebStorage/tree/main/xsreader/backup
 
 阅读｜书源
 https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E9%98%85%E8%AF%BB%EF%BD%9C%E4%B9%A6%E6%BA%90%EF%BD%9C2021%E5%B9%B46%E6%9C%88%E6%95%B4%E7%90%86.txt
