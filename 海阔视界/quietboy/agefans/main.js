@@ -1,18 +1,210 @@
-const _local_config_path = 'hiker://files/quietboy/agefans/config.json';
-const _domin = 'https://www.agefans.cc/';
-function getSettingObjByID(id) {
-    let settings = JSON.parse(fetch(_local_config_path, {})).setting;
-    let obj = {};
-    settings.some(setting => {
-        if (setting.id == id) {
-            obj = setting;
-            return true;
+const _local_config_path = 'hiker://files/rules/quietboy/agefans/config.json';
+const _domin = 'https://www.agefans.vip';
+
+function descPage() {
+    var ret = [];
+    var url = MY_PARAMS.xjjurl;
+    let res = fetch(url, {});
+    let otherInfo = parseDomForArray(res, '.baseblock2,0&&li');
+    for (let i = 0; i < otherInfo.length; i++) {
+        ret.push(
+            {
+                title: parseDomForHtml(otherInfo[i], '.detail_imform_tag&&Text') + parseDomForHtml(otherInfo[i], '.detail_imform_value&&Text'),
+                col_type: 'long_text'
+            }
+        );
+    }
+    ret.push({
+        title: '详细简介：' + parseDomForHtml(res, '.detail_imform_desc_pre&&Text'),
+        col_type: 'long_text'
+    })
+    setResult(ret);
+}
+function detailPage() {
+    const _cachePath = 'hiker://files/rules/quietboy/agefans/cache.txt';
+    function get(url) {
+        // var demo = {
+        //     "url": url,
+        //     "pic": pic_url,
+        //     "desc": desc,
+        //     "current_index": 0,
+        //     "reverse": false,
+        //     "content": [
+        //         {
+        //             "tab": tab_name,
+        //             "items": [
+        //                 {
+        //                     "name": item_name,
+        //                     "url": item_url
+        //                 }
+        //             ]
+        //         }
+        //     ]
+        // };
+        var ret = {};
+        ret.url = url;
+        res = fetch(url, {});
+        ret.pic = parseDom(res, '.baseblock&&.blockcontent&&img&&src');
+        ret.desc = parseDomForHtml(res, '.detail_imform_desc_pre&&Text');
+        try {
+            var cache = JSON.parse(fetch(_cachePath, {}));
+            var check = false;
+            for (let i = 0; i < cache.length; i++) {
+                if (cache[i].url == url) {
+                    check = true;
+                    ret.current_index = cache[i].current_index;
+                    ret.reverse = cache[i].reverse;
+                    break;
+                }
+            }
+            if (!check) {
+                cache.push({
+                    url: url,
+                    current_index: 0,
+                    reverse: false
+                });
+                ret.current_index = 0;
+                ret.reverse = false;
+                writeFile(_cachePath, JSON.stringify(cache));
+            }
+        } catch (e) {
+            log(e);
+            let obj = {};
+            obj.url = url;
+            obj.current_index = 0;
+            obj.reverse = false;
+            ret.current_index = 0;
+            ret.reverse = false;
+            writeFile(_cachePath, JSON.stringify([obj]));
         }
-        else {
-            return false;
+        var content = [];
+        var serverList = parseDomForArray(res, '#main0&&.movurl');
+        for (let i = 0; i < serverList.length; i++) {
+            let epiList = parseDomForArray(serverList[i], 'ul&&a');
+            let epiListLen = epiList.length;
+            if (epiListLen != 0) {
+                let tmp = {};
+                tmp.tab = '播放列表' + (i + 1);
+                tmp.items = [];
+                for (let j = 0; j < epiListLen; j++) {
+                    tmp.items.push({
+                        name: parseDomForHtml(epiList[j], 'a&&Text'),
+                        url: _domin + parseDomForHtml(epiList[j], 'a&&href')
+                    });
+                }
+                content.push(tmp);
+            }
         }
-    });
-    return obj;
+        ret.content = content;
+        return ret;
+    }
+    function set(data) {
+        var res = [];
+        var extra = JSON.stringify({
+            xjjurl: data.url
+        });
+        res.push({
+            title: "点我查看详情",
+            col_type: 'movie_1_vertical_pic_blur',
+            url: 'hiker://page/desc.html',
+            img: data.pic,
+            desc: data.desc,
+            extra: extra
+        });
+        res.push({
+            col_type: 'line_blank'
+        });
+        for (let i = 0; i < 10; i++) {
+            res.push({
+                col_type: 'blank_block'
+            });
+        }
+        res.push({
+            col_type: 'scroll_button',
+            title: '““””<strong><font color="black">线路：</font></strong>',
+            url: $('hiker://empty#noLoading#').lazyRule(() => {
+                return 'hiker://empty';
+            })
+        });
+        for (let i = 0; i < data.content.length; i++) {
+            var tabObj = {};
+            tabObj.col_type = 'scroll_button';
+            tabObj.url = $('hiker://empty#noLoading#').lazyRule((obj) => {
+                var cache = JSON.parse(fetch(obj._cachePath, {}));
+                for (let i = 0; i < cache.length; i++) {
+                    if (cache[i].url == obj.url) {
+                        cache[i].current_index = obj.index;
+                        break;
+                    }
+                }
+                writeFile(obj._cachePath, JSON.stringify(cache));
+                refreshPage();
+                return 'hiker://empty';
+            }, {
+                index: i,
+                _cachePath: _cachePath,
+                url: data.url
+            });
+            if (i == data.current_index) {
+                tabObj.title = '““””<small><font color="red">' + data.content[i].tab + '</font></small>'
+
+            } else {
+                tabObj.title = data.content[i].tab
+            }
+            res.push(tabObj);
+        }
+        res.push({
+            col_type: 'line_blank'
+        });
+        res.push({
+            col_type: 'flex_button',
+            title: '““””<font color="black">反序</font>',
+            url: $('hiker://empty#noLoading#').lazyRule((obj) => {
+                var cache = JSON.parse(fetch(obj._cachePath, {}));
+                for (let i = 0; i < cache.length; i++) {
+                    if (cache[i].url == obj.url) {
+                        cache[i].reverse = !cache[i].reverse;
+                        break;
+                    }
+                }
+                writeFile(obj._cachePath, JSON.stringify(cache));
+                refreshPage();
+                return 'hiker://empty';
+            }, {
+                _cachePath: _cachePath,
+                url: data.url
+            })
+        });
+        res.push({
+            col_type: 'line'
+        });
+        var current_item = data.content[data.current_index].items;
+        var current_group = [];
+        for (let i = 0; i < current_item.length; i++) {
+            current_group.push(
+                {
+                    col_type: 'text_3',
+                    title: current_item[i].name,
+                    url: $(current_item[i].url).lazyRule(() => {
+                        eval(fetch('hiker://files/rules/quietboy/agefans/main.js', {}));
+                        try {
+                            return getVideoUrl(input);
+                        } catch (e) {
+                            log(e);
+                            return "toast://请重试";
+                        }
+                    })
+                }
+            );
+        }
+        if (data.reverse) {
+            current_group.reverse();
+        }
+        res = res.concat(current_group);
+        setResult(res);
+    }
+    var url = MY_PARAMS.xjjurl;
+    set(get(url));
 }
 var vip = {
     '88ys': function (url) {
@@ -395,136 +587,12 @@ var vip = {
         return newUrl;
     }
 }
-function erji() {
-    let res = {};
-    let d = [];
-    if (MY_URL.indexOf('haikuoshijie') >= 0) {
-        d.push({
-            desc: 'auto',
-            col_type: 'x5_webview_single',
-            url: MY_URL
-        });
-        res.data = d;
-        setResult(res);
-        return;
-    }
-    let showNum = (getSettingObjByID(1).value == 0) ? false : true;
-    let isZip = (getSettingObjByID(3).value == 0) ? false : true;
-    var oriRes = getResCode();
-    let title = parseDomForHtml(oriRes, '.detail_imform_name&&Text');
-    let img = parseDom(oriRes, '.baseblock&&.blockcontent&&img&&src');
-    let desc = parseDomForHtml(oriRes, '.detail_imform_desc_pre&&Text');
-    let Rule = 'hiker://empty#' + MY_URL + `@rule=js:eval(fetch('hiker://files/quietboy/agefans/main.js',{}));Rule_1()`;
-    d.push({
-        title: "点我查看详情",
-        col_type: 'movie_1_vertical_pic',
-        url: Rule,
-        img: img,
-        desc: desc
-    });
-    d.push({
-        col_type: 'line_blank'
-    });
-
-    let playList = parseDomForArray(oriRes, '#main0&&.movurl');
-    let playListLen = playList.length;
-    //压缩逻辑
-    if (isZip) {
-        var zip = fetch('hiker://files/quietboy/agefans/zip.txt').split(',');
-        if (zip[0] != getUrl()) {
-            writeFile('hiker://files/quietboy/agefans/zip.txt', getUrl() + ',0,' + Array(playListLen).fill(1).join(','));
-            zip = fetch('hiker://files/quietboy/agefans/zip.txt').split(',');
-        }
-    }
-    let lazy = `@lazyRule=.js:eval(fetch('hiker://files/quietboy/agefans/main.js',{}));try{lazyRule_1()}catch(e){"toast://请重试"}`;
-    for (let i = 0; i < playListLen; i++) {
-        let epiList = parseDomForArray(playList[i], 'ul&&a');
-        let epiListLen = epiList.length;
-        if (epiListLen != 0) {
-            if (isZip) {
-                d.push(
-                    {
-                        title: '播放列表' + (i + 1),
-                        col_type: 'text_1',
-                        url: `hiker://empty@lazyRule=.js:let zip = fetch('hiker://files/quietboy/agefans/zip.txt').split(',');zip[` + (i + 1) + `] = (zip[` + (i + 1) + `] == '1') ? '0' : '1';writeFile('hiker://files/quietboy/agefans/zip.txt', zip.join(','));refreshPage();'toast://xxoo'`
-                    }
-                );
-                if (zip[i + 1] != '1') {
-                    for (let j = 0; j < epiListLen; j++) {
-                        d.push(
-                            {
-                                title: showNum ? ((i + 1) + ' - ' + parseDomForHtml(epiList[j], 'a&&Text')) : parseDomForHtml(epiList[j], 'a&&Text'),
-                                url: $(parseDom(epiList[j], 'a&&href')).lazyRule(() => {
-                                    eval(fetch('hiker://files/quietboy/agefans/main.js', {}));
-                                    try {
-                                        return lazyRuleGetPlayUrl();
-                                    } catch (e) {
-                                        return "toast://请重试";
-                                    }
-                                })
-                            }
-                        );
-                    }
-                }
-            }
-            else {
-                d.push(
-                    {
-                        title: '播放列表' + (i + 1),
-                        col_type: 'text_1',
-                        url: 'toast://xxoo'
-                    }
-                );
-                for (let j = 0; j < epiListLen; j++) {
-                    d.push(
-                        {
-                            title: showNum ? ((i + 1) + ' - ' + parseDomForHtml(epiList[j], 'a&&Text')) : parseDomForHtml(epiList[j], 'a&&Text'),
-                            url: $(parseDom(epiList[j], 'a&&href')).lazyRule(() => {
-                                eval(fetch('hiker://files/quietboy/agefans/main.js', {}));
-                                try {
-                                    return lazyRuleGetPlayUrl();
-                                } catch (e) {
-                                    return "toast://请重试";
-                                }
-                            })
-                        }
-                    );
-                }
-
-            }
-        }
-    }
-    //压缩逻辑end
-    res.data = d;
-    setResult(res);
-}
-function Rule_1() {
-    let res = {};
-    let d = [];
-    let resOri = fetch(MY_URL.split('#')[1], {});
-    let otherInfo = parseDomForArray(resOri, '.baseblock2,0&&li');
-    for (let i = 0; i < otherInfo.length; i++) {
-        d.push(
-            {
-                title: parseDomForHtml(otherInfo[i], '.detail_imform_tag&&Text') + parseDomForHtml(otherInfo[i], '.detail_imform_value&&Text'),
-                col_type: 'long_text'
-            }
-        );
-    }
-    d.push({
-        title: '详细简介：' + parseDomForHtml(resOri, '.detail_imform_desc_pre&&Text'),
-        col_type: 'long_text'
-    })
-    res.data = d;
-    setHomeResult(res);
-}
-function lazyRuleGetPlayUrl() {
-    let online = (getSettingObjByID(2).value == 0) ? false : true;
-    function getCookie() {
+function getVideoUrl(url) {
+    function getCookie(url) {
         let t1;
         let t2;
         let k1;
-        let oriCookie = JSON.parse(fetchCookie(input, {}));
+        let oriCookie = JSON.parse(fetchCookie(url, {}));
         oriCookie.map((c) => {
             c.split(';').some((s) => {
                 if (s.split('=')[0] == 't1' || s.split('=')[0] == 'k1') {
@@ -549,20 +617,19 @@ function lazyRuleGetPlayUrl() {
         }
     }
     var cookie = {};
-    getCookie();
-    const _url = input;
-    var _getplay_url = (_url.replace(/play.{1}(.*?).{1}playid.{1}(.*?)_(.*)/, '_getplay?aid=$1&playindex=$2&epindex=$3'));
+    getCookie(url);
+    var _getplay_url = (url.replace(/play.{1}(.*?).{1}playid.{1}(.*?)_(.*)/, '_getplay?aid=$1&playindex=$2&epindex=$3'));
     let playResCode = fetch(_getplay_url,
         {
             headers: {
                 "user-agent": "Mozilla/5.0",
                 "x-requested-with": "XMLHttpRequest",
-                'referer': _url,
+                'referer': url,
                 'cookie': 't1=' + cookie.t1 + ';t2=' + cookie.t2 + ';k2=' + cookie.k2
             }
         }
     );
-    var play = input;
+    var play = url;
     if (playResCode.indexOf('{') >= 0) {
         let playJson = JSON.parse(playResCode);
         if (playJson.playid.search(/QLIVE|web_mp4|web_m3u8|PC-XXX|WMVBRH|WMZD|WMQPIC|WMXIAOMI/) >= 0) {
@@ -584,10 +651,6 @@ function lazyRuleGetPlayUrl() {
                 vurl = 'https:' + vurl;
             }
             play = vip['88ys'](vurl);
-            if (online) {
-                //writeFile('hiker://files/quietboy/tmp.m3u8', fetch(play, {}));
-                //play = 'file:///storage/emulated/0/Android/data/com.example.hikerview/files/Documents/quietboy/tmp.m3u8#' + base64Encode(vurl);
-            }
         }
         else {
             setError(playResCode);
@@ -598,48 +661,124 @@ function lazyRuleGetPlayUrl() {
     }
     return play + '#isVideo=true#';
 }
-function refreshWeek() {
-    let resCode = fetch(_domin, {});
-    eval(resCode.match(/var new_anime_list = [\s\S]*?\}\]\;/)[0].replace('var', 'let'));
-    let week = {};
-    week.info = new_anime_list;
-    week.cur = new Date().getDay();
-    week.update = new Date().getTime();
-    writeFile('hiker://files/quietboy/agefans/week.txt', JSON.stringify(week));
+function erji() {
+    if (MY_URL.indexOf('haikuoshijie') >= 0) {
+        let d = [];
+        d.push({
+            desc: 'auto',
+            col_type: 'x5_webview_single',
+            url: MY_URL
+        });
+        setResult(d);
+    }
 }
-function jiexi() {
-    let res = {};
-    let d = [];
-    let xjjclass = MY_URL.split('##')[1];
-    let xjjpage = MY_URL.split('##')[2];
-    switch (xjjclass) {
-        case 'update':
-            let resCode_1 = fetch(_domin + 'update?page=' + xjjpage, {});
+function search() {
+    var ret = [];
+    var xjjsearchkey = MY_URL.split('##')[1];
+    var xjjpage = MY_URL.split('##')[2];
+    var url = _domin + '/search?query=' + xjjsearchkey + '&page=' + xjjpage;
+    var res = fetch(url, {});
+    var movies = parseDomForArray(res, '.blockcontent1&&.cell');
+    for (let i of movies) {
+        let extra = JSON.stringify({
+            xjjurl: _domin + parseDomForHtml(i, 'a&&href')
+        });
+        ret.push({
+            title: parseDomForHtml(i, '.cell_imform&&.cell_imform_name&&Text'),
+            url: 'hiker://page/detail.html' + '#immersiveTheme#',
+            desc: parseDomForHtml(i, '.newname&&Text'),
+            img: parseDomForHtml(i, 'img&&src'),
+            content: parseDomForHtml(i, '.cell_imform_kv_desc&&Text'),
+            extra: extra
+        });
+    }
+    setResult(ret);
+}
+function chapter() {
+    var url = MY_PARAMS.xjjurl;
+    res = fetch(url, {});
+    var idx = parseDomForHtml(res, '#DEF_PLAYINDEX&&Html');
+    var current_group = parseDomForArray(res, '.movurl,' + idx + '&&li');
+    var latest = parseDomForHtml(current_group[current_group.length - 1], 'a&&Text');
+    setResult(latest)
+}
+function main() {
+    function addTabBtn(page, res, tabs) {
+        var tab = getVar('age-tab');
+        if (tab == '') {
+            tab = tabs[0];
+        }
+        if (page != 1) {
+            return tab;
+        }
+        for (let name of tabs) {
+            var btn = {};
+            btn.col_type = 'scroll_button';
+            btn.url = $('hiker://empty#noLoading#').lazyRule((obj) => {
+                putVar('age-tab', obj.name);
+                refreshPage();
+                return 'hiker://empty';
+            }, { name: name });
+            if (tab == name) {
+                btn.title = '““””<strong><font color="#44BB44">xjjkey</font></strong>'.replace('xjjkey', name);
+            }
+            else {
+                btn.title = '““””<strong><font color="black">xjjkey</font></strong>'.replace('xjjkey', name);
+            }
+            res.push(btn);
+        }
+        res.push({
+            col_type: 'blank_block'
+        });
+        return tab;
+    }
+    var ret = [];
+    let xjjpage = MY_URL.split('##')[1];
+    var tabs = ['最近更新', '每周放送', '目录'];
+    var tab = addTabBtn(xjjpage, ret, tabs);
+
+    switch (tab) {
+        case '最近更新':
+            let resCode_1 = fetch(_domin + '/update?page=' + xjjpage, {});
             let movies = parseDomForArray(resCode_1, '.ul_li_a6&&.anime_icon2');
             for (let i of movies) {
-                d.push({
+                let extra = JSON.stringify({
+                    xjjurl: _domin + parseDomForHtml(i, 'a&&href')
+                });
+                ret.push({
                     title: parseDomForHtml(i, '.anime_icon2_name&&Text'),
-                    url: _domin + parseDomForHtml(i, 'a&&href').substr(1),
+                    url: 'hiker://page/detail.html' + '#immersiveTheme#',
                     desc: parseDomForHtml(i, '.anime_icon1_name1&&Text'),
-                    img: parseDomForHtml(i, 'img&&src')
+                    img: parseDomForHtml(i, 'img&&src'),
+                    extra: extra
                 });
             }
             break;
-        case 'week':
-            d.push({
-                title: `<a href="hiker://empty@lazyRule=.js:let weekInfo = JSON.parse(fetch('hiker://files/quietboy/agefans/week.txt', {}));weekInfo.cur=1;writeFile('hiker://files/quietboy/agefans/week.txt', JSON.stringify(weekInfo));refreshPage();'toast://轻点~'">周一</a>&nbsp&nbsp&nbsp&nbsp` +
-                    `<a href="hiker://empty@lazyRule=.js:let weekInfo = JSON.parse(fetch('hiker://files/quietboy/agefans/week.txt', {}));weekInfo.cur=2;writeFile('hiker://files/quietboy/agefans/week.txt', JSON.stringify(weekInfo));refreshPage();'toast://轻点~'">周二</a>&nbsp&nbsp&nbsp&nbsp` +
-                    `<a href="hiker://empty@lazyRule=.js:let weekInfo = JSON.parse(fetch('hiker://files/quietboy/agefans/week.txt', {}));weekInfo.cur=3;writeFile('hiker://files/quietboy/agefans/week.txt', JSON.stringify(weekInfo));refreshPage();'toast://轻点~'">周三</a>&nbsp&nbsp&nbsp&nbsp` +
-                    `<a href="hiker://empty@lazyRule=.js:let weekInfo = JSON.parse(fetch('hiker://files/quietboy/agefans/week.txt', {}));weekInfo.cur=4;writeFile('hiker://files/quietboy/agefans/week.txt', JSON.stringify(weekInfo));refreshPage();'toast://轻点~'">周四</a>&nbsp&nbsp&nbsp&nbsp` +
-                    `<a href="hiker://empty@lazyRule=.js:let weekInfo = JSON.parse(fetch('hiker://files/quietboy/agefans/week.txt', {}));weekInfo.cur=5;writeFile('hiker://files/quietboy/agefans/week.txt', JSON.stringify(weekInfo));refreshPage();'toast://轻点~'">周五</a>&nbsp&nbsp&nbsp&nbsp` +
-                    `<a href="hiker://empty@lazyRule=.js:let weekInfo = JSON.parse(fetch('hiker://files/quietboy/agefans/week.txt', {}));weekInfo.cur=6;writeFile('hiker://files/quietboy/agefans/week.txt', JSON.stringify(weekInfo));refreshPage();'toast://轻点~'">周六</a>&nbsp&nbsp&nbsp&nbsp` +
-                    `<a href="hiker://empty@lazyRule=.js:let weekInfo = JSON.parse(fetch('hiker://files/quietboy/agefans/week.txt', {}));weekInfo.cur=0;writeFile('hiker://files/quietboy/agefans/week.txt', JSON.stringify(weekInfo));refreshPage();'toast://轻点~'">周日</a>&nbsp&nbsp&nbsp&nbsp`,
+        case '每周放送':
+            function refreshWeek() {
+                let resCode = fetch(_domin, {});
+                eval(resCode.match(/var new_anime_list = [\s\S]*?\}\]\;/)[0].replace('var', 'let'));
+                let week = {};
+                week.info = new_anime_list;
+                week.cur = new Date().getDay();
+                week.update = new Date().getTime();
+                writeFile('hiker://files/rules/quietboy/agefans/week.txt', JSON.stringify(week));
+            }
+            if (xjjpage != 1) break;
+            ret.push({
+                title: `<a href="hiker://empty@lazyRule=.js:let weekInfo = JSON.parse(fetch('hiker://files/rules/quietboy/agefans/week.txt', {}));weekInfo.cur=1;writeFile('hiker://files/rules/quietboy/agefans/week.txt', JSON.stringify(weekInfo));refreshPage();'toast://轻点~'">周一</a>&nbsp&nbsp&nbsp&nbsp` +
+                    `<a href="hiker://empty@lazyRule=.js:let weekInfo = JSON.parse(fetch('hiker://files/rules/quietboy/agefans/week.txt', {}));weekInfo.cur=2;writeFile('hiker://files/rules/quietboy/agefans/week.txt', JSON.stringify(weekInfo));refreshPage();'toast://轻点~'">周二</a>&nbsp&nbsp&nbsp&nbsp` +
+                    `<a href="hiker://empty@lazyRule=.js:let weekInfo = JSON.parse(fetch('hiker://files/rules/quietboy/agefans/week.txt', {}));weekInfo.cur=3;writeFile('hiker://files/rules/quietboy/agefans/week.txt', JSON.stringify(weekInfo));refreshPage();'toast://轻点~'">周三</a>&nbsp&nbsp&nbsp&nbsp` +
+                    `<a href="hiker://empty@lazyRule=.js:let weekInfo = JSON.parse(fetch('hiker://files/rules/quietboy/agefans/week.txt', {}));weekInfo.cur=4;writeFile('hiker://files/rules/quietboy/agefans/week.txt', JSON.stringify(weekInfo));refreshPage();'toast://轻点~'">周四</a>&nbsp&nbsp&nbsp&nbsp` +
+                    `<a href="hiker://empty@lazyRule=.js:let weekInfo = JSON.parse(fetch('hiker://files/rules/quietboy/agefans/week.txt', {}));weekInfo.cur=5;writeFile('hiker://files/rules/quietboy/agefans/week.txt', JSON.stringify(weekInfo));refreshPage();'toast://轻点~'">周五</a>&nbsp&nbsp&nbsp&nbsp` +
+                    `<a href="hiker://empty@lazyRule=.js:let weekInfo = JSON.parse(fetch('hiker://files/rules/quietboy/agefans/week.txt', {}));weekInfo.cur=6;writeFile('hiker://files/rules/quietboy/agefans/week.txt', JSON.stringify(weekInfo));refreshPage();'toast://轻点~'">周六</a>&nbsp&nbsp&nbsp&nbsp` +
+                    `<a href="hiker://empty@lazyRule=.js:let weekInfo = JSON.parse(fetch('hiker://files/rules/quietboy/agefans/week.txt', {}));weekInfo.cur=0;writeFile('hiker://files/rules/quietboy/agefans/week.txt', JSON.stringify(weekInfo));refreshPage();'toast://轻点~'">周日</a>&nbsp&nbsp&nbsp&nbsp`,
                 col_type: 'rich_text'
             });
-            let weekInfo = fetch('hiker://files/quietboy/agefans/week.txt', {});
+            let weekInfo = fetch('hiker://files/rules/quietboy/agefans/week.txt', {});
             if (weekInfo == '') {
                 refreshWeek();
-                weekInfo = fetch('hiker://files/quietboy/agefans/week.txt', {});
+                weekInfo = fetch('hiker://files/rules/quietboy/agefans/week.txt', {});
             }
             let curTime = new Date().getTime();
             let weekInfoParse = JSON.parse(weekInfo);
@@ -647,34 +786,39 @@ function jiexi() {
             let update = weekInfoParse.update;
             if ((curTime - update) > 3600000) {
                 refreshWeek();
-                weekInfo = fetch('hiker://files/quietboy/agefans/week.txt', {});
+                weekInfo = fetch('hiker://files/rules/quietboy/agefans/week.txt', {});
                 weekInfoParse = JSON.parse(weekInfo);
                 curWeek = weekInfoParse.cur;
                 update = weekInfoParse.update;
             }
-            d.push({
+            ret.push({
                 title: '当前显示： ““周' + curWeek + '””',
                 col_type: 'text_1'
             })
-            d.push({
+            ret.push({
                 col_type: 'line_blank'
             })
             for (let i of weekInfoParse.info) {
                 if (i.wd == curWeek) {
-                    d.push({
+                    let extra = JSON.stringify({
+                        xjjurl: _domin + '/detail/' + i.id
+                    });
+                    ret.push({
+                        col_type: 'text_1',
                         title: i.name + '    ' + i.namefornew,
-                        url: _domin + 'detail/' + i.id,
-                        col_type: 'text_1'
-                    })
+                        url: 'hiker://page/detail.html' + '#immersiveTheme#',
+                        extra: extra
+                    });
                 }
             }
             break;
-        case 'menu':
+        case '目录':
+            var menuPath = 'hiker://files/rules/quietboy/agefans/menu.txt';
             function loadMenu() {
-                let menuInfo = fetch('hiker://files/quietboy/agefans/menu.txt', {});
+                let menuInfo = fetch(menuPath, {});
                 if (menuInfo == '') {
                     menuInfo = new Array(9).fill(0).join('|');
-                    writeFile('hiker://files/quietboy/agefans/menu.txt', menuInfo);
+                    writeFile(menuPath, menuInfo);
                 }
                 return menuInfo.split('|');
             }
@@ -702,11 +846,11 @@ function jiexi() {
                 ['time', 'name', '点击量']
             ];
             let menuIdx = loadMenu();
-            let rowUrl = _domin + 'catalog/版本-年份-首字母-类型-资源-排序-' + xjjpage + '-地区-季度-状态';
+            let rowUrl = _domin + '/catalog/版本-年份-首字母-类型-资源-排序-' + xjjpage + '-地区-季度-状态';
             for (let i = 0; i < menuKey.length; i++) {
                 rowUrl = rowUrl.replace(menuKey[i], menuValue[i][menuIdx[i]]);
                 if (xjjpage == 1) {
-                    d.push({
+                    ret.push({
                         col_type: 'scroll_button',
                         title: '““””<strong><font color="black">xjjkey：</font></strong>'.replace('xjjkey', menuKey[i]),
                         url: $('hiker://empty#noLoading#').lazyRule(() => {
@@ -715,7 +859,7 @@ function jiexi() {
                     });
                     for (let j = 0; j < menuValue[i].length; j++) {
                         if (menuIdx[i] == j) {
-                            d.push({
+                            ret.push({
                                 col_type: 'scroll_button',
                                 title: '““””<small><font color="red">xjjshow</font></small>'.replace('xjjshow', menuShow[i][j]),
                                 url: $('hiker://empty#noLoading#').lazyRule(() => {
@@ -724,45 +868,50 @@ function jiexi() {
                             });
                         }
                         else {
-                            d.push({
+                            ret.push({
                                 col_type: 'scroll_button',
                                 title: '““””<code>xjjshow</code>'.replace('xjjshow', menuShow[i][j]),
                                 url: $('hiker://empty#noLoading#').lazyRule((obj) => {
-                                    let menuInfo = fetch('hiker://files/quietboy/agefans/menu.txt', {}).split('|');
+                                    let menuInfo = fetch(obj.menuPath, {}).split('|');
                                     menuInfo[obj.i] = obj.j;
-                                    writeFile('hiker://files/quietboy/agefans/menu.txt', menuInfo.join('|'));
+                                    writeFile(obj.menuPath, menuInfo.join('|'));
                                     refreshPage();
                                     return 'hiker://empty';
-                                }, { i: i, j: j })
+                                }, { menuPath: menuPath, i: i, j: j })
                             });
                         }
                     }
-                    d.push({
+                    ret.push({
                         col_type: 'blank_block'
                     })
                 }
             }
             if (xjjpage == 1) {
-                d.push({
+                ret.push({
                     col_type: 'flex_button',
                     title: '重置选项',
-                    url: $("hiker://empty").lazyRule(() => {
-                        writeFile('hiker://files/quietboy/agefans/menu.txt', new Array(9).fill(0).join('|'));
+                    url: $("hiker://empty").lazyRule((obj) => {
+                        writeFile(obj.menuPath, new Array(9).fill(0).join('|'));
                         refreshPage();
                         return 'toast://重置成功~'
-                    })
+                    }, { menuPath: menuPath })
                 });
-                d.push({
+                ret.push({
                     col_type: 'line_blank'
                 });
             }
+
             let moviesMenu = parseDomForArray(fetch(rowUrl, {}), '.blockcontent1&&.cell');
             for (let idx = 0; idx < moviesMenu.length; idx++) {
-                d.push({
+                let extra = JSON.stringify({
+                    xjjurl: _domin + parseDomForHtml(moviesMenu[idx], 'a&&href')
+                });
+                ret.push({
                     title: parseDomForHtml(moviesMenu[idx], '.cell_imform&&.cell_imform_name&&Text'),
-                    url: _domin + parseDomForHtml(moviesMenu[idx], 'a&&href'),
+                    url: 'hiker://page/detail.html' + '#immersiveTheme#',
                     desc: parseDomForHtml(moviesMenu[idx], '.newname&&Text'),
-                    img: parseDomForHtml(moviesMenu[idx], 'img&&src')
+                    img: parseDomForHtml(moviesMenu[idx], 'img&&src'),
+                    extra: extra
                 });
             }
 
@@ -770,6 +919,5 @@ function jiexi() {
         default:
             break;
     }
-    res.data = d;
-    setResult(res);
+    setResult(ret);
 }
