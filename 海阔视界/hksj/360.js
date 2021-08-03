@@ -39,120 +39,123 @@ function EJ() {
     */
 
     var lazy = `@lazyRule=.js:if(getVar('bfq')=='0'){var jx = fetch("hiker://files/jx_cache.txt",{});refreshX5WebView(jx+input);'toast://播放中'}else{refreshX5WebView('');` + lazy + `}`;
-try{
-    if (html.includes('data-cat')) {
+    //var lazy = `@lazyRule=.js:if(getVar('bfq')=='0'){var jx = fetch("hiker://files/jx_cache.txt",{});refreshX5WebView(jx+input);'toast://播放中'}else{refreshX5WebView('');JSON.parse(request('http://www.dtjug.cn/home/api?type=ys&uid=22486&key=cdegmqxyEGHJMPQRV5&url='+input)).url}`;
 
-        var aaa = (parseDomForArray(html, '#js-sitebar&&select') + '').match(/data-cat=\"(.*?)\" data-id=\"(.*?)\"/);
-        var bbb = (parseDomForArray(html, '#js-sitebar&&select') + '').match(/data-site=\"(.*?)\"/g);
-        var urls = [];
-        for (let b of bbb) {
-            var tongji = 'http://m.360kan.com/coverpage/get' + html.match(/coverpage\/(.*?)\./)[1].replace('dianying', 'Dianshi') + 'LinksBySite?id=';
-            urls.push({ url: tongji + aaa[2] + '&cat=' + aaa[1] + '&site=' + b.match(/data-site=\"(.*?)\"/)[1] });
-        }
-        var batchResult = batchFetch(urls);
+    try {
+        if (html.includes('data-cat')) {
 
-        var tabs = [];
-        var lists = [];
-        var conts = parseDomForArray(html, '#js-sitebar&&.item');
-        for (var i in batchResult) {
-            tabs.push(parseDomForHtml(conts[i], '.item&&Text'))
-            lists.push(parseDomForArray(JSON.parse(batchResult[i]).data, '.items&&li'))
-        }
-        function setTabs(tabs, vari) {
-            d.push({
-                title: '‘‘线路’’',
-                url: `#noLoading#@lazyRule=.js:let conf = getVar('折叠');if(conf=='关'){putVar({key:'折叠', value:'开'});}else{putVar({key:'折叠', value:'关'})};refreshPage(false);'toast://切换成功';'#noHistory#hiker://empty'`,
-                col_type: 'text_center_1'
-            })
-            if (getVar('折叠') == '开' || getVar('折叠') == '') {
-                for (var i = 0; i < tabs.length; i++) {
-                    var url = "#noLoading#@lazyRule=.js:putVar('" + vari + "', '" + i + "');refreshPage(false);'toast://切换成功！';'#noHistory#hiker://empty'";
+            var aaa = (parseDomForArray(html, '#js-sitebar&&select') + '').match(/data-cat=\"(.*?)\" data-id=\"(.*?)\"/);
+            var bbb = (parseDomForArray(html, '#js-sitebar&&select') + '').match(/data-site=\"(.*?)\"/g);
+            var urls = [];
+            for (let b of bbb) {
+                var tongji = 'http://m.360kan.com/coverpage/get' + html.match(/coverpage\/(.*?)\./)[1].replace('dianying', 'Dianshi') + 'LinksBySite?id=';
+                urls.push({ url: tongji + aaa[2] + '&cat=' + aaa[1] + '&site=' + b.match(/data-site=\"(.*?)\"/)[1] });
+            }
+            var batchResult = batchFetch(urls);
+
+            var tabs = [];
+            var lists = [];
+            var conts = parseDomForArray(html, '#js-sitebar&&.item');
+            for (var i in batchResult) {
+                tabs.push(parseDomForHtml(conts[i], '.item&&Text'))
+                lists.push(parseDomForArray(JSON.parse(batchResult[i]).data, '.items&&li'))
+            }
+            function setTabs(tabs, vari) {
+                d.push({
+                    title: '‘‘线路’’',
+                    url: `#noLoading#@lazyRule=.js:let conf = getVar('折叠');if(conf=='关'){putVar({key:'折叠', value:'开'});}else{putVar({key:'折叠', value:'关'})};refreshPage(false);'toast://切换成功';'#noHistory#hiker://empty'`,
+                    col_type: 'text_center_1'
+                })
+                if (getVar('折叠') == '开' || getVar('折叠') == '') {
+                    for (var i = 0; i < tabs.length; i++) {
+                        var url = "#noLoading#@lazyRule=.js:putVar('" + vari + "', '" + i + "');refreshPage(false);'toast://切换成功！';'#noHistory#hiker://empty'";
+                        var title = tabs[i].length > 0 ? tabs[i] : '风行网';
+                        d.push({
+                            title: getVar(vari, '0') == i ? '““' + title + '””' : title,
+                            url: url,
+                            col_type: 'text_2'
+                        })
+                    }
                     d.push({
-                        title: (tabs[i].length > 0 ? tabs[i] : '风行网') + (getVar(vari, '0') == i ? '✅' : ''),
-                        url: url,
-                        col_type: 'text_2'
+                        col_type: 'line_blank'
                     })
                 }
+            }
+            function setLists(lists, index) {
                 d.push({
-                    col_type: 'line_blank'
+                    title: '‘‘选集’’',
+                    url: `#noLoading#@lazyRule=.js:let conf = getVar('shsort');if(conf==' - 逆序'){putVar({key:'shsort', value:' - 正序'});}else{putVar({key:'shsort', value:' - 逆序'})};refreshPage(false);'toast://切换排序成功';'#noHistory#hiker://empty'`,
+                    col_type: 'text_center_1'
                 })
-            }
-        }
-        function setLists(lists, index) {
-            d.push({
-                title: '‘‘选集’’',
-                url: `#noLoading#@lazyRule=.js:let conf = getVar('shsort');if(conf==' - 逆序'){putVar({key:'shsort', value:' - 正序'});}else{putVar({key:'shsort', value:' - 逆序'})};refreshPage(false);'toast://切换排序成功';'#noHistory#hiker://empty'`,
-                col_type: 'text_center_1'
-            })
-            var list = lists[index];
-            if (getVar('shsort') == ' - 逆序') {
+                var list = lists[index];
+                if (getVar('shsort') == ' - 逆序') {
 
-                for (var j = list.length - 1; j >= 0; j--) {
-                    d.push({
-                        title: parseDomForHtml(list[j], 'Text'),
-                        url: parseDom(list[j], 'a&&href') + lazy,
-                        col_type: list.length > 3 ? 'text_4' : 'text_2'
-                    });
-                }
-            } else {
-                for (var j = 0; j < list.length; j++) {
-                    d.push({
-                        title: parseDomForHtml(list[j], 'Text'),
-                        url: parseDom(list[j], 'a&&href') + lazy,
-                        col_type: list.length > 3 ? 'text_4' : 'text_2'
-                    });
-                }
-            }
-            if (html.includes('观看正片')) {
-                d.push({
-                    title: '观看正片',
-                    url: parseDomForHtml(conts[index], '.item&&data-url') + lazy,
-                    col_type: list.length > 3 ? 'text_3' : 'text_2'
-                });
-            }
-        }
-        setTabs(tabs, MY_URL);
-        setLists(lists, getVar(MY_URL, '0'));
-
-        /*
-                for (var i in batchResult) {
-                    var conts = parseDomForArray(html, '#js-sitebar&&.item');
-                    var list = parseDomForArray(JSON.parse(batchResult[i]).data, '.items&&li');
-                    var title = parseDomForHtml(conts[i], '.item&&Text');
-                    d.push({
-                        title: title.length > 0 ? title : '风行网',
-                        url: parseDomForHtml(conts[i], '.item&&data-url'),
-                        col_type: 'text_1'
-                    });
-                    for (var j in list) {
+                    for (var j = list.length - 1; j >= 0; j--) {
                         d.push({
                             title: parseDomForHtml(list[j], 'Text'),
                             url: parseDom(list[j], 'a&&href') + lazy,
                             col_type: list.length > 3 ? 'text_4' : 'text_2'
                         });
                     }
-                    if (html.includes('观看正片')) {
+                } else {
+                    for (var j = 0; j < list.length; j++) {
                         d.push({
-                            title: '观看正片',
-                            url: parseDomForHtml(conts[i], '.item&&data-url') + lazy,
-                            col_type: list.length > 3 ? 'text_3' : 'text_2'
+                            title: parseDomForHtml(list[j], 'Text'),
+                            url: parseDom(list[j], 'a&&href') + lazy,
+                            col_type: list.length > 3 ? 'text_4' : 'text_2'
                         });
                     }
                 }
-                */
-    } else {
-//        var list = parseDomForArray(html, '.cp-dsseries||.p-dianying-wrap||.cp-zyseries&&a:not(:contains(集)):not(:contains(月)):not(:contains(展开))');
-        var list = parseDomForArray(html, '.items||#js-zyseries||.p-dianying-wrap&&a:not(.js-txt):not(.expand-all)');
-        for (var j in list) {
-            var title = parseDomForHtml(list[j], 'Text');
-            d.push({
-                title: title,
-                url: parseDom(list[j], 'a&&href') + lazy,
-                col_type: title.length < 4 ? 'text_4' : 'text_2'
-            });
+                if (html.includes('观看正片')) {
+                    d.push({
+                        title: '观看正片',
+                        url: parseDomForHtml(conts[index], '.item&&data-url') + lazy,
+                        col_type: list.length > 3 ? 'text_3' : 'text_2'
+                    });
+                }
+            }
+            setTabs(tabs, MY_URL);
+            setLists(lists, getVar(MY_URL, '0'));
+
+            /*
+                    for (var i in batchResult) {
+                        var conts = parseDomForArray(html, '#js-sitebar&&.item');
+                        var list = parseDomForArray(JSON.parse(batchResult[i]).data, '.items&&li');
+                        var title = parseDomForHtml(conts[i], '.item&&Text');
+                        d.push({
+                            title: title.length > 0 ? title : '风行网',
+                            url: parseDomForHtml(conts[i], '.item&&data-url'),
+                            col_type: 'text_1'
+                        });
+                        for (var j in list) {
+                            d.push({
+                                title: parseDomForHtml(list[j], 'Text'),
+                                url: parseDom(list[j], 'a&&href') + lazy,
+                                col_type: list.length > 3 ? 'text_4' : 'text_2'
+                            });
+                        }
+                        if (html.includes('观看正片')) {
+                            d.push({
+                                title: '观看正片',
+                                url: parseDomForHtml(conts[i], '.item&&data-url') + lazy,
+                                col_type: list.length > 3 ? 'text_3' : 'text_2'
+                            });
+                        }
+                    }
+                    */
+        } else {
+            //        var list = parseDomForArray(html, '.cp-dsseries||.p-dianying-wrap||.cp-zyseries&&a:not(:contains(集)):not(:contains(月)):not(:contains(展开))');
+            var list = parseDomForArray(html, '.items||#js-zyseries||.p-dianying-wrap&&a:not(.js-txt):not(.expand-all)');
+            for (var j in list) {
+                var title = parseDomForHtml(list[j], 'Text');
+                d.push({
+                    title: title,
+                    url: parseDom(list[j], 'a&&href') + lazy,
+                    col_type: title.length < 4 ? 'text_4' : 'text_2'
+                });
+            }
         }
-    }
- }catch(e){}
+    } catch (e) { }
     setResult(d)
 }
 function SYYJ() {

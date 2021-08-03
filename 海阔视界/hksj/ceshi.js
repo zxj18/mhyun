@@ -18,14 +18,12 @@ function EJ() {
     }
     var html = JSON.parse(getResCode().split('window.__INITIAL_STATE__=')[1].split(';(function(){var s;')[0]).detail.itemData;
 
-
-
     d.push({
         title: ((html.score ? '评分：' + html.score + '\t\t\t' : html.emcee ? '主持：' + html.emcee : '') + (html.year ? '年代：' + html.year : '') + '\n' + (html.zone + '\t' + html.style).substring(0, 15) + '\n' + (html.starring ? '主演：' + html.starring.substring(0, 15) : '')).replace(/undefined/g, ''),
         desc: html.release_time || html.update_wordstr || html.introduction,
         img: html.v_picurl,
         url: setUrl,
-        col_type: 'movie_1_vertical_pic'
+        col_type: 'movie_1_vertical_pic_blur'
     })
     try {
         var tabs = [];
@@ -189,7 +187,7 @@ function SYYJ() {
                     title: parseDomForHtml(list[j], 'img&&alt'),
                     img: parseDom(list[j], 'img&&src'),
                     desc: parseDomForHtml(list[j], 'a&&Text'),
-                    url: parseDom(list[j], 'a&&href'),
+                    url: parseDom(list[j], 'a&&href') + '#immersiveTheme#',
                     col_type: "movie_3"
                 });
             }
@@ -205,7 +203,7 @@ function SYYJ() {
                             title: parseDomForHtml(list[i], 'img&&alt'),
                             img: parseDom(list[i], 'img&&src'),
                             desc: parseDomForHtml(list[i], 'a&&Text'),
-                            url: $(parseDom(list[i], 'a&&href')).rule(() => { eval(fetch('hiker://files/jiexi/sougou.js')); EJ() }),
+                            url: $(parseDom(list[i], 'a&&href') + '#immersiveTheme#').rule(() => { eval(fetch('hiker://files/jiexi/sougou.js')); EJ() }),
                             col_type: 'movie_3'
                         })
                     }
@@ -226,7 +224,7 @@ function SYYJ() {
                 desc: list[i].docname,
                 content: list[i].introduction,
                 img: list[i].v_picurl,
-                url: 'https://v.sogou.com' + list[i].tiny_url
+                url: 'https://v.sogou.com' + list[i].tiny_url + '#immersiveTheme#'
             });
         }
     }
@@ -242,7 +240,7 @@ function SSYJ() {
             desc: list[i].docname,
             content: list[i].introduction,
             img: list[i].v_picurl,
-            url: 'https://v.sogou.com' + list[i].tiny_url
+            url: 'https://v.sogou.com' + list[i].tiny_url + '#immersiveTheme#'
         });
     }
     setResult(d)
