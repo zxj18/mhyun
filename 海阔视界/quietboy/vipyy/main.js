@@ -253,7 +253,7 @@ function lazyRule_1() {
             eval(parseDom(rescode, "body&&.stui-player__video&&script&&Html"));
             if (player_data["from"] == "qqpic") {
                 let _domin_zbk = 'https://cq.mmiyue.com/';
-                play = 'x5://' + _domin_zbk + 'zhenbuka/player/resourceServerPlayer.php?id=' + player_data["url"];
+                play = 'x5WebView://' + _domin_zbk + 'zhenbuka/player/resourceServerPlayer.php?id=' + player_data["url"];
                 // let resCodeQqpic = fetch(_domin_zbk + "zhenbuka/api/resMid.php?id=" + player_data["url"], {
                 //     headers: {
                 //         "Referer": _domin_zbk

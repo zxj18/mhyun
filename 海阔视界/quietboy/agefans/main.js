@@ -381,14 +381,14 @@ var vip = {
         var resCode2 = fetch('https://v1.shankuwang.com/Api.php', {
             headers: {
                 'Token': Vkey,
-                "Access-Token": Key + "-" + Sign + "-" + Token,
+                "Access-Token": Vkey + "-" + Key + "-" + Sign + "-" + Token,
                 'Version': Version,
-                'Cookie': 'uuid=' + Key + "-" + Sign + "-" + Token
+                'Cookie': 'uuid=' + Vkey + "-" + Key + "-" + Sign + "-" + Token
             },
             method: 'POST',
-            body: 'url=' + url + '&referer=' + 'aHR0cHM6Ly93d3cuYWdlZmFucy50dg==' + '&host=' + Host + '&key=' + Key + '&sign=' + Sign + '&token=' + Token + '&time=' + Time
+            body: 'url=' + Vurl + '&referer=' + 'aHR0cHM6Ly93d3cuYWdlZmFucy50dg==' + '&host=' + Host + '&key=' + Key + '&sign=' + Sign + '&token=' + Token + '&time=' + Time
         });
-        var newUrl = decodeURIComponent(decode_url(JSON.parse(resCode2).url, $.md5(Host + Time)));
+        var newUrl = decodeURIComponent(decode_url(JSON.parse(resCode2).url, $.md5(Host + Token)));
         if (newUrl[0] == '/') {
             newUrl = 'https:' + newUrl;
         }
