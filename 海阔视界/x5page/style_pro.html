@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>二级样式pro</title>
+	<link href="http://82.156.222.77/weisyr/css/pro_style.css" rel="stylesheet" type="text/css">
+	<link href="http://82.156.222.77/weisyr/css/black.css" class="style_black" rel="stylesheet"  type="text/css" disabled>
+	<link href="http://82.156.222.77/weisyr/css/loading.css" rel="stylesheet" type="text/css">
+	<link href="http://82.156.222.77/weisyr/css/fonts.css" rel="stylesheet" type="text/css">	
+	<script type="text/javascript" src="http://82.156.222.77/weisyr/js/jquery.min.js"></script>
+	<script type="text/javascript" src="http://82.156.222.77/weisyr/js/jquery.cookie.min.js"></script>
+	<script type="text/javascript" src="http://82.156.222.77/weisyr/js/lazyload.beta.2.js"></script>
+	<script type="text/javascript" src="http://82.156.222.77/weisyr/js/script.js"></script>
+	
+	<style type="text/css">
+        *{
+            moz-user-select: -moz-none;
+            -moz-user-select: none;
+            -o-user-select:none;
+            -khtml-user-select:none;
+            -webkit-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+        }
+		.view .video-info .page-title {
+			padding-bottom: 10px;
+			font-size: 34px; /* 标题大小 */	
+			line-height: 1.3;
+		}
+		.view #header {
+			background: 0 0;
+			height: 115px; /* 海报离顶 */
+			margin: 0;
+			z-index: 2
+			}
+		.view #header::after {
+			top: 0;
+			background:0 0;
+			z-index: -1
+		}
+		.linear{
+				position: absolute;
+				top: 0;
+				background: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+				height: 215px;    /* 遮罩高度 */
+				width: 100%;
+				z-index: 3;
+				}		
+		.mobile-play img {
+			   left: -5%;
+			   top: -5%;
+			  -webkit-filter: blur(30px); /* 动态模糊 */
+			   animation: rotateBox 15s linear infinite;
+		   }
+	   
+ /* 清晰图样式 */
+		.view .video-cover {
+		    z-index: 4;
+		}
+	   .video-cover:hover{/* 点击后效果 */
+	   	border-radius: 10px;
+	   }
+	   .video-cover img{
+	       transition: all 0.2s;
+	   }
+	   .video-cover:hover img{/* 点击后效果 */
+	       transform: scale(1.4);
+	       filter: blur(0px); 
+	   }  
+ /* 功能按钮 */		
+		.zt {
+		    position: fixed;
+		    top: 80px;
+		    left: 0px;
+		    z-index: 99;
+		    background: rgba(0, 0, 0, 0.0);
+		    width: 80px;
+		    height: 60px;
+		}
+		.fw {
+		    position: fixed;
+		    top: 110px;
+		    Right: 0px;
+		    z-index: 99;
+		    background: rgba(0, 0, 0, 0.0);
+		    width: 80px;
+		    height: 60px;
+		}
+		.lishi {
+			font-family: "iconfont" !important;
+			display: inline-block;
+			line-height: 25px;
+			font-size: 14px;
+			bottom: 10px;
+			border-radius: 0 25px 0 18px;
+			padding: 0 15px;
+			cursor: pointer;
+			background: linear-gradient(90deg, rgba(229, 9, 20, 0.3),rgba(255, 149, 0, 0.0));
+		}	   	   	
+ /* 引导页样式 */
+		.gx {
+			display: flex;
+			flex-direction: column;
+		}
+		.gxbg img {
+		      -webkit-filter: blur(20px); /* 动态模糊 */
+		   }
+ 
+		.enter {
+		  align-self:center;
+		  text-transform: uppercase;
+		  background: #ececec;
+		  color: #555;
+		  font-family: "Gill Sans", Impact, sans-serif;
+		  font-size: 15px;
+		  margin: 100px 75px 10px 75px;
+		  padding: 15px 20px;
+		  position: relative;
+		  text-align: center;
+		  width: 180px;
+		  top: -200px;
+		  border-radius: 8px;
+		  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+		  -webkit-transform: translateZ(0);
+		  -webkit-font-smoothing: antialiased;
+		}
+		.enter .tooltip {
+			letter-spacing:1px;
+			line-height:30px;
+			border-radius: 8px;
+		  background: #1496bb;
+		  bottom: 100%;
+		  color: #fff;
+		  display: block;
+		  left: -20px;
+		  margin-bottom: 15px;
+		  opacity: 0;
+		  padding: 20px;
+		  pointer-events: none;
+		  position: absolute;
+		  width: 100%;
+		  height: 110px;
+		  top: -200px;
+		  -webkit-transform: translateY(10px);
+		     -moz-transform: translateY(10px);
+		      -ms-transform: translateY(10px);
+		       -o-transform: translateY(10px);
+		          transform: translateY(10px);
+		  -webkit-transition: all .25s ease-out;
+		     -moz-transition: all .25s ease-out;
+		      -ms-transition: all .25s ease-out;
+		       -o-transition: all .25s ease-out;
+		          transition: all .25s ease-out;
+		  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+		     -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+		      -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+		       -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+		          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+		}
+		.enter .tooltip:before {
+		  bottom: -20px;
+		  content: " ";
+		  display: block;
+		  height: 20px;
+		  left: 0;
+		  position: absolute;
+		  width: 100%;
+		}  
+		 .enter .tooltip:after {
+		  border-left: solid transparent 10px;
+		  border-right: solid transparent 10px;
+		  border-top: solid #1496bb 10px;
+		  bottom: -10px;
+		  content: " ";
+		  height: 0;
+		  left: 50%;
+		  margin-left: -13px;
+		  position: absolute;
+		  width: 0;
+		}
+		.enter:hover .tooltip {
+		  opacity: 1;
+		  pointer-events: auto;
+		  -webkit-transform: translateY(0px);
+		     -moz-transform: translateY(0px);
+		      -ms-transform: translateY(0px);
+		       -o-transform: translateY(0px);
+		          transform: translateY(0px);
+		}
+		.enter:hover{
+		    transform: scale(1.1);
+			transition: all 0.3s;
+		}
+		@-webkit-keyframes fade-in {/*针对x5*/
+		0% {opacity: 0;}/*初始状态 */
+		40% {opacity: 0;}/*过渡状态 */
+		100% {opacity: 1;}/*结束状态 */
+		}
+		#main {
+		animation: fade-in;
+		-webkit-animation:fade-in 0.6s;/*针对x5*/
+		}
+	</style>
+</head>
+<body ontouchstart="" class="view page" onunload="download()">
+ 	<!-- up-->
+ 	<div  id="up" class="gx">
+ 	    <div class="gxbg">
+ 			<img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCnZpZXdCb3g9IjAgMCAxNzIgMjQxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxNzIgMjQxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KLnN0MHtmaWxsOiNGRkZGRkY7fQ0KLnN0MXtmaWxsOiNGRjQ0OEY7fQ0KLnN0MntmaWxsOiM1RUZGRkY7fQ0KLnN0M3tmaWxsOiM3MERBRkY7fQ0KLnN0NHtmaWxsOiM3NUJERkY7fQ0KLnN0NXtmaWxsOiM5NzY2RkY7fQ0KPC9zdHlsZT4NCjxyZWN0IGlkPSJiIiBjbGFzcz0ic3QwIiB3aWR0aD0iMTcyIiBoZWlnaHQ9IjI0MSIvPg0KPGNpcmNsZSBpZD0iX3gzNF9fMV8iIGNsYXNzPSJzdDEiIGN4PSI1MCIgY3k9IjkwIiByPSIzNCIvPg0KPGNpcmNsZSBpZD0iX3gzNF8iIGNsYXNzPSJzdDIiIGN4PSIxMzMiIGN5PSI5NCIgcj0iMjAiLz4NCjxjaXJjbGUgaWQ9Il94MzNfIiBjbGFzcz0ic3QzIiBjeD0iODkiIGN5PSIxMjYiIHI9IjEyIi8+DQo8ZWxsaXBzZSBpZD0iX3gzMV8iIHRyYW5zZm9ybT0ibWF0cml4KDcuMDg4OTA0ZS0wMiAtMC45OTc1IDAuOTk3NSA3LjA4ODkwNGUtMDIgLTEwOS43MTM3IDI1My43MjIyKSIgY2xhc3M9InN0NSIgY3g9IjgxIiBjeT0iMTg1LjgiIHJ4PSI0MSIgcnk9IjQxIi8+DQo8Zz4gCjxjaXJjbGUgaWQ9Il94MzJfIiBjbGFzcz0ic3Q0IiBjeD0iMTEzIiBjeT0iMzkiIHI9IjI1Ii8+CjxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgYmVnaW49IjBzIiBkdXI9IjdzIiB0eXBlPSJyb3RhdGUiIGZyb209IjEyMCAxMTMgMzkiIHRvPSIzNjAgMTYwIDE5MCIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4KPC9nPg0KPC9zdmc+DQo="/>
+ 		</div>
+ 		<div class="enter" onmouseenter="mouseEnter()">
+ 			缺少样式文件，点击加载！
+ 			<div class="tooltip">good 视界有你更精彩 ! X5页面瞎点发现更多功能。请编辑小程序，拉到最底部查看说明！正在跳转中……
+			</div>
+ 		</div>
+ 	</div>	
+	<main id="main" class="wrapper" style="display:none">
+	    <!-- 进入网页 -->
+	    <div id="tiaozhuan" class="fw" ></div>
+	    
+		<!-- 头部遮罩 -->
+		<div class="linear"></div>
+		<!-- theme -->
+		<div id="theme" class="zt" ></div>
+		<!-- loading -->
+		<div class="loadingBox" data-show="0">
+			<div class="loadingMain">
+				<div class="loadingCenter">
+					<div class="loadingIcon"><span></span>
+					</div>
+					<p>正在努力解析中</p>
+				</div>
+			</div>
+		</div>
+		<!-- 简介 -->
+		<div class="content">
+			<div class="box view-heading">
+				<header id="header" class="wrapper"></header>
+				<div class="mobile-play">
+					<div class="module-item-cover">
+						<div class="module-item-pic">
+							<img class="lazyload" data-src="https://z3.ax1x.com/2021/07/14/WeeRm9.jpg" src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDI0MCAzNTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI0MCAzNTA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQoJLnN0MHtmaWxsOiNGRkZGRkY7fQ0KCS5zdDF7ZmlsbDojRkY0NDhGO30NCgkuc3Qye2ZpbGw6IzVFRkZGRjt9DQoJLnN0M3tmaWxsOiM3MERBRkY7fQ0KCS5zdDR7ZmlsbDojOTc2NkZGO30NCgkuc3Q1e2ZpbGw6Izc1QkRGRjt9DQo8L3N0eWxlPg0KPHJlY3QgaWQ9ImIiIGNsYXNzPSJzdDAiIHdpZHRoPSIyNDAiIGhlaWdodD0iMzUwIi8+DQo8Y2lyY2xlIGlkPSJfeDM0X18xXyIgY2xhc3M9InN0MSIgY3g9IjY0LjEiIGN5PSIxMjMuNSIgcj0iNDguNSIvPg0KPGNpcmNsZSBpZD0iX3gzNF8iIGNsYXNzPSJzdDIiIGN4PSIxODMuNCIgY3k9IjEyOC4zIiByPSIyOS40Ii8+DQo8Y2lyY2xlIGlkPSJfeDMzXyIgY2xhc3M9InN0MyIgY3g9IjEyMCIgY3k9IjE3NSIgcj0iMTcuMyIvPg0KPGNpcmNsZSBpZD0iX3gzMl8iIGNsYXNzPSJzdDQiIGN4PSIxMDguNyIgY3k9IjI1OSIgcj0iNTkuMSIvPg0KPGNpcmNsZSBpZD0iX3gzMV8iIGNsYXNzPSJzdDUiIGN4PSIxNTQiIGN5PSI1MC42IiByPSIzNi44Ii8+DQo8L3N2Zz4NCg=="/>
+						</div>
+					</div>
+				</div>
+				
+				<div class="video-cover">
+					<div class="module-item-cover" onmouseenter="mouseEnter2()">
+						<div class="module-item-pic">
+							<a href="#" title="插件设置" id="plugin"><i class="icon-play"></i></a>
+							<img class="lazyload" alt="" data-src="https://z3.ax1x.com/2021/07/14/WeeRm9.jpg" src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDE3MiAyNDEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE3MiAyNDE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQoJLnN0MHtvcGFjaXR5OjAuNTtmaWxsOiNGRkZGRkY7fQ0KCS5zdDF7ZmlsbDojRkY0NDhGO30NCgkuc3Qye2ZpbGw6IzVFRkZGRjt9DQoJLnN0M3tmaWxsOiM3MERBRkY7fQ0KCS5zdDR7ZmlsbDojOTc2NkZGO30NCgkuc3Q1e2ZpbGw6Izc1QkRGRjt9DQo8L3N0eWxlPg0KPHJlY3QgaWQ9ImIiIGNsYXNzPSJzdDAiIHdpZHRoPSIxNzIiIGhlaWdodD0iMjQxIi8+DQo8Y2lyY2xlIGlkPSJfeDM0X18xXyIgY2xhc3M9InN0MSIgY3g9IjUwIiBjeT0iOTAiIHI9IjM0Ii8+DQo8Y2lyY2xlIGlkPSJfeDM0XyIgY2xhc3M9InN0MiIgY3g9IjEzMyIgY3k9Ijk0IiByPSIyMCIvPg0KPGNpcmNsZSBpZD0iX3gzM18iIGNsYXNzPSJzdDMiIGN4PSI4OSIgY3k9IjEyNiIgcj0iMTIiLz4NCjxlbGxpcHNlIGlkPSJfeDMxXyIgY2xhc3M9InN0NCIgY3g9IjgxLjQiIGN5PSIxODYuMSIgcng9IjQxIiByeT0iNDEiLz4NCjxnPg0KCTxjaXJjbGUgaWQ9Il94MzJfIiBjbGFzcz0ic3Q1IiBjeD0iMTEzIiBjeT0iMzkiIHI9IjI1Ii8+DQoJDQoJCTxhbmltYXRlVHJhbnNmb3JtICBhY2N1bXVsYXRlPSJub25lIiBhZGRpdGl2ZT0icmVwbGFjZSIgYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iN3MiIGZpbGw9InJlbW92ZSIgZnJvbT0iMTIwIDExMyAzOSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHJlc3RhcnQ9ImFsd2F5cyIgdG89IjM2MCAxNjAgMTkwIiB0eXBlPSJyb3RhdGUiPg0KCQk8L2FuaW1hdGVUcmFuc2Zvcm0+DQo8L2c+DQo8L3N2Zz4NCg=="/>
+							<div class="loading"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="video-info">
+					<div class="video-info-header">
+						<h1 class="page-title">name</h1>
+						<div class="video-info-aux"></div>
+					</div>
+					<div class="video-info-main"></div>
+					<!-- 历史记录 -->
+					<span id="myhistory" class="lishi" style="display:none">我是历史记录</span>
+				</div>
+			</div>
+		<!-- 列表 -->
+			<div class="module"> 
+				<div class="module-heading"> 
+					<h2 class="module-title" title="">播放列表</h2> 倒序 
+					<div class="module-tab module-player-tab "> 
+						<input type="hidden" name="tab" id="tab" class="module-tab-input"> 
+						<label class="module-tab-name"><span class="module-tab-value" id="titleplay">切换节点</span><i class="icon-arrow-bottom-o"></i></label> 
+						<div class="module-tab-items"> 
+							<div class="module-tab-title">
+								播放节点列表
+								<span class="close-drop"><i class="icon-close-o"></i></span>
+							</div> 
+							<div class="module-tab-content"></div> 
+						</div> 
+					</div> 
+					<div class="shortcuts-mobile-overlay"></div> 
+				</div>
+			</div>
+		</div>
+	
+	</main>
+	<script type="text/javascript">
+		/*var data = {
+				name: '浪客剑心',
+				pic: 'https://oss.wwdianying.net/dy/fe412ec4fd745b56b06f6e0b22ca2fdc',
+				url: 'https://www.baidu.com',
+				info: [
+					{type: '导演:', inf:'王家卫'},
+					{type: '演员:', inf:'梁朝伟 章子怡 张震 宋慧乔 梁朝伟 章子怡 张震 宋慧乔'},
+					{type: '更新:', inf:'2021年 08：00'}
+				],
+				class: '惊悚片',
+				year: '2022',
+				area: '日本',
+				desc: '讲述了民国期间“南北武林”多个门派宗师级人物，以及一代武学宗师叶问的传奇一生。讲述了民国期间“南北武林”多个门派宗师级人物，以及一代武学宗师叶问的传奇一生。讲述了民国期间“南北武林”多个门派宗师级人物，以及一代武学宗师叶问的传奇一生。讲述了民国期间“南北武林”多个门派宗师级人物，以及一代武学宗师叶问的传奇一生。',
+				plugin:"setError('进入设置')",
+				lazy:true,
+				playList:[{use:true,name:"线路一",list:[{title:"第1集",url:"https://move1.1ii0.cn/play/ebdec30e914f2740e2dd2e2b37ee7e846edc55c1689be9bc8d9fb58b34ae35235c0a5fcd5075410156cd7a3e9151e75b.m3u8"},{title:"第2集",url:"https://move1.1ii0.cn/play/ebdec30e914f2740e2dd2e2b37ee7e846edc55c1689be9bc8d9fb58b34ae35235c0a5fcd5075410156cd7a3e9151e75b.m3u8"}]}]
+				};*/
+			// 跨域调试请打开上面组关闭下面一条
+			var data = JSON.parse( fy_bridge_app.getVar("movieDetail"));
+			//fy_bridge_app.putVar("movieDetail","");
+			$(".lazyload").attr({
+				"src":data.pic,
+				"data-src":data.pic,
+				"alt":data.name
+			});
+			$("h1").text(data.name);
+			var detailed=$(".video-info-main")
+			data.info.forEach(item=>{
+				detailed.append(`<div class="video-info-items"><span class="video-info-itemtitle">${item.type}</span><div class="video-info-item">${item.inf}</div></div>`);
+			});
+			$(".video-info-aux").append(`
+				<a class="tag-link">${data.class}</a>
+				<a class="tag-link">${data.year}</a>
+				<a class="tag-link">${data.area}</a>
+			`/*,$('<a class="tag-link">刷新</a>').click(()=>{
+				fy_bridge_app.refreshPage(false);
+			})*/);
+			detailed.append(`<div class="video-info-items"><span class="video-info-itemtitle">剧情：</span>
+			<div class="video-info-item video-info-content">
+					<p class="zkjj_a">
+						${data.desc.slice(0,30)+"..."}<span
+							class="zk_jj red">[展开全部]</span></p>
+					<p class="sqjj_a" style="display: none;">
+						${data.desc}<span
+							class="sq_jj red">[收起部分]</span></p>
+				</div>
+			</div>`);
+			$.fn.longPress = function (fn,trsTime) {//长按监听
+				var $this = this;
+				for (var i = 0; i < $this.length; i++) {
+					(function (target) {
+						var timeout;
+						target.addEventListener('touchstart', function (event) {
+							timeout = setTimeout(function () {
+								//fn.apply(target);
+								fn(target);
+							}, trsTime ? trsTime : 500);
+						});
+						target.addEventListener('touchend', function (event) {
+							clearTimeout(timeout);
+						});
+						target.addEventListener('touchmove', function (event) {
+							clearTimeout(timeout);
+						});
+					})($this[i]);
+				}
+			}
+	// 插件设置
+			if(data.plugin){
+			   $("#plugin").longPress(function(){
+				   fy_bridge_app.toDetailPage("插件设置", "hiker://empty", "", "text_1","js:"+data.plugin, "");
+			   },700);
+			}
+			$("#plugin").click(function(){
+				fy_bridge_app.showPic(data.pic||"https://z3.ax1x.com/2021/07/14/WeeRm9.jpg");
+			});
+			var flag=true;
+			var lisTab=$(".module-tab-content");
+			data.playList.forEach((item,i)=>{
+				lisTab.append(`<div class="module-tab-item tab-item" data-dropdown-value="${item.name}">
+					  <span>${item.name}</span>
+					  <small>${item.list.length}</small>
+				</div> `);
+				
+				$(`<div class="module-list module-player-list tab-list sort-list" id="glist-${i}"> 
+				  <div class="module-tab module-sorttab"> 
+				   <input type="hidden" name="tab-sort" id="tab-sort" class="module-tab-input"> 
+				   <label class="module-tab-name hiker-anthology"list="${i}"><i class="icon-all"></i></label> 
+				   <div class="module-tab-items"> 
+					<div class="module-tab-title">
+					 选集
+					 <span class="close-drop"><i class="icon-close-o"></i></span>
+					 <a class="desc sort-button" href="javascript:void(0);" to="#sort-item-${i}"><i class="icon-sort"></i>排序</a>
+					</div> 
+					<div class="module-tab-content"> 
+					 <div class="module-blocklist"> 
+					  <div class="sort-item sort-item-${i}" id="sort-item-${i}"> 
+					  </div> 
+					 </div> 
+					</div> 
+				   </div> 
+				  </div> 
+				  <div class="shortcuts-mobile-overlay"></div> 
+				  <div class="module-blocklist scroll-box scroll-box-y"> 
+				   <div class="scroll-content sort-item-${i}"> 
+				   </div> 
+				  </div> 
+				 </div> `).appendTo(".module");
+				 var anthology=$(`.sort-item-${i}`);
+				 item.list.forEach((it,j)=>{
+					 var a=$(`<a lb="${i}"><span>${it.title}</span></a>`);
+					 a.attr({
+					 "onclick":"playVideo.call(this)",
+					 "jishu":j
+					 });
+					 anthology.append(a);
+				 });
+				 if(item.use&&flag){
+					$("#titleplay").text(item.name);
+					$(`#glist-${i}`).addClass("selected");
+					flag=false;
+				}
+			});
+			if(flag){
+				$("#titleplay").text("选择节点");
+				$(".module-list:first").addClass("selected");
+				flag=false;
+			}
+	// 进入视界列表
+			$(".hiker-anthology").longPress(function(ele){
+			   let i=ele.getAttribute("list");
+			   let fun=$$$.toString(i=>{
+				   let list=JSON.parse(getVar("movieDetail")).playList[i].list;
+				   setResult(list.map(item=>{
+					   return {
+						   title:item.title,
+						   url:item.url,
+						   col_type:item.title.length <= 7 ? 'text_3': 'text_2'
+					   };
+				   }));
+			   },i);
+			   fy_bridge_app.toDetailPage(`[${data.playList[i].name}]${data.name}`, "hiker://empty", "", "text_1","js:"+fun, "");
+			},300);
+	// 进入搜索
+			$("h1").longPress(function(){
+				$$$("hiker://empty#noLoading#").x5LazyRule(name=>"hiker://search?s="+name,data.name);
+			},300);
+			var flagPlay =true;
+			function playVideo(l,j){
+				if(flagPlay){
+					 let jishu=j||this.getAttribute("jishu");
+					 let lb=l||this.getAttribute("lb");
+					 record(lb,jishu);
+					 let playList=data.playList[lb].list.concat();
+					 let playlist=[];
+					 if(data.lazy){
+						playlist=playList.map((item,k)=>{
+							 var p={};
+							 p.codeAndHeader=";get";
+							 p.originalUrl=item.url;
+							 p.title=data.name+"-"+item.title;
+							 if(k==jishu){
+								 p.url=fy_bridge_app.parseLazyRule(item.url);
+								 p.use=true;
+							 }else{
+								 p.url=item.url.replace(/@lazyRule=.*/,"");
+							 }
+							 return p;
+						 });
+					 }else{
+						 playlist=playList.map((item,k)=>{
+							 var p={};
+							 p.url=item.url;
+							 p.title=data.name+"-"+item.title;
+							 if(k==jishu){
+								 p.use=true;
+							 }
+							 return p;
+						 })
+					 }
+					 flagPlay=false;
+					 fy_bridge_app.playVideos(JSON.stringify(playlist));
+					 setTimeout(()=>{flagPlay=true;$('.loadingBox').attr('data-show', 0);},300);
+				 }
+			 }
+	// 设置主题 
+			 var cookie=fy_bridge_app.fetch("hiker://files//rules/x5page/cookie_theme");
+			 if((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)||(!cookie)){//false
+				 $(".style_black").removeAttr("disabled");
+				 cookie="";
+			 }else{
+				 $(".style_black").attr("disabled","");
+			 }
+			 $("#theme").click(function(){
+				 if(cookie){
+					 $(".style_black").removeAttr("disabled");
+					 fy_bridge_app.writeFile("hiker://files//rules/x5page/cookie_theme","")
+				 }else{
+					 $(".style_black").attr("disabled","");
+					 fy_bridge_app.writeFile("hiker://files//rules/x5page/cookie_theme","1")
+				 }
+				 cookie=fy_bridge_app.fetch("hiker://files//rules/x5page/cookie_theme");
+			 });
+			 
+			 function record(list,index){
+    			 if(!data.myhistory){
+    			    return;
+    			 }
+    			 $('#myhistory').attr("style","display:none");
+    			 let myhistory=JSON.parse(request('hiker://files//rules/x5page/myhistory')||'[]');
+    			 var t=myhistory.findIndex(item=>item.ruleName==data.myhistory.ruleName);
+    			 if(t==-1){
+    			     t=myhistory.length;
+    			     myhistory.push({
+    			         ruleName:data.myhistory.ruleName,
+    			         myhistoryList:[]
+    			     })
+    			 }
+    			 var y=myhistory[t].myhistoryList.findIndex(item=>item.url==data.myhistory.url);
+    			 if(y==-1){
+    			     myhistory[t].myhistoryList.push({url:data.myhistory.url,list,index});
+    			 }else{
+    			     myhistory[t].myhistoryList[y].list=list;
+    			     myhistory[t].myhistoryList[y].index=index;
+    			 }
+    			 if(myhistory[t].myhistoryList.length>=15){
+    			     myhistory[t].myhistoryList.splice(0,1);
+    			 }
+    			 fy_bridge_app.writeFile("hiker://files//rules/x5page/myhistory",JSON.stringify(myhistory,null,2));
+			 }
+			 var myhistoryA=JSON.parse(fy_bridge_app.fetch('hiker://files//rules/x5page/myhistory')||'[]');
+			 var myhistoryIT=myhistoryA.find(item=>item.ruleName==data.myhistory.ruleName);
+			 if(myhistoryIT){
+			     myhistoryIT=myhistoryIT.myhistoryList.find(it=>it.url==data.myhistory.url);
+    			 if(myhistoryIT){
+    			    let itemA=data.playList[myhistoryIT.list];
+    			    $('#myhistory').attr("style","").text(itemA.name+"\t"+itemA.list[myhistoryIT.index].title).click(function(){
+    			        playVideo(myhistoryIT.list,myhistoryIT.index);
+    			    });
+    			 }
+			 }
+			 $("#tiaozhuan").click(function(){
+			     $$$("hiker://empty#noLoading#").x5LazyRule(url=>url,data.myhistory.url);
+			 })
+
+			$(".sq_jj").click(function () {
+				$(".sqjj_a").toggle();
+				$(".zkjj_a").toggle();
+			});
+			$(".zk_jj").click(function () {
+				$(".sqjj_a").toggle();
+				$(".zkjj_a").toggle();
+			});
+			$('.gotodownloadlist').click(function () { $('html,body').animate({ scrollTop: $('#download-list').offset().top }, 800); });
+	<!-- loading -->		
+			$(".scroll-content").click(function () {
+				$('.loadingBox').attr('data-show', 1);
+				/*setTimeout(function(){
+					$('.loadingBox').attr('data-show', 0);
+				},3000);*/
+			});
+			$(".sort-item").click(function () {
+				$('.loadingBox').attr('data-show', 1);
+			});
+	
+	</script>
+</body>
+</html>
