@@ -25,7 +25,6 @@ var ssxc=setjson.sscount;
 var self=JSON.parse(getRule()).title;
 var res = {};var items = [];
 //items.push({col_type: 'line'});
-
 var decText = getVar("xyqtext", "");
 items.push({
     title: decText,
@@ -72,7 +71,6 @@ items.push({
         });
  }
 }//for arr.length
-
 items.unshift({
     title : '香情影视',
     url:'hiker://home@香情影视||https://mp.weixin.qq.com/s/XpUI3F1nBvlNgHXvY71t0g',
@@ -191,7 +189,8 @@ items.push({
 title:title,
 pic_url:pic+'@Referer='+pic,
 desc:note,
-url:arrr+"?ac=videolist&ids="+url+`@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
+url:arrr+"?ac=videolist&ids="+url+"#immersiveTheme#"
++`@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
 col_type:"movie_3"
     });
 }else{
@@ -199,7 +198,8 @@ var dt = parseDomForHtml(list[j],"body&&dt&&Text");
 items.push({
 title:title+"  状态:"+note,
 desc:last+' '+typ+' '+dt,
-url:arrr+"?ac=videolist&ids="+url+`@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
+url:arrr+"?ac=videolist&ids="+url+"#immersiveTheme#"
++`@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
 col_type:"text_1"
 })
     }
@@ -286,7 +286,6 @@ var fileUrl=fetch("hiker://files/rules/xyq/zywset2.json",{}).replace('\"listmod\
 items.push({col_type: 'line'});
 }
 //结束第一页分类处理
-
 //对列表处理开始
 eval(fetch('hiker://files/rules/xyq/zywcj2.js'));
 listfun();
@@ -341,12 +340,10 @@ Ost.push({url:arr});
 }
 
 //---------------代码分界线----------------
-
 //批量发送请求
 if(Data!=''){
 var bfhtml=batchFetch(Data);
 //setError(Tit);
-
 for(var k=0;k<bfhtml.length;k++){
 var html=bfhtml[k];
 	
@@ -380,7 +377,8 @@ items.push({
             title: title+" "+' • '+note,
             desc: ' '+Tit[k].tit+' · '+typ+' · '+dt,
 
-            url: Ost[k].url+"?ac=videolist&ids="+url+`@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
+            url: Ost[k].url+"?ac=videolist&ids="+url+"#immersiveTheme#"
++`@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
             col_type: 'text_center_1'
 
         });
@@ -391,7 +389,6 @@ items.push({
 }//for k
 //}
 }//聚/列
-
 res.data = items;
 
 setSearchResult(res);
@@ -404,7 +401,6 @@ var res = {};var items = [];
 var domain = MY_URL.split('?wd')[0];
 var html=getResCode();
 //setError(domain);
-
 if(!/\<video\>/.test(html)){
 items.push({
 			title: '未搜索到相关资源',
@@ -428,7 +424,8 @@ items.push({
             title: '““'+title+'””'+" "+' • '+note,         
             desc: last+' ·  '+typ+' ·  '+dt,
 
-            url: domain+"?ac=videolist&ids="+ids+`@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
+            url: domain+"?ac=videolist&ids="+ids+"#immersiveTheme#"
++`@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
             col_type: 'text_center_1'
 
         });
@@ -468,7 +465,7 @@ title:'演员：'+'\n'+parseDomForHtml(html, "rss&&actor&&Text"),
 desc:'导演：'+parseDomForHtml(html, "rss&&director&&Text"),
 pic_url:pic+'@Referer='+pic,
 url:pic,
-col_type: 'movie_1_vertical_pic'
+col_type: 'movie_1_vertical_pic_blur'
 });
 
 items.push({
@@ -541,6 +538,8 @@ eval(fetch(fileUrl,{}));
 var play=vodkey.toUrl(src.split('"')[0]);
 return play!=""?play:getUrl(src.split('"')[0]);
 }else if(src.indexOf("xmflv")!=-1){
+	return 'x5WebView://'+src;
+	/*
 var html=request(src);
 var time=html.match(/var time = \'(.*?)\'/)[1];
 var url=html.match(/var url = \'(.*?)\'/)[1];
@@ -549,6 +548,7 @@ var vkey=html.match(/var vkey = \'(.*?)\'/)[1];
 var body='time='+time+'&url='+url+'&cip='+cip+'&wap=1&vkey='+vkey;
 var json=fetch('https://jx.xmflv.com/xmflv.SVG', {headers:{'content-type':'application/x-www-form-urlencoded'},body:body,method:'POST'});
 return JSON.parse(json).url;
+*/
 }else if(src.indexOf("135-cdn")!=-1){
 refreshX5WebView(src);
 return "toast://请等待加载选集！";
