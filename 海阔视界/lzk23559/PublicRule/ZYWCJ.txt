@@ -3,15 +3,12 @@
 红影,http://csksk.com/api.php/provide/vod/at/xml
 7K资源,https://zy.7kjx.com/cjapi.php
 九零影视,http://www.9xku.com/api.php/provide/vod/at/xml
-欧宝资源,http://zy.266sc.cn/api.php/provide/vod/at/xml
-789盘,http://cms.789pan.cn/api.php/provide/vod/at/xml
 宅看影视,http://zhaikanys.xyz/api.php/provide/vod/at/xml
-未来影视,https://qsulfji.cn/api.php/provide/vod/at/xml
-乐活影视,https://lehootv.com/api.php/provide/vod/at/xml
-555电影,https://www.o8tv.com/api.php/provide/vod/at/xml
 艾特,http://tv.aitesucai.xyz/api.php/provide/vod/at/xml
 番茄资源,http://api.fqzy.cc/api.php/provide/vod/at/xml
-蓝光资源,https://api.languang.wfss100.com/api.php/provide/vod/at/xml
+侦探影视,http://ys.huangguay.com/api.php/provide/vod/at/xml
+小蜻蜓,http://3ketv.com/api.php/provide/vod/at/xml/
+U猫资源,http://umao.ml/api.php/provide/vod/at/xml/
 #
 #切片类
 天空资源,https://caiji.tiankongapi.com/inc/api.php
@@ -19,6 +16,8 @@
 快播资源,http://www.kuaibozy.com/api.php/provide/vod/from/kbm3u8/at/xml
 乐多资源,http://www.leduozy.com/inc/seacmsapi.php
 百度云资源,https://api.apibdzy.com/api.php/Seacms/vod
+北斗星资源,https://api.bdxzyapi.com/api.php/provide/vod/at/xml
+无尽资源,https://api.wujinapi.com/api.php/provide/vod/at/xml
 穿梭资源,http://ok.888hyk.com/api.php/provide/vod/at/xml
 1886资源,http://cj.1886zy.co/inc/api.php
 605资源,http://www.605zy.co/inc/api.php
@@ -29,7 +28,6 @@
 蚂蚁BT,https://www.mayipbt.cc/api.php/provide/vod/at/xml
 泰剧迷,https://www.taijumi.cc/api.php/provide/vod/at/xml
 免费影院,http://www.ruiuri.com/api.php/provide/vod/at/xml
-AWSLTV,http://www.awsltv.com/api.php/provide/vod/at/xml
 追剧吧,http://www.huaxiab.com/api.php/provide/vod/at/xml
 全网影视,https://www.qwysvip.com/api.php/provide/vod/at/xml
 #
