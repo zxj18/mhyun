@@ -574,9 +574,13 @@ return meiju.match(/url:.*?[\'\"](.*?)[\'\"]/)[1];
 }*/
 else if(src.indexOf("fqzy.cc")!=-1){
 var html=fetch(src,{headers:{"User-Agent":MOBILE_UA}});
+if(/bt_token/.test(html)){
 var fileUrl=fetch("https://cdn.jsdelivr.net/gh/lzk23559/Public_folder/token.js",{});
 eval(fileUrl);
 var play=(tkurl.indexOf('url=') > -1 ? tkurl.split('url=')[1] : tkurl);
+}
+else{
+var play=html.match(/\"url\": \"(.*?)\"/)[1]}
 return play;
 }else if(src.indexOf("leduotv")!=-1){
 var purl=request(src,{}).split("var url=\'")[1].split("\'")[0];
