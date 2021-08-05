@@ -644,7 +644,8 @@ return urll+';{Referer@https://j.languang.wfss100.com/}';
 refreshX5WebView(src);
 return "toast://请等待加载选集！";
 }else if(flag=='bilibili'){
-return src;
+var zxyb=fetch('https://www.zxyb.cc/bd_json.php?url='+src,{});
+return JSON.parse(zxyb).url+';{Referer@https://www.bilibili.com&&User-Agent@Mozilla/5.0}';
 }else if(src.indexOf("alizy-")!=-1){
 refreshX5WebView('http://hong.1ren.ren/?url='+src);
 return "toast://请等待加载选集！";
