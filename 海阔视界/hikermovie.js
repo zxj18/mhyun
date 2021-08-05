@@ -1801,10 +1801,19 @@ if(/vdxj/.test(myurl)){
 if(fro=='yunbo'){
 //var json=fetch('https://dtjug.cn/json_api.php?id='+urll,{headers:{"User-Agent":MOBILE_UA,"Referer":myurl}});
 return 'https://p.vod123.xyz/v/'+urll;
-}else if(fro=='youku'){
+}
+else if(fro=='youku'){
 var json=fetch('https://json.mtosz.com/Mao.php?url='+urll,{headers:{"User-Agent":MOBILE_UA,"Referer":myurl}});
+}
+/*
+else if(fro=='hp'){
+var json=fetch('http://www.dtjug.cn/home/api?type=ys&uid=22486&key=fgijlstADLOQSVX289&url='+urll,{headers:{"User-Agent":MOBILE_UA,"Referer":myurl}});
 }else{
-var json=fetch('http://www.dtjug.cn/home/api?type=ys&uid=22486&key=cdegmqxyEGHJMPQRV5&url='+urll,{headers:{"User-Agent":MOBILE_UA,"Referer":myurl}})
+var json=fetch('http://www.dtjug.cn/home/api?type=ys&uid=22486&key=fgijlstADLOQSVX289&url='+urll,{headers:{"User-Agent":MOBILE_UA,"Referer":myurl}})
+}
+*/
+else{
+var json=fetch('http://cdn.dtjug.cn/api.php', {headers:{'X-Requested-With':'XMLHttpRequest','Content-Type':'application/x-www-form-urlencoded','Referer':'http://cdn.dtjug.cn/'},body:'url='+urll,method:'POST'})
 }
 if(fro=='mgtv'){
 return JSON.parse(json).url+'#isVideo=true#'+';{Referer@https://www.mgtv.com/&&User-Agent@Mozilla/5.0}';}
