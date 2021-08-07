@@ -4,10 +4,11 @@
 ```
 海阔视界｜APP
 https://www.lanzoux.com/u/GoldRiver
-海阔视界｜小程序：道长仓库
-https://pasteme.cn/134841
+https://www.lanzoui.com/u/GoldRiver
+海阔视界｜小程序：道长仓库●新
+http://netcut.cn/p/2a632e9846fa2760
 海阔视界｜小程序：香情影视
-https://pasteme.cn/121288
+http://netcut.cn/p/c33fb17206308ee4
 
 FreeDTV｜APP
 https://www.lanzoui.com/b025mpw7e
@@ -56,15 +57,18 @@ http://yck.mumuceo.com/yuedu/shuyuan/index.html
 http://yuedu.miaogongzi.net/gx.html
 
 阅读APP官方群📖 https://t.me/yueduguanfang
-namofree大佬的男频书源：http://shuyuan.miaogongzi.net/shuyuan/1617406392.json
-乃星大佬的女频书源：http://shuyuan.miaogongzi.site/shuyuan/1614660488.json
+haxc 大佬的漫画源：https://haxc.coding.net/p/booksrc/d/booksrc/git/raw/master/Book3.0Source.json
+namofree大佬的书源：https://namofree.gitee.io/yuedu3/legado3_booksource_by_Namo.json
+乃星大佬的女频书源：http://shuyuan.miaogongzi.net/shuyuan/1626319938.json
 关耳大佬的女频书源合集：https://guaner001125.coding.net/p/coding-code-guide/d/booksources/git/raw/master/sources/guaner.json
-一程大佬的男频书源：http://shuyuan.miaogongzi.net/shuyuan/1621144934.json
+一程大佬的书源：http://shuyuan.miaogongzi.net/shuyuan/1627741986.json
 不世玄奇大佬的书源合集：
 1、通用书源和搜索引擎书源：http://no-mystery.gitee.io/shuyuan/%E5%85%A8%E7%BD%91%E9%80%9A%E7%94%A8.json
 2、精校书源：http://no-mystery.gitee.io/shuyuan/%E7%B2%BE%E6%A0%A1%E4%B9%A6%E6%BA%90%E5%90%88%E9%9B%86.json
-破冰6大佬的听书书源合集：https://gitee.com/z507525872/book-source/raw/master/yousheng.json
-天域战歌大佬的2.0的1516个书源合集：https://tianyuzhange.lanzoux.com/iyOH8o2arzi
+破冰6大佬的自用源书源合集：https://pbpobing.coding.net/p/yueduyuan/d/sy/git/raw/master/syhj.json
+破冰6大佬的笔趣阁书源合集：https://pbpobing.coding.net/p/yueduyuan/d/sy/git/raw/master/bqg.json
+破冰6大佬的听书书源合集：https://pbpobing.coding.net/p/yueduyuan/d/sy/git/raw/master/yshj.json
+天域战歌大佬的3.0的书源：https://tianyuzhange.coding.net/p/booksource/d/shuyuan/git/raw/master/huahuo.json
 ```
 
 
