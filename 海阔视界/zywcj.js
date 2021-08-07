@@ -6,13 +6,13 @@ res.data=items;
 setHomeResult(res);
 };
 function filter(key) {
-  //var word = ["伦理","写真","福利","VIP","美女","里番","性感","倫理","论理","成人","情色","无码","有码","妻","诱","乳","红主","莉","品推","文字","三级","美少","HEY","骑兵","产自","性爱","裸聊","乱伦","偷","AV","av","淫","妖","男同","女同","人","妇","丝","私","盗","虚拟","交","SM","慰","精品","学生","射","3P","大秀","精品","口味","高潮","极品","DMM","首次","辣椒","家擂","色情","主播","名优","幼","眉","女","阴","奸","轨","师","情侣","激","态","控","飞机","推","潮","麻豆","ey"];
-  var word=[];
-  //for (var i = 0; i <word.length; i++){
-  //  if(key.indexOf(word[i])>-1){
-  //  	return true;
-  //  	}
-  //    }
+  var word = ["伦理","写真","福利","VIP","美女","里番","性感","倫理","论理","成人","情色","无码","有码","妻","诱","乳","红主","莉","品推","文字","三级","美少","HEY","骑兵","产自","性爱","裸聊","乱伦","偷","AV","av","淫","妖","男同","女同","人","妇","丝","私","盗","虚拟","交","SM","慰","精品","学生","射","3P","大秀","精品","口味","高潮","极品","DMM","首次","辣椒","家擂","色情","主播","名优","幼","眉","女","阴","奸","轨","师","情侣","激","态","控","飞机","推","潮","麻豆","ey"];
+  //var word=[];
+  for (var i = 0; i <word.length; i++){
+    if(key.indexOf(word[i])>-1){
+    	return true;
+    	}
+      }
   return false;
 };
 
@@ -25,6 +25,7 @@ var ssxc=setjson.sscount;
 var self=JSON.parse(getRule()).title;
 var res = {};var items = [];
 //items.push({col_type: 'line'});
+
 var decText = getVar("xyqtext", "");
 items.push({
     title: decText,
@@ -32,8 +33,8 @@ items.push({
     col_type: 'icon_1_search'
 });
 
-var ssyq = ['资源网采集搜@@资源网采集.xyq2','香情影视搜@@香情影视.奈菲'];
-if(self!=='资源网采集.xyq2'){
+var ssyq = ['香情影视搜@@香情影视.奈菲','资源网采集搜@@资源网采集.xyq2'];
+if(self!=='资源网采集.xyq'){
 items.push({
         title: '你的规则改过名，搜索框搜索功能将受影响。',
         url: 'hiker://search?s='+getVar('xyqtext')+'&rule='+self,
@@ -71,6 +72,7 @@ items.push({
         });
  }
 }//for arr.length
+
 items.unshift({
     title : '香情影视',
     url:'hiker://home@香情影视||https://mp.weixin.qq.com/s/XpUI3F1nBvlNgHXvY71t0g',
@@ -286,6 +288,7 @@ var fileUrl=fetch("hiker://files/rules/xyq/zywset2.json",{}).replace('\"listmod\
 items.push({col_type: 'line'});
 }
 //结束第一页分类处理
+
 //对列表处理开始
 eval(fetch('hiker://files/rules/xyq/zywcj2.js'));
 listfun();
@@ -340,10 +343,12 @@ Ost.push({url:arr});
 }
 
 //---------------代码分界线----------------
+
 //批量发送请求
 if(Data!=''){
 var bfhtml=batchFetch(Data);
 //setError(Tit);
+
 for(var k=0;k<bfhtml.length;k++){
 var html=bfhtml[k];
 	
@@ -389,6 +394,7 @@ items.push({
 }//for k
 //}
 }//聚/列
+
 res.data = items;
 
 setSearchResult(res);
@@ -401,6 +407,7 @@ var res = {};var items = [];
 var domain = MY_URL.split('?wd')[0];
 var html=getResCode();
 //setError(domain);
+
 if(!/\<video\>/.test(html)){
 items.push({
 			title: '未搜索到相关资源',
@@ -538,17 +545,31 @@ eval(fetch(fileUrl,{}));
 var play=vodkey.toUrl(src.split('"')[0]);
 return play!=""?play:getUrl(src.split('"')[0]);
 }else if(src.indexOf("xmflv")!=-1){
-	return 'x5WebView://'+src;
-	/*
-var html=request(src);
+	eval(getCryptoJS());
+	//感谢墙佬提供算法代码
+	var sign = function(a) {
+    var b = CryptoJS.MD5(a);
+    var c = CryptoJS.enc.Utf8.parse(b);
+    var d = CryptoJS.enc.Utf8.parse('ren163com5201314');
+    var e = CryptoJS.AES.encrypt(a, c, {
+        iv: d,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.ZeroPadding
+    });
+    return e.toString()
+}
+var html=fetch(src,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://jx.xmflv.com"}});
+var svg=html.match(/\[\'post\'\]\(\'(.*?)\'/)[1];
 var time=html.match(/var time = \'(.*?)\'/)[1];
 var url=html.match(/var url = \'(.*?)\'/)[1];
-var cip='192.168.125.9';
 var vkey=html.match(/var vkey = \'(.*?)\'/)[1];
-var body='time='+time+'&url='+url+'&cip='+cip+'&wap=1&vkey='+vkey;
-var json=fetch('https://jx.xmflv.com/xmflv.SVG', {headers:{'content-type':'application/x-www-form-urlencoded'},body:body,method:'POST'});
+var fvkey=sign(html.match(/var fvkey = \'(.*?)\'/)[1]);
+var body='time='+time+'&url='+url+'&wap=1&vkey='+vkey+'&fvkey='+fvkey;
+var json=fetch('https://jx.xmflv.com'+svg, {headers:{'content-type':'application/x-www-form-urlencoded'},body:body,method:'POST'});
+//log(json);
 return JSON.parse(json).url;
-*/
+}else if(src.indexOf('obj/tos')!=-1){
+return src+'#isVideo=true#';
 }else if(src.indexOf("135-cdn")!=-1){
 refreshX5WebView(src);
 return "toast://请等待加载选集！";
@@ -640,9 +661,10 @@ var ifsrc=src.split('/?url=')[0]+parseDomForHtml(phtml,"body&&iframe&&src");
 var ifsrct=ifsrc.split('?url=')[0]+parseDomForHtml(request(ifsrc,{}),"body&&iframe&&src");
 var urll=request(ifsrct,{}).match(/vodurl = \'(.*?)\'/)[1];
 return urll+';{Referer@https://j.languang.wfss100.com/}';
-}else if(src.indexOf("baipiaozy")!=-1||src.indexOf("bowang")!=-1){
-refreshX5WebView(src);
-return "toast://请等待加载选集！";
+}else if(flag=='pll'){
+var json=JSON.parse(fetch(src,{}));
+if(json.code=='200'){
+return json.url;}
 }else if(flag=='bilibili'){
 var zxyb=fetch('https://www.zxyb.cc/bd_json.php?url='+src,{});
 return JSON.parse(zxyb).url+';{Referer@https://www.bilibili.com&&User-Agent@Mozilla/5.0}';
