@@ -13,6 +13,7 @@ function filter(key) {
   //  	return true;
   //  	}
   //    }
+  return false;
 };
 
 function zywhm() {
@@ -477,6 +478,11 @@ col_type: 'movie_1_vertical_pic_blur'
 items.push({
 title: "剧情简介：",
 desc:des,
+url:$('hiker://empty').rule((des)=>{
+var res = {};var items = [];
+items.push({title:des,col_type: 'long_text'});
+res.data = items;setHomeResult(res);
+},des),
 col_type: 'text_1'
 });
 var conts=parseDomForArray(html,'rss&&dl&&dd');
