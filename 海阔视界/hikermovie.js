@@ -42,7 +42,61 @@ for (var yq in ssyq) {
     });
 }
 }
+    d.push({
+        title: '茶杯狐搜',
+        url: $('hiker://empty#x#' + getVar('xyqtext') + '#x#fypage@-1@*20@#x#').rule(() => {
+            var res = {};
+            var d = [];
+            var spl = MY_URL.split('#x#');
+            var lin = 'https://api2.jackeriss.com/api/v1/search/?text=' + spl[1] + '&type=0&from=' + spl[2] + '&size=20';
+            var pn = spl[2] / 20 + 1;
+            var urlo = JSON.parse(request(lin, {}));
+            var urlt = JSON.parse(fetch(lin.replace('type=0', 'type=1'), {}));
+            //log(urlo);
+            if (urlo.resources.length < 1&&urlt.resources.length < 1) {
+                d.push({
+                    title: '当前关键字  ' + spl[1] + '  无搜索结果',
+                    col_type: 'text_center_1'
+                });
+            }
+            if (urlo.resources.length > 0) {
+                d.push({
+                    title: '♥当前第' + pn + '页',
+                    col_type: 'text_center_1'
+                });
 
+                for (var i = 0; i < urlo.resources.length; i++) {
+                    var title = urlo.resources[i].text.replace(/\<.*?\>/g, '');
+                    var url = urlo.resources[i].url;
+                    var desc = urlo.resources[i].website;
+                    d.push({
+                        title: title.replace(spl[1], '““' + spl[1] + '””')+'  '+desc+'  在线',
+                        url: url,
+                        //desc: '在线搜索结果',
+                        col_type: 'text_1'
+                    });
+                }
+            }
+
+            if (urlt.resources.length > 0) {
+                for (var j = 0; j < urlt.resources.length; j++) {
+                    var title = urlt.resources[j].text.replace(/\<.*?\>/g, '');
+                    var url = urlt.resources[j].url;
+                    var desc = urlt.resources[j].website;
+                    d.push({
+                        title: title.replace(spl[1], '““' + spl[1] + '””')+'  '+desc+'  下载',
+                        url: url,
+                        //desc: '下载搜索结果',
+                        col_type: 'text_1'
+                    });
+                }
+            }
+            res.data = d;
+            setResult(res);
+        }),
+        col_type: "flex_button"
+    });
+    
 var len=[];
 for (var i = 0; i < json.data.length; i++) {
 var tab = json.data[i];
@@ -689,7 +743,7 @@ else if(/aidi/.test(url)){url=url+'/vsearch/'+spl[2]+'----------fypage---.html';
 else if(/siguyy|ganfantv|5180s/.test(url)){url=url+'/search/'+spl[2]+'----------fypage---.html';}
 else if(/7xiady|bwl87/.test(url)){url=url+'/search/'+spl[2]+'----------fypage---/';}
 else if(/dianyingim/.test(url)){url=url+'/search-'+spl[2]+'-----------fypage--/';}
-else if(/nkvod/.test(url)){url=url+'/aabbc/'+spl[2]+'----------fypage---/';}
+else if(/nkvod/.test(url)){url=url+'/aab/'+spl[2]+'----------fypage---/';}
 else if(/1090ys/.test(url)){url=url+'/search/wd/'+spl[2]+'/page/fypage.html';}
 else if(/bowang/.test(url)){url=url+'/api.php/app/search?pg=fypage&text='+spl[2]+'&token=';}
 else if(/subaibai|qianoo|gdwar|magedn/.test(url)){url=url+'/page/fypage?s='+spl[2];}
@@ -806,11 +860,15 @@ d.push({
    col_type: 'text_1'
 });}
 else if(/btwaf/.test(html)){
+	/*
 d.push({
    title:Tit[k].tit+' '+'有宝塔验证，点击访问原网页',
    url:Data[k].url+`@lazyRule=.js:input.split(';')[0]`,
    col_type: 'text_1'
-});}
+});
+*/
+html=request(Data[k].url + '&btwaf'+ html.match(/btwaf(.*?)\"/)[1], {});
+}
 else if(/zhenbuka|1090ys|bwl87|cokemv/.test(Data[k].url)){
 d.push({
    title:Tit[k].tit+' '+'需要输入验证码后才能搜索，点击访问原网页',
@@ -1581,9 +1639,16 @@ eval(fetch(fileUrl,{}));return realUrl;
 }
 //真不卡影视
 else if(/zhenbuka/.test(myurl)){
-if(!fileExist('hiker://files/rules/js/global_香情真不卡.js')){
 var zbkjs=fetch("https://code.aliyun.com/lzk23559/CloudRule/raw/master/global_香情真不卡.js",{});
+if(!fileExist('hiker://files/rules/js/global_香情真不卡.js')){
 writeFile("hiker://files/rules/js/global_香情真不卡.js",zbkjs);
+refreshPage(false);return 'toast://已添加插件，请重新点击选集。';
+}else{
+var locjs=fetch("hiker://files/rules/js/global_香情真不卡.js",{});
+if(locjs!=zbkjs){
+writeFile("hiker://files/rules/js/global_香情真不卡.js",zbkjs);
+refreshPage(false);return 'toast://插件已更新，请重新点击选集。';
+  }
 }
 var phtml =fetch(srcurl,{headers:{"User-Agent":MOBILE_UA}});
 var scrpt = parseDomForHtml(phtml,".embed-responsive&&script&&Html");
@@ -1869,7 +1934,7 @@ return alizy(urll);}
 else if(/hktv01/.test(myurl)&&/hkm3u8/.test(fro)){return srcurl;}
 else{
 if(/msdv/.test(myurl)){
-var jiek='https://4k.msdv.cn/?url=';
+var jiek='https://jiexi.msdv.cn/?url=';
 }else{
 var jiek=request(myurl+'/static/player/'+fro+'.js',{}).match(/src=\"(.*?)\"/)[1].split("'")[0];}
 if(jiek!=''){
