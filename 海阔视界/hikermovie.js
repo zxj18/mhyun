@@ -48,7 +48,8 @@ for (var yq in ssyq) {
             var res = {};
             var d = [];
             var spl = MY_URL.split('#x#');
-            var lin = 'https://api2.jackeriss.com/api/v1/search/?text=' + spl[1] + '&type=0&from=' + spl[2] + '&size=20';
+            //var lin = 'https://api2.jackeriss.com/api/v1/search/?text=' + spl[1] + '&type=0&from=' + spl[2] + '&size=20';
+            var lin = 'https://api.jackeriss.com/api/v1/search/?text='+spl[1]+'&type=0&from='+spl[2]+'&size=20';
             var pn = spl[2] / 20 + 1;
             var urlo = JSON.parse(request(lin, {}));
             var urlt = JSON.parse(fetch(lin.replace('type=0', 'type=1'), {}));
@@ -1910,7 +1911,7 @@ else if(/jhplayer/.test(html)&&/jianghu\/js\/setting/.test(html)){return html.ma
 else if(/var urls =/.test(html)){return html.match(/urls = \"(.*?)\"/)[1];}
 else if(/var vodurl =/.test(html)){return html.match(/vodurl = \'(.*?)\'/)[1];}
 else if(/var url =/.test(html)){return html.match(/url = \'(.*?)\'/)[1];}
-else if(/\"url\": \"/.test(html)&&/\.m3u8|\.mp4/.test(html)){return html.match(/\"url\": \"(.*?)\"/)[1];}
+else if(/\"url\":.*?[\"]http/.test(html)&&/\.m3u8|\.mp4/.test(html)){return html.match(/\"url\":.*?\"(.*?)\"/)[1];}
 //其它打开自带解析页面
 else{
 return (jiek+urll+"&next="+nxt)}
@@ -1966,7 +1967,7 @@ return ifsrc.split('?v=')[1];
 }
 else if(/var urls/.test(html)){return html.match(/urls = \"(.*?)\"/)[1];}
 else if(/var vodurl/.test(html)){return html.match(/vodurl = \'(.*?)\'/)[1];}
-else if(/\"url\": \"/.test(html)&&/\.m3u8|\.mp4/.test(html)){return html.match(/\"url\": \"(.*?)\"/)[1];}
+else if(/\"url\":.*?[\"]http/.test(html)&&/\.m3u8|\.mp4/.test(html)){return html.match(/\"url\":.*?\"(.*?)\"/)[1];}
 //其它打开自带解析页面
 else{
 return (jiek+urll+"&next="+nxt)}
