@@ -24,6 +24,154 @@ d.push({
     col_type: 'icon_1_search'
 });
 
+var ssyq = ['资源网采集搜@@资源网采集.xyq2','香情影视搜@@香情影视.奈菲'];
+if(self!=='香情影视.奈菲'){
+d.push({
+        title: '你的规则改过名，搜索框搜索功能将受影响。',
+        url: 'hiker://search?s='+getVar('xyqtext')+'&rule='+self,
+        col_type: 'flex_button'
+    });
+ }
+else{
+for (var yq in ssyq) {
+    var kj = ssyq[yq].split('@@');
+    d.push({
+        title: kj[0],
+        url: 'hiker://search?s=' + getVar('xyqtext') + '&rule=' + kj[1],
+        col_type: "flex_button"
+    });
+}
+}
+    d.push({
+        title: '茶杯狐搜',
+        url: $('hiker://empty#x#' + getVar('xyqtext') + '#x#fypage@-1@*24@#x#').rule(() => {
+            var res = {};
+            var d = [];
+            var spl = MY_URL.split('#x#');
+            //var lin = 'https://api2.jackeriss.com/api/v1/search/?text=' + spl[1] + '&type=0&from=' + spl[2] + '&size=20';
+            var lin = 'https://api.jackeriss.com/api/v1/search/?text='+spl[1]+'&type=0&from='+spl[2]+'&size=24';
+            var pn = spl[2] / 20 + 1;
+            var urlo = JSON.parse(request(lin, {}));
+            var urlt = JSON.parse(fetch(lin.replace('type=0', 'type=1'), {}));
+            //log(urlo);
+            if (urlo.resources.length < 1&&urlt.resources.length < 1) {
+                d.push({
+                    title: '当前关键字  ' + spl[1] + '  无搜索结果',
+                    col_type: 'text_center_1'
+                });
+            }
+            if (urlo.resources.length > 0) {
+                d.push({
+                    title: '♥当前第' + pn + '页',
+                    col_type: 'text_center_1'
+                });
+
+                for (var i = 0; i < urlo.resources.length; i++) {
+                    var title = urlo.resources[i].text.replace(/\<.*?\>/g, '');
+                    var url = urlo.resources[i].url;
+                    var desc = urlo.resources[i].website;
+                    d.push({
+                        title: title.replace(spl[1], '““' + spl[1] + '””')+'  '+desc+'  在线',
+                        url: url,
+                        //desc: '在线搜索结果',
+                        col_type: 'text_1'
+                    });
+                }
+            }
+
+            if (urlt.resources.length > 0) {
+                for (var j = 0; j < urlt.resources.length; j++) {
+                    var title = urlt.resources[j].text.replace(/\<.*?\>/g, '');
+                    var url = urlt.resources[j].url;
+                    var desc = urlt.resources[j].website;
+                    d.push({
+                        title: title.replace(spl[1], '““' + spl[1] + '””')+'  '+desc+'  下载',
+                        url: url,
+                        //desc: '下载搜索结果',
+                        col_type: 'text_1'
+                    });
+                }
+            }
+            res.data = d;
+            setResult(res);
+        }),
+        col_type: "flex_button"
+    });
+    
+var len=[];
+for (var i = 0; i < json.data.length; i++) {
+var tab = json.data[i];
+/*
+    d.push({
+    title : '““'+tab.type+'””',
+    col_type : 'text_center_1'
+})
+*/
+for (var k = 0; k < tab.list.length; k++) {
+var list = tab.list[k];
+    d.push({
+    title : list.title,
+    img : list.ico+'@Referer=',
+    url : 'hiker://empty$$'+list.url+'$$fypage$$'+list.vodtype+'$$'+list.vodhref+'$$',
+    col_type:'icon_4_card'
+})
+len.push({title:list.title});
+}
+}
+if(json.note!=''){
+d.unshift({
+    title : '““'+json.note+'””'+'('+len.length+')',
+    url:$('hiker://empty').rule((json)=>{
+    var res = {};var d = [];
+    var json = json;
+    d.push({
+    title : json.note,
+    desc : json.content,
+    url : json.uplink,
+    col_type:'text_center_1'
+			})
+    res.data = d;setHomeResult(res);
+    },json),
+    col_type:'flex_button'
+});
+}
+d.unshift({
+    title : '资源网',
+    url:'hiker://home@资源网采集.xyq||https://haikuoshijie.cn/topic/6033',
+    col_type:'flex_button'
+});
+d.unshift({
+    title : '🔄更新',
+    url:$('hiker://empty').lazyRule(()=>{
+	var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie.js',{});
+	writeFile("hiker://files/rules/xyq/hikermovie2.js",rulejs);
+
+//新方圆小棉袄公众号特供版
+//规则编辑By香雅情。2021/06/07
+
+//主页解析
+function hikhmrule() {
+var json = JSON.parse(getResCode());
+var res = {};
+var d = [];
+var setjson=JSON.parse(fetch('hiker://files/rules/xyq/hikerset2.json',{}));
+var ssmd=setjson.ssmode;
+var ssxc=setjson.sscount;
+var self=JSON.parse(getRule()).title;
+//d.push({col_type: 'line'});
+
+//d.push({
+//    url:"'hiker://search?s='+input+'&rule="+self+"'",
+//    desc:"请输入搜索关键词",
+//    col_type:"input"
+//});
+var decText = getVar("xyqtext", "");
+d.push({
+    title: decText,
+    url: "input://" + '' + ".js:putVar('xyqtext',input);refreshPage()",
+    col_type: 'icon_1_search'
+});
+
 var ssyq = ['资源网采集搜@@资源网采集.xyq2','香情影视搜@@香情影视.奈菲''];
 if(self!=='香情影视.奈菲''){
 d.push({
