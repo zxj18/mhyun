@@ -504,7 +504,7 @@ col_type: 'text_1'
 var url={};
 for(var j = 0; j<list.length; j++){
 if(list[j].split('$')[1]!=null){url=list[j].split('$')[1];}else{url=list[j].split('$')[0];}
-if(MY_URL.indexOf('haiyangzy')!=-1){url='https://api.xxctzy.com/wp-api/glid.php?vid='+url}
+if(MY_URL.indexOf('leduosj')!=-1){url='https://api.xxctzy.com/wp-api/glid.php?vid='+url}
 if(MY_URL.indexOf('bbkdj')!=-1){url='http://jx.yparse.com/index.php?url='+url}
 if(MY_URL.indexOf('7kjx')!=-1){url='https://jx.xmflv.com/?url='+url}
 if(flag=='ddyunp'||flag=='xin'){url='https://player.90mm.me/play.php?url='+url.replace(/第.*?集/g,'')}
