@@ -80,10 +80,13 @@ Tachiyomi｜APP
 https://github.com/tachiyomiorg/tachiyomi
 全是漫画｜APP
 https://github.com/hongchacha/cartoon
+Cimoc｜APP
+https://github.com/Haleydu/Cimoc
+导入图源 > 粘贴 > https://gitee.com/Haleydu/update/raw/master/sourceBaseUrl.json
+
 
 漫画｜图源
-https://mp.weixin.qq.com/s/cHfh-7m91ByrtkSliHTg2w
-https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E6%BC%AB%E7%94%BB%EF%BD%9C%E5%9B%BE%E6%BA%90%EF%BD%9C2021%E5%B9%B48%E6%9C%88%E5%A4%A7%E6%95%B4%E5%90%88%E6%BA%90%20%E6%9C%89%E5%9B%BE%E6%A0%87.txt
+https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E6%BC%AB%E7%94%BB%EF%BD%9C%E5%9B%BE%E6%BA%90%EF%BD%9C2021.8.21%E6%9C%89%E5%9B%BE%E6%A0%87%E5%A4%A7%E6%95%B4%E5%90%88%E6%BA%90%E6%9B%B4%E6%96%B0.txt
 https://github.com/wanglabk/hub/tree/c2099
 http://yck.mumuceo.com/yiciyuan/tuyuan/index.html
 ```
