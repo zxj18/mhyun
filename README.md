@@ -8,7 +8,7 @@ https://www.lanzoui.com/u/GoldRiver
 海阔视界｜小程序：道长仓库●新
 http://netcut.cn/p/2a632e9846fa2760
 海阔视界｜小程序：香情影视
-http://netcut.cn/p/c33fb17206308ee4
+https://paste.yuchen.tech/1527 xZlRNi
 
 FreeDTV｜APP
 https://www.lanzoui.com/b025mpw7e
@@ -80,6 +80,7 @@ Tachiyomi｜APP
 https://github.com/tachiyomiorg/tachiyomi
 全是漫画｜APP
 https://github.com/hongchacha/cartoon
+
 Cimoc｜APP
 https://github.com/Haleydu/Cimoc
 导入图源 > 粘贴 > https://gitee.com/Haleydu/update/raw/master/sourceBaseUrl.json
