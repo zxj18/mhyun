@@ -141,6 +141,7 @@ d.unshift({
     url:'hiker://home@资源网采集.xyq||https://haikuoshijie.cn/topic/6033',
     col_type:'flex_button'
 });
+
 d.unshift({
     title : '🔄更新',
     url:$('hiker://empty').lazyRule(()=>{
@@ -148,11 +149,14 @@ d.unshift({
 	writeFile("hiker://files/rules/xyq/hikermovie2.js",rulejs);
 	var rulejson = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie.json',{});
 	writeFile("hiker://files/rules/xyq/hikermovie2.json",rulejson);
-	writeFile("hiker://files/rules/xyq/hikerupdate2.txt",new Date()+'')
+	var upruleplugin = fetch('https://codeberg.org/lzk23559/cloudrule/raw/branch/master/global_香情影视网页插件.js',{});
+	writeFile("hiker://files/rules/js/global_香情影视网页插件.js",upruleplugin);
+    writeFile("hiker://files/rules/xyq/hikerupdate2.txt",new Date()+'')
 	refreshPage(false);return 'toast://应该是获取最新了吧。'
     }),
     col_type:'flex_button'
 });
+
 d.unshift({
     title : '🔍设置'+'('+(ssmd==1?'聚'+ssxc:'列')+')',
     url:$('hiker://empty').rule(()=>{
@@ -160,10 +164,7 @@ var d=[];
 var setjson=JSON.parse(fetch('hiker://files/rules/xyq/hikerset2.json',{}));
 var ssmd=setjson.ssmode;
 var ssxc=setjson.sscount;
-d.push({
-    title:'规则看不到搜索的请转到海阔视界设置→UI界面自定义→开启底部搜索框或者显示首页悬浮图标。',
-    col_type:'text_1'
-});
+
 d.push({
     title:'搜索模式设置',
     col_type:'text_center_1'
@@ -823,7 +824,7 @@ d.push({
 }
 //////////////////////////////////////////////////////////////////
 if(ssmd==1){
-
+try{
 var Data=[];
 var Tit=[];
 for(var j=le-ssxc;j<le;j++){
@@ -833,19 +834,23 @@ var Url = ssph[j].sslin;
 var tout = "3000";
 if(/kunyu77/.test(Url)){
 Data.push({url:Url.split(';')[0],options:{headers:{"User-Agent":'Dalvik/2.1.0'},timeout:tout}});
-}
-else if(/nangua/.test(Url)){
+}else if(/nangua/.test(Url)){
 Data.push({url:Url.split(';')[0],options:{headers:{"User-Agent":"Mozilla/5.0","Referer":"http://www.nangua55.com/search/","X-Requested-With":"XMLHttpRequest"},timeout:tout}});
-}
-else if(/leduosj/.test(Url)){
+}else if(/leduosj/.test(Url)){
 Data.push({url:"http://www.leduosj.com/index.php?m=vod-search",options:{headers:{"User-Agent":MOBILE_UA},timeout:tout,body:Url.split('search?')[1].split(';post')[0],method:'POST'}});
-}
-else if(/paofanhuai/.test(Url)){
+}else if(/paofanhuai/.test(Url)){
 var jbd=Url.split('JsonBody=')[1].split(';post')[0];
 Data.push({url:Url.split('?Json')[0],options:{headers:{"User-Agent":"okhttp/4.1.0","Content-Type": "application/json"},timeout:tout,body:jbd,method:"POST"}});
-}
-else if(/nfmovies/.test(Url)){
+}else if(/nfmovies/.test(Url)){
 Data.push({url:Url,options:{headers:{"User-Agent":"Mozilla/5.0","Cookie":getVar("hikernfcookie")},timeout:tout}});
+}else if(/1090ys/.test(Url)){
+Data.push({url:Url,options:{headers:{"User-Agent":MOBILE_UA,"Cookie":fetch("hiker://files/rules/xyq/xqyscookie/yljlcookie.txt", {})}}});
+}else if(/jpysvip/.test(Url)){
+Data.push({url:Url,options:{headers:{"User-Agent":MOBILE_UA,"Cookie":fetch("hiker://files/rules/xyq/xqyscookie/jpyscookie.txt", {})}}});
+}else if(/zhenbuka/.test(Url)){
+Data.push({url:Url,options:{headers:{"User-Agent":MOBILE_UA,"Cookie":fetch("hiker://files/rules/xyq/xqyscookie/zbkcookie.txt", {})}}});
+}else if(/fantuan/.test(Url)){
+Data.push({url:Url,options:{headers:{"User-Agent":MOBILE_UA,"Cookie":fetch("hiker://files/rules/xyq/xqyscookie/fantcookie.txt", {})}}});
 }
 else{
 Data.push({url:Url,options:{headers:{"User-Agent":MOBILE_UA},timeout:tout}});}
@@ -883,7 +888,9 @@ d.push({
 */
 html=request(Data[k].url + '&btwaf'+ html.match(/btwaf(.*?)\"/)[1], {});
 }
-else if(/1090ys/.test(Data[k].url)){
+else if(html.search(/请输入验证码|验证后查看搜索结果/) != -1){
+
+if(/1090ys/.test(Data[k].url)){
 d.push({
    title:Tit[k].tit+' '+'需要输入验证码后才能搜索',
    url : Data[k].url+';get;utf-8;{User-Agent@.js:MOBILE_UA&&Cookie@.js:fetch("hiker://files/rules/xyq/xqyscookie/yljlcookie.txt", {})}'+sear,
@@ -897,22 +904,25 @@ d.push({
 });
 }else if(/zhenbuka/.test(Data[k].url)){
 d.push({
-   title:Tit[k].tit+' '+'需要验证后才能搜索',
+   title:Tit[k].tit+' '+'需要滑动验证后才能搜索',
    url : Data[k].url+';get;utf-8;{User-Agent@.js:MOBILE_UA&&Cookie@.js:fetch("hiker://files/rules/xyq/xqyscookie/zbkcookie.txt", {})}'+sear,
    col_type: 'text_1'
 });
 }else if(/fantuan/.test(Data[k].url)){
 d.push({
-   title:Tit[k].tit+' '+'需要验证后才能搜索',
+   title:Tit[k].tit+' '+'需要滑动验证后才能搜索',
    url : Data[k].url+';get;utf-8;{User-Agent@.js:MOBILE_UA&&Cookie@.js:fetch("hiker://files/rules/xyq/xqyscookie/fantcookie.txt", {})}'+sear,
    col_type: 'text_1'
 });
-}else if(/bwl87|cokemv/.test(Data[k].url)){
+}else{
+    //if(/bwl87|cokemv/.test(Data[k].url))
 d.push({
    title:Tit[k].tit+' '+'有搜索验证，点击进入原网页搜索',
    url:Data[k].url+`@lazyRule=.js:input.split(';')[0]`,
    col_type: 'text_1'
 });
+}
+
 }else{
 if(/<rss/.test(html)&&/<video>/.test(html)){
 var spl = Data[k].url.split("?")[0];
@@ -925,7 +935,7 @@ ssjiex();
 }//for k
 
 }//if Data
-
+}catch(e){}
 }//结束聚合搜索
 
 res.data = d;setSearchResult(res);
@@ -1162,8 +1172,8 @@ var spl = MY_URL.match(/([\S]*?:\/\/[\S]*?)\//)[1];
 }
 
 //处理搜索验证
-if(html.search(/输入验证码|验证后查看搜索结果/) != -1){
- //滑块x5处理
+if(html.search(/请输入验证码|验证后查看搜索结果/) != -1){
+ //滑块验证x5处理
 if (spl.search(/zhenbuka/) != -1) {
     d.push({
         title: '',
@@ -1178,13 +1188,15 @@ if (spl.search(/zhenbuka/) != -1) {
         url: 'https://fantuan.tv/vodsearch/page/fypage/wd/xqysfantcookie.html',
         col_type: 'x5_webview_single'
     });
-} else if(spl.search(/1090ys|jpysvip/) != -1){
-//验证码输入
+}
+//验证码输入处理
+else if(spl.search(/1090ys|jpysvip/) != -1){
     if (spl.search(/1090ys/) != -1) {
         var imglin=spl + '/verify/index.html?' + Math.random();
     }else if(spl.search(/jpysvip/)!=-1){
         var imglin=spl + '/index.php/verify/index.html?r=' + Math.random();
     }
+   //取cookie
     var cok = JSON.parse(fetchCookie(imglin, {
             headers: {
                         'User-Agent': MOBILE_UA
@@ -1215,6 +1227,7 @@ if (spl.search(/zhenbuka/) != -1) {
         title: '发送',
         url: $(MY_URL).lazyRule((cok, spl) => {
             var cod = getVar('香情验证码');
+            //发送验证请求
             if (spl.search(/1090ys/) != -1) {
                 var html = fetch(input, {
                     headers: {
@@ -1235,6 +1248,7 @@ if (spl.search(/zhenbuka/) != -1) {
                     method: 'POST'
                 }));
             }
+            //对验证进行判断
             if (spl.search(/1090ys/) != -1) {
                 if (html.indexOf('输入验证码后查看搜索结果') > 0) {
                     return "toast://验证失败。"
@@ -1251,7 +1265,7 @@ if (spl.search(/zhenbuka/) != -1) {
             } else {
                 return "toast://验证失败！"
             }
-            }
+            }//验证if结束
         }, cok, spl),
         col_type: 'text_2'
     });
@@ -1978,8 +1992,11 @@ if(urll.substring(0,2)=='JT'||/kanju/.test(myurl)){urll=unescape(base64Decode(ur
 else if(urll.substring(0,1)=='%'){urll=unescape(urll);nxt=unescape(nxt);}
 //打开直链
 if(/\.m3u8|\.mp4|obj\/tos/.test(urll)&&/http/.test(urll)){
-if(/bigmao/.test(urll)){return urll+';{Referer@'+myurl+'}'+'#isVideo=true#';}
-else{return urll+'#isVideo=true#'}
+if(/bigmao/.test(urll)){
+return urll+';{Referer@'+myurl+'}'+'#isVideo=true#';}
+else if(/wkfile/.test(urll)){
+	return urll+';{Referer@'+myurl+'}'
+}else{return urll+'#isVideo=true#'}
 }
 //阿里资源
 else if(/alizy-/.test(urll)){
@@ -2319,7 +2336,7 @@ let sset=ssxc.replace('\"\}','\"\,\"sscount\"\:\"5\"\}');
 writeFile("hiker://files/rules/xyq/hikerset2.json",sset);
  }
  if(!fileExist('hiker://files/rules/js/global_香情影视网页插件.js')){
-var plugin=request("https://code.aliyun.com/lzk23559/CloudRule/raw/master/global_香情影视网页插件.js",{});
+var plugin=request("https://codeberg.org/lzk23559/cloudrule/raw/branch/master/global_香情影视网页插件.js",{});
 writeFile("hiker://files/rules/js/global_香情影视网页插件.js",plugin);  
  }
 try{
