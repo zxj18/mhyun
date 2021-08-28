@@ -663,7 +663,7 @@ for (var i = 0; i < conts.length; i++) {
                 } else {
                     url = list[j].split('$')[0];
                 }
-                if (MY_URL.indexOf('leduosj') != -1) {
+                if (MY_URL.indexOf('leduo') != -1) {
                     url = 'https://api.xxctzy.com/wp-api/glid.php?vid=' + url
                 }
                 if (MY_URL.indexOf('bbkdj') != -1) {
