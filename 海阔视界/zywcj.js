@@ -700,7 +700,7 @@ function SSEJ() {
                             url = 'https://www.shenma4480.com/jx.php?id=' + url
                         }
                         if (flag == 'hkm3u8') {
-                            url = 'https://pl.tcc-interiors.com/hls/' + url
+                            url = 'https://jxn2.178du.com/hls/' + url
                         }
                         if (flag == 'xsp1') {
                             url = 'https://jx.api.xhfhttc.cn/jx/?type=xsp1&url=' + url
@@ -732,6 +732,15 @@ function SSEJ() {
                         if (flag == 'lekanzyw') {
                             url = 'https://bak.ojbkjx.com/?url=' + url
                         }
+                        if (flag == 'renrenmi') {
+                            url = 'https://tv.cjt521.com/?url=' + url
+                        }
+                        if (flag == 'yunbo') {
+                            url = 'https://www.mayigq.com/vodzip/player.php?vid=' + url
+                        }
+                        if (flag == 'duoduozy') {
+                            url = 'https://player.duoduozy.com/ddplay/?url=' + url
+                        }                        
                         var title = (list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0]);
                         items.push({
                             title: list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0],
@@ -794,7 +803,9 @@ function lazyRu() {
         return JSON.parse(json).url;
     } else if (src.indexOf('obj/tos') != -1) {
         return src + '#isVideo=true#';
-    } else if (src.indexOf("135-cdn") != -1) {
+    } else if(/wkfile/.test(src)){
+	    return src+';{Referer@https://fantuan.tv}'
+     }else if (src.indexOf("135-cdn") != -1) {
         refreshX5WebView(src);
         return "toast://请等待加载选集！";
     } else if (src.indexOf("/share/") != -1) {
@@ -819,7 +830,11 @@ function lazyRu() {
     var meiju=fetch(src,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://www.meiju11.com"}});
     return meiju.match(/url:.*?[\'\"](.*?)[\'\"]/)[1];
     }*/
-    else if (src.indexOf("fqzy.cc") != -1) {
+    else if(src.indexOf("duoduozy")!=-1){
+    var duoduo=fetch(src,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://www.duoduozy.com/"}});
+    return duoduo.match(/var urls.*?[\'\"](.*?)[\'\"]/)[1];
+    }
+    else if (/fqzy\.cc|ojbkjx/.test(src)) {
         var html = fetch(src, {
             headers: {
                 "User-Agent": MOBILE_UA
@@ -832,7 +847,7 @@ function lazyRu() {
         } else {
             var play = html.match(/\"url\": \"(.*?)\"/)[1]
         }
-        return play;
+        if(/4kan/.test(play)){return play+';{Referer@https://bak.ojbkjx.com/}';}else{return play};
     } else if (src.indexOf("xxctzy") != -1) {
         var purl = request(src, {}).split("var url=\'")[1].split("\'")[0];
         var pla = request("https://api.xxctzy.com" + purl, {});
