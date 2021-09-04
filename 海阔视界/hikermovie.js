@@ -152,7 +152,7 @@ d.unshift({
 	//var upruleplugin = fetch('https://code.aliyun.com/lzk23559/CloudRule/raw/master/global_香情影视网页插件.js',{});
 	var upruleplugin = fetch('https://codeberg.org/lzk23559/cloudrule/raw/branch/master/global_香情影视网页插件.js',{});
 	writeFile("hiker://files/rules/js/global_香情影视网页插件.js",upruleplugin);
-    	writeFile("hiker://files/rules/xyq/hikerupdate2.txt",new Date()+'')
+        writeFile("hiker://files/rules/xyq/hikerupdate2.txt",new Date()+'')
 	refreshPage(false);return 'toast://只是更新了一下网页插件，不用天天按。'
     }),
     col_type:'flex_button'
@@ -1987,17 +1987,17 @@ if(fro=='4kya'){return urll+';{Referer@https://m3u8.4kya.com/}';}else{return url
 }
 //骚火
 else if(/saohuotv/.test(myurl)){
-var phtml =fetch(srcurl,{headers:{'User-Agent':MOBILE_UA}});
-var src = parseDomForHtml(phtml,"body&&iframe&&src");
-var cc=parseDomForHtml(fetch(src,{}),'body&&script,0&&Html').split('endebug()\;')[1].split('var act')[0];
+var phtml =request(srcurl);
+var src = parseDom(phtml,"body&&iframe&&src");
+var cc=parseDomForHtml(request(src,{}),'body&&script,0&&Html').split('endebug()\;')[1].split('var act')[0];
 eval(cc);
 var cs='url='+url+'&t='+t+'&key='+key+'&act=0&play=1';
-var fc=fetch('http://play.hhplayer.com/hhjx/api.php',{headers:{'User-Agent':MOBILE_UA,'referer':'http://play.hhplayer.com/'},body:cs,method:'POST'});
+var fc=fetch('https://api.hhplayer.com/api.php',{headers:{'User-Agent':MOBILE_UA,'referer':'https://api.hhplayer.com'},body:cs,method:'POST'});
 var playlink=JSON.parse(fc).url;
 if(/obj\/tos/.test(playlink)){
 return playlink+'#isVideo=true#';}
 else{
-return playlink.indexOf('http')!=-1?playlink:'http://play.hhplayer.com'+playlink}
+return playlink.indexOf('http')!=-1?playlink:'https://api.hhplayer.com'+playlink}
 }
 //扛把子
 else if(/46nb/.test(myurl)){
@@ -2047,8 +2047,11 @@ if(/\.m3u8|\.mp4|obj\/tos/.test(urll)&&/http/.test(urll)){
 if(/bigmao/.test(urll)){
 return urll+';{Referer@'+myurl+'}'+'#isVideo=true#';}
 else if(/wkfile/.test(urll)){
-	return urll+';{Referer@'+myurl+'}'
-}else{return urll+'#isVideo=true#'}
+return urll+';{Referer@'+myurl+'}'}
+else if(urll.search(/duoduozy/)!=-1){
+var duoduo=fetch('https://player.duoduozy.com/ddplay/?url='+urll,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://www.duoduozy.com/"}});
+return duoduo.match(/var urls.*?[\'\"](.*?)[\'\"]/)[1];}
+else{return urll+'#isVideo=true#'}
 }
 //阿里资源
 else if(/alizy-/.test(urll)){
