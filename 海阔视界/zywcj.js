@@ -609,7 +609,7 @@ function SSEJ() {
                 desc: '导演：' + dir,
                 pic_url: pic + '@Referer=' + pic,
                 url: pic,
-                col_type: 'movie_1_vertical_pic_blur'
+                col_type: 'movie_1_vertical_pic'
             });
 
             items.push({
