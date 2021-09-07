@@ -197,7 +197,7 @@ function listfun() {
                         title: title,
                         pic_url: pic + '@Referer=' + pic,
                         desc: note,
-                        url: arrr + "?ac=videolist&ids=" + url + "#immersiveTheme#" +
+                        url: arrr + "?ac=videolist&ids=" + url +
                             `@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
                         col_type: "movie_3"
                     });
@@ -206,7 +206,7 @@ function listfun() {
                     items.push({
                         title: title + "  状态:" + note,
                         desc: last + ' ' + typ + ' ' + dt,
-                        url: arrr + "?ac=videolist&ids=" + url + "#immersiveTheme#" +
+                        url: arrr + "?ac=videolist&ids=" + url +
                             `@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
                         col_type: "text_1"
                     })
@@ -233,7 +233,7 @@ function jsonlist() {
                         title: title,
                         pic_url: pic + '@Referer=' + pic,
                         desc: note,
-                        url: arrr + "?ac=videolist&ids=" + url + "#immersiveTheme#" +
+                        url: arrr + "?ac=videolist&ids=" + url +
                             `@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
                         col_type: "movie_3"
                     });
@@ -242,7 +242,7 @@ function jsonlist() {
                     items.push({
                         title: title + "  状态:" + note,
                         desc: last + ' ' + typ + ' ' + dt,
-                        url: arrr + "?ac=videolist&ids=" + url + "#immersiveTheme#" +
+                        url: arrr + "?ac=videolist&ids=" + url +
                             `@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
                         col_type: "text_1"
                     })
@@ -486,7 +486,7 @@ function zywsea() {
                         items.push({
                             title: title + " " + ' • ' + note,
                             desc: ' ' + Tit[k].tit + ' · ' + typ + ' · ' + dt,
-                            url: Ost[k].url + "?ac=videolist&ids=" + ids + "#immersiveTheme#" + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
+                            url: Ost[k].url + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
                             col_type: 'text_center_1'
                         });
 
@@ -541,7 +541,7 @@ function zywerj() {
                 items.push({
                     title: '““' + title + '””' + " " + ' • ' + note,
                     desc: last + ' ·  ' + typ + ' ·  ' + dt,
-                    url: domain + "?ac=videolist&ids=" + ids + "#immersiveTheme#" + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
+                    url: domain + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
                     col_type: 'text_center_1'
                 });
 
@@ -721,7 +721,7 @@ function SSEJ() {
                             url = 'http://api.kudian6.com/jm/pdplayer.php?url=' + url
                         }
                         if (flag == '789pan') {
-                            url = 'https://vip.gaotian.love/api/?key=sRy0QAq8hqXRlrEtrq&url=' + url
+                            url = 'https://vip.gaotian.love/api/?key=GiML8kaI6DnlpAahLM&url=' + url
                         }
                         if (flag == 'fanqie') {
                             url = 'https://jx.fqzy.cc/jx.php?url=' + url
@@ -733,14 +733,17 @@ function SSEJ() {
                             url = 'https://bak.ojbkjx.com/?url=' + url
                         }
                         if (flag == 'renrenmi') {
-                            url = 'https://tv.cjt521.com/?url=' + url
+                            url = 'https://cache1.jhdyw.vip:8091/rrmi.php?url=' + url
                         }
                         if (flag == 'yunbo') {
                             url = 'https://www.mayigq.com/vodzip/player.php?vid=' + url
                         }
                         if (flag == 'duoduozy') {
                             url = 'https://player.duoduozy.com/ddplay/?url=' + url
-                        }                        
+                        }
+                        //if (flag == 'miaoparty') {
+                            //url = 'https://jiexi.msdv.cn/jiemi/?url=' + url
+                        //}                        
                         var title = (list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0]);
                         items.push({
                             title: list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0],
@@ -834,6 +837,10 @@ function lazyRu() {
     var duoduo=fetch(src,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://www.duoduozy.com/"}});
     return duoduo.match(/var urls.*?[\'\"](.*?)[\'\"]/)[1];
     }
+    else if(flag=='miaoparty'){
+    var miao=fetch('https://jiexi.msdv.cn/jiemi/api.php', {headers:{'content-type':'application/x-www-form-urlencoded'},body:'url='+src+'&ac=jx',method:'POST'});
+    return JSON.parse(miao).url;
+    }
     else if (/fqzy\.cc|ojbkjx/.test(src)) {
         var html = fetch(src, {
             headers: {
@@ -912,7 +919,7 @@ function lazyRu() {
     } else if (src.indexOf("kudian6.com") != -1) {
         var html = request(src);
         return html.match(/url\":.*?[\'\"](.*?)[\'\"]/)[1];
-    } else if (src.indexOf("719ns") != -1) {
+    } else if (/719ns|rrmi/.test(src)) {
         /*
 var html=request(src);
 eval(getCryptoJS());
@@ -935,8 +942,9 @@ var purl='http://play.zk132.cn/new/play1/'+id+'%7C'+times+'%7C'+sh+'%7C'+'1'+'%7
             return json.url;
         }
     } else if (flag == 'bilibili') {
-        var zxyb = fetch('https://www.zxyb.cc/bd_json.php?url=' + src, {});
-        return JSON.parse(zxyb).url + ';{Referer@https://www.bilibili.com&&User-Agent@Mozilla/5.0}';
+        //var zxyb = fetch('https://www.zxyb.cc/bd_json.php?url=' + src, {});
+        //return JSON.parse(zxyb).url + ';{Referer@https://www.bilibili.com&&User-Agent@Mozilla/5.0}';  
+        return 'https://www.2692222.com/?url='+src;
     } else if (src.indexOf("alizy-") != -1) {
         refreshX5WebView('http://hong.1ren.ren/?url=' + src);
         return "toast://请等待加载选集！";
