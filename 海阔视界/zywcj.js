@@ -7,7 +7,7 @@ function updata() {
 };
 
 function filter(key) {
-    //var word = ["伦理", "写真", "福利", "VIP", "美女", "里番", "性感", "倫理", "论理", "成人", "情色", "无码", "有码", "妻", "诱", "乳", "红主", "莉", "品推", "文字", "三级", "美少", "HEY", "骑兵", "产自", "性爱", "裸聊", "乱伦", "偷", "AV", "av", "淫", "妖","同性", "男同", "女同", "人", "妇", "丝", "私", "盗", "虚拟", "交", "SM", "慰", "精品", "学生", "射", "3P", "大秀", "精品", "口味", "高潮", "极品", "DMM", "首次", "辣椒", "家擂", "色情", "主播", "名优", "幼", "眉", "女", "阴", "奸", "轨", "师", "情侣", "激", "态", "控", "飞机", "推", "潮", "麻豆", "ey"];
+    //var word = base64Decode('WyLkvKbnkIYiLCAi5YaZ55yfIiwgIuemj+WIqSIsICJWSVAiLCAi576O5aWzIiwgIumHjOeVqiIsICLmgKfmhJ8iLCAi5YCr55CGIiwgIuiuuueQhiIsICLmiJDkuroiLCAi5oOF6ImyIiwgIuaXoOeggSIsICLmnInnoIEiLCAi5aa7IiwgIuivsSIsICLkubMiLCAi57qi5Li7IiwgIuiOiSIsICLlk4HmjqgiLCAi5paH5a2XIiwgIuS4iee6pyIsICLnvo7lsJEiLCAiSEVZIiwgIumqkeWFtSIsICLkuqfoh6oiLCAi5oCn54ixIiwgIuijuOiBiiIsICLkubHkvKYiLCAi5YG3IiwgIkFWIiwgImF2IiwgIua3qyIsICLlppYiLCAi5ZCM5oCnIiwgIueUt+WQjCIsICLlpbPlkIwiLCAi5Lq6IiwgIuWmhyIsICLkuJ0iLCAi56eBIiwgIueblyIsICLomZrmi58iLCAi5LqkIiwgIlNNIiwgIuaFsCIsICLnsr7lk4EiLCAi5a2m55SfIiwgIuWwhCIsICIzUCIsICLlpKfnp4AiLCAi57K+5ZOBIiwgIuWPo+WRsyIsICLpq5jmva4iLCAi5p6B5ZOBIiwgIkRNTSIsICLpppbmrKEiLCAi6L6j5qSSIiwgIuWutuaTgiIsICLoibLmg4UiLCAi5Li75pKtIiwgIuWQjeS8mCIsICLlubwiLCAi55yJIiwgIuWlsyIsICLpmLQiLCAi5aW4IiwgIui9qCIsICLluIgiLCAi5oOF5L6jIiwgIua/gCIsICLmgIEiLCAi5o6nIiwgIumjnuacuiIsICLmjqgiLCAi5r2uIiwgIum6u+ixhiIsICJleSJd');
     var word=[];
     //for (var i = 0; i < word.length; i++) {
     //    if (key.indexOf(word[i]) > -1) {
@@ -27,7 +27,6 @@ function zywhm() {
     var res = {};
     var items = [];
     //items.push({col_type: 'line'});
-
     var decText = getVar("xyqtext", "");
     items.push({
         title: decText,
@@ -74,7 +73,6 @@ function zywhm() {
             });
         }
     } //for arr.length
-
     items.unshift({
         title: '香情影视',
         url: 'hiker://home@香情影视||https://code.aliyun.com/lzk23559/Rulehouse/raw/master/%E9%A6%99%E6%83%85%E5%BD%B1%E8%A7%86%E5%8F%A3%E4%BB%A4.txt',
@@ -379,7 +377,6 @@ function TWEJ() {
         });
     }
     //结束第一页分类处理
-
     //对列表处理开始
     if (/vod_play_from/.test(html)) {
         html = JSON.parse(html);
@@ -402,7 +399,6 @@ function zywsea() {
 
     //设置超时时间，越小越快，单位毫秒
     //var timeou = 3000;
-
     var ss = MY_URL.split('$$$')[1];
     var num = MY_URL.split('$$$')[2];
     var ssmode = JSON.parse(fetch('hiker://files/rules/xyq/zywset2.json', {})).ssmode;
@@ -454,7 +450,6 @@ function zywsea() {
         }
 
         //---------------代码分界线----------------
-
         //批量发送请求
         if (Data != '') {
             var bfhtml = batchFetch(Data);
@@ -500,9 +495,7 @@ function zywsea() {
                 }
             } //for k
         } //if Data
-
     } //聚/列
-
     res.data = items;
     setSearchResult(res);
 };
@@ -602,7 +595,6 @@ function SSEJ() {
 
         }
         //log(tabs);
-
         if (!filter(typ)) {
             items.push({
                 title: '演员：' + '\n' + act,
@@ -649,9 +641,9 @@ function SSEJ() {
                     var flag = tabs[i];
                 }
 
-                if (list != null) {
+                if (list != null&&filter(base64Decode('5peg56CB'))) {
                     items.push({
-                        title: flag == 'qdyun' ? flag + " 不显示播放的需刷新一次网页才能播" : flag + "    🔗" + [i + 1] + '/' + conts.length + "““点击切换选集排序””",
+                        title: flag == 'bilibili' ? flag + " 网页需切换成PC的UA才能播" : flag + "    🔗" + [i + 1] + '/' + conts.length + "““点击切换选集排序””",
                         url: "hiker://empty@lazyRule=.js:putVar('zywlsort', getVar('zywlsort','1')=='1'?'0':'1');refreshPage(false);'toast://切换成功！'",
                         col_type: 'text_1'
                     });
@@ -671,6 +663,9 @@ function SSEJ() {
                         }
                         if (MY_URL.indexOf('7kjx') != -1) {
                             url = 'https://jx.xmflv.com/?url=' + url
+                        }
+                        if (MY_URL.indexOf('ujuba') != -1) {
+                            url = 'https://zy.ujuba.com/play.php?url=' + url
                         }
                         if (flag == 'ddyunp' || flag == 'xin') {
                             url = 'https://player.90mm.me/play.php?url=' + url.replace(/第.*?集/g, '')
@@ -708,9 +703,9 @@ function SSEJ() {
                         if (flag == 'bb') {
                             url = 'https://jx.api.xhfhttc.cn/jx/?url=' + url
                         }
-                        if (flag == 'pll') {
-                            url = 'https://vip.gaotian.love/api/?key=sRy0QAq8hqXRlrEtrq&url=' + url
-                        }
+                        //if (flag == 'pll') {
+                            //url = 'https://vip.gaotian.love/api/?key=GiML8kaI6DnlpAahLM&url=' + url
+                        //}
                         if (flag == 'languang') {
                             url = 'https://j.languang.wfss100.com/?url=' + url
                         }
@@ -720,7 +715,7 @@ function SSEJ() {
                         if (flag == 'kdyx' || flag == 'kdsx') {
                             url = 'http://api.kudian6.com/jm/pdplayer.php?url=' + url
                         }
-                        if (flag == '789pan') {
+                        if (flag == '789pan'||flag == 'pll') {
                             url = 'https://vip.gaotian.love/api/?key=GiML8kaI6DnlpAahLM&url=' + url
                         }
                         if (flag == 'fanqie') {
@@ -742,15 +737,20 @@ function SSEJ() {
                             url = 'https://player.duoduozy.com/ddplay/?url=' + url
                         }
                         //if (flag == 'miaoparty') {
-                            //url = 'https://jiexi.msdv.cn/jiemi/?url=' + url
+                        //url = 'https://jiexi.msdv.cn/jiemi/?url=' + url
                         //}                        
                         var title = (list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0]);
+                        if (list.length <= 4) {
+                            var clt = 'text_2';
+                        } else {
+                            var clt = isNaN(title) ? 'flex_button' : 'text_5'
+                        }
                         items.push({
                             title: list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0],
                             url: 'hiker://empty##' + flag + '##' + url.replace(/\n*/g, '') + '##' + `@lazyRule=.js:/*refreshX5WebView*/eval(fetch('hiker://files/rules/xyq/zywcj2.js'));lazyRu();`,
                             //col_type: title.length>=6?'text_2':'text_3'
-                            col_type: list.length >= 3 ? 'flex_button' : 'text_2'
-                        });
+                            col_type: clt
+                        });                       
                     } //for j list.length                     
                 } //if list != null    
             } //for i conts.length
@@ -766,9 +766,25 @@ function lazyRu() {
     var src = (input.split('##')[2]).replace(/amp;/g, "").replace(/^\s*/, "");
     if (flag == 'qq' || flag == 'qiyi' || flag == 'youku' || flag == 'mgtv' || flag == 'letv' || flag == 'sohu' || flag == 'pptv' || flag == 'm1905') {
         var fileUrl = "https://codeberg.org/lzk23559/PublicRule/raw/branch/master/parse.js";
+        //var fileUrl = "hiker://files/rules/parse.js";
         eval(fetch(fileUrl, {}));
         var play = vodkey.toUrl(src.split('"')[0]);
-        return play != "" ? play : getUrl(src.split('"')[0]);
+        if (play != "" && play !== undefined) {
+            return play;
+        } else {
+            var play = btoken.toUrl(src.split('"')[0]);
+            if (play != "" && play !== undefined) {
+                return play;
+            } else {
+                var play = yqjx.toUrl(src.split('"')[0]);
+                if (play != "" && play !== undefined) {
+                    return play;
+                } else {
+                    return 'http://17kyun.com/api.php?url=' + (src.split('"')[0]);
+                }
+            }
+        }
+
     } else if (src.indexOf("xmflv") != -1) {
         eval(getCryptoJS());
         //感谢墙佬提供算法代码
@@ -806,9 +822,9 @@ function lazyRu() {
         return JSON.parse(json).url;
     } else if (src.indexOf('obj/tos') != -1) {
         return src + '#isVideo=true#';
-    } else if(/wkfile/.test(src)){
-	    return src+';{Referer@https://fantuan.tv}'
-     }else if (src.indexOf("135-cdn") != -1) {
+    } else if (/wkfile/.test(src)) {
+        return src + ';{Referer@https://fantuan.tv}'
+    } else if (src.indexOf("135-cdn") != -1) {
         refreshX5WebView(src);
         return "toast://请等待加载选集！";
     } else if (src.indexOf("/share/") != -1) {
@@ -833,15 +849,24 @@ function lazyRu() {
     var meiju=fetch(src,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://www.meiju11.com"}});
     return meiju.match(/url:.*?[\'\"](.*?)[\'\"]/)[1];
     }*/
-    else if(src.indexOf("duoduozy")!=-1){
-    var duoduo=fetch(src,{headers:{"User-Agent":MOBILE_UA,"Referer":"https://www.duoduozy.com/"}});
-    return duoduo.match(/var urls.*?[\'\"](.*?)[\'\"]/)[1];
-    }
-    else if(flag=='miaoparty'){
-    var miao=fetch('https://jiexi.msdv.cn/jiemi/api.php', {headers:{'content-type':'application/x-www-form-urlencoded'},body:'url='+src+'&ac=jx',method:'POST'});
-    return JSON.parse(miao).url;
-    }
-    else if (/fqzy\.cc|ojbkjx/.test(src)) {
+    else if (src.indexOf("duoduozy") != -1) {
+        var duoduo = fetch(src, {
+            headers: {
+                "User-Agent": MOBILE_UA,
+                "Referer": "https://www.duoduozy.com/"
+            }
+        });
+        return duoduo.match(/var urls.*?[\'\"](.*?)[\'\"]/)[1];
+    } else if (flag == 'miaoparty') {
+        var miao = fetch('https://jiexi.msdv.cn/jiemi/api.php', {
+            headers: {
+                'content-type': 'application/x-www-form-urlencoded'
+            },
+            body: 'url=' + src + '&ac=jx',
+            method: 'POST'
+        });
+        return JSON.parse(miao).url;
+    } else if (/fqzy\.cc|ojbkjx/.test(src)) {
         var html = fetch(src, {
             headers: {
                 "User-Agent": MOBILE_UA
@@ -854,7 +879,11 @@ function lazyRu() {
         } else {
             var play = html.match(/\"url\": \"(.*?)\"/)[1]
         }
-        if(/4kan/.test(play)){return play+';{Referer@https://bak.ojbkjx.com/}';}else{return play};
+        if (/4kan/.test(play)) {
+            return play + ';{Referer@https://bak.ojbkjx.com/}';
+        } else {
+            return play
+        };
     } else if (src.indexOf("xxctzy") != -1) {
         var purl = request(src, {}).split("var url=\'")[1].split("\'")[0];
         var pla = request("https://api.xxctzy.com" + purl, {});
@@ -936,7 +965,7 @@ var purl='http://play.zk132.cn/new/play1/'+id+'%7C'+times+'%7C'+sh+'%7C'+'1'+'%7
         var ifsrct = ifsrc.split('?url=')[0] + parseDomForHtml(request(ifsrc, {}), "body&&iframe&&src");
         var urll = request(ifsrct, {}).match(/vodurl = \'(.*?)\'/)[1];
         return urll + ';{Referer@https://j.languang.wfss100.com/}';
-    } else if (flag == 'pll'||flag == '789pan') {
+    } else if (flag == 'pll' || flag == '789pan') {
         var json = JSON.parse(fetch(src, {}));
         if (json.code == '200') {
             return json.url;
@@ -944,7 +973,7 @@ var purl='http://play.zk132.cn/new/play1/'+id+'%7C'+times+'%7C'+sh+'%7C'+'1'+'%7
     } else if (flag == 'bilibili') {
         //var zxyb = fetch('https://www.zxyb.cc/bd_json.php?url=' + src, {});
         //return JSON.parse(zxyb).url + ';{Referer@https://www.bilibili.com&&User-Agent@Mozilla/5.0}';  
-        return 'https://www.2692222.com/?url='+src;
+        return 'http://17kyun.com/api.php?url=' + src;
     } else if (src.indexOf("alizy-") != -1) {
         refreshX5WebView('http://hong.1ren.ren/?url=' + src);
         return "toast://请等待加载选集！";
@@ -969,5 +998,4 @@ function zywpre() {
         var set = `{"ssmode":"0","listmod":"0","sscount":"5"}`;
         writeFile("hiker://files/rules/xyq/zywset2.json", set);
     }
-
 }
