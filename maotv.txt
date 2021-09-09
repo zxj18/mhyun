@@ -1,8 +1,8 @@
 {
     "sites": [
         {
-            "key": "蟡鮋帕敶梢堺",
-            "name": "蟡鮋帕敶梢堺",
+            "key": "神马影院",
+            "name": "神马影院",
             "type": 0,
             "api": "http://www.zitv.cc/api.php/provide/vod/at/xml/",
             "playUrl": "",
@@ -11,8 +11,8 @@
             ]
         },
         {
-            "key": "����韏�皞�",
-            "name": "����韏�皞�",
+            "key": "极品资源",
+            "name": "极品资源",
             "type": 0,
             "api": "https://www.jpysvip.net/api.php/provide/vod/at/xml/",
             "categories": [
@@ -20,8 +20,8 @@
             ]
         },
         {
-            "key": "��埝�頣���鞉�𣂼僑鈭綽��",
-            "name": "��埝�頣���鞉�𣂼僑鈭綽��",
+            "key": "芒果（限成年人）",
+            "name": "芒果（限成年人）",
             "type": 0,
             "api": "https://www.mgav1.cc/api.php/provide/vod/at/xml/",
             "playUrl": "",
@@ -30,8 +30,8 @@
             ]
         },
         {
-           "key": "BT憭拙�嚗��鞉�𣂼僑鈭綽��",
-            "name": "BT憭拙�嚗��鞉�𣂼僑鈭綽��",
+           "key": "BT天堂（限成年人）",
+            "name": "BT天堂（限成年人）",
             "type": 0,
             "api": "http://bttcj.com/inc/sapi.php",
             "playUrl": "",
@@ -40,8 +40,8 @@
             ]
         },
         {
-            "key": "605韏�皞�",
-            "name": "605韏�皞�",
+            "key": "605资源",
+            "name": "605资源",
             "type": 0,
             "api": "http://www.605zy.co/inc/605m3u8.php",
             "playUrl": "",
@@ -51,8 +51,8 @@
         },
         {
         
-         "key": "�𧞅��敶梢堺",
-            "name": "�𧞅��敶梢堺",
+         "key": "番茄影院",
+            "name": "番茄影院",
             "type": 0,
             "api": "http://api.fqzy.cc/api.php/provide/vod/at/xml/",
             "playUrl": "",
@@ -61,8 +61,8 @@
             ]
         },
         {
-         "key": "209韏�皞�",
-            "name": "209韏�皞�",
+         "key": "209资源",
+            "name": "209资源",
             "type": 0,
             "api": "http://api.fqzy.cc/api.php/provide/vod/at/xml/",
             "playUrl": "",
@@ -71,8 +71,8 @@
             ]
         },
         {
-         "key": "鞊��𢭪鈭�",
-            "name": "鞊��𢭪鈭�",
+         "key": "豆瓣云",
+            "name": "豆瓣云",
             "type": 0,
             "api": "http://api.bdyunzy.com/api.php/provide/vod/at/xml/",
             "playUrl": "",
@@ -81,8 +81,8 @@
             ]
         },
         {
-            "key": "8090韏�皞�",
-            "name": "8090韏�皞�",
+            "key": "8090资源",
+            "name": "8090资源",
             "type": 0,
             "api": "http://zy.yilans.net:8090/api.php/provide/vod/at/xml/",
             "playUrl": "",
@@ -91,8 +91,8 @@
             ]
         },
         {
-            "key": "39敶梯�",
-            "name": "39敶梯�",
+            "key": "39影视",
+            "name": "39影视",
             "type": 0,
             "api": "https://www.39kan.com/api.php/provide/vod/at/xml",
             "playUrl": "",
@@ -101,8 +101,8 @@
             ]
         },
         {
-            "key": "銝厰妟韏�皞�",
-            "name": "銝厰妟韏�皞�",
+            "key": "三零资源",
+            "name": "三零资源",
             "type": 0,
             "api": "http://api.000zy.com/provide/vod/at/xml/",
             "playUrl": "",
@@ -111,8 +111,8 @@
             ]
         },
         {
-            "key": "ZY韏�皞�",
-            "name": "ZY韏�皞�",
+            "key": "ZY资源",
+            "name": "ZY资源",
             "type": 0,
             "api": "https://zy.zcocc.com/api.php/provide/vod/at/xml",
             "playUrl": "",
@@ -121,8 +121,8 @@
             ]
         },
         {
-            "key": "��擧𠯫韏�皞�",
-            "name": "��擧𠯫韏�皞�",
+            "key": "明日资源",
+            "name": "明日资源",
             "type": 0,
             "api": "http://zy.zcocc.com/api.php/provide/vod/at/xml",
             "playUrl": "",
@@ -131,8 +131,8 @@
             ]
         },
         {
-            "key": "��𡁜�鞱�皞�",
-            "name": "��𡁜�鞱�皞�",
+            "key": "柚子资源",
+            "name": "柚子资源",
             "type": 0,
             "api": "http://tv.aitesucai.xyz/api.php/provide/vod/at/xml",
             "playUrl": "",
@@ -141,8 +141,8 @@
             ]
         },
         {
-            "key": "靘行䔝APP",
-            "name": "靘行䔝APP",
+            "key": "侦探APP",
+            "name": "侦探APP",
             "type": 0,
             "api": "http://ys.huangguay.com/api.php/provide/vod/at/xml/",
             "playUrl": "",
@@ -151,8 +151,8 @@
             ]
         },
         {
-            "key": "KK��见�",
-            "name": "KK��见�",
+            "key": "KK看剧",
+            "name": "KK看剧",
             "type": 0,
             "api": "http://www.kkkanju.com/api.php/provide/vod/at/xml",
             "playUrl": "",
@@ -161,8 +161,8 @@
             ]
         },
         {
-            "key": "��峕�𡏭�皞�",
-            "name": "��峕�𡏭�皞�",
+            "key": "萌果资源",
+            "name": "萌果资源",
             "type": 0,
             "api": "http://api.appearoo.top/api.php/provide/vod/at/xml/",
             "playUrl": "",
@@ -171,8 +171,8 @@
             ]
         },
         {
-            "key": "蝢𤾸���毺�",
-            "name": "蝢𤾸���毺�",
+            "key": "美剧星球",
+            "name": "美剧星球",
             "type": 0,
             "api": "https://www.meijuxq.com/inc/api.php",
             "playUrl": "",
@@ -181,8 +181,8 @@
             ]
         },
         {
-            "key": "餈賢��嫃",
-            "name": "餈賢��嫃",
+            "key": "追剧吧",
+            "name": "追剧吧",
             "type": 0,
             "api": "http://www.huaxiab.com/api.php/provide/vod/at/xml",
             "playUrl": "",
@@ -191,8 +191,8 @@
             ]
         },
         {
-            "key": "��曏剛�皞�",
-            "name": "��曏剛�皞�",
+            "key": "老鸭资源",
+            "name": "老鸭资源",
             "type": 0,
             "api": "https://api.apilyzy.com/api.php/provide/vod/at/xml",
             "playUrl": "",
@@ -201,8 +201,8 @@
             ]
         },
         {
-            "key": "摰厰�詨蔣�堺",
-            "name": "摰厰�詨蔣�堺",
+            "key": "安逸影院",
+            "name": "安逸影院",
             "type": 0,
             "api": "http://dy.51isu.com:11801/api.php/provide/vod/at/xml",
             "playUrl": "",
@@ -211,8 +211,8 @@
             ]
         },
         {
-            "key": "憭拍征韏�皞�",
-            "name": "憭拍征韏�皞�",
+            "key": "天空资源",
+            "name": "天空资源",
             "type": 0,
             "api": "https://caiji.tiankongapi.com/inc/api.php",
             "playUrl": "",
@@ -221,8 +221,8 @@
             ]
         },
         {
-            "key": "�急�雴��",
-            "name": "�急�雴��",
+            "key": "八戒云",
+            "name": "八戒云",
             "type": 0,
             "api": "http://cj.bajiecaiji.com/inc/bjm3u8.php",
             "playUrl": "",
@@ -231,8 +231,8 @@
             ]
         },
         {
-            "key": "敹急偘鈭�",
-            "name": "敹急偘鈭�",
+            "key": "快播云",
+            "name": "快播云",
             "type": 0,
             "api": "http://www.kuaibozy.com/api.php/provide/vod/at/xml/",
             "playUrl": "",
@@ -241,8 +241,8 @@
             ]
         },
         {
-            "key": "蝛踵╲韏�皞�",
-            "name": "蝛踵╲韏�皞�",
+            "key": "穿梭资源",
+            "name": "穿梭资源",
             "type": 0,
             "api": "http://ok.888hyk.com/api.php/provide/vod/at/xml",
             "playUrl": "",
@@ -251,8 +251,8 @@
             ]
         },
         {
-            "key": "���𡏭�皞�",
-            "name": "���𡏭�皞�",
+            "key": "速搜资源",
+            "name": "速搜资源",
             "type": 0,
             "api": "http://www.susouzy.com/api.php/provide/vod/at/xml",
             "playUrl": "",
@@ -261,8 +261,8 @@
             ]
         },
         {
-            "key": "1886韏�皞�",
-            "name": "1886韏�皞�",
+            "key": "1886资源",
+            "name": "1886资源",
             "type": 1,
             "api": "http://cj.1886zy.co/inc/api.php",
             "playUrl": "",
@@ -271,8 +271,8 @@
             ]
         },
         {
-            "key": "��𤏸���皞�",
-            "name": "��𤏸���皞�",
+            "key": "蘑菇资源",
+            "name": "蘑菇资源",
             "type": 0,
             "api": "http://www.moguzyw.com:520/moguzy.php/provide/vod/at/xml/",
             "playUrl": "",
@@ -281,8 +281,8 @@
             ]
         },
         {
-            "key": "蝥Ｙ�𥡝�皞�",
-            "name": "蝥Ｙ�𥡝�皞�",
+            "key": "红牛资源",
+            "name": "红牛资源",
             "type": 0,
             "api": "https://www.hongniuzy.com/inc/api.php",
             "playUrl": "",
@@ -291,8 +291,8 @@
             ]
         },
         {
-            "key": "�鞉�㚚葉韏�皞�",
-            "name": "�鞉�㚚葉韏�皞�",
+            "key": "恐怖鸭资源",
+            "name": "恐怖鸭资源",
             "type": 0,
             "api": "https://kongbuya.com/api.php/provide/vod/at/xml/",
             "playUrl": "",
@@ -301,8 +301,8 @@
             ]
         },
         {
-            "key": "��埈�埈��",
-            "name": "��埈�埈��",
+            "key": "北斗星",
+            "name": "北斗星",
             "type": 0,
             "api": "https://v8.bdxzyapi.com/inc/api.php",
             "playUrl": "",
@@ -311,8 +311,8 @@
             ]
         },
         {
-            "key": "瘛条���皞�",
-            "name": "瘛条���皞�",
+            "key": "淘片资源",
+            "name": "淘片资源",
             "type": 0,
             "api": "https://taopianzy.com/home/cjapi/c4ca4238a0b923820dcc509a6f75849b/vod/xml",
             "playUrl": "",
@@ -321,8 +321,8 @@
             ]
         },
         {
-            "key": "88韏�皞�",
-            "name": "88韏�皞�",
+            "key": "88资源",
+            "name": "88资源",
             "type": 0,
             "api": "http://www.88zyw.net/inc/api.php",
             "playUrl": "",
@@ -331,8 +331,8 @@
             ]
         },
         {
-            "key": "�㩞敶梁��",
-            "name": "�㩞敶梁��",
+            "key": "电影牛",
+            "name": "电影牛",
             "type": 0,
             "api": "https://www.dianyingn.com/api.php/provide/vod/at/xml/",
             "playUrl": "",
@@ -341,8 +341,8 @@
             ]
         },
         {
-            "key": "憟賢末韏�皞�",
-            "name": "憟賢末韏�皞�",
+            "key": "好好资源",
+            "name": "好好资源",
             "type": 0,
             "api": "http://haohaozy.com/api.php/provide/vod/at/xml/",
             "playUrl": "",
@@ -351,8 +351,8 @@
             ]
         },
         {
-            "key": "敶望晷韏�皞�",
-            "name": "敶望晷韏�皞�",
+            "key": "影派资源",
+            "name": "影派资源",
             "type": 0,
             "api": "https://v.dtjos.com/api.php/provide/vod/at/xml",
             "playUrl": "",
@@ -363,10 +363,10 @@
     ],
     "lives": [
         {
-            "group": "�䌊摰帋��",
+            "group": "自定义",
             "channels": [
                 {
-                    "name": "�龗�墖�㪗閫�",
+                    "name": "凤凰卫视",
                     "urls": [
                         "http://223.110.235.3/ott.js.chinamobile.com/PLTV/3/224/3221228057/index.m3u8",
                         "HD,http://117.169.124.37:6610/ysten-businessmobile/live/fhchinese/1.m3u8",
@@ -375,7 +375,7 @@
                     ]
                 },
                 {
-                    "name": "�龗�墖韏�霈�",
+                    "name": "凤凰资讯",
                     "urls": [
                         "http://223.110.235.13/ott.js.chinamobile.com/PLTV/3/224/3221228098/index.m3u8",
                         "HD,http://183.207.249.35/PLTV/3/224/3221226923/index.m3u8",
@@ -450,28 +450,28 @@
                     ]
                 },
                 {
-                    "name": "鈭娍�煺�栞��",
+                    "name": "五星体育",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225503/index.m3u8",
                         "http://39.134.24.24/PLTV/88888888/224/3221225718/index.m3u8"
                     ]
                 },
                 {
-                    "name": "頞�蝥找�栞��",
+                    "name": "超级体育",
                     "urls": [
                         "http://39.134.135.126/otttv.bj.chinamobile.com/TVOD/88888888/224/3221226232/1.m3u8",
                         "http://39.134.24.24/PLTV/88888888/224/3221225718/index.m3u8"
                     ]
                 },
                 {
-                    "name": "蝳誩遣雿栞��",
+                    "name": "福建体育",
                     "urls": [
                         "rtsp://183.252.166.199:554/PLTV/88888888/224/3221226127/10000100000000060000000002434540_0.smil",
                         "rtsp://183.252.176.54:554/PLTV/88888888/224/3221226127/10000100000000060000000002434540_0.smil"
                     ]
                 },
                 {
-                    "name": "敹思�𣂼����",
+                    "name": "快乐垂钓",
                     "urls": [
                         "http://39.134.135.126/otttv.bj.chinamobile.com/TVOD/88888888/224/3221226549/1.m3u8"
                     ]
@@ -489,26 +489,26 @@
                     ]
                 },
                 {
-                    "name": "CHC摰嗅滬敶梢堺",
+                    "name": "CHC家庭影院",
                     "urls": [
                         "http://117.148.179.160/PLTV/88888888/224/3221231799/index.m3u8",
     "http://39.134.19.228:6610/yinhe/2/ch00000090990000002085/index.m3u8?virtualDomain=yinhe.live_hls.zte.com"
                     ]
                 },
                 {
-    "name": "CHC�𢆡雿𦦵㩞敶�",
+    "name": "CHC动作电影",
                     "urls": [
                         "http://39.134.19.228:6610/yinhe/2/ch00000090990000002055/index.m3u8?virtualDomain=yinhe.live_hls.zte.com"
                     ]
                 },
                 {
-    "name": "CHC擃䀹��㩞敶�",
+    "name": "CHC高清电影",
                     "urls": [
                         "http://39.134.19.228:6610/yinhe/2/ch00000090990000002065/index.m3u8?virtualDomain=yinhe.live_hls.zte.com"
                     ]
                 },
                 {
-                    "name": "暺𤏸�梶㩞敶�",
+                    "name": "黑莓电影",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225610/index.m3u8",
                         "http://117.148.179.160/PLTV/88888888/224/3221231621/index.m3u8",
@@ -516,7 +516,7 @@
                     ]
                 },
                 {
-                    "name": "頞�蝥抒㩞敶�",
+                    "name": "超级电影",
                     "urls": [
                         "http://39.134.135.126/otttv.bj.chinamobile.com/TVOD/88888888/224/3221226369/1.m3u8",
                         "http://117.148.179.160/PLTV/88888888/224/3221231568/index.m3u8",
@@ -525,21 +525,21 @@
                     ]
                 },
                 {
-                    "name": "蝎曉�憭批�",
+                    "name": "精品大剧",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225612/index.m3u8",
                         "http://39.134.135.126/otttv.bj.chinamobile.com/TVOD/88888888/224/3221226331/1.m3u8"
                     ]
                 },
                 {
-                    "name": "������𨅯�",
+                    "name": "爱情喜剧",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225616/index.m3u8",
                         "http://111.40.196.9/PLTV/88888888/224/3221225624/index.m3u8"
                     ]
                 },
                 {
-                    "name": "�𢆡雿𦦵㩞敶�",
+                    "name": "动作电影",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225620/index.m3u8",
                         "http://117.148.179.160/PLTV/88888888/224/3221231565/index.m3u8",
@@ -643,7 +643,7 @@
                 },
                 {
 
-                    "name": "皝硋�堒㪗閫�",
+                    "name": "湖南卫视",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225554/index.m3u8",
                         "http://111.40.196.9/PLTV/88888888/224/3221225521/index.m3u8",
@@ -653,7 +653,7 @@
                     ]
                 },
                 {
-                    "name": "銝𨀣䲮�㪗閫�",
+                    "name": "东方卫视",
                     "urls": [                   
                         "http://39.134.135.126/otttv.bj.chinamobile.com/TVOD/88888888/224/3221226237/1.m3u8",
                         "http://39.134.135.126/otttv.bj.chinamobile.com/TVOD/88888888/224/3221226364/1.m3u8",
@@ -664,7 +664,7 @@
                     ]
                 },
                 {
-                    "name": "瘙蠘�誩㪗閫�",
+                    "name": "江苏卫视",
                     "urls": [                  
                         "http://117.148.179.160/PLTV/88888888/224/3221231447/index.m3u8",
                         "http://111.40.196.9/PLTV/88888888/224/3221225515/index.m3u8",
@@ -675,7 +675,7 @@
                     ]
                 },
                 {
-                    "name": "瘚蹱�笔㪗閫�",
+                    "name": "浙江卫视",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225523/index.m3u8",
                         "http://111.40.196.9/PLTV/88888888/224/3221225510/index.m3u8",
@@ -683,7 +683,7 @@
                     ]
                 },
                 {
-                    "name": "瘛勗裵�㪗閫�",
+                    "name": "深圳卫视",
                     "urls": [
                         "http://39.134.135.126/otttv.bj.chinamobile.com/TVOD/88888888/224/3221226245/1.m3u8",
                         "http://111.40.196.9/PLTV/88888888/224/3221225528/index.m3u8",
@@ -693,7 +693,7 @@
                     ]
                 },
                 {
-                    "name": "��𦯀漪�㪗閫�",
+                    "name": "北京卫视",
                     "urls": [
                         "http://39.134.135.126/otttv.bj.chinamobile.com/TVOD/88888888/224/3221226436/1.m3u8",
                         "http://39.134.39.37/PLTV/88888888/224/3221226161/index.m3u8",
@@ -705,7 +705,7 @@
                     ]
                 },
                 {
-                    "name": "憭拇揖�㪗閫�",
+                    "name": "天津卫视",
                     "urls": [
        "http://111.40.196.9/PLTV/88888888/224/3221225604/index.m3u8",
                         "http://39.134.135.126/otttv.bj.chinamobile.com/TVOD/88888888/224/3221226502/1.m3u8",        
@@ -713,7 +713,7 @@
                     ]
                 },
                 {
-                    "name": "摰匧噬�㪗閫�",
+                    "name": "安徽卫视",
                     "urls": [
                         "http://39.134.135.126/otttv.bj.chinamobile.com/TVOD/88888888/224/3221226499/1.m3u8",
                         "http://117.148.179.160/PLTV/88888888/224/3221231567/index.m3u8",
@@ -723,14 +723,14 @@
                     ]
                 },
                 {
-                    "name": "��滚��㪗閫�",
+                    "name": "重庆卫视",
                     "urls": [
                         "http://183.207.248.71:80/cntv/live1/HD-8000k-1080P-chongqingstv/HD-8000k-1080P-chongqingstv",
                         "http://39.134.24.24/PLTV/88888888/224/3221225592/index.m3u8"
                     ]
                 },
                 {
-                    "name": "銝𨅯�堒㪗閫�",
+                    "name": "东南卫视",
                     "urls": [
                         "rtsp://183.252.176.54:554/PLTV/88888888/224/3221226121/10000100000000060000000002358085_0.smil",
                         "http://111.40.196.9/PLTV/88888888/224/3221225583/index.m3u8",
@@ -739,13 +739,13 @@
                     ]
                 },
                 {
-                    "name": "瘚瑕部�㪗閫�",
+                    "name": "海峡卫视",
                     "urls": [
                         "rtsp://183.252.166.199/PLTV/88888888/224/3221226128/10000100000000060000000002434539_0.smil"
                     ]
                 },
                 {
-                    "name": "撟蹂�𨅯㪗閫�",
+                    "name": "广东卫视",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225533/index.m3u8",
                         "http://117.148.179.160/PLTV/88888888/224/3221231502/index.m3u8",
@@ -755,7 +755,7 @@
                     ]
                 },
                 {
-                    "name": "韐萄�𧼮㪗閫�",
+                    "name": "贵州卫视",
                     "urls": [
                         "rtsp://183.252.176.54:554/PLTV/88888888/224/3221226126/10000100000000060000000002434541_0.smil",
                         "rtsp://183.252.166.199:554/PLTV/88888888/224/3221226126/10000100000000060000000002434541_0.smil",
@@ -764,14 +764,14 @@
                     ]
                 },
                 {
-                    "name": "瘚瑕�堒㪗閫�",
+                    "name": "海南卫视",
                     "urls": [
                         "rtsp://183.252.176.54:554/PLTV/88888888/224/3221226048/10000100000000060000000002296889_0.smil",
                         "http://39.134.24.24/PLTV/88888888/224/3221225614/index.m3u8"
                     ]
                 },
                 {
-                    "name": "瘝喳�堒㪗閫�",
+                    "name": "河北卫视",
                     "urls": [
                         "http://39.134.66.66/PLTV/88888888/224/3221225867/index.m3u8",
                         "http://183.207.248.71:80/cntv/live1/n-hebeistv/n-hebeistv",
@@ -779,21 +779,21 @@
                     ]
                 },
                 {
-                    "name": "瘝喳�堒㪗閫�",
+                    "name": "河南卫视",
                     "urls": [
                         "rtsp://183.252.176.54:554/PLTV/88888888/224/3221226076/10000100000000060000000002296917_0.smil",
                         "http://39.134.24.24/PLTV/88888888/224/3221225716/index.m3u8"
                     ]
                 },
                 {
-                    "name": "暺煾�蹱�笔㪗閫�",
+                    "name": "黑龙江卫视",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225544/index.m3u8",
                         "http://39.134.135.126/otttv.bj.chinamobile.com/TVOD/88888888/224/3221226239/1.m3u8"
                     ]
                 },
                 {
-                    "name": "皝硋�堒㪗閫�",
+                    "name": "湖北卫视",
                     "urls": [
                         "http://39.134.135.126/otttv.bj.chinamobile.com/TVOD/88888888/224/3221226240/1.m3u8",
                         "http://39.134.39.37/PLTV/88888888/224/3221226159/index.m3u8",
@@ -803,14 +803,14 @@
                     ]
                 },
                 {
-                    "name": "��㗇�堒㪗閫�",
+                    "name": "吉林卫视",
                     "urls": [
                         "rtsp://183.252.166.199/PLTV/88888888/224/3221226792/48616745.smil",
                         "http://39.134.24.24/PLTV/88888888/224/3221225804/index.m3u8"
                     ]
                 },
                 {
-                    "name": "瘙蠘正�㪗閫�",
+                    "name": "江西卫视",
                     "urls": [
                         "http://117.148.179.160/PLTV/88888888/224/3221231964/index.m3u8",
                         "http://111.40.196.9/PLTV/88888888/224/3221225560/index.m3u8",
@@ -820,7 +820,7 @@
                     ]
                 },
                 {
-                    "name": "颲賢��㪗閫�",
+                    "name": "辽宁卫视",
                     "urls": [
                         "http://39.134.135.84/otttv.bj.chinamobile.com/TVOD/88888888/224/3221226500/1.m3u8",
                         "http://117.148.179.160/PLTV/88888888/224/3221231802/index.m3u8",
@@ -828,7 +828,7 @@
                     ]
                 },
                 {
-                    "name": "暺煾�蹱�笔㪗閫�",
+                    "name": "黑龙江卫视",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225539/index.m3u8",
                         "http://117.148.179.160/PLTV/88888888/224/3221231967/index.m3u8",
@@ -838,7 +838,7 @@
                     ]
                 },
                 {
-                    "name": "撅曹�𨅯㪗閫�",
+                    "name": "山东卫视",
                     "urls": [
                         "http://39.134.135.126/otttv.bj.chinamobile.com/TVOD/88888888/224/3221226501/1.m3u8",
                         "http://39.134.39.37/PLTV/88888888/224/3221226162/index.m3u8",
@@ -850,33 +850,33 @@
                     ]
                 },
                 {
-                    "name": "撅梯正�㪗閫�",
+                    "name": "山西卫视",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225520/index.m3u8"
                     ]
                 },
                 {
-                "name": "鈭穃�堒㪗閫�",
+                "name": "云南卫视",
                     "urls": [                        "rtsp://183.252.166.199/PLTV/88888888/224/3221226108/10000100000000060000000002310150_0.smil",                        "rtsp://183.252.176.54:554/PLTV/88888888/224/3221226108/10000100000000060000000002310150_0.smil",
                         "http://183.207.248.71:80/cntv/live1/n-yntv1/n-yntv1",
                         "http://39.134.24.24/PLTV/88888888/224/3221225696/index.m3u8"
                     ]
                 },
                 {
-                    "name": "�鰵���㪗閫�",
+                    "name": "新疆卫视",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225598/index.m3u8"
                     ]
                 },
                 {
-                    "name": "��閗正�㪗閫�",
+                    "name": "陕西卫视",
                     "urls": [
                         "http://39.134.66.66/PLTV/88888888/224/3221225567/index.m3u8",
                         "http://183.207.248.71:80/cntv/live1/n-shanxi1stv/n-shanxi1stv"
                     ]
                 },
                 {
-                    "name": "��𥕦�嘥㪗閫�",
+                    "name": "四川卫视",
                     "urls": [
                         "http://117.148.179.160/PLTV/88888888/224/3221231888/index.m3u8",
                         "http://183.207.248.71:80/cntv/live1/n-sichuanstv/n-sichuanstv",
@@ -884,14 +884,14 @@
                     ]
                 },
                 {
-             "name": "��䁅���㪗閫�",
+             "name": "甘肃卫视",
                     "urls": [
                         "http://183.207.248.71:80/cntv/live1/n-gansustv/n-gansustv",
                         "http://39.134.24.24/PLTV/88888888/224/3221225714/index.m3u8"
                     ]
                 },
                 {
-             "name": "撟輯正�㪗閫�",
+             "name": "广西卫视",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225518/index.m3u8",
                         "rtsp://183.252.176.54:554/PLTV/88888888/224/3221226070/10000100000000060000000002296911_0.smil",
@@ -899,20 +899,20 @@
                     ]
                 },
                 {
-                    "name": "銝𦠜絲敶梯�",
+                    "name": "上海影视",
                     "urls": [
                         "http://183.207.255.188/live/program/live/dsjpdhd/4000000/mnf.m3u8"
                     ]
                 },
                 {
-                    "name": "銝𦠜絲�鰵�鉟",
+                    "name": "上海新闻",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225499/index.m3u8",
                         "http://183.207.255.188/live/program/live/xwzhhd/4000000/mnf.m3u8"
                     ]
                 },
                 {
-                    "name": "蝚砌�韐Ｙ��",
+                    "name": "第一财经",
                     "urls": [
                         "http://39.134.39.37/PLTV/88888888/224/3221226172/index.m3u8",
                         "http://111.40.196.9/PLTV/88888888/224/3221225497/index.m3u8",
@@ -920,7 +920,7 @@
                     ]
                 },
                 {
-                    "name": "銝𦠜絲蝥芸�硺犖���",
+                    "name": "上海纪实人文",
                     "urls": [
                         "http://39.134.39.39/PLTV/88888888/224/3221226174/index.m3u8",
                         "http://111.40.196.9/PLTV/88888888/224/3221225491/index.m3u8",
@@ -928,51 +928,51 @@
                     ]
                 },
                 {
-                    "name": "銝𦠜絲韐Ｙ��",
+                    "name": "上海财经",
                     "urls": [
                         "http://183.207.255.188/live/program/live/dfcj/1300000/mnf.m3u8",
                         "http://39.134.39.39/PLTV/88888888/224/3221226172/index.m3u8"
                     ]
                 },
                 {
-                    "name": "銝𨀣䲮敶梯�",
+                    "name": "东方影视",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225615/index.m3u8",
                         "http://39.134.24.24/PLTV/88888888/224/3221225708/index.m3u8"
                     ]
                 },
                 {
-                    "name": "��煾僭�㨃��",
+                    "name": "金鹰卡通",
                     "urls": [
                         "http://39.134.66.66/PLTV/88888888/224/3221225561/index.m3u8"
                     ]
                 },
                 {
-                    "name": "�怠𢆡�㨃��",
+                    "name": "炫动卡通",
                     "urls": [
                         "rtsp://183.252.176.54:554/PLTV/88888888/224/3221226060/10000100000000060000000002296901_0.smil"
                     ]
                 },
                 {
-                    "name": "��劐蔔�㨃��",
+                    "name": "嘉佳卡通",
                     "urls": [
                         "rtsp://183.252.176.54:554/PLTV/88888888/224/3221226046/10000100000000060000000002296680_0.smil"
                     ]
                 },
                 {
-                    "name": "�𢆡瞍怎��㦤",
+                    "name": "动漫秀场",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225599/index.m3u8"
                     ]
                 },
                 {
-                    "name": "隡䀹憤�㨃��",
+                    "name": "优漫卡通",
                     "urls": [
                         "http://39.134.66.66/PLTV/88888888/224/3221225556/index.m3u8"
                     ]
                 },
                 {
-                    "name": "��埝�嚹V�凒�偘",
+                    "name": "芒果TV直播",
                     "urls": [
                         "http://117.148.179.160/PLTV/88888888/224/3221231276/index.m3u8",
                         "http://117.148.179.160/PLTV/88888888/224/3221231301/index.m3u8",
@@ -981,134 +981,134 @@
                     ]
                 },
                 {
-                    "name": "皜豢�讐凒�偘",
+                    "name": "游戏直播",
                     "urls": [
                         "http://39.134.66.66/PLTV/88888888/224/3221225559/index.m3u8"
                     ]
                 },
                 {
-    "name": "擐蹱葛蝧∠�惩蝱",
+    "name": "香港翡翠台",
                     "urls": [
                         "http://116.199.5.51:8114/index.m3u8?Fsv_chan_hls_se_idx=188&amp;FvSeid=1&amp;Fsv_ctype=LIVES&amp;Fsv_otype=1&amp;Provider_id=&amp;Pcontent_id=.m3u8"
                     ]
                 },
                 {
-                    "name": "擐蹱葛��𡒊�惩蝱",
+                    "name": "香港明珠台",
                     "urls": [
                         "http://116.199.5.52:8114/00000000/index.m3u8?&Fsv_ctype=LIVES&Fsv_otype=1&FvSeid=5abd1660af1babb4&Pcontent_id=&Provider_id=&Fsv_chan_hls_se_idx=12"
                     ]
                 },
                 {
-                    "name": "�𠯫�𧋦NHK銝剜���堒��",
+                    "name": "日本NHK中文字幕",
                     "urls": [
                         "https://nhkw-zh-hlscomp.akamaized.net/8thz5iufork8wjip/playlist.m3u8"
                     ]
                 },
                 {
-                    "name": "CNC銝剜��鰵�鉟",
+                    "name": "CNC中文新闻",
                     "urls": [
                         "http://source07.v.news.cn/live/CNC_CN/playlist.m3u8"
                     ]
                 },
                 {
-                    "name": "�傁���4K",
+                    "name": "咪咕4K",
                     "urls": [
                         "http://117.136.154.98/PLTV/88888888/224/3221225800/index.m3u8",
                         "http://117.136.154.98/PLTV/88888888/224/3221225833/index.m3u8"
                     ]
                 },
                 {                  
-  "name": "������𨅯�",
+  "name": "爱情喜剧",
                     "urls": [
                         "http://183.207.248.71:80/cntv/live1/n-aiqingxj/n-aiqingxj"
                     ]
                 },
                 {
-                    "name": "�𦠜�𡁏�祉��",
+                    "name": "惊悚悬疑",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225638/index.m3u8"
                     ]
                 },
                 {
-                    "name": "�𢆡雿𦦵㩞敶�",
+                    "name": "动作电影",
                     "urls": [
                         "http://183.207.248.71:80/cntv/live1/n-dongzuody/n-dongzuody"
                     ]
                 },
                 {
-                    "name": "�𧂈鋆����㦤",
+                    "name": "古装剧场",
                     "urls": [
                         "http://183.207.248.71:80/cntv/live1/n-guzhuangjc/n-guzhuangjc"
                     ]
                 },
                 {
-                    "name": "�𥕢�贝�霈�",
+                    "name": "军事评论",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225634/index.m3u8"
                     ]
                 },
                 {
-                    "name": "銝剖𤙴��笔井",
+                    "name": "中国功夫",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225678/index.m3u8"
                     ]
                 },
                 {
-                    "name": "暺𤏸�枏𢆡�𤫇",
+                    "name": "黑莓动画",
                     "urls": [
                         "http://183.207.248.71:80/cntv/live1/donghuawg/donghuawg"
                     ]
                 },
                 {
-                    "name": "摰嗅滬���㦤",
+                    "name": "家庭剧场",
                     "urls": [
                         "http://183.207.248.71:80/cntv/live1/n-jiatingjc/n-jiatingjc"
                     ]
                 },
                 {
-                    "name": "蝎曉�憭批�",
+                    "name": "精品大剧",
                     "urls": [
                         "http://183.207.248.71:80/cntv/live1/n-jdaju/n-jdaju"
                     ]
                 },
                 {
-                    "name": "�𥟇����㦤",
+                    "name": "军旅剧场",
                     "urls": [
                         "http://183.207.248.71:80/cntv/live1/n-junlvjc/n-junlvjc"
                     ]
                 },
                 {
-                    "name": "��𤑳�𣬚遞�䰾",
+                    "name": "金牌综艺",
                     "urls": [
                         "http://183.207.248.71:80/cntv/live1/n-saishijx/n-saishijx"
                     ]
                 },
                 {
-                    "name": "頞�蝥抒遞�䰾",
+                    "name": "超级综艺",
                     "urls": [
                         "http://39.134.66.66/PLTV/88888888/224/3221225642/index.m3u8"
                     ]
                 },
                 {
-                    "name": "蝎曉�蝏澆��",
+                    "name": "精品综合",
                     "urls": [
                         "http://183.207.248.71:80/cntv/live1/n-mingxingdp/n-mingxingdp"
                     ]
                 },
                 {
-                    "name": "�𥕢�贝�霈�",
+                    "name": "军事评论",
                     "urls": [
                         "http://183.207.248.71:80/cntv/live1/n-junshipl/n-junshipl"
                     ]
                 },
                 {
-                    "name": "蝎曉�霈啣��",
+                    "name": "精品记录",
                     "urls": [
                         "http://111.40.196.9/PLTV/88888888/224/3221225630/index.m3u8"
                     ]
                 },
                 {
-                    "name": "�剜偘蝎暸��",
+                    "name": "热播精选",
                     "urls": [
                         "http://183.207.248.71:80/cntv/live1/n-xiqumd/n-xiqumd"
                     ]
@@ -1118,27 +1118,27 @@
     ],
     "parses": [
         {
-            "name": "暺䁅恕閫���",
+            "name": "默认解析",
             "url": "https://1.api.80tvs.cn/?url="
         },
         {
-            "name": "��嘥�㕑圾���",
+            "name": "蓝光解析",
             "url": "https://api.steak517.top/?url="
         },
         {
-            "name": "��鈭輯�皜�",
+            "name": "千亿超清",
             "url": "https://www.qianyicp.com/?url="
         },
         {
-            "name": "B蝡躰圾���",
+            "name": "B站解析",
             "url": "https://vip.parwix.com:4433/player/?url="
         },
         {
-            "name": "��惩嘀��𡃏�皜�",
+            "name": "无广告超清",
             "url": "https://jx.awx88.cn/jiexi/?url="
         },
         {
-            "name": "�蓡蝐�",
+            "name": "虾米",
             "url": "https://jx.xmflv.com/?url="
         },
         {
@@ -1146,7 +1146,7 @@
             "url": "https://vip.bljiex.com/?v="
         },
         {
-            "name": "銋𣂼�朞�皞�",
+            "name": "乐多资源",
             "url": "https://api.leduotv.com/wp-api/ifr.php?isDp=1&vid="
         },
         {
@@ -1158,15 +1158,15 @@
             "url": "https://jx.m3u8.tv/jiexi/?url="
         },
         {
-            "name": "���踎",
+            "name": "老板",
             "url": "https://vip.laobandq.com/jiexi.php?url="
         },
         {
-            "name": "Mao閫���",
+            "name": "Mao解析",
             "url": "https://qd.hxys.tv/m3u8.php?url="
         },
         {
-            "name": "��睃𧂈",
+            "name": "盘古",
             "url": "https://www.pangujiexi.cc/jiexi.php?url="
         },
         {
@@ -1174,7 +1174,7 @@
             "url": "https://www.ssamao.com/jx/?url="
         },
         {
-            "name": "��䭾�",
+            "name": "无极",
             "url": "https://da.wujiys.com/?url="
         },
         {
@@ -1186,11 +1186,11 @@
             "url": "https://www.ckmov.vip/api.php?url="
         },
         {
-            "name": "餈芸孕",
+            "name": "迪奥",
             "url": "https://123.1dior.cn/?url="
         },
         {
-            "name": "蝳𤩺��",
+            "name": "福星",
             "url": "https://jx.popo520.cn/jiexi/?url="
         },
         {
@@ -1202,23 +1202,23 @@
             "url": "https://www.h8jx.com/jiexi.php?url="
         },
         {
-            "name": "閫��邮a",
+            "name": "解析la",
             "url": "https://api.jiexi.la/?url="
         },
         {
-            "name": "銋��偘",
+            "name": "久播",
             "url": "https://jx.jiubojx.com/vip.php?url="
         },
         {
-            "name": "銋嘥��",
+            "name": "九八",
             "url": "https://jx.youyitv.com/?url="
         },
         {
-            "name": "���踎",
+            "name": "老板",
             "url": "https://vip.laobandq.com/jiexi.php?url="
         },
         {
-            "name": "銋𣂼鮟",
+            "name": "乐喵",
             "url": "https://jx.hao-zsj.cn/vip/?url="
         },
         {
@@ -1226,11 +1226,11 @@
             "url": "https://jiexi.janan.net/jiexi/?url="
         },
         {
-            "name": "��擧𠯫",
+            "name": "明日",
             "url": "https://jx.yingxiangbao.cn/vip.php?url="
         },
         {
-            "name": "蝤刻��",
+            "name": "磨菇",
             "url": "https://jx.wzslw.cn/?url="
         },
         {
@@ -1238,31 +1238,31 @@
             "url": "https://okjx.cc/?url="
         },
         {
-            "name": "蝏游��",
+            "name": "维多",
             "url": "https://jx.ivito.cn/?url="
         },
         {
-            "name": "撠讛��",
+            "name": "小蒋",
             "url": "https://www.kpezp.cn/jlexi.php?url="
         },
         {
-            "name": "撠讐𣄽",
+            "name": "小狼",
             "url": "https://jx.yaohuaxuan.com/?url="
         },
         {
-            "name": "�惣��",
+            "name": "智能",
             "url": "https://vip.kurumit3.top/?v="
         },
         {
-            "name": "��罸庚",
+            "name": "星驰",
             "url": "https://vip.cjys.top/?url="
         },
         {
-            "name": "��毺征",
+            "name": "星空",
             "url": "http://60jx.com/?url="
         },
         {
-            "name": "���漁",
+            "name": "月亮",
             "url": "https://api.yueliangjx.com/?url="
         },
         {
@@ -1270,11 +1270,11 @@
             "url": "https://go.yh0523.cn/y.cy?url="
         },
         {
-            "name": "鈭𤑳垢",
+            "name": "云端",
             "url": "https://jx.ergan.top/?url="
         },
         {
-            "name": "17鈭�",
+            "name": "17云",
             "url": "https://www.1717yun.com/jx/ty.php?url="
         },
         {
@@ -1290,7 +1290,7 @@
             "url": "https://vip.66parse.club/?url="
         },
         {
-            "name": "鈭烐��",
+            "name": "云析",
             "url": "https://jx.yparse.com/index.php?url="
         },
         {
@@ -1312,7 +1312,7 @@
     ],
     "ijk": [
         {
-            "group": "頧航圾��",
+            "group": "软解码",
             "options": [
                 {
                     "category": 4,
@@ -1392,7 +1392,7 @@
             ]
         },
         {
-            "group": "蝖祈圾��",
+            "group": "硬解码",
             "options": [
                 {
                     "category": 4,
