@@ -321,7 +321,7 @@
     },
     {
       "key": "M3U8.TV2",
-      "name": "M3U8.TV",
+      "name": "M3U8.TV2",
       "type": 1,
       "api": "http://www.zycaiji.net:7788/api.php/provide/vod",
       "playUrl": ""
