@@ -663,12 +663,20 @@
       "playUrl": ""
     },
     {
-      "key": "*老鸭资源",
-      "name": "*老鸭资源",
+      "key": "*老鸭资源1",
+      "name": "*老鸭资源1",
       "api": "https://api.apilyzy.com/api.php/provide/vod/at/xml",
       "categories": [],
       "type": 0,
       "playUrl": ""
+    },
+    {
+      "key": "*老鸭资源2",
+      "name": "*老鸭资源2",
+      "type": 0,
+      "api": "http://laoyazy.vip/api.php/provide/vod/at/xml",
+      "playUrl": "",
+      "categories": []
     },
     {
       "key": "*BT天堂",
@@ -723,14 +731,6 @@
       "name": "*BB资源",
       "type": 0,
       "api": "http://bbzy.cc/inc/maccms10.php",
-      "playUrl": "",
-      "categories": []
-    },
-    {
-      "key": "*老鸭资源",
-      "name": "*老鸭资源",
-      "type": 0,
-      "api": "http://laoyazy.vip/api.php/provide/vod/at/xml",
       "playUrl": "",
       "categories": []
     },
@@ -907,6 +907,30 @@
       "name": "*桃色资源18x",
       "type": 0,
       "api": "https://cj.taoseapi.com/inc/api.php",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "*1024资源",
+      "name": "*1024资源",
+      "type": 0,
+      "api": "https://www.1024nf.com/api.php/provide/vod/at/xml/",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "*92爱资源",
+      "name": "*92爱资源p",
+      "type": 0,
+      "api": "http://www.92aizy.com/api/macs.php",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "*av888资源",
+      "name": "*av888资源",
+      "type": 0,
+      "api": "http://m.7777688.com/inc/api.php",
       "playUrl": "",
       "categories": []
     }
