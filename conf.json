@@ -466,15 +466,7 @@
       "name": "片库资源",
       "type": 0,
       "api": "https://pianku.wang/api.php/provide/vod/at/xml",
-      "playUrl": https://api.jhdyw.vip/?url="",
-      "categories": []
-    },
-    {
-      "key": "喵派对蓝光",
-      "name": "喵派对蓝光",
-      "type": 1,
-      "api": "https://www.neenl.com/api.php/provide/vod/?ac=list",
-      "playUrl": "https://jiexi.msdv.cn/jiemi/?url=",
+      "playUrl": "https://api.jhdyw.vip/?url=",
       "categories": []
     },
     {
