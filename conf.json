@@ -153,7 +153,7 @@
       "type": 0,
       "api": "http://www.zitv.cc/api.php/provide/vod/at/xml/",
       "playUrl": "",
-      "categories": [],
+      "categories": []
     },
     {
       "key": "速影",
@@ -419,7 +419,7 @@
       "name": "360资源",
       "type": 0,
       "api": "http://xa88.vip:88/api.php/provide/vod/at/xml",
-      "playUrl": "https://www.2ajx.com/vip.php?url=",
+      "playUrl": "https://www.2ajx.com/vip.php?url="
     },
     {
       "key": "1905资源",
