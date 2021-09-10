@@ -56,14 +56,6 @@
       "playUrl": ""
     },
     {
-      "key": "恐怖鸭资源",
-      "name": "恐怖鸭资源",
-      "api": "https://kongbuya.com/api.php/provide/vod/at/xml/",
-      "categories": [],
-      "type": 0,
-      "playUrl": ""
-    },
-    {
       "key": "北斗资源",
       "name": "北斗资源",
       "type": 1,
@@ -98,14 +90,6 @@
       "key": "萌果资源",
       "name": "萌果资源",
       "api": "http://api.appearoo.top/api.php/provide/vod/at/xml/",
-      "categories": [],
-      "type": 0,
-      "playUrl": ""
-    },
-    {
-      "key": "美剧星球",
-      "name": "美剧星球",
-      "api": "https://www.meijuxq.com/inc/api.php",
       "categories": [],
       "type": 0,
       "playUrl": ""
@@ -205,10 +189,10 @@
     {
       "key": "番茄资源",
       "name": "番茄资源",
-      "api": "http://api.fqzy.cc/api.php/provide/vod/at/xml",
-      "categories": [],
       "type": 0,
-      "playUrl": ""
+      "api": "http://api.fqzy.cc/api.php/provide/vod/at/xml/",
+      "playUrl": "https://dp.8b5q.cn/dplayer/?url=",
+      "categories": []
     },
     {
       "key": "柚子资源",
@@ -266,51 +250,12 @@
       "playUrl": ""
     },
     {
-      "key": "玉米",
-      "name": "玉米",
-      "api": "https://yumi.video/api.php/provide/vod/at/xml/",
-      "categories": [],
-      "type": 0,
-      "playUrl": ""
-    },
-    {
-      "key": "比心",
-      "name": "比心",
-      "api": "http://bxin.tv/api.php/provide/vod/at/xml/",
-      "categories": [],
-      "type": 0,
-      "playUrl": ""
-    },
-    {
       "key": "豆瓣云",
       "name": "豆瓣云",
       "type": 1,
       "api": "http://api.dbyunzy.com/api.php/provide/vod/?ac=list",
       "playUrl": "",
       "categories": []
-    },
-    {
-      "key": "38资源",
-      "name": "38资源",
-      "api": "http://ok.888hyk.com/api.php/provide/vod/at/xml",
-      "categories": [],
-      "type": 0,
-      "playUrl": ""
-    },
-    {
-      "key": "思古",
-      "name": "思古",
-      "api": "https://www.siguyy.com/api.php/provide/vod/at/xml/",
-      "categories": [],
-      "type": 0,
-      "playUrl": ""
-    },
-    {
-      "key": "影派资源",
-      "name": "影派资源",
-      "type": 0,
-      "api": "https://v.dtjos.com/api.php/provide/vod/at/xml",
-      "playUrl": ""
     },
     {
       "key": "M3U8.TV",
@@ -454,14 +399,6 @@
       "playUrl": ""
     },
     {
-      "key": "番茄资源",
-      "name": "番茄资源",
-      "type": 0,
-      "api": "http://api.fqzy.cc/api.php/provide/vod/at/xml/",
-      "playUrl": "https://dp.8b5q.cn/dplayer/?url=",
-      "categories": []
-    },
-    {
       "key": "片库",
       "name": "片库资源",
       "type": 0,
@@ -482,14 +419,6 @@
       "name": "987影视",
       "type": 1,
       "api": "https://www.9875.xyz/api.php/provide/vod/?ac=list",
-      "playUrl": "",
-      "categories": []
-    },
-    {
-      "key": "欧乐影院",
-      "name": "欧乐影院",
-      "type": 0,
-      "api": "https://www.olevod.tv/api.php/provide/vod/at/xml",
       "playUrl": "",
       "categories": []
     },
