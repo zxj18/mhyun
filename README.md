@@ -5,14 +5,13 @@
 海阔视界｜APP
 https://www.lanzoux.com/u/GoldRiver
 https://www.lanzoui.com/u/GoldRiver
-海阔视界｜小程序：道长仓库●新
-http://netcut.cn/p/2a632e9846fa2760
+海阔视界｜小程序：道长仓库Pro
+https://paste.yuchen.tech/5208
 海阔视界｜小程序：香情影视
 https://paste.yuchen.tech/1527 xZlRNi
 
 FreeDTV｜APP
 https://www.lanzoui.com/b025mpw7e
-
 FreeDTV｜接口
 https://github.com/FreeDTV/FreeD
 　TV自建接口：https://github.com/FreeDTV/FreeD/raw/master/tv/
@@ -21,7 +20,6 @@ https://gitee.com/freedTV/freed
 
 ZY-Player-PC｜APP
 https://github.com/cuiocean/ZY-Player
-
 ZY-Player-Android｜APP
 https://github.com/cuiocean/ZY-Player-APP
 ```
