@@ -1,5 +1,5 @@
 (function() {
-if(/\.mmiyue\.com/.test(window.location.host)){
+if(/\.mmiyue\.com|jxn2\.178du\.com|90ys2\.com\/x2/.test(window.location.host)){
         if(document.querySelector('body').innerText.indexOf('未授权')>=0) {
             window.location.href=window.location.href;
         }
