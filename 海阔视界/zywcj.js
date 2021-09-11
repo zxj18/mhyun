@@ -7,7 +7,7 @@ function updata() {
 };
 
 function filter(key) {
-    //var word = base64Decode('WyLkvKbnkIYiLCAi5YaZ55yfIiwgIuemj+WIqSIsICJWSVAiLCAi576O5aWzIiwgIumHjOeVqiIsICLmgKfmhJ8iLCAi5YCr55CGIiwgIuiuuueQhiIsICLmiJDkuroiLCAi5oOF6ImyIiwgIuaXoOeggSIsICLmnInnoIEiLCAi5aa7IiwgIuivsSIsICLkubMiLCAi57qi5Li7IiwgIuiOiSIsICLlk4HmjqgiLCAi5paH5a2XIiwgIuS4iee6pyIsICLnvo7lsJEiLCAiSEVZIiwgIumqkeWFtSIsICLkuqfoh6oiLCAi5oCn54ixIiwgIuijuOiBiiIsICLkubHkvKYiLCAi5YG3IiwgIkFWIiwgImF2IiwgIua3qyIsICLlppYiLCAi5ZCM5oCnIiwgIueUt+WQjCIsICLlpbPlkIwiLCAi5Lq6IiwgIuWmhyIsICLkuJ0iLCAi56eBIiwgIueblyIsICLomZrmi58iLCAi5LqkIiwgIlNNIiwgIuaFsCIsICLnsr7lk4EiLCAi5a2m55SfIiwgIuWwhCIsICIzUCIsICLlpKfnp4AiLCAi57K+5ZOBIiwgIuWPo+WRsyIsICLpq5jmva4iLCAi5p6B5ZOBIiwgIkRNTSIsICLpppbmrKEiLCAi6L6j5qSSIiwgIuWutuaTgiIsICLoibLmg4UiLCAi5Li75pKtIiwgIuWQjeS8mCIsICLlubwiLCAi55yJIiwgIuWlsyIsICLpmLQiLCAi5aW4IiwgIui9qCIsICLluIgiLCAi5oOF5L6jIiwgIua/gCIsICLmgIEiLCAi5o6nIiwgIumjnuacuiIsICLmjqgiLCAi5r2uIiwgIum6u+ixhiIsICJleSJd');
+    //var word = JSON.parse(base64Decode('WyLkvKbnkIYiLCAi5YaZ55yfIiwgIuemj+WIqSIsICJWSVAiLCAi576O5aWzIiwgIumHjOeVqiIsICLmgKfmhJ8iLCAi5YCr55CGIiwgIuiuuueQhiIsICLmiJDkuroiLCAi5oOF6ImyIiwgIuaXoOeggSIsICLmnInnoIEiLCAi5aa7IiwgIuivsSIsICLkubMiLCAi57qi5Li7IiwgIuiOiSIsICLlk4HmjqgiLCAi5paH5a2XIiwgIuS4iee6pyIsICLnvo7lsJEiLCAiSEVZIiwgIumqkeWFtSIsICLkuqfoh6oiLCAi5oCn54ixIiwgIuijuOiBiiIsICLkubHkvKYiLCAi5YG3IiwgIkFWIiwgImF2IiwgIua3qyIsICLlppYiLCAi5ZCM5oCnIiwgIueUt+WQjCIsICLlpbPlkIwiLCAi5Lq6IiwgIuWmhyIsICLkuJ0iLCAi56eBIiwgIueblyIsICLomZrmi58iLCAi5LqkIiwgIlNNIiwgIuaFsCIsICLnsr7lk4EiLCAi5a2m55SfIiwgIuWwhCIsICIzUCIsICLlpKfnp4AiLCAi57K+5ZOBIiwgIuWPo+WRsyIsICLpq5jmva4iLCAi5p6B5ZOBIiwgIkRNTSIsICLpppbmrKEiLCAi6L6j5qSSIiwgIuWutuaTgiIsICLoibLmg4UiLCAi5Li75pKtIiwgIuWQjeS8mCIsICLlubwiLCAi55yJIiwgIuWlsyIsICLpmLQiLCAi5aW4IiwgIui9qCIsICLluIgiLCAi5oOF5L6jIiwgIua/gCIsICLmgIEiLCAi5o6nIiwgIumjnuacuiIsICLmjqgiLCAi5r2uIiwgIum6u+ixhiIsICJleSJd'));
     var word=[];
     //for (var i = 0; i < word.length; i++) {
     //    if (key.indexOf(word[i]) > -1) {
@@ -27,6 +27,7 @@ function zywhm() {
     var res = {};
     var items = [];
     //items.push({col_type: 'line'});
+
     var decText = getVar("xyqtext", "");
     items.push({
         title: decText,
@@ -37,7 +38,7 @@ function zywhm() {
     var ssyq = ['香情影视搜@@香情影视.奈菲', '资源网采集搜@@资源网采集.xyq2'];
     if (self !== '资源网采集.xyq2') {
         items.push({
-            title: '你的规则改过名，搜索框搜索功能将受影响。',
+            title: self+'搜',
             url: 'hiker://search?s=' + getVar('xyqtext') + '&rule=' + self,
             col_type: 'flex_button'
         });
@@ -73,6 +74,7 @@ function zywhm() {
             });
         }
     } //for arr.length
+
     items.unshift({
         title: '香情影视',
         url: 'hiker://home@香情影视||https://code.aliyun.com/lzk23559/Rulehouse/raw/master/%E9%A6%99%E6%83%85%E5%BD%B1%E8%A7%86%E5%8F%A3%E4%BB%A4.txt',
@@ -185,8 +187,8 @@ function listfun() {
             var url = parseDomForHtml(list[j], "body&&id&&Text");
             var note = parseDomForHtml(list[j], "body&&note&&Text");
             var typ = parseDomForHtml(list[j], "body&&type&&Text");
-            var last = parseDomForHtml(list[j], "body&&last&&Text");
-            if (!filter(typ)) {
+            var last = parseDomForHtml(list[j], "body&&last&&Text");           
+            if (!filter(typ)) {            	
                 if (html.indexOf("</pic>") != -1) {
                     var pic = parseDomForHtml(list[j], "body&&pic&&Text").replace("http://t.8kmm.com", "https://www.wxtv.net");
                     eval(fetch("hiker://files/rules/xyq/zywcj2.js"));
@@ -199,7 +201,7 @@ function listfun() {
                             `@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
                         col_type: "movie_3"
                     });
-                } else {
+                } else {                	
                     var dt = parseDomForHtml(list[j], "body&&dt&&Text");
                     items.push({
                         title: title + "  状态:" + note,
@@ -280,16 +282,16 @@ function TWEJ() {
             }
             for (var i = 0; i < type.length; i++) {
                 if (/vod_play_from/.test(rescod)) {
-                    var title = type[i].type_name;
-                    var url = type[i].type_id;
+                    var typ = type[i].type_name;
+                    var tyid = type[i].type_id;
                 } else {
-                    var title = parseDomForHtml(type[i], "body&&Text").split('{')[0];
-                    var url = parseDomForHtml(type[i], "body&&ty&&id");
+                    var typ = parseDomForHtml(type[i], "body&&Text").split('{')[0];
+                    var tyid = parseDomForHtml(type[i], "body&&ty&&id");
                 }
-                if (!filter(title)) {
+                if (!filter(typ)) {
                     items.push({
-                        title: title,
-                        url: $(arrr + "?ac=list&pg=fypage&t=" + url).rule(() => {
+                        title: typ,
+                        url: $(arrr + "?ac=list&pg=fypage&t=" + tyid).rule(() => {
                             var arrr = MY_URL.split("?")[0];
                             var pn = MY_URL.split("pg=")[1].split("&t=")[0];
                             var listmod = JSON.parse(fetch('hiker://files/rules/xyq/zywset2.json', {})).listmod;
@@ -377,6 +379,7 @@ function TWEJ() {
         });
     }
     //结束第一页分类处理
+
     //对列表处理开始
     if (/vod_play_from/.test(html)) {
         html = JSON.parse(html);
@@ -399,6 +402,7 @@ function zywsea() {
 
     //设置超时时间，越小越快，单位毫秒
     //var timeou = 3000;
+
     var ss = MY_URL.split('$$$')[1];
     var num = MY_URL.split('$$$')[2];
     var ssmode = JSON.parse(fetch('hiker://files/rules/xyq/zywset2.json', {})).ssmode;
@@ -450,6 +454,7 @@ function zywsea() {
         }
 
         //---------------代码分界线----------------
+
         //批量发送请求
         if (Data != '') {
             var bfhtml = batchFetch(Data);
@@ -478,13 +483,14 @@ function zywsea() {
                             var typ = parseDomForHtml(list[j], 'body&&type&&Text');
                             var dt = parseDomForHtml(list[j], 'body&&dt&&Text');
                         }
+                        if (!filter(typ)) {
                         items.push({
                             title: title + " " + ' • ' + note,
                             desc: ' ' + Tit[k].tit + ' · ' + typ + ' · ' + dt,
                             url: Ost[k].url + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
                             col_type: 'text_center_1'
                         });
-
+                        }
                     } //for j
                 } else {
                     items.push({
@@ -495,7 +501,9 @@ function zywsea() {
                 }
             } //for k
         } //if Data
+
     } //聚/列
+
     res.data = items;
     setSearchResult(res);
 };
@@ -531,13 +539,14 @@ function zywerj() {
                     var typ = parseDomForHtml(list[j], 'body&&type&&Text');
                     var dt = parseDomForHtml(list[j], 'body&&dt&&Text');
                 }
+                if (!filter(typ)) {
                 items.push({
                     title: '““' + title + '””' + " " + ' • ' + note,
                     desc: last + ' ·  ' + typ + ' ·  ' + dt,
                     url: domain + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
                     col_type: 'text_center_1'
                 });
-
+                }
             }
         } else {
             items.push({
@@ -595,6 +604,7 @@ function SSEJ() {
 
         }
         //log(tabs);
+
         if (!filter(typ)) {
             items.push({
                 title: '演员：' + '\n' + act,
@@ -640,8 +650,8 @@ function SSEJ() {
                 } else {
                     var flag = tabs[i];
                 }
-
-                if (list != null&&filter(base64Decode('5peg56CB'))) {
+                //如果列表不为null就显示选集
+                if (list != null) {
                     items.push({
                         title: flag == 'bilibili' ? flag + " 网页需切换成PC的UA才能播" : flag + "    🔗" + [i + 1] + '/' + conts.length + "““点击切换选集排序””",
                         url: "hiker://empty@lazyRule=.js:putVar('zywlsort', getVar('zywlsort','1')=='1'?'0':'1');refreshPage(false);'toast://切换成功！'",
@@ -745,12 +755,21 @@ function SSEJ() {
                         } else {
                             var clt = isNaN(title) ? 'flex_button' : 'text_5'
                         }
+                        if(filter(base64Decode('VklQ'))){
                         items.push({
                             title: list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0],
                             url: 'hiker://empty##' + flag + '##' + url.replace(/\n*/g, '') + '##' + `@lazyRule=.js:/*refreshX5WebView*/eval(fetch('hiker://files/rules/xyq/zywcj2.js'));lazyRu();`,
                             //col_type: title.length>=6?'text_2':'text_3'
                             col_type: clt
-                        });                       
+                        });
+                        }else{
+                        items.push({
+                            title: list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0],
+                            url: url.replace(/\n*/g, '') +flag+ `@lazyRule=.js:/*refreshX5WebView*/if(input.search(/html|bilibili/)!=-1){'http://17kyun.com/api.php?url='+input;}else{input + '#isVideo=true#'}`,                            
+                            //col_type: title.length>=6?'text_2':'text_3'
+                            col_type: clt
+                        });    
+                        }                      
                     } //for j list.length                     
                 } //if list != null    
             } //for i conts.length
@@ -958,7 +977,7 @@ var sh= CryptoJS.MD5(base64Encode(id+times)).toString();
 var purl='http://play.zk132.cn/new/play1/'+id+'%7C'+times+'%7C'+sh+'%7C'+'1'+'%7C'+'index.m3u8';
 */
         var html = fetch(src, {});
-        return JSON.parse(html).url;
+        return 'x5Play://'+JSON.parse(html).url;
     } else if (/wfss100/.test(src)) {
         var phtml = request(src, {});
         var ifsrc = src.split('/?url=')[0] + parseDomForHtml(phtml, "body&&iframe&&src");
