@@ -12,9 +12,9 @@ function EJ() {
     }
     eval(fetch(jsUrl));
     if (!getVar('fftq') || getVar('fftq') == '断插') {
-        var lazy = `@lazyRule=.js:var html = fetch(input).match(/window.open\\('(.*?)'/)[1];if(html.indexOf('sa.sogou')!=-1){parseDomForHtml(fetch(html),'video&&src')}else if(html.indexOf('xigua')!=-1){html}else{var input = html;` + lazy + `}`;
+        var lazy = `@lazyRule=.js:var html = fetch(input).match(/window.open\\('(.*?)'/)[1];if(html.indexOf('sa.sogou')!=-1){parseDomForHtml(fetch(html),'video&&src')}else if(html.indexOf('xigua')!=-1){request('https://vip.xrff.xyz/?url='+html, {headers:{ 'Referer':'https://vip.xrff.xyz'}}).match(/url":"(.*?)"/)[1]+'#isVideo=true#'}else{var input = html;` + lazy + `}`;
     } else if (getVar('fftq') == '努插') {
-        var lazy = `@lazyRule=.js:var html = fetch(input).match(/window.open\\('(.*?)'/)[1];if(html.indexOf('sa.sogou')!=-1){parseDomForHtml(fetch(html),'video&&src')}else if(html.indexOf('xigua')!=-1){html}else{eval(fetch('hiker://files/rules/js/Messy-parsing.js'));player(html)}`;
+        var lazy = `@lazyRule=.js:var html = fetch(input).match(/window.open\\('(.*?)'/)[1];if(html.indexOf('sa.sogou')!=-1){parseDomForHtml(fetch(html),'video&&src')}else if(html.indexOf('xigua')!=-1){fetch('https://jiexi.cjt521.com/?url='+html, {timeout:20000}).match(/url":"(.*?)"/)[1]+'#isVideo=true#'}else{eval(fetch('hiker://files/rules/js/Messy-parsing.js'));player(html)}`;
     }
     var html = JSON.parse(getResCode().split('window.__INITIAL_STATE__=')[1].split(';(function(){var s;')[0]).detail.itemData;
 
