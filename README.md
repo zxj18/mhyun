@@ -85,7 +85,7 @@ https://github.com/Haleydu/Cimoc
 
 
 漫画｜图源
-https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E6%BC%AB%E7%94%BB%EF%BD%9C%E5%9B%BE%E6%BA%90%EF%BD%9C2021.8.25%E6%9C%89%E5%9B%BE%E6%A0%87%E5%A4%A7%E6%95%B4%E5%90%88%E6%BA%90%E6%9B%B4%E6%96%B0(%E4%BF%AE%E5%A4%8Dcoco%E6%BC%AB%E7%94%BB).txt
+https://cdn.jsdelivr.net/gh/YuanHsing/freed/漫画｜图源｜2021.9.13有图标大整合源更新.txt
 https://github.com/wanglabk/hub/tree/c2099
 http://yck.mumuceo.com/yiciyuan/tuyuan/index.html
 ```
