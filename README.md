@@ -37,20 +37,21 @@ https://github.com/kaich/Yuedu
 香色闺阁｜APP (ios版～支持书源导入～无广告、无内购)
 https://apps.apple.com/cn/app/id1521205149
 香色闺阁｜书源 (书源管理>同步>搜索书源) 或 (书源管理>同步>粘贴 新书源>同步)
+https://flyandnewgame.coding.net/p/a/d/xs/git/raw/master/source.xbs
 https://gitee.com/giovannyramsey/xiangse/raw/master/sourceModelList.xbs
-https://gitee.com/AliyaBatesBit/xiangseting/raw/master/sourceModelList.xbs
-https://gitee.com/xiangse/womeidejiayuan/raw/master/sourceModelList.xbs
-https://gitee.com/AlphonsoEstrada/xs/raw/master/sourceModelList.xbs
-https://gitee.com/weilaiok/xiangsemanhua/raw/master/sourceModelList.xbs
-https://github.com/weilai199/xiangseComic/raw/main/sourceModelList.xbs
+https://raw.githubusercontent.com/dejiayuan/xiangse/main/sourceModelList.xbs
+https://alphonsoestrada.coding.net/p/test/d/xiangse/git/raw/master/sourceModelList.xbs
+https://alphonsoestrada.coding.net/p/test/d/xiangse/git/raw/master/sourceModelList2.xbs
+https://gitee.com/readbook188/xiangs/raw/master/sourceModelList.xbs
+https://aliyabates.coding.net/p/xs/d/xs/git/raw/master/sourceModelList.xbs
+https://weilaiba.coding.net/p/s/d/s/git/raw/master/sourceModelList.xbs
 香色闺阁｜书源｜搬运备份
 https://github.com/zqzess/MyWebStorage/tree/main/xsreader/backup
 
 阅读｜书源
-https://cdn.jsdelivr.net/gh/YuanHsing/freed/%E9%98%85%E8%AF%BB%EF%BD%9C%E4%B9%A6%E6%BA%90%EF%BD%9C2021%E5%B9%B46%E6%9C%88%E6%95%B4%E7%90%86.txt
+https://cdn.jsdelivr.net/gh/YuanHsing/freed/阅读｜书源｜2021年9月整理.txt
 https://github.com/XIU2/Yuedu
 https://gitee.com/vpq/yd
-https://gitee.com/namofree/yuedu3/raw/legado3booksource/legado3_booksource_by_Namo.json
 http://yck.mumuceo.com/yuedu/shuyuan/index.html
 http://yuedu.miaogongzi.net/gx.html
 
@@ -72,22 +73,22 @@ namofree大佬的书源：https://namofree.gitee.io/yuedu3/legado3_booksource_by
 
 #### [漫画]
 ```
-异次元｜APP
-https://yiciyuan.lanzoux.com/b00ej0kba
-Tachiyomi｜APP
-https://github.com/tachiyomiorg/tachiyomi
-全是漫画｜APP
-https://github.com/hongchacha/cartoon
-
 Cimoc｜APP
 https://github.com/Haleydu/Cimoc
 导入图源 > 粘贴 > https://gitee.com/Haleydu/update/raw/master/sourceBaseUrl.json
 
+Tachiyomi｜APP
+https://github.com/tachiyomiorg/tachiyomi
 
-漫画｜图源
+异次元｜APP
+https://yiciyuan.lanzoux.com/b00ej0kba
+异次元｜图源
 https://cdn.jsdelivr.net/gh/YuanHsing/freed/漫画｜图源｜2021.9.13有图标大整合源更新.txt
 https://github.com/wanglabk/hub/tree/c2099
 http://yck.mumuceo.com/yiciyuan/tuyuan/index.html
+
+全是漫画｜APP
+https://github.com/hongchacha/cartoon
 ```
 
 
