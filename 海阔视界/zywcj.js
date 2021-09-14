@@ -7,13 +7,12 @@ function updata() {
 };
 
 function filter(key) {
-    //var word = JSON.parse(base64Decode('WyLkvKbnkIYiLCAi5YaZ55yfIiwgIuemj+WIqSIsICJWSVAiLCAi576O5aWzIiwgIumHjOeVqiIsICLmgKfmhJ8iLCAi5YCr55CGIiwgIuiuuueQhiIsICLmiJDkuroiLCAi5oOF6ImyIiwgIuaXoOeggSIsICLmnInnoIEiLCAi5aa7IiwgIuivsSIsICLkubMiLCAi57qi5Li7IiwgIuiOiSIsICLlk4HmjqgiLCAi5paH5a2XIiwgIuS4iee6pyIsICLnvo7lsJEiLCAiSEVZIiwgIumqkeWFtSIsICLkuqfoh6oiLCAi5oCn54ixIiwgIuijuOiBiiIsICLkubHkvKYiLCAi5YG3IiwgIkFWIiwgImF2IiwgIua3qyIsICLlppYiLCAi5ZCM5oCnIiwgIueUt+WQjCIsICLlpbPlkIwiLCAi5Lq6IiwgIuWmhyIsICLkuJ0iLCAi56eBIiwgIueblyIsICLomZrmi58iLCAi5LqkIiwgIlNNIiwgIuaFsCIsICLnsr7lk4EiLCAi5a2m55SfIiwgIuWwhCIsICIzUCIsICLlpKfnp4AiLCAi57K+5ZOBIiwgIuWPo+WRsyIsICLpq5jmva4iLCAi5p6B5ZOBIiwgIkRNTSIsICLpppbmrKEiLCAi6L6j5qSSIiwgIuWutuaTgiIsICLoibLmg4UiLCAi5Li75pKtIiwgIuWQjeS8mCIsICLlubwiLCAi55yJIiwgIuWlsyIsICLpmLQiLCAi5aW4IiwgIui9qCIsICLluIgiLCAi5oOF5L6jIiwgIua/gCIsICLmgIEiLCAi5o6nIiwgIumjnuacuiIsICLmjqgiLCAi5r2uIiwgIum6u+ixhiIsICJleSJd'));
-    var word=[];
-    //for (var i = 0; i < word.length; i++) {
-    //    if (key.indexOf(word[i]) > -1) {
-    //        return true;
-     //   }
-    //}
+    var word = JSON.parse(base64Decode('VlZWVklQ'));
+    for (var i = 0; i < word.length; i++) {
+        if (key.indexOf(word[i]) > -1) {
+            return true;
+        }
+    }
     return false;
 };
 
@@ -112,12 +111,12 @@ function zywhm() {
                 url: $().lazyRule(() => {
                     var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/zywcj.js', {});
                     eval(rulejs);
-                    //if (filter(base64Decode('5peg56CB'))) {
+                    if (filter(base64Decode('VlZWVklQ'))) {
                         writeFile("hiker://files/rules/xyq/zywcj2.js", rulejs);
                         back(true);
                         return 'toast://应该是最新了吧。';
-                    //} else {
-                    //    return 'toast://更新失败。'
+                    } else {
+                        return 'toast://更新失败。'
                     }
                 }),
                 desc: '推荐更新,有益无害。',
@@ -852,7 +851,7 @@ function SSEJ() {
                         } else {
                             var clt = isNaN(title) ? 'flex_button' : 'text_5'
                         }
-                        if (filter(base64Decode('VklQ'))) {
+                        if (filter(base64Decode('VlZWVklQ'))) {
                             items.push({
                                 title: list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0],
                                 url: 'hiker://empty##' + flag + '##' + url.replace(/\n*/g, '') + '##' + `@lazyRule=.js:/*refreshX5WebView*/eval(fetch('hiker://files/rules/xyq/zywcj2.js'));lazyRu();`,
