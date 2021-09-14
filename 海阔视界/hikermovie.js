@@ -17,18 +17,29 @@ var self=JSON.parse(getRule()).title;
 //    desc:"请输入搜索关键词",
 //    col_type:"input"
 //});
-var decText = getVar("xyqtext", "");
+var decText = getVar("xyqxqystext", "");
+//d.push({
+    //title: decText,
+    //url: "input://" + '' + ".js:putVar('xyqtext',input);refreshPage()",
+    //col_type: 'icon_1_search'
+//});
+
 d.push({
     title: decText,
-    url: "input://" + '' + ".js:putVar('xyqtext',input);refreshPage()",
-    col_type: 'icon_1_search'
+    url: "input://" + '' + ".js:putVar('ipttext',input);refreshPage()",
+    url: "'toast://你输入的是' + input",
+    extra: {
+        onChange: "putVar('xyqxqystext',input)",
+        titleVisible: false
+    },
+    col_type: 'input'
 });
 
 var ssyq = ['资源网采集搜@@资源网采集.xyq2','香情影视搜@@香情影视.奈菲'];
 if(self!=='香情影视.奈菲'){
 d.push({
-        title: '你的规则改过名，搜索框搜索功能将受影响。',
-        url: 'hiker://search?s='+getVar('xyqtext')+'&rule='+self,
+        title: self+'搜',
+        url: $("#noLoading#").lazyRule(rule => 'hiker://search?s='+getVar('xyqxqystext')+'&rule='+rule, self),
         col_type: 'flex_button'
     });
  }
@@ -37,26 +48,26 @@ for (var yq in ssyq) {
     var kj = ssyq[yq].split('@@');
     d.push({
         title: kj[0],
-        url: 'hiker://search?s=' + getVar('xyqtext') + '&rule=' + kj[1],
+        url: $("#noLoading#").lazyRule(rule => 'hiker://search?s=' + getVar('xyqxqystext') + '&rule=' + rule, kj[1]),
         col_type: "flex_button"
     });
 }
 }
     d.push({
         title: '茶杯狐搜',
-        url: $('hiker://empty#x#' + getVar('xyqtext') + '#x#fypage@-1@*24@#x#').rule(() => {
+        url: $('hiker://empty#x#fypage@-1@*24@#x#').rule(() => {
             var res = {};
             var d = [];
             var spl = MY_URL.split('#x#');
             //var lin = 'https://api2.jackeriss.com/api/v1/search/?text=' + spl[1] + '&type=0&from=' + spl[2] + '&size=20';
-            var lin = 'https://api.jackeriss.com/api/v1/search/?text='+spl[1]+'&type=0&from='+spl[2]+'&size=24';
-            var pn = spl[2] / 20 + 1;
+            var lin = 'https://api.jackeriss.com/api/v1/search/?text='+getVar('xyqxqystext')+'&type=0&from='+spl[1]+'&size=24';
+            var pn = spl[1] / 20 + 1;
             var urlo = JSON.parse(request(lin, {}));
             var urlt = JSON.parse(fetch(lin.replace('type=0', 'type=1'), {}));
             //log(urlo);
             if (urlo.resources.length < 1&&urlt.resources.length < 1) {
                 d.push({
-                    title: '当前关键字  ' + spl[1] + '  无搜索结果',
+                    title: '当前关键字  ' + getVar('xyqxqystext') + '  无搜索结果',
                     col_type: 'text_center_1'
                 });
             }
@@ -71,7 +82,7 @@ for (var yq in ssyq) {
                     var url = urlo.resources[i].url;
                     var desc = urlo.resources[i].website;
                     d.push({
-                        title: title.replace(spl[1], '““' + spl[1] + '””')+'  '+desc+'  在线',
+                        title: title.replace(getVar('xyqxqystext'), '““' + getVar('xyqxqystext') + '””')+'  '+desc+'  在线',
                         url: url,
                         //desc: '在线搜索结果',
                         col_type: 'text_1'
@@ -85,7 +96,7 @@ for (var yq in ssyq) {
                     var url = urlt.resources[j].url;
                     var desc = urlt.resources[j].website;
                     d.push({
-                        title: title.replace(spl[1], '““' + spl[1] + '””')+'  '+desc+'  下载',
+                        title: title.replace(getVar('xyqxqystext'), '““' + getVar('xyqxqystext') + '””')+'  '+desc+'  下载',
                         url: url,
                         //desc: '下载搜索结果',
                         col_type: 'text_1'
@@ -2091,7 +2102,7 @@ var jso=request(jconf,{}).match(/player_list=(.*?),MacPlayerConfig/)[1];
 eval("json="+jso);
 var jiek=eval("json['"+fro+"'].parse");
 if(/98hyk/.test(myurl)){
-jiek='http://jx.hao-zsj.cn/dm/?url=';
+jiek='http://jx.hao-zsj.cn/vip/?url=';
 }
 if(jiek!=''){
  if(jiek.substring(0,4)=='http'){jiek=jiek;}
@@ -2182,10 +2193,10 @@ return alizy(urll);}
 else if(/tvyb02/.test(myurl)&&/hkm3u8/.test(fro)){return srcurl;}
 else{
 if(/msdv/.test(myurl)){
-if(fro=='miaoparty'){
-var miao=fetch('https://jiexi.msdv.cn/jiemi/api.php', {headers:{'content-type':'application/x-www-form-urlencoded'},body:'url='+urll+'&ac=jx',method:'POST'});}
+if(fro=='miaoparty'||fro=='renrenmi'){
+var miao=fetch('https://cc-dd-112266-t.ms180.fun/偷接口死妈/api.php', {headers:{'content-type':'application/x-www-form-urlencoded'},body:'url='+urll+'&ac=jx',method:'POST'});}
 else{
-var miao=fetch('https://jiexi.msdv.cn/api.php', {headers:{'content-type':'application/x-www-form-urlencoded'},body:'url='+urll+'&ac=jx',method:'POST'});
+var miao=fetch('https://cc-dd-112266-t.ms180.fun/api.php', {headers:{'content-type':'application/x-www-form-urlencoded'},body:'url='+urll+'&ac=jx',method:'POST'});
 }
 return JSON.parse(miao).url;
 }else{
