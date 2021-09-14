@@ -98,7 +98,7 @@ function zywhm() {
                 url: "confirm://确认更新此文件，会覆盖自添加接口哟？.js:" + $.toString(() => {
                     var ruletxt = fetch('https://codeberg.org/lzk23559/PublicRule/raw/branch/master/ZYWCJ.txt', {});
                     if (ruletxt.search(/provide/) != -1) {
-                        writeFile("hiker://files/rules/xyq/ZYWCJ.txt", ruletxt);
+                        writeFile("hiker://files/rules/xyq/ZYWCJ2.txt", ruletxt);
                         return 'toast://更新成功。'
                     } else {
                         return 'toast://更新失败。'
@@ -112,12 +112,12 @@ function zywhm() {
                 url: $().lazyRule(() => {
                     var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/zywcj.js', {});
                     eval(rulejs);
-                    if (filter(base64Decode('5peg56CB'))) {
-                        writeFile("hiker://files/rules/xyq/zywcj2.js", rulejs);
+                    //if (filter(base64Decode('5peg56CB'))) {
+                        writeFile("hiker://files/rules/xyq/zywset2.json", rulejs);
                         back(true);
                         return 'toast://应该是最新了吧。';
-                    } else {
-                        return 'toast://更新失败。'
+                    //} else {
+                    //    return 'toast://更新失败。'
                     }
                 }),
                 desc: '推荐更新,有益无害。',
@@ -238,14 +238,14 @@ function listfun() {
             if (!filter(typ)) {
                 if (html.indexOf("</pic>") != -1) {
                     var pic = parseDomForHtml(list[j], "body&&pic&&Text").replace("http://t.8kmm.com", "https://www.wxtv.net");
-                    eval(fetch("hiker://files/rules/xyq/zywcj2.js"));
+                    eval(fetch("hiker://files/rules/xyq/zywset2.json"));
                     picfun();
                     items.push({
                         title: title,
                         pic_url: pic + '@Referer=' + pic,
                         desc: note,
                         url: arrr + "?ac=videolist&ids=" + url +
-                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
+                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywset2.json'));SSEJ();`,
                         col_type: "movie_3"
                     });
                 } else {
@@ -254,7 +254,7 @@ function listfun() {
                         title: title + "  状态:" + note,
                         desc: last + ' ' + typ + ' ' + dt,
                         url: arrr + "?ac=videolist&ids=" + url +
-                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
+                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywset2.json'));SSEJ();`,
                         col_type: "text_1"
                     })
                 }
@@ -266,13 +266,25 @@ function listfun() {
 //json列表解析函数
 function jsonlist() {
     try {
-        var list = html.list;
+        if (html.data) {
+            var list = html.data;
+        } else {
+            var list = html.list;
+        }
         for (var j = 0; j < list.length; j++) {
             var title = list[j].vod_name;
             var url = list[j].vod_id;
-            var note = list[j].vod_remarks;
+            if (list[j].vod_remarks) {
+                var note = list[j].vod_remarks;
+            } else {
+                var note = list[j].vod_total;
+            }
             var typ = list[j].type_name;
-            var last = list[j].vod_time;
+            if (list[j].vod_addtime) {
+                var last = list[j].vod_addtime;
+            } else {
+                var last = list[j].vod_time;
+            }
             if (!filter(typ)) {
                 if (list[j].vod_pic) {
                     var pic = list[j].vod_pic;
@@ -281,7 +293,7 @@ function jsonlist() {
                         pic_url: pic + '@Referer=' + pic,
                         desc: note,
                         url: arrr + "?ac=videolist&ids=" + url +
-                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
+                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywset2.json'));SSEJ();`,
                         col_type: "movie_3"
                     });
                 } else {
@@ -290,7 +302,7 @@ function jsonlist() {
                         title: title + "  状态:" + note,
                         desc: last + ' ' + typ + ' ' + dt,
                         url: arrr + "?ac=videolist&ids=" + url +
-                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
+                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywset2.json'));SSEJ();`,
                         col_type: "text_1"
                     })
                 }
@@ -322,13 +334,18 @@ function TWEJ() {
             } else {
                 rescod = request(arrr + "?ac=list")
             }
-            if (/type_name/.test(rescod)) {
+            if (/list_name/.test(rescod)) {
+                var type = JSON.parse(rescod).list;
+            } else if (/type_name/.test(rescod)) {
                 var type = JSON.parse(rescod).class;
             } else {
                 var type = parseDomForHtml(rescod, "class&&Html").match(/<ty[\s]id[\s\S]*?<\/ty>/g);
             }
             for (var i = 0; i < type.length; i++) {
-                if (/vod_play_from/.test(rescod)) {
+                if (/list_name/.test(rescod)) {
+                    var typ = type[i].list_name;
+                    var tyid = type[i].list_id;
+                } else if (/vod_play_from/.test(rescod)) {
                     var typ = type[i].type_name;
                     var tyid = type[i].type_id;
                 } else {
@@ -379,10 +396,10 @@ function TWEJ() {
 
                             if (/vod_play_from/.test(html)) {
                                 html = JSON.parse(html);
-                                eval(fetch('hiker://files/rules/xyq/zywcj2.js'));
+                                eval(fetch('hiker://files/rules/xyq/zywset2.json'));
                                 jsonlist();
                             } else {
-                                eval(fetch('hiker://files/rules/xyq/zywcj2.js'));
+                                eval(fetch('hiker://files/rules/xyq/zywset2.json'));
                                 listfun();
                             }
 
@@ -430,10 +447,10 @@ function TWEJ() {
     //对列表处理开始
     if (/vod_play_from/.test(html)) {
         html = JSON.parse(html);
-        eval(fetch('hiker://files/rules/xyq/zywcj2.js'));
+        eval(fetch('hiker://files/rules/xyq/zywset2.json'));
         jsonlist();
     } else {
-        eval(fetch('hiker://files/rules/xyq/zywcj2.js'));
+        eval(fetch('hiker://files/rules/xyq/zywset2.json'));
         listfun();
     }
     //对列表处理结束
@@ -465,7 +482,7 @@ function zywsea() {
             if (!/itono|888hyk/.test(cc[i])) {
                 items.push({
                     title: cc[i].split(',')[0] + ' 点击查看搜索结果',
-                    url: cc[i].split(',')[1] + ss.replace(/pg=\d*/g, 'pg=fypage') + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);zywerj();`,
+                    url: cc[i].split(',')[1] + ss.replace(/pg=\d*/g, 'pg=fypage') + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywset2.json",{});eval(erj);zywerj();`,
                     col_type: 'text_center_1'
                 });
             }
@@ -510,7 +527,9 @@ function zywsea() {
                 var html = bfhtml[k];
                 //搜索结果网页处理开始
                 if (/\<video\>/.test(html) || /vod_name/.test(html)) {
-                    if (/vod_name/.test(html)) {
+                    if (/list_name/.test(html)) {
+                        var list = JSON.parse(html).data;
+                    } else if (/vod_name/.test(html)) {
                         var list = JSON.parse(html).list;
                     } else {
                         var list = parseDomForArray(html, 'rss&&video');
@@ -520,7 +539,11 @@ function zywsea() {
                         if (/vod_name/.test(html)) {
                             var title = list[j].vod_name;
                             var ids = list[j].vod_id;
-                            var note = list[j].vod_remarks;
+                            if (/vod_remarks/.test(html)) {
+                                var note = list[j].vod_remarks;
+                            } else {
+                                var note = list[j].vod_total;
+                            }
                             var typ = list[j].type_name;
                             var dt = list[j].vod_play_from;
                         } else {
@@ -534,7 +557,7 @@ function zywsea() {
                             items.push({
                                 title: title + " " + ' • ' + note,
                                 desc: ' ' + Tit[k].tit + ' · ' + typ + ' · ' + dt,
-                                url: Ost[k].url + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
+                                url: Ost[k].url + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywset2.json",{});eval(erj);SSEJ();`,
                                 col_type: 'text_center_1'
                             });
                         }
@@ -565,7 +588,9 @@ function zywerj() {
 
         //setError(domain);
         if (/\<video\>/.test(html) || /vod_name/.test(html)) {
-            if (/vod_name/.test(html)) {
+            if (/list_name/.test(html)) {
+                var list = JSON.parse(html).data;
+            } else if (/vod_name/.test(html)) {
                 var list = JSON.parse(html).list;
             } else {
                 var list = parseDomForArray(html, 'rss&&video');
@@ -574,8 +599,16 @@ function zywerj() {
                 if (/vod_name/.test(html)) {
                     var title = list[j].vod_name;
                     var ids = list[j].vod_id;
-                    var note = list[j].vod_remarks;
-                    var last = list[j].vod_time;
+                    if (/vod_remarks/.test(html)) {
+                        var note = list[j].vod_remarks;
+                    } else {
+                        var note = list[j].vod_total;
+                    }
+                    if (/vod_addtime/.test(html)) {
+                        var last = list[j].vod_addtime;
+                    } else {
+                        var last = list[j].vod_time;
+                    }
                     var typ = list[j].type_name;
                     var dt = list[j].vod_play_from;
                 } else {
@@ -590,7 +623,7 @@ function zywerj() {
                     items.push({
                         title: '““' + title + '””' + " " + ' • ' + note,
                         desc: last + ' ·  ' + typ + ' ·  ' + dt,
-                        url: domain + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
+                        url: domain + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywset2.json",{});eval(erj);SSEJ();`,
                         col_type: 'text_center_1'
                     });
                 }
@@ -607,7 +640,7 @@ function zywerj() {
         setHomeResult(res);
     } else {
 
-        var net = fetch('hiker://files/rules/xyq/zywcj2.js', {});
+        var net = fetch('hiker://files/rules/xyq/zywset2.json', {});
         eval(net);
         SSEJ();
     }
@@ -621,25 +654,36 @@ function SSEJ() {
     refreshX5WebView("");
     items.push({
         title: '',
-        desc: '240&&float',
+        desc: '255&&float',
         url: '',
         col_type: 'x5_webview_single'
     });
     var html = getResCode();
     try {
         if (/vod_play_from/.test(html)) {
-            var html = JSON.parse(html);
-            var pic = html.list[0].vod_pic;
-            var typ = html.list[0].type_name;
-            var des = html.list[0].vod_content;
-            var act = html.list[0].vod_actor;
-            var dir = html.list[0].vod_director;
-            var tabs = html.list[0].vod_play_from.split('$$$');
-            var conts = html.list[0].vod_play_url.split('$$$');
-            var url = html.list[0].vod_id;
+        	var jhtml = JSON.parse(html);
+            if (/list_name/.test(html)) {
+                var pic = jhtml.data[0].vod_pic;
+                var typ = jhtml.data[0].type_name;
+                var des = jhtml.data[0].vod_content;
+                var act = jhtml.data[0].vod_actor;
+                var dir = jhtml.data[0].vod_director;
+                var tabs = jhtml.data[0].vod_play_from.split('$$$');
+                var conts = jhtml.data[0].vod_play_url.split('$$$');
+                var url = jhtml.data[0].vod_id;
+            } else {
+                var pic = jhtml.list[0].vod_pic;
+                var typ = jhtml.list[0].type_name;
+                var des = jhtml.list[0].vod_content;
+                var act = jhtml.list[0].vod_actor;
+                var dir = jhtml.list[0].vod_director;
+                var tabs = jhtml.list[0].vod_play_from.split('$$$');
+                var conts = jhtml.list[0].vod_play_url.split('$$$');
+                var url = jhtml.list[0].vod_id;
+            }
         } else {
             var pic = parseDomForHtml(html, "rss&&pic&&Text").replace("http://t.8kmm.com", "https://www.wxtv.net");
-            eval(fetch('hiker://files/rules/xyq/zywcj2.js'));
+            eval(fetch('hiker://files/rules/xyq/zywset2.json'));
             picfun();
             var typ = parseDomForHtml(html, "body&&type&&Text");
             var des = parseDomForHtml(html, "rss&&des&&Text");
@@ -676,27 +720,33 @@ function SSEJ() {
                 }, des),
                 col_type: 'text_1'
             });
+
             //-----简介选集分割线---//
             for (var i = 0; i < conts.length; i++) {
                 if (getVar('zywlsort', '1') == '1') {
                     if (/dd flag/.test(conts)) {
                         var list = conts[i].split(">\n")[1].split("\n<")[0].split("#");
+                    } else if (/\r/.test(conts)) {
+                        var list = conts[i].split("\r");
                     } else {
                         var list = conts[i].split("#");
                     }
                 } else {
                     if (/dd flag/.test(conts)) {
                         var list = conts[i].split(">\n")[1].split("\n<")[0].split("#").reverse();
+                    } else if (/\r/.test(conts)) {
+                        var list = conts[i].split("\r").reverse();
                     } else {
                         var list = conts[i].split("#").reverse();
                     }
                 }
-
+                //log(list);
                 if (/dd flag/.test(conts)) {
                     var flag = parseDomForHtml(tabs[i], "dd&&flag");
                 } else {
                     var flag = tabs[i];
                 }
+
                 //如果列表不为null就显示选集
                 if (list != null) {
                     items.push({
@@ -805,7 +855,7 @@ function SSEJ() {
                         if (filter(base64Decode('VklQ'))) {
                             items.push({
                                 title: list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0],
-                                url: 'hiker://empty##' + flag + '##' + url.replace(/\n*/g, '') + '##' + `@lazyRule=.js:/*refreshX5WebView*/eval(fetch('hiker://files/rules/xyq/zywcj2.js'));lazyRu();`,
+                                url: 'hiker://empty##' + flag + '##' + url.replace(/\n*/g, '') + '##' + `@lazyRule=.js:/*refreshX5WebView*/eval(fetch('hiker://files/rules/xyq/zywset2.json'));lazyRu();`,
                                 //col_type: title.length>=6?'text_2':'text_3'
                                 col_type: clt
                             });
@@ -924,7 +974,7 @@ function lazyRu() {
         });
         return duoduo.match(/var urls.*?[\'\"](.*?)[\'\"]/)[1];
     } else if (flag == 'miaoparty') {
-        var miao = fetch('https://jiexi.msdv.cn/jiemi/api.php', {
+        var miao = fetch('https://cc-dd-112266-t.ms180.fun/偷接口死妈/api.php', {
             headers: {
                 'content-type': 'application/x-www-form-urlencoded'
             },
