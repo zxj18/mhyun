@@ -7,7 +7,8 @@ function updata() {
 };
 
 function filter(key) {
-    var word = JSON.parse(base64Decode('VlZWVklQ'));
+    //var word = JSON.parse(base64Decode('WyLkvKbnkIYiLCAi5YaZ55yfIiwgIuemj+WIqSIsICJWSVAiLCAi576O5aWzIiwgIumHjOeVqiIsICLmgKfmhJ8iLCAi5YCr55CGIiwgIuiuuueQhiIsICLmiJDkuroiLCAi5oOF6ImyIiwgIuaXoOeggSIsICLmnInnoIEiLCAi5aa7IiwgIuivsSIsICLkubMiLCAi57qi5Li7IiwgIuiOiSIsICLlk4HmjqgiLCAi5paH5a2XIiwgIuS4iee6pyIsICLnvo7lsJEiLCAiSEVZIiwgIumqkeWFtSIsICLkuqfoh6oiLCAi5oCn54ixIiwgIuijuOiBiiIsICLkubHkvKYiLCAi5YG3IiwgIkFWIiwgImF2IiwgIua3qyIsICLlppYiLCAi5ZCM5oCnIiwgIueUt+WQjCIsICLlpbPlkIwiLCAi5Lq6IiwgIuWmhyIsICLkuJ0iLCAi56eBIiwgIueblyIsICLomZrmi58iLCAi5LqkIiwgIlNNIiwgIuaFsCIsICLnsr7lk4EiLCAi5a2m55SfIiwgIuWwhCIsICIzUCIsICLlpKfnp4AiLCAi57K+5ZOBIiwgIuWPo+WRsyIsICLpq5jmva4iLCAi5p6B5ZOBIiwgIkRNTSIsICLpppbmrKEiLCAi6L6j5qSSIiwgIuWutuaTgiIsICLoibLmg4UiLCAi5Li75pKtIiwgIuWQjeS8mCIsICLlubwiLCAi55yJIiwgIuWlsyIsICLpmLQiLCAi5aW4IiwgIui9qCIsICLluIgiLCAi5oOF5L6jIiwgIua/gCIsICLmgIEiLCAi5o6nIiwgIumjnuacuiIsICLmjqgiLCAi5r2uIiwgIum6u+ixhiIsICJleSJd'));
+    var word=[];
     for (var i = 0; i < word.length; i++) {
         if (key.indexOf(word[i]) > -1) {
             return true;
@@ -835,21 +836,14 @@ function SSEJ() {
                         } else {
                             var clt = isNaN(title) ? 'flex_button' : 'text_5'
                         }
-                        if (filter(base64Decode('VlZWVklQ'))) {
+
                             items.push({
                                 title: list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0],
                                 url: 'hiker://empty##' + flag + '##' + url.replace(/\n*/g, '') + '##' + `@lazyRule=.js:/*refreshX5WebView*/eval(fetch('hiker://files/rules/xyq/zywcj2.js'));lazyRu();`,
                                 //col_type: title.length>=6?'text_2':'text_3'
                                 col_type: clt
                             });
-                        } else {
-                            items.push({
-                                title: list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0],
-                                url: url.replace(/\n*/g, '') + flag + `@lazyRule=.js:/*refreshX5WebView*/if(input.search(/html|bilibili/)!=-1){'http://17kyun.com/api.php?url='+input;}else{input + '#isVideo=true#'}`,
-                                //col_type: title.length>=6?'text_2':'text_3'
-                                col_type: clt
-                            });
-                        }
+
                     } //for j list.length                     
                 } //if list != null    
             } //for i conts.length
