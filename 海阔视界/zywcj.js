@@ -28,18 +28,26 @@ function zywhm() {
     var items = [];
     //items.push({col_type: 'line'});
 
-    var decText = getVar("xyqtext", "");
+    var decText = getVar("xyqzywcjtext", "");
+    //items.push({
+    //title: decText,
+    //url: "input://" + '' + ".js:putVar('xyqtext',input);refreshPage()",
+    //col_type: 'icon_1_search'
+    //});
     items.push({
-        title: decText,
-        url: "input://" + '' + ".js:putVar('xyqtext',input);refreshPage()",
-        col_type: 'icon_1_search'
+        title: '',
+        url: "'toast://你输入的是' + input",
+        extra: {
+            onChange: "putVar('xyqzywcjtext',input)",
+            titleVisible: false
+        },
+        col_type: 'input'
     });
-
     var ssyq = ['香情影视搜@@香情影视.奈菲', '资源网采集搜@@资源网采集.xyq2'];
     if (self !== '资源网采集.xyq2') {
         items.push({
-            title: self+'搜',
-            url: 'hiker://search?s=' + getVar('xyqtext') + '&rule=' + self,
+            title: self + '搜',
+            url: $("#noLoading#").lazyRule(rule => 'hiker://search?s=' + getVar('xyqzywcjtext') + '&rule=' + rule, self),
             col_type: 'flex_button'
         });
     } else {
@@ -47,7 +55,7 @@ function zywhm() {
             var kj = ssyq[yq].split('@@');
             items.push({
                 title: kj[0],
-                url: 'hiker://search?s=' + getVar('xyqtext') + '&rule=' + kj[1],
+                url: $("#noLoading#").lazyRule(rule => 'hiker://search?s=' + getVar('xyqzywcjtext') + '&rule=' + rule, kj[1]),
                 col_type: "flex_button"
             });
         }
@@ -82,13 +90,41 @@ function zywhm() {
     });
     items.unshift({
         title: '🔄更新' + '(共' + len.length + '个)',
-        url: $('hiker://empty').lazyRule(() => {
-            var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/zywcj.js', {});
-            writeFile("hiker://files/rules/xyq/zywcj2.js", rulejs);
-            //var ruletxt = fetch('https://codeberg.org/lzk23559/PublicRule/raw/branch/master/ZYWCJ.txt', {});
-            //writeFile("hiker://files/rules/xyq/ZYWCJ2.txt", ruletxt);
-            refreshPage(false);
-            return 'toast://应该是获取最新了吧。'
+        url: $('hiker://empty').rule(() => {
+            var res = {};
+            var items = [];
+            items.push({
+                title: '更新ZYWCJ.txt(接口文件)',
+                url: "confirm://确认更新此文件，会覆盖自添加接口哟？.js:" + $.toString(() => {
+                    var ruletxt = fetch('https://codeberg.org/lzk23559/PublicRule/raw/branch/master/ZYWCJ.txt', {});
+                    if (ruletxt.search(/provide/) != -1) {
+                        writeFile("hiker://files/rules/xyq/ZYWCJ.txt", ruletxt);
+                        return 'toast://更新成功。'
+                    } else {
+                        return 'toast://更新失败。'
+                    }
+                }),
+                desc: '如有自添加接口可忽略。',
+                col_type: 'text_center_1'
+            });
+            items.push({
+                title: '更新zywcj.js(规则文件)',
+                url: $().lazyRule(() => {
+                    var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/zywcj.js', {});
+                    eval(rulejs);
+                    if (filter(base64Decode('5peg56CB'))) {
+                        writeFile("hiker://files/rules/xyq/zywcj2.js", rulejs);
+                        back(true);
+                        return 'toast://应该是最新了吧。';
+                    } else {
+                        return 'toast://更新失败。'
+                    }
+                }),
+                desc: '推荐更新,有益无害。',
+                col_type: 'text_center_1'
+            });
+            res.data = items;
+            setHomeResult(res);
         }),
         col_type: 'flex_button'
     });
@@ -152,6 +188,17 @@ function zywhm() {
                 }),
                 col_type: 'text_2'
             });
+            d.push({
+                title: '接口文件管理(支持xml与json采集接口)',
+                col_type: 'text_center_1'
+            });
+            d.push({
+                title: '打开编辑',
+                url: $().lazyRule(() => {
+                    return 'editFile://hiker://files/rules/xyq/ZYWCJ2.txt'
+                }),
+                col_type: 'text_2'
+            });
             setResult(d)
         }),
         col_type: 'flex_button'
@@ -187,8 +234,8 @@ function listfun() {
             var url = parseDomForHtml(list[j], "body&&id&&Text");
             var note = parseDomForHtml(list[j], "body&&note&&Text");
             var typ = parseDomForHtml(list[j], "body&&type&&Text");
-            var last = parseDomForHtml(list[j], "body&&last&&Text");           
-            if (!filter(typ)) {            	
+            var last = parseDomForHtml(list[j], "body&&last&&Text");
+            if (!filter(typ)) {
                 if (html.indexOf("</pic>") != -1) {
                     var pic = parseDomForHtml(list[j], "body&&pic&&Text").replace("http://t.8kmm.com", "https://www.wxtv.net");
                     eval(fetch("hiker://files/rules/xyq/zywcj2.js"));
@@ -201,7 +248,7 @@ function listfun() {
                             `@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
                         col_type: "movie_3"
                     });
-                } else {                	
+                } else {
                     var dt = parseDomForHtml(list[j], "body&&dt&&Text");
                     items.push({
                         title: title + "  状态:" + note,
@@ -409,7 +456,7 @@ function zywsea() {
     var le = num * ssxc;
     //setError(le);
     var src = fetch('hiker://files/rules/xyq/ZYWCJ2.txt', {});
-    //var src = fetch('', {});
+    //var src = fetch('https://codeberg.org/lzk23559/PublicRule/raw/branch/master/ZYWCJ.txt', {});
     var cc = src.indexOf('http') != -1 ? src.match(/[\S]*?,.*?[\s]/g) : base64Decode(src).match(/[\S]*?,.*?[\s]/g);
 
     if (ssmode == '0') {
@@ -484,12 +531,12 @@ function zywsea() {
                             var dt = parseDomForHtml(list[j], 'body&&dt&&Text');
                         }
                         if (!filter(typ)) {
-                        items.push({
-                            title: title + " " + ' • ' + note,
-                            desc: ' ' + Tit[k].tit + ' · ' + typ + ' · ' + dt,
-                            url: Ost[k].url + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
-                            col_type: 'text_center_1'
-                        });
+                            items.push({
+                                title: title + " " + ' • ' + note,
+                                desc: ' ' + Tit[k].tit + ' · ' + typ + ' · ' + dt,
+                                url: Ost[k].url + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
+                                col_type: 'text_center_1'
+                            });
                         }
                     } //for j
                 } else {
@@ -540,12 +587,12 @@ function zywerj() {
                     var dt = parseDomForHtml(list[j], 'body&&dt&&Text');
                 }
                 if (!filter(typ)) {
-                items.push({
-                    title: '““' + title + '””' + " " + ' • ' + note,
-                    desc: last + ' ·  ' + typ + ' ·  ' + dt,
-                    url: domain + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
-                    col_type: 'text_center_1'
-                });
+                    items.push({
+                        title: '““' + title + '””' + " " + ' • ' + note,
+                        desc: last + ' ·  ' + typ + ' ·  ' + dt,
+                        url: domain + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
+                        col_type: 'text_center_1'
+                    });
                 }
             }
         } else {
@@ -714,7 +761,7 @@ function SSEJ() {
                             url = 'https://jx.api.xhfhttc.cn/jx/?url=' + url
                         }
                         //if (flag == 'pll') {
-                            //url = 'https://vip.gaotian.love/api/?key=GiML8kaI6DnlpAahLM&url=' + url
+                        //url = 'https://vip.gaotian.love/api/?key=GiML8kaI6DnlpAahLM&url=' + url
                         //}
                         if (flag == 'languang') {
                             url = 'https://j.languang.wfss100.com/?url=' + url
@@ -725,7 +772,7 @@ function SSEJ() {
                         if (flag == 'kdyx' || flag == 'kdsx') {
                             url = 'http://api.kudian6.com/jm/pdplayer.php?url=' + url
                         }
-                        if (flag == '789pan'||flag == 'pll') {
+                        if (flag == '789pan' || flag == 'pll') {
                             url = 'https://vip.gaotian.love/api/?key=GiML8kaI6DnlpAahLM&url=' + url
                         }
                         if (flag == 'fanqie') {
@@ -755,21 +802,21 @@ function SSEJ() {
                         } else {
                             var clt = isNaN(title) ? 'flex_button' : 'text_5'
                         }
-                        if(filter(base64Decode('VklQ'))){
-                        items.push({
-                            title: list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0],
-                            url: 'hiker://empty##' + flag + '##' + url.replace(/\n*/g, '') + '##' + `@lazyRule=.js:/*refreshX5WebView*/eval(fetch('hiker://files/rules/xyq/zywcj2.js'));lazyRu();`,
-                            //col_type: title.length>=6?'text_2':'text_3'
-                            col_type: clt
-                        });
-                        }else{
-                        items.push({
-                            title: list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0],
-                            url: url.replace(/\n*/g, '') +flag+ `@lazyRule=.js:/*refreshX5WebView*/if(input.search(/html|bilibili/)!=-1){'http://17kyun.com/api.php?url='+input;}else{input + '#isVideo=true#'}`,                            
-                            //col_type: title.length>=6?'text_2':'text_3'
-                            col_type: clt
-                        });    
-                        }                      
+                        if (filter(base64Decode('VklQ'))) {
+                            items.push({
+                                title: list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0],
+                                url: 'hiker://empty##' + flag + '##' + url.replace(/\n*/g, '') + '##' + `@lazyRule=.js:/*refreshX5WebView*/eval(fetch('hiker://files/rules/xyq/zywcj2.js'));lazyRu();`,
+                                //col_type: title.length>=6?'text_2':'text_3'
+                                col_type: clt
+                            });
+                        } else {
+                            items.push({
+                                title: list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0],
+                                url: url.replace(/\n*/g, '') + flag + `@lazyRule=.js:/*refreshX5WebView*/if(input.search(/html|bilibili/)!=-1){'http://17kyun.com/api.php?url='+input;}else{input + '#isVideo=true#'}`,
+                                //col_type: title.length>=6?'text_2':'text_3'
+                                col_type: clt
+                            });
+                        }
                     } //for j list.length                     
                 } //if list != null    
             } //for i conts.length
@@ -977,7 +1024,7 @@ var sh= CryptoJS.MD5(base64Encode(id+times)).toString();
 var purl='http://play.zk132.cn/new/play1/'+id+'%7C'+times+'%7C'+sh+'%7C'+'1'+'%7C'+'index.m3u8';
 */
         var html = fetch(src, {});
-        return 'x5Play://'+JSON.parse(html).url;
+        return 'x5Play://' + JSON.parse(html).url;
     } else if (/wfss100/.test(src)) {
         var phtml = request(src, {});
         var ifsrc = src.split('/?url=')[0] + parseDomForHtml(phtml, "body&&iframe&&src");
