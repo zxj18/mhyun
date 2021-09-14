@@ -93,31 +93,15 @@ function zywhm() {
             var res = {};
             var items = [];
             items.push({
-                title: '更新ZYWCJ.txt(接口文件)',
-                url: "confirm://确认更新此文件，会覆盖自添加接口哟？.js:" + $.toString(() => {
-                    var ruletxt = fetch('https://codeberg.org/lzk23559/PublicRule/raw/branch/master/ZYWCJ.txt', {});
-                    if (ruletxt.search(/provide/) != -1) {
-                        writeFile("hiker://files/rules/xyq/ZYWCJ2.txt", ruletxt);
-                        return 'toast://更新成功。'
-                    } else {
-                        return 'toast://更新失败。'
-                    }
-                }),
-                desc: '如有自添加接口可忽略。',
-                col_type: 'text_center_1'
-            });
-            items.push({
                 title: '更新zywcj.js(规则文件)',
                 url: $().lazyRule(() => {
                     var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/zywcj.js', {});
                     eval(rulejs);
-                    if (filter(base64Decode('VlZWVklQ'))) {
+
                         writeFile("hiker://files/rules/xyq/zywcj2.js", rulejs);
                         back(true);
                         return 'toast://应该是最新了吧。';
-                    } else {
-                        return 'toast://更新失败。'
-                    }
+
                 }),
                 desc: '推荐更新,有益无害。',
                 col_type: 'text_center_1'
