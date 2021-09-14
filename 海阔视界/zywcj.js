@@ -113,7 +113,7 @@ function zywhm() {
                     var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/zywcj.js', {});
                     eval(rulejs);
                     //if (filter(base64Decode('5peg56CB'))) {
-                        writeFile("hiker://files/rules/xyq/zywset2.json", rulejs);
+                        writeFile("hiker://files/rules/xyq/zywcj2.js", rulejs);
                         back(true);
                         return 'toast://应该是最新了吧。';
                     //} else {
@@ -238,14 +238,14 @@ function listfun() {
             if (!filter(typ)) {
                 if (html.indexOf("</pic>") != -1) {
                     var pic = parseDomForHtml(list[j], "body&&pic&&Text").replace("http://t.8kmm.com", "https://www.wxtv.net");
-                    eval(fetch("hiker://files/rules/xyq/zywset2.json"));
+                    eval(fetch("hiker://files/rules/xyq/zywcj2.js"));
                     picfun();
                     items.push({
                         title: title,
                         pic_url: pic + '@Referer=' + pic,
                         desc: note,
                         url: arrr + "?ac=videolist&ids=" + url +
-                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywset2.json'));SSEJ();`,
+                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
                         col_type: "movie_3"
                     });
                 } else {
@@ -254,7 +254,7 @@ function listfun() {
                         title: title + "  状态:" + note,
                         desc: last + ' ' + typ + ' ' + dt,
                         url: arrr + "?ac=videolist&ids=" + url +
-                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywset2.json'));SSEJ();`,
+                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
                         col_type: "text_1"
                     })
                 }
@@ -293,7 +293,7 @@ function jsonlist() {
                         pic_url: pic + '@Referer=' + pic,
                         desc: note,
                         url: arrr + "?ac=videolist&ids=" + url +
-                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywset2.json'));SSEJ();`,
+                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
                         col_type: "movie_3"
                     });
                 } else {
@@ -302,7 +302,7 @@ function jsonlist() {
                         title: title + "  状态:" + note,
                         desc: last + ' ' + typ + ' ' + dt,
                         url: arrr + "?ac=videolist&ids=" + url +
-                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywset2.json'));SSEJ();`,
+                            `@rule=js:eval(fetch('hiker://files/rules/xyq/zywcj2.js'));SSEJ();`,
                         col_type: "text_1"
                     })
                 }
@@ -396,10 +396,10 @@ function TWEJ() {
 
                             if (/vod_play_from/.test(html)) {
                                 html = JSON.parse(html);
-                                eval(fetch('hiker://files/rules/xyq/zywset2.json'));
+                                eval(fetch('hiker://files/rules/xyq/zywcj2.js'));
                                 jsonlist();
                             } else {
-                                eval(fetch('hiker://files/rules/xyq/zywset2.json'));
+                                eval(fetch('hiker://files/rules/xyq/zywcj2.js'));
                                 listfun();
                             }
 
@@ -447,10 +447,10 @@ function TWEJ() {
     //对列表处理开始
     if (/vod_play_from/.test(html)) {
         html = JSON.parse(html);
-        eval(fetch('hiker://files/rules/xyq/zywset2.json'));
+        eval(fetch('hiker://files/rules/xyq/zywcj2.js'));
         jsonlist();
     } else {
-        eval(fetch('hiker://files/rules/xyq/zywset2.json'));
+        eval(fetch('hiker://files/rules/xyq/zywcj2.js'));
         listfun();
     }
     //对列表处理结束
@@ -482,7 +482,7 @@ function zywsea() {
             if (!/itono|888hyk/.test(cc[i])) {
                 items.push({
                     title: cc[i].split(',')[0] + ' 点击查看搜索结果',
-                    url: cc[i].split(',')[1] + ss.replace(/pg=\d*/g, 'pg=fypage') + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywset2.json",{});eval(erj);zywerj();`,
+                    url: cc[i].split(',')[1] + ss.replace(/pg=\d*/g, 'pg=fypage') + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);zywerj();`,
                     col_type: 'text_center_1'
                 });
             }
@@ -557,7 +557,7 @@ function zywsea() {
                             items.push({
                                 title: title + " " + ' • ' + note,
                                 desc: ' ' + Tit[k].tit + ' · ' + typ + ' · ' + dt,
-                                url: Ost[k].url + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywset2.json",{});eval(erj);SSEJ();`,
+                                url: Ost[k].url + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
                                 col_type: 'text_center_1'
                             });
                         }
@@ -623,7 +623,7 @@ function zywerj() {
                     items.push({
                         title: '““' + title + '””' + " " + ' • ' + note,
                         desc: last + ' ·  ' + typ + ' ·  ' + dt,
-                        url: domain + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywset2.json",{});eval(erj);SSEJ();`,
+                        url: domain + "?ac=videolist&ids=" + ids + `@rule=js:var erj=fetch("hiker://files/rules/xyq/zywcj2.js",{});eval(erj);SSEJ();`,
                         col_type: 'text_center_1'
                     });
                 }
@@ -640,7 +640,7 @@ function zywerj() {
         setHomeResult(res);
     } else {
 
-        var net = fetch('hiker://files/rules/xyq/zywset2.json', {});
+        var net = fetch('hiker://files/rules/xyq/zywcj2.js', {});
         eval(net);
         SSEJ();
     }
@@ -683,7 +683,7 @@ function SSEJ() {
             }
         } else {
             var pic = parseDomForHtml(html, "rss&&pic&&Text").replace("http://t.8kmm.com", "https://www.wxtv.net");
-            eval(fetch('hiker://files/rules/xyq/zywset2.json'));
+            eval(fetch('hiker://files/rules/xyq/zywcj2.js'));
             picfun();
             var typ = parseDomForHtml(html, "body&&type&&Text");
             var des = parseDomForHtml(html, "rss&&des&&Text");
@@ -855,7 +855,7 @@ function SSEJ() {
                         if (filter(base64Decode('VklQ'))) {
                             items.push({
                                 title: list[j].split('$')[0].indexOf('http') != -1 ? [j + 1] : list[j].split('$')[0],
-                                url: 'hiker://empty##' + flag + '##' + url.replace(/\n*/g, '') + '##' + `@lazyRule=.js:/*refreshX5WebView*/eval(fetch('hiker://files/rules/xyq/zywset2.json'));lazyRu();`,
+                                url: 'hiker://empty##' + flag + '##' + url.replace(/\n*/g, '') + '##' + `@lazyRule=.js:/*refreshX5WebView*/eval(fetch('hiker://files/rules/xyq/zywcj2.js'));lazyRu();`,
                                 //col_type: title.length>=6?'text_2':'text_3'
                                 col_type: clt
                             });
