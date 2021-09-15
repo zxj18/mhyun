@@ -431,6 +431,238 @@
       "categories": []
     },
     {
+      "key": "清欢资源",
+      "name": "清欢资源",
+      "type": 1,
+      "api": "https://www.qinghuanzy.cn/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "任我云",
+      "name": "任我云",
+      "type": 1,
+      "api": "https://www.renwoyun.cn/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "2K资源",
+      "name": "2K资源",
+      "type": 1,
+      "api": "http://2kzyz.com/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "畅视影视",
+      "name": "畅视影视",
+      "type": 1,
+      "api": "http://app.reboju.net/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "追剧吧APP",
+      "name": "追剧吧APP",
+      "type": 1,
+      "api": "http://data.zju8.cc:1234/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "真不卡",
+      "name": "真不卡",
+      "type": 1,
+      "api": "http://db.taijuwang.cc/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "竹嘎(蓝光解析)",
+      "name": "竹嘎(蓝光解析)",
+      "type": 1,
+      "api": "http://m.ycccyk.cn/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "爱看",
+      "name": "爱看",
+      "type": 1,
+      "api": "http://tvcms.ikan6.vip/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "爱看啦",
+      "name": "爱看啦",
+      "type": 1,
+      "api": "http://v.aik.la/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "九九美剧",
+      "name": "九九美剧",
+      "type": 1,
+      "api": "https://www.999meiju.com/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "孤单影院",
+      "name": "孤单影院",
+      "type": 1,
+      "api": "https://www.hanmiys.com/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "嘿锋影视",
+      "name": "嘿锋影视",
+      "type": 1,
+      "api": "https://www.hfys8.vip/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "污妖动漫",
+      "name": "污妖动漫",
+      "type": 1,
+      "api": "https://www.wyydm.com/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "优全影视",
+      "name": "优全影视",
+      "type": 1,
+      "api": "https://xmyun.xyz/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "U酷资源",
+      "name": "U酷资源",
+      "type": 0,
+      "api": "http://ukuzy.com/api.php/provide/vod/at/xml",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "韩剧资源",
+      "name": "韩剧资源",
+      "type": 0,
+      "api": "http://www.hanjuzy.com/inc/api.php",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "影视聚合采集",
+      "name": "影视聚合采集",
+      "type": 1,
+      "api": "http://zy.vodcdn.top/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "最新(云播)资源",
+      "name": "最新(云播)资源",
+      "type": 1,
+      "api": "https://api.yunboys.cn/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "酷点资源",
+      "name": "酷点资源",
+      "type": 0,
+      "api": "https://kudian8.com/api.php/provide/vod/at/xml",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "奇乐(优剧)资源",
+      "name": "奇乐(优剧)资源",
+      "type": 1,
+      "api": "https://zy.ujuba.com/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "核桃影视",
+      "name": "核桃影视",
+      "type": 1,
+      "api": "http://app.hetaoys.vip/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "电影盒子",
+      "name": "电影盒子",
+      "type": 1,
+      "api": "http://cms.tvbox543.com/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "爱看1080",
+      "name": "爱看1080",
+      "type": 1,
+      "api": "http://www.ik1080.com/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "蓝果APP",
+      "name": "蓝果APP",
+      "type": 1,
+      "api": "http://www.languotv.com/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "飞鱼影视",
+      "name": "飞鱼影视",
+      "type": 1,
+      "api": "https://app.feiyu5.com/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "思乐影视",
+      "name": "思乐影视",
+      "type": 1,
+      "api": "https://www.4ltv.com/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "77影视",
+      "name": "77影视",
+      "type": 1,
+      "api": "https://www.77diany.com/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "播放呀APP",
+      "name": "播放呀APP",
+      "type": 1,
+      "api": "https://www.bofangya.com/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "白熊影院",
+      "name": "白熊影院",
+      "type": 1,
+      "api": "https://www.bxyy5.com/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
       "key": "1717腾讯资源",
       "name": "腾讯资源",
       "type": 0,
@@ -862,6 +1094,22 @@
       "api": "http://m.7777688.com/inc/api.php",
       "playUrl": "",
       "categories": []
+    },
+    {
+      "key": "*百度伦理资源",
+      "name": "*百度伦理资源",
+      "type": 1,
+      "api": "http://llbdzy.com/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
+    },
+    {
+      "key": "*若梦影视",
+      "name": "*若梦影视",
+      "type": 1,
+      "api": "http://47.106.80.129/api.php/provide/vod/?ac=list",
+      "playUrl": "",
+      "categories": []
     }
   ],
   "lives": [
@@ -1105,6 +1353,10 @@
   ],
   "parses": [
     {
+      "name": "parwix解析",
+      "url": "https://jx.parwix.com:4433/player/?url="
+    },
+    {
       "name": "纯净解析",
       "url": "https://z1.m1907.cn/?jx="
     },
@@ -1153,10 +1405,6 @@
     {
       "name": "全民解析",
       "url": "https://jx.quanmingjiexi.com/?url="
-    },
-    {
-      "name": "parwix解析",
-      "url": "https://jx.parwix.com:4433/player/?url="
     },
     {
       "name": "高速接口1",
