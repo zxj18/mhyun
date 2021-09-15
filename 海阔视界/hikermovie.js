@@ -1645,6 +1645,53 @@ var myurl=input.split('$$$')[1];
 var srcurl=input.split('$$$')[2];
 try{
 //通用解析代码
+function ojbk_decode(_0x152316) {
+    var _0x474e5a = {
+        'mTTfY': '4|5|0|2|1|3',
+        'knVnp': function(_0x4fbcc4, _0x35bb84) {
+            return _0x4fbcc4 < _0x35bb84;
+        },
+        'kUvZj': function(_0x36a9c0, _0x1846fc) {
+            return _0x36a9c0 % _0x1846fc;
+        },
+        'hxSKn': function(_0xb8ef7, _0xd32172) {
+            return _0xb8ef7 ^ _0xd32172;
+        },
+        'ftykS': function(_0x1bc14f, _0x5a0864) {
+            return _0x1bc14f(_0x5a0864);
+        },
+        'rvdLZ': 'ojbk666',
+        'odtzo': function(_0x4cec6a, _0x3167d3) {
+            return _0x4cec6a(_0x3167d3);
+        }
+    };
+    var _0x2b2042 = _0x474e5a['mTTfY']['split']('|'),_0x5e6d8c = 0x0;
+    while (!![]) {
+        switch (_0x2b2042[_0x5e6d8c++]) {
+            case '0':
+                len = key['length'];
+                continue;
+            case '1':
+                for (i = 0x0; _0x474e5a['knVnp'](i, string['length']); i++) {
+                    k = _0x474e5a['kUvZj'](i, len);
+                    code += String['fromCharCode'](_0x474e5a['hxSKn'](string['charCodeAt'](i), key['charCodeAt'](k)));
+                }
+                continue;
+            case '2':
+                code = '';
+                continue;
+            case '3':
+                return _0x474e5a['ftykS'](base64Decode, code);
+            case '4':
+                key = _0x474e5a['rvdLZ'];
+                continue;
+            case '5':
+                string = _0x474e5a['odtzo'](base64Decode, _0x152316);
+                continue;
+        }
+        break;
+    }
+}
 //开始bt_token
 function btoken(html){
 if(!fetch("hiker://files/rules/xyq/token.js",{})){var fileUrl=fetch("https://cdn.jsdelivr.net/gh/lzk23559/Public_folder/token.js",{});writeFile("hiker://files/rules/xyq/token.js",fileUrl);eval(fileUrl);}else{var fileUrl=fetch("hiker://files/rules/xyq/token.js",{});eval(fileUrl)};
@@ -1656,6 +1703,7 @@ eval(getCryptoJS());
 var urlstr=html.match(/getVideoInfo\(\"(.*?)\"\)/)[1];
 var bt_token=html.split('bt_token = "')[1].split('"')[0];
 var token_key=CryptoJS.enc.Utf8.parse('H5C9PJ60t5JgzxUS');
+if(/wkfile/.test(html)){token_key=CryptoJS.enc.Utf8.parse('94185E43DED6EBAF')};
 var token_iv=CryptoJS.enc.Utf8.parse(bt_token);
 function decrypt(urlstr,token_key,token_iv){
 return CryptoJS.AES.decrypt(urlstr,token_key,{'iv':token_iv}).toString(CryptoJS.enc.Utf8);
@@ -2057,6 +2105,8 @@ if (player_data.encrypt == '1') {
     } else if (player_data.encrypt == '2') {
         urll = unescape(base64Decode(urll));
         nxt = unescape(base64Decode(nxt))
+    } else if (player_data.encrypt == '3') {
+        urll = ojbk_decode(urll);
     }
 //if(urll.substring(0,2)=='JT'||/kanju/.test(myurl)){urll=unescape(base64Decode(urll));nxt=unescape(base64Decode(nxt));}
 //else if(urll.substring(0,1)=='%'){urll=unescape(urll);nxt=unescape(nxt);}
@@ -2180,6 +2230,8 @@ if (player_data.encrypt == '1') {
     } else if (player_data.encrypt == '2') {
         urll = unescape(base64Decode(urll));
         nxt = unescape(base64Decode(nxt))
+    } else if (player_data.encrypt == '3') {
+        return srcurl;
     }
 //if(urll.substring(0,2)=='JT'){urll=unescape(base64Decode(urll));nxt=unescape(base64Decode(nxt));}
 //else if(urll.substring(0,1)=='%'){urll=unescape(urll);nxt=unescape(nxt);}
