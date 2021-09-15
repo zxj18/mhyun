@@ -3,19 +3,25 @@
     {
       "id": 1,
       "ad": "no",
+      "name": "parwix解析",
+      "url": "https://jx.parwix.com:4433/player/?url="
+    },
+    {
+      "id": 1,
+      "ad": "no",
       "name": "纯净解析",
       "url": "https://z1.m1907.cn/?jx="
     },
     {
       "id": 1,
       "ad": "no",
-      "name": "高速接口1",
-      "url": "https://jsap.attakids.com/?url="
+      "name": "暮光解析",
+      "url": "https://muguang.mgtv.com.muguangys.com/jiexi.php?url="
     },
     {
       "id": 1,
       "ad": "no",
-      "name": "B站解析1",
+      "name": "B站解析1(Parwix解析)",
       "url": "https://vip.parwix.com:4433/player/?url="
     },
     {
@@ -27,7 +33,67 @@
     {
       "id": 1,
       "ad": "no",
-      "name": "虾米",
+      "name": "Json.M3u8",
+      "url": "https://json.m3u8.tv:7788/json.php?url=",
+    },
+    {
+      "id": 1,
+      "ad": "no",
+      "name": "Json.VodJX",
+      "url": "https://www.vodjx.top/api/?key=XSQzk8KFK1I7FfPK5X&url=",
+    },
+    {
+      "id": 1,
+      "ad": "no",
+      "name": "默认",
+      "url": "http://api.u1o.net/?url="
+    },
+    {
+      "id": 1,
+      "ad": "no",
+      "name": "JHD",
+        "url": "https://api.jhdyw.vip/?url="
+    },
+    {
+      "id": 1,
+      "ad": "no",
+      "name": "80tv",
+      "url": "https://1.api.80tvs.cn/?url="
+    },
+     {
+      "id": 1,
+      "ad": "no",
+      "name": "月亮",
+      "url": "https://vip.jianjians.com/?url="
+    },
+    {
+      "id": 1,
+      "ad": "no",
+      "name": "2Ajx",
+      "url": "https://www.2ajx.com/vip.php?url="
+    },
+    {
+      "id": 1,
+      "ad": "no",
+      "name": "久看解析",
+      "url": "https://9kjx.com/?url="
+    },
+    {
+      "id": 1,
+      "ad": "no",
+      "name": "全民解析",
+      "url": "https://jx.quanmingjiexi.com/?url="
+    },
+    {
+      "id": 1,
+      "ad": "no",
+      "name": "高速接口1",
+      "url": "https://jsap.attakids.com/?url="
+    },
+    {
+      "id": 1,
+      "ad": "no",
+      "name": "虾米(sohu)",
       "url": "https://jx.xmflv.com/?url="
     },
     {
@@ -39,7 +105,7 @@
     {
       "id": 1,
       "ad": "no",
-      "name": "BL",
+      "name": "BL解析",
       "url": "https://vip.bljiex.com/?v="
     },
     {
@@ -51,7 +117,13 @@
     {
       "id": 1,
       "ad": "no",
-      "name": "ccyjjd",
+      "name": "ckmov",
+      "url": "https://www.ckmov.vip/api.php?url="
+    },
+    {
+      "id": 1,
+      "ad": "no",
+      "name": "CKMOV解析",
       "url": "https://ckmov.ccyjjd.com/ckmov/?url="
     },
     {
@@ -63,8 +135,14 @@
     {
       "id": 1,
       "ad": "no",
-      "name": "老板",
+      "name": "8090解析",
       "url": "https://vip.laobandq.com/jiexi.php?url="
+    },
+    {
+      "id": 1,
+      "ad": "no",
+      "name": "8090G",
+      "url": "https://www.8090g.cn/?url="
     },
     {
       "id": 1,
@@ -95,12 +173,6 @@
       "ad": "no",
       "name": "618G",
       "url": "https://jx.618g.com/?url="
-    },
-    {
-      "id": 1,
-      "ad": "no",
-      "name": "ckmov",
-      "url": "https://www.ckmov.vip/api.php?url="
     },
     {
       "id": 1,
@@ -147,12 +219,6 @@
     {
       "id": 1,
       "ad": "no",
-      "name": "老板",
-      "url": "https://vip.laobandq.com/jiexi.php?url="
-    },
-    {
-      "id": 1,
-      "ad": "no",
       "name": "乐喵",
       "url": "https://jx.hao-zsj.cn/vip/?url="
     },
@@ -183,7 +249,7 @@
     {
       "id": 1,
       "ad": "no",
-      "name": "维多",
+      "name": "维多(0k)",
       "url": "https://jx.ivito.cn/?url="
     },
     {
@@ -213,7 +279,7 @@
     {
       "id": 1,
       "ad": "no",
-      "name": "星空",
+      "name": "星空(ok)",
       "url": "http://60jx.com/?url="
     },
     {
@@ -225,7 +291,7 @@
     {
       "id": 1,
       "ad": "no",
-      "name": "0523",
+      "name": "盘古云多路",
       "url": "https://go.yh0523.cn/y.cy?url="
     },
     {
@@ -263,12 +329,6 @@
       "ad": "no",
       "name": "云析",
       "url": "https://jx.yparse.com/index.php?url="
-    },
-    {
-      "id": 1,
-      "ad": "no",
-      "name": "8090",
-      "url": "https://www.8090g.cn/?url="
     }
   ]
 }
