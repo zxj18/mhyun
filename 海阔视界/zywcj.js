@@ -807,7 +807,7 @@ function SSEJ() {
                             url = 'http://api.kudian6.com/jm/pdplayer.php?url=' + url
                         }
                         if (flag == '789pan' || flag == 'pll') {
-                            url = 'https://vip.gaotian.love/api/?key=GiML8kaI6DnlpAahLM&url=' + url
+                            url = 'https://vip.gaotian.love/api/?key=sRy0QAq8hqXRlrEtrq&url=' + url
                         }
                         if (flag == 'fanqie') {
                             url = 'https://jx.fqzy.cc/jx.php?url=' + url
