@@ -1,6 +1,10 @@
 (function() {
-if(/\.mmiyue\.com|jxn2\.178du\.com|90ys2\.com\/x2/.test(window.location.host)){
-        if(document.querySelector('body').innerText.indexOf('未授权')>=0) {
+if(/\.mmiyue\.com|jxn2\.178du\.com|90ys2\.com\/x2|play\.ds163\.cc/.test(window.location.host)){
+        if(document.querySelector('body').innerText.search(/未授权|接口防盗/)>=0) {
+            window.location.href=window.location.href;
+        }
+}else if(/v\.xiajinba\.cn/.test(window.location.host)){
+        if(document.querySelector('body').innerText.indexOf('No input file specified')>=0) {
             window.location.href=window.location.href;
         }
 }else if (window.location.host == 'www.zhenbuka3.com') {
