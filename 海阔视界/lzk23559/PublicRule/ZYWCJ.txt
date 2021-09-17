@@ -14,6 +14,9 @@ U猫资源,http://umao.ml/api.php/provide/vod/at/xml
 #切片综合类
 人人资源,https://www.rrzyw.cc/api.php/provide/vod/at/xml
 BL视频,https://bljiex.com/api.php/provide/vod/at/xml
+U酷资源,http://ukuzy.com/api.php/provide/vod/
+酷点资源,https://kudian8.com/api.php/provide/vod/
+淘片资源,https://taopianzy.com/home/cjapi/c4ca4238a0b923820dcc509a6f75849b/vod/xml
 乐奇艺,https://www.lqiyi.co/api.php/provide/vod/at/xml
 百度资源,https://api.apibdzy.com/api.php/provide/vod/at/xml
 红牛资源,http://www.hongniuzy.com/inc/seacms.php
