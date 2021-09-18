@@ -257,6 +257,11 @@
 "vodhref":"1&30&2&3&4&6&20&21&22&23&24&25&26&27&28&7&8&9&10&11&12&31&32&33&34&13&14&15&16",
 "ico":"https://www.msdv.cn/template/JOELEO/asset/img/favicon.ico",
 "url":"https://www.msdv.cn"},
+{"title":"CJT影视",
+"vodtype":"电影&电视剧&综艺&动漫&bilibili",
+"vodhref":"1&2&3&4&29",
+"ico":"https://www.cjt521.com/upload/site/20210903-1/ced917d33de30ac5ccabb22a97f4619a.png",
+"url":"https://www.cjt521.com"},
 {"title":"AUETE影视",
 "vodtype":"电影&电视剧&综艺&动漫&其它&喜剧片&动作片&爱情片&科幻片&恐怖片&战争片&剧情片&美剧&韩剧&日剧&泰剧&网剧&台剧&国产&港剧",
 "vodhref":"Movie&Tv&Zy&Dm&qita&Movie/xjp&Movie/dzp&Movie/aqp&Movie/khp&Movie/kbp&Movie/zzp&Movie/jqp&Tv/oumei&Tv/hanju&Tv/riju&Tv/yataiju&Tv/wangju&Tv/taiju&Tv/neidi&Tv/tvbgj",
@@ -294,7 +299,12 @@
 "vodtype":"全部&TV&剧场版&OVA",
 "vodhref":"all&TV&剧场版&OVA",
 "ico":"https://www.agefans.cc/favicon.ico",
-"url":"https://www.agefans.cc"}
+"url":"https://www.agefans.cc"},
+{"title":"动漫巴士",
+"vodtype":"国产动漫&日本动漫&欧美动漫&电影",
+"vodhref":"1&2&3&4",
+"ico":"https://dm84.tv/favicon.ico",
+"url":"https://dm84.tv"}
 ]},
 {"type":"资源网",
   "list":[
