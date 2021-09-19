@@ -3,10 +3,10 @@
     {
       "key": "极品资源",
       "name": "极品资源",
-      "api": "https://www.jpysvip.net/api.php/provide/vod/at/xml/",
-      "categories": [],
       "type": 0,
-      "playUrl": ""
+      "api": "https://www.jpysvip.net/api.php/provide/vod/at/xml/",
+      "playUrl": "",
+      "categories": []
     },
     {
       "key": "2A资源站",
@@ -1053,16 +1053,33 @@
       "url": "https://jx.parwix.com:4433/player/?url="
     },
     {
-      "name": "17kyun",
-      "url": "http://17kyun.com/api.php?url="
-    },
-    {
       "name": "纯净解析",
       "url": "https://z1.m1907.cn/?jx="
     },
     {
-      "name": "暮光解析",
-      "url": "https://muguang.mgtv.com.muguangys.com/jiexi.php?url="
+      "name": "Json.VodJX",
+      "url": "https://www.vodjx.top/api/?key=XSQzk8KFK1I7FfPK5X&url=",
+      "type": 1
+    },
+    {
+      "name": "playmgtv",
+      "url": "https://playmgtvdata.ccyjjd.com/mgtv1206/index.php?url="
+    },
+    {
+      "name": "titan.mgtv",
+      "url": "https://titan.mgtv.com.o8tv.com/jiexi/?url="
+    },
+    {
+      "name": "17kyun.zh188",
+      "url": "https://1717yun.com.zh188.net/0828/?url="
+    },
+    {
+      "name": "4kdv",
+      "url": "https://jx.4kdv.com/?url="
+    },
+    {
+      "name": "17kyun",
+      "url": "http://17kyun.com/api.php?url="
     },
     {
       "name": "B站解析1(Parwix解析)",
@@ -1071,11 +1088,6 @@
     {
       "name": "Json.M3u8",
       "url": "https://json.m3u8.tv:7788/json.php?url=",
-      "type": 1
-    },
-    {
-      "name": "Json.VodJX",
-      "url": "https://www.vodjx.top/api/?key=XSQzk8KFK1I7FfPK5X&url=",
       "type": 1
     },
     {
@@ -1273,7 +1285,11 @@
     {
       "name": "云析",
       "url": "https://jx.yparse.com/index.php?url="
-    }
+    },
+    {
+      "name": "暮光解析",
+      "url": "https://muguang.mgtv.com.muguangys.com/jiexi.php?url="
+    },
   ],
   "flags": [
     "youku",
@@ -1286,7 +1302,8 @@
     "pptv",
     "mgtv",
     "wasu",
-    "bilibili"
+    "bilibili",
+    "m1905"
   ],
   "ijk": [
     {
