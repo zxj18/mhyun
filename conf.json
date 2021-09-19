@@ -1059,7 +1059,6 @@
     {
       "name": "Json.VodJX",
       "url": "https://www.vodjx.top/api/?key=XSQzk8KFK1I7FfPK5X&url=",
-      "type": 1
     },
     {
       "name": "playmgtv",
@@ -1087,8 +1086,7 @@
     },
     {
       "name": "Json.M3u8",
-      "url": "https://json.m3u8.tv:7788/json.php?url=",
-      "type": 1
+      "url": "https://json.m3u8.tv:7788/json.php?url="
     },
     {
       "name": "默认",
@@ -1289,7 +1287,7 @@
     {
       "name": "暮光解析",
       "url": "https://muguang.mgtv.com.muguangys.com/jiexi.php?url="
-    },
+    }
   ],
   "flags": [
     "youku",
