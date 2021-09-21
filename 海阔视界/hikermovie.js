@@ -2220,6 +2220,9 @@ return parwix(html);
 else if(/789pan/.test(html)&&/var id=/.test(html)){
 return qbjpan(html);
 }//结束789盘
+else if(/manmankan/.test(jiek)){
+var miao=fetch('https://jx.manmankan.top/api.php', {headers:{'content-type':'application/x-www-form-urlencoded'},body:'url='+urll+'&ac=jx',method:'POST'});
+return 'x5Play://'+JSON.parse(miao).url;}
 else if(/llqplayer/.test(html)){return 'x5WebView://'+(jiek+urll+"&next="+nxt);}
 else if(/jhplayer/.test(html)&&/jianghu\/js\/setting/.test(html)){return html.match(/\"url\": \"(.*?)\"/)[1];}
 else if(/var urls =/.test(html)){return html.match(/urls = \"(.*?)\"/)[1];}
