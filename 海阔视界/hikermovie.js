@@ -1763,6 +1763,27 @@ function ojbk_enc(_0x38ea2d) {
         break;
     }
 }
+function btoa(str) {
+    return new Buffer.from(str).toString("base64");
+}
+function atob(b64) {
+    eval(getCryptoJS());
+    return CryptoJS.enc.Base64.parse(b64).toString(CryptoJS.enc.Latin1)
+}
+function rc4(e, n, t) {
+    var o = n || "jhyun9521",
+        c = "",
+        n = [],
+        r = [],
+        u = o.length,
+        s = (e = (1 == t ? atob : encodeURIComponent)(e)).length;
+    for (i = 0; i < 256; i++) n[i] = o[i % u].charCodeAt(), r[i] = i;
+    for (j = i = 0; i < 256; i++) j = (j + r[i] + n[i]) % 256, tmp = r[i], r[i] = r[j],
+        r[j] = tmp;
+    for (a = j = i = 0; i < s; i++) a = (a + 1) % 256, j = (j + r[a]) % 256, tmp = r[a],
+        r[a] = r[j], r[j] = tmp, k = r[(r[a] + r[j]) % 256], c += String.fromCharCode(e[i].charCodeAt() ^ k);
+    return (1 == t ? decodeURIComponent : btoa)(c);
+}
 //开始bt_token
 function btoken(html){
 if(!fetch("hiker://files/rules/xyq/token.js",{})){var fileUrl=fetch("https://cdn.jsdelivr.net/gh/lzk23559/Public_folder/token.js",{});writeFile("hiker://files/rules/xyq/token.js",fileUrl);eval(fileUrl);}else{var fileUrl=fetch("hiker://files/rules/xyq/token.js",{});eval(fileUrl)};
@@ -2129,7 +2150,7 @@ return JSON.parse(json).url;}
 else{return cc.indexOf('godsong')!=-1?cc+'#.mp4':cc}
 }
 //肖先生&干饭&回响&淘淘&大师兄&BD电影&思古&爱迪&极品&迪迪&九州&饭团
-else if(/syg520|ganfantv|hxys|flvweb|tv.ci|bddysf|siguyy|aidi|jpysvip|4ytv|unss|fantuan|klysw|zhaikanys|nkvod|juhaokan|vdxj|kanju77|o8tv|jushetv|dtjos|dikotv|mjhd|77diany|lekkan|xkvideo|renrenmi|90zyk|vipmv|cccu|newfii|7a11l|98hyk|lqiyi|yingkuya|cjt521/.test(myurl)){
+else if(/syg520|ganfantv|hxys|flvweb|tv.ci|bddysf|siguyy|aidi|jpysvip|4ytv|unss|fantuan|klysw|zhaikanys|nkvod|juhaokan|vdxj|kanju77|o8tv|555dy|jushetv|dtjos|dikotv|mjhd|77diany|lekkan|xkvideo|renrenmi|90zyk|vipmv|cccu|newfii|7a11l|98hyk|lqiyi|yingkuya|cjt521/.test(myurl)){
 var phtml =fetch(srcurl,{headers:{"User-Agent":MOBILE_UA,"Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-User":"?1","Sec-Fetch-Dest":"document"}});
 //var scrpt = parseDomForHtml(phtml,".leo-player||.embed-responsive||.stui-player__video||.myui-player__video||.myui-player__item||#bofang_box||.player-box-main&&script&&Html").replace(/player_.*?={/,'player_data={');
 var scrpt=phtml.match(/var player_.*?\}/)[0].replace(/player_.*?={/,'player_data={');
@@ -2220,6 +2241,15 @@ return parwix(html);
 else if(/789pan/.test(html)&&/var id=/.test(html)){
 return qbjpan(html);
 }//结束789盘
+else if(/jianghuplayer/.test(html)&&/xiaolei1994/.test(html)){
+eval(html.match(/var config[\s\S]*?}/)[0]);
+if((config.url).substring(0,4)=='http'){
+var video = config.url;
+}else{
+var video = rc4(config.url,"jhyun9521", 0x1);
+}
+return video + '#isVideo=true#'+';{Referer@'+srcurl+'&&User-Agent@Mozilla/5.0}';
+}
 else if(/manmankan/.test(jiek)){
 var miao=fetch('https://jx.manmankan.top/api.php', {headers:{'content-type':'application/x-www-form-urlencoded'},body:'url='+urll+'&ac=jx',method:'POST'});
 return 'x5Play://'+JSON.parse(miao).url;}
@@ -2295,6 +2325,15 @@ return parwix(html);
 else if(/789pan/.test(html)&&/var id=/.test(html)){
 return qbjpan(html);
 }//结束789盘
+else if(/jianghuplayer/.test(html)&&/xiaolei1994/.test(html)){
+eval(html.match(/var config[\s\S]*?}/)[0]);
+if((config.url).substring(0,4)=='http'){
+var video = config.url;
+}else{
+var video = rc4(config.url,"jhyun9521", 0x1);
+}
+return video + '#isVideo=true#'+';{Referer@'+srcurl+'&&User-Agent@Mozilla/5.0}';
+}
 else if(/hanmiys/.test(html)&&/m3u8/.test(html)){return myurl+html.match(/\"url\": \"(.*?)\"/)[1]}
 else if(/llqplayer/.test(html)){return 'x5WebView://'+(jiek+urll+"&next="+nxt);}
 else if(/jhplayer/.test(html)&&/.m3u8/.test(html)&&/iframe/.test(html)){var ifsrc=parseDomForHtml(html,"body&&iframe&&src");
@@ -2362,6 +2401,15 @@ return parwix(html);
 else if(/789pan/.test(html)&&/var id=/.test(html)){
 return qbjpan(html);
 }//结束789盘
+else if(/jianghuplayer/.test(html)&&/xiaolei1994/.test(html)){
+eval(html.match(/var config[\s\S]*?}/)[0]);
+if((config.url).substring(0,4)=='http'){
+var video = config.url;
+}else{
+var video = rc4(config.url,"jhyun9521", 0x1);
+}
+return video + '#isVideo=true#'+';{Referer@'+srcurl+'&&User-Agent@Mozilla/5.0}';
+}
 else if(/jhplayer/.test(html)&&/.m3u8/.test(html)&&/iframe/.test(html)){var ifsrc=parseDomForHtml(html,"body&&iframe&&src");
 return ifsrc.split('?v=')[1];
 }
