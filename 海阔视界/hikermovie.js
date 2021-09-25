@@ -11,19 +11,7 @@ var ssmd=setjson.ssmode;
 var ssxc=setjson.sscount;
 var self=JSON.parse(getRule()).title;
 //d.push({col_type: 'line'});
-
-//d.push({
-//    url:"'hiker://search?s='+input+'&rule="+self+"'",
-//    desc:"请输入搜索关键词",
-//    col_type:"input"
-//});
 var decText = getVar("xyqxqystext", "");
-//d.push({
-    //title: decText,
-    //url: "input://" + '' + ".js:putVar('xyqtext',input);refreshPage()",
-    //col_type: 'icon_1_search'
-//});
-
 d.push({
     title: decText,
     url: "input://" + '' + ".js:putVar('ipttext',input);refreshPage()",
@@ -155,17 +143,52 @@ d.unshift({
 
 d.unshift({
     title : '🔄更新',
-    url:$('hiker://empty').lazyRule(()=>{
-	var uprulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie.js',{});
-	writeFile("hiker://files/rules/xyq/hikermovie2.js",uprulejs);
-	var uprulejson = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie.json',{});
-	writeFile("hiker://files/rules/xyq/hikermovie2.json",uprulejson);
-	//var upruleplugin = fetch('https://code.aliyun.com/lzk23559/CloudRule/raw/master/global_香情影视网页插件.js',{});
-	var upruleplugin = fetch('https://codeberg.org/lzk23559/cloudrule/raw/branch/master/global_香情影视网页插件.js',{});
-	writeFile("hiker://files/rules/js/global_香情影视网页插件.js",upruleplugin);
-        writeFile("hiker://files/rules/xyq/hikerupdate2.txt",new Date()+'')
-	refreshPage(false);return 'toast://只是更新了一下网页插件，不用天天按。'
-	}),
+    url:$('hiker://empty').rule(() => {
+            var res = {};
+            var items = [];
+            items.push({
+                title: '注意，请不要去频繁点击更新，否则造成我云端仓库频繁异常的话我会停止维护云端。'+'\n'+'规则使用过程中有问题请到海阔视界QQ群或者微信群向我反馈。',
+                col_type: 'long_text'
+            });
+            items.push({
+                title: '更新网页插件',
+                url: "confirm://确认更新此插件文件？.js:" + $.toString(() => {
+                        return '海阔视界，网页插件￥js_url￥global_香情影视网页插件@https://codeberg.org/lzk23559/cloudrule/raw/branch/master/global_香情影视网页插件.js'
+                }),
+                desc: '香情影视网页插件，一般很少更新。',
+                col_type: 'text_center_1'
+            });
+            items.push({
+                title: '更新规则核心文件',
+                url: $('').lazyRule(() => {         	
+                   var rulejs = fetch('https://code.aliyun.com/lzk23559/CloudRule/raw/master/hikermovie.js', {});
+                   if (rulejs.search(/lazyRule/) == -1) {
+                   rulejs = fetch('https://codeberg.org/lzk23559/cloudrule/raw/branch/master/hikermovie.js', {});
+                   }
+                   if (rulejs.search(/lazyRule/) != -1) {
+                   writeFile("hiker://files/rules/xyq/hikermovie2.js", rulejs);
+                   }
+                   var rulejson = fetch('https://code.aliyun.com/lzk23559/CloudRule/raw/master/hikermovie.json', {});
+                   if (rulejson.search(/\"vodhref\"/) == -1) {
+                   rulejson = fetch('https://codeberg.org/lzk23559/cloudrule/raw/branch/master/hikermovie.json', {});
+                   }
+                   if (rulejson.search(/\"vodhref\"/) != -1) {
+                   writeFile("hiker://files/rules/xyq/hikermovie2.json", rulejson);
+                  }
+                  if (rulejs.search(/lazyRule/) != -1 && rulejson.search(/\"vodhref\"/) != -1) {
+                   writeFile("hiker://files/rules/xyq/hikerupdate.txt", new Date() + '');
+                   back(true);
+                   return 'toast://更新文件成功。'
+                   }else{
+                   return 'toast://更新失败。'
+                   }
+                  }),
+                desc: '香情影视核心文件，点击可及时同步云端文件，说不定有些问题被解决了。',
+                col_type: 'text_center_1'
+            });
+            res.data = items;
+            setHomeResult(res);
+        }),
     col_type:'flex_button'
 });
 
@@ -1371,7 +1394,7 @@ else if(spl.search(/1090ys|jpysvip|ysftv|kyikan/) != -1){
 //对验证处理结束
 }else if (html.indexOf('不要频繁操作') >= 0) {
     d.push({
-        title: '太过频繁等待6秒',
+        title: '太过频繁，等待6秒后下滑刷新本页面。',
         col_type: 'text_center_1'
     })
 
@@ -1733,7 +1756,7 @@ function ojbk_decode(_0x152316) {
         }
         break;
     }
-}
+};
 function ojbk_enc(_0x38ea2d) {
     var _0x9bdf7e = '3|2|1|0|5|4'.split('|'),
         _0x5a0128 = 0x0;
@@ -1762,14 +1785,14 @@ function ojbk_enc(_0x38ea2d) {
         }
         break;
     }
-}
+};
 function btoa(str) {
     return new Buffer.from(str).toString("base64");
-}
+};
 function atob(b64) {
     eval(getCryptoJS());
     return CryptoJS.enc.Base64.parse(b64).toString(CryptoJS.enc.Latin1)
-}
+};
 function rc4(e, n, t) {
     var o = n || "jhyun9521",
         c = "",
@@ -1783,13 +1806,13 @@ function rc4(e, n, t) {
     for (a = j = i = 0; i < s; i++) a = (a + 1) % 256, j = (j + r[a]) % 256, tmp = r[a],
         r[a] = r[j], r[j] = tmp, k = r[(r[a] + r[j]) % 256], c += String.fromCharCode(e[i].charCodeAt() ^ k);
     return (1 == t ? decodeURIComponent : btoa)(c);
-}
+};
 //开始bt_token
 function btoken(html){
 if(!fetch("hiker://files/rules/xyq/token.js",{})){var fileUrl=fetch("https://cdn.jsdelivr.net/gh/lzk23559/Public_folder/token.js",{});writeFile("hiker://files/rules/xyq/token.js",fileUrl);eval(fileUrl);}else{var fileUrl=fetch("hiker://files/rules/xyq/token.js",{});eval(fileUrl)};
 var play=(tkurl.indexOf('url=') > -1 ? tkurl.split('url=')[1] : tkurl);
 if(fro=='bilibili'){return play+';{Referer@https://www.bilibili.com&&User-Agent@Mozilla/5.0}';}else if(play.indexOf('titan.mgtv.com')!=-1){return play+'#isVideo=true#'+';{Referer@www.mgtv.com&&User-Agent@Mozilla/5.0}';}else if(/4kan/.test(play)){return play+';{Referer@https://bak.ojbkjx.com/}';}else{return play};
-}
+};
 function btken(html){
 eval(getCryptoJS());
 var urlstr=html.match(/getVideoInfo\(\"(.*?)\"\)/)[1];
@@ -1812,12 +1835,12 @@ return bkurl+';{Referer@https://v.ojbkjx.com/}';
 }else{
 return bkurl;
 }
-}
+};
 //结束bt_token
 //开始阿里
 function alizy(srcurl){
 return fetch('https://foubin.com/jiexi.php?url='+srcurl,{}).match(/\"url\":\"(.*?)\"/)[1]
-}
+};
 //结束阿里
 //开始PAR
 function parwix(html){
@@ -1835,7 +1858,7 @@ var purl=parseDomForHtml(html,'#video&&source&&src');}
 else{
 var purl=html.match(/var url = \"(.*?)\"/)[1]}
 if(fro=='bilibili'){return purl+';{Referer@https://www.bilibili.com&&User-Agent@Mozilla/5.0}';}else if(fro=='mgtv'){return purl+'#isVideo=true#'+';{Referer@www.mgtv.com&&User-Agent@Mozilla/5.0}';}else if(/yuns\.club/.test(purl)){return purl+';{Referer@'+dom+'}';}else{return purl};
-}
+};
 //结束PAR
 //开始789盘
 function qbjpan(html){
@@ -1845,7 +1868,7 @@ var times=(new Date()).getTime()+'';
 var sh= CryptoJS.MD5(base64Encode(id+times)).toString();
 var purl='http://play.zk132.cn/new/play1/'+id+'%7C'+times+'%7C'+sh+'%7C'+'1'+'%7C'+'index.m3u8';
 return purl;
-}
+};
 //结束789盘
 //资源网yun
 function zywyun(srcurl){
@@ -1859,7 +1882,7 @@ else{
 var main=fc.match(/url:.*?[\'\"](.*?)[\'\"]/)[1];
 var play=(main.indexOf("http")!=-1?main:link+main)};
 return play;
-}
+};
 //结束资源网yun
 //结束通用解析
 
@@ -2201,9 +2224,9 @@ return purl+"#isVideo=true#"};
 //加自带接口
 else{
 var jconf = parseDom(phtml,".leo-player||.embed-responsive||.stui-player__video||.myui-player__video||.myui-player__item||#bofang_box||.player-box-main&&script,1&&src");
-var jso=request(jconf,{}).match(/player_list=(.*?),MacPlayerConfig/)[1];
-eval("json="+jso);
-var jiek=eval("json['"+fro+"'].parse");
+eval(request(jconf,{}));
+var jiek = MacPlayerConfig.player_list[fro].parse;
+if (jiek == '') {jiek = MacPlayerConfig.parse};
 if(/98hyk/.test(myurl)){
 jiek='http://jx.hao-zsj.cn/vip/?url=';
 }else if(/cjt521/.test(myurl)&&/renrenmi/.test(fro)){
@@ -2523,7 +2546,7 @@ else{return srcurl}
 
 //预处理代码
 function hikerpre(){
-	if(!fetch('hiker://files/rules/xyq/hikerset2.json',{})){
+if(!fetch('hiker://files/rules/xyq/hikerset2.json',{})){
 let set=`{"ssmode":"1","sscount":"5"}`;
 writeFile("hiker://files/rules/xyq/hikerset2.json",set);  
  }
@@ -2533,8 +2556,7 @@ let sset=ssxc.replace('\"\}','\"\,\"sscount\"\:\"5\"\}');
 writeFile("hiker://files/rules/xyq/hikerset2.json",sset);
  }
  if(!fileExist('hiker://files/rules/js/global_香情影视网页插件.js')){
-var plugin=request("https://codeberg.org/lzk23559/cloudrule/raw/branch/master/global_香情影视网页插件.js",{});
-writeFile("hiker://files/rules/js/global_香情影视网页插件.js",plugin);  
+confirm({title:'提示', content:'检测到你没有网页插件，点击确定可手动导入。',confirm: "'海阔视界，网页插件￥js_url￥global_香情影视网页插件@https://codeberg.org/lzk23559/cloudrule/raw/branch/master/global_香情影视网页插件.js'"})
  }
 try{
 if(!getVar('hikersbbmfwaf')){
