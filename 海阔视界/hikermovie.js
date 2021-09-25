@@ -161,22 +161,22 @@ d.unshift({
             items.push({
                 title: '更新规则核心文件',
                 url: $('').lazyRule(() => {         	
-                   var rulejs = fetch('https://code.aliyun.com/lzk23559/CloudRule/raw/master/hikermovie.js', {});
+                   var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie.js', {});
                    if (rulejs.search(/lazyRule/) == -1) {
-                   rulejs = fetch('https://codeberg.org/lzk23559/cloudrule/raw/branch/master/hikermovie.js', {});
+                   rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie.js', {});
                    }
                    if (rulejs.search(/lazyRule/) != -1) {
                    writeFile("hiker://files/rules/xyq/hikermovie2.js", rulejs);
                    }
-                   var rulejson = fetch('https://code.aliyun.com/lzk23559/CloudRule/raw/master/hikermovie.json', {});
+                   var rulejson = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie.json', {});
                    if (rulejson.search(/\"vodhref\"/) == -1) {
-                   rulejson = fetch('https://codeberg.org/lzk23559/cloudrule/raw/branch/master/hikermovie.json', {});
+                   rulejson = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/hikermovie.json', {});
                    }
                    if (rulejson.search(/\"vodhref\"/) != -1) {
                    writeFile("hiker://files/rules/xyq/hikermovie2.json", rulejson);
                   }
                   if (rulejs.search(/lazyRule/) != -1 && rulejson.search(/\"vodhref\"/) != -1) {
-                   writeFile("hiker://files/rules/xyq/hikerupdate.txt", new Date() + '');
+                   writeFile("hiker://files/rules/xyq/hikerupdate2.txt", new Date() + '');
                    back(true);
                    return 'toast://更新文件成功。'
                    }else{
