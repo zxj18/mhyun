@@ -94,7 +94,7 @@ function zywhm() {
             var res = {};
             var items = [];
             items.push({
-                title: '更新zywcj.js(规则文件)',
+                title: '更新zywcj.js(规则核心文件)',
                 url: $().lazyRule(() => {
                     var rulejs = fetch('https://raw.githubusercontent.com/YuanHsing/freed/master/%E6%B5%B7%E9%98%94%E8%A7%86%E7%95%8C/zywcj.js', {});
                     eval(rulejs);
@@ -807,6 +807,7 @@ function SSEJ() {
                             url = 'http://api.kudian6.com/jm/pdplayer.php?url=' + url
                         }
                         if (flag == '789pan' || flag == 'pll') {
+                        	//https://www.gudetv.com/danmu/?url=
                             url = 'https://vip.gaotian.love/api/?key=sRy0QAq8hqXRlrEtrq&url=' + url
                         }
                         if (flag == 'fanqie') {
