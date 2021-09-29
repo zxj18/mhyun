@@ -8,7 +8,7 @@ https://www.lanzoui.com/u/GoldRiver
 海阔视界｜小程序：道长仓库Pro
 https://paste.yuchen.tech/5208
 海阔视界｜小程序：香情影视
-https://paste.yuchen.tech/1527 xZlRNi
+https://paste.yuchen.tech/8046 uJxEBv
 
 FreeDTV｜APP
 https://www.lanzoui.com/b025mpw7e
