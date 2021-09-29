@@ -10,6 +10,14 @@ https://paste.yuchen.tech/5208
 海阔视界｜小程序：香情影视
 https://paste.yuchen.tech/8046 uJxEBv
 
+猫影视TV｜APP
+https://github.com/catvod/CatVodTVSpider
+猫影视TV｜接口相关
+https://catvod.github.io/CatVodTVJsonEditor/
+https://netcut.cn/
+猫影视TV｜接口
+设置 > 当前配置接口
+
 FreeDTV｜APP
 https://www.lanzoui.com/b025mpw7e
 FreeDTV｜接口
