@@ -1,12 +1,14 @@
 {
- "spider": "https://github.com/catvod/CatVodTVSpider/blob/master/jar/custom_spider.jar?raw=true",
+  "spider": "https://github.com/catvod/CatVodTVSpider/blob/master/jar/custom_spider.jar?raw=true",
   "sites": [
 {"key": "极品影视","name": "极品影视","type": 0,"api": "https://www.jpysvip.net/api.php/provide/vod/at/xml/","playUrl":"","categories": []},
-{"key": "csp_Aidi","name": "@愛迪影視","type": 3,"api": "csp_Aidi","searchable": 1,"quickSearch": 0,"filterable": 1},
-{"key": "csp_EPang","name": "@阿房影視","type": 3,"api": "csp_EPang","searchable": 1,"quickSearch": 0,"filterable": 1},
+{"key": "csp_Aidi","name": "@爱迪","type": 3,"api": "csp_Aidi","searchable": 1,"quickSearch": 0,"filterable": 1},
 {"key": "csp_Enlienli","name": "@嗯哩嗯哩","type": 3,"api": "csp_Enlienli","searchable": 1,"quickSearch": 0,"filterable": 1},
+{"key": "csp_EPang","name": "@阿房影视","type": 3,"api": "csp_EPang","searchable": 1,"quickSearch": 0,"filterable": 1},
 {"key": "csp_Auete","name": "@Auete","type": 3,"api": "csp_Auete","searchable": 1,"quickSearch": 0,"filterable": 1},
 {"key": "csp_Cokemv","name": "@Cokemv","type": 3,"api": "csp_Cokemv","searchable": 1,"quickSearch": 0,"filterable": 1},
+{"key": "csp_Buka","name": "@真不卡(测试)","type": 3,"api": "csp_Buka","searchable": 0,"quickSearch": 0,"filterable": 1},
+{"key": "csp_Ysgc","name": "@影视工厂","type": 3,"api": "csp_Ysgc","searchable": 1,"quickSearch": 0,"filterable": 1}
 {"key": "小蜻蜓APP","name": "小蜻蜓APP","type": 1,"api": "http://3ketv.com/api.php/provide/vod/","playUrl":"","categories": []},
 {"key": "番茄资源","name": "番茄资源","type": 0,"api": "http://api.fqzy.cc/api.php/provide/vod/at/xml/","playUrl":"https://jx.fqzy.cc/jx.php?url=","categories": []},
 {"key": "畅视影视","name": "畅视影视","type": 1,"api": "http://app.reboju.net/api.php/provide/vod/","playUrl":"","categories": []},
