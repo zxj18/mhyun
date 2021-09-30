@@ -13,6 +13,7 @@ https://paste.yuchen.tech/8046 uJxEBv
 猫影视TV｜APP
 https://github.com/catvod/CatVodTVSpider
 猫影视TV｜接口相关
+https://github.com/catvod/CatVodTVSpider/tree/master/jar
 https://catvod.github.io/CatVodTVJsonEditor/
 https://netcut.cn/
 猫影视TV｜接口
