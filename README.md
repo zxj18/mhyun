@@ -8,7 +8,7 @@ https://www.lanzoui.com/u/GoldRiver
 海阔视界｜小程序：道长仓库Pro
 https://paste.yuchen.tech/5208
 海阔视界｜小程序：香情影视
-http://www.28url.cn/yx3aqu
+香情影视￥home_rule_url￥http://www.28url.cn/yx3aqu
 
 猫影视TV｜APP
 https://github.com/catvod/CatVodTVSpider
