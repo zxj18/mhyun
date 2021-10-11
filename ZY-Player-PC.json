@@ -1,5 +1,4 @@
-[{"id": 1,"key":"zplayer1","name": "极品影视","api": "https://www.jpysvip.net/api.php/provide/vod/at/xml","download":"","jiexiUrl":"","group": "资源","isActive": true,"status": "可用"},
-{"id": 2,"key":"zplayer2","name": "小蜻蜓APP","api": "http://3ketv.com/api.php/provide/vod/at/xml","download":"","jiexiUrl":"","group": "资源","isActive": true,"status": "可用"},
+[{"id": 2,"key":"zplayer2","name": "小蜻蜓APP","api": "http://3ketv.com/api.php/provide/vod/at/xml","download":"","jiexiUrl":"","group": "资源","isActive": true,"status": "可用"},
 {"id": 3,"key":"zplayer3","name": "番茄资源","api": "http://api.fqzy.cc/api.php/provide/vod/at/xml","download":"","jiexiUrl":"https://jx.fqzy.cc/jx.php?url=","group": "资源","isActive": true,"status": "可用"},
 {"id": 4,"key":"zplayer4","name": "畅视影视","api": "http://app.reboju.net/api.php/provide/vod/at/xml","download":"","jiexiUrl":"","group": "资源","isActive": true,"status": "可用"},
 {"id": 5,"key":"zplayer5","name": "追剧吧APP","api": "http://data.zju8.cc:1234/api.php/provide/vod/at/xml","download":"","jiexiUrl":"","group": "资源","isActive": true,"status": "可用"},
