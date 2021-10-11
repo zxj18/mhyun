@@ -95,9 +95,6 @@ https://yiciyuan.lanzoux.com/b00ej0kba
 https://cdn.jsdelivr.net/gh/YuanHsing/freed/漫画｜图源｜2021.9.13有图标大整合源更新.txt
 https://github.com/wanglabk/hub/tree/c2099
 http://yck.mumuceo.com/yiciyuan/tuyuan/index.html
-
-全是漫画｜APP
-https://github.com/hongchacha/cartoon
 ```
 
 
