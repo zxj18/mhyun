@@ -6,7 +6,7 @@
 https://www.lanzoux.com/u/GoldRiver
 https://www.lanzoui.com/u/GoldRiver
 海阔视界｜小程序：道长仓库Pro
-https://paste.yuchen.tech/5208
+https://paste.yuchen.tech/10795
 海阔视界｜小程序：香情影视
 香情影视￥home_rule_url￥http://www.28url.cn/yx3aqu
 
