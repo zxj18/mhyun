@@ -18,6 +18,8 @@ https://catvod.github.io/CatVodTVJsonEditor/
 https://netcut.cn/
 猫影视TV｜接口
 设置 > 当前配置接口
+猫影视TV｜TG交流群
+https://t.me/catvodtv
 
 FreeDTV｜APP
 https://www.lanzoui.com/b025mpw7e
