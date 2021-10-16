@@ -90,8 +90,7 @@
 {"key": "奇乐(优剧)资源","name": "奇乐(优剧)资源","type": 1,"api": "https://zy.ujuba.com/api.php/provide/vod/","playUrl":"","categories": []},
 {"key": "无尽资源","name": "无尽资源","type": 1,"api": "https://wuzy9.com/api.php/provide/vod/","playUrl":"","categories": []},
 {"key": "美剧天堂","name": "美剧天堂","type": 1,"api": "https://www.meijuday.com/api.php/provide/vod/","playUrl":"","categories": []},
-{"key": "测试","name": "测试","type": 1,"api": "http://107.150.5.146:39000/maccms10-main/api.php/provide/vod/","playUrl":"","categories": []},
-{"key": "极品影视","name": "极品影视(已废弃)","type": 0,"api": "https://www.jpysvip.net/api.php/provide/vod/at/xml/","playUrl":"","categories": []}
+{"key": "测试","name": "测试","type": 1,"api": "http://107.150.5.146:39000/maccms10-main/api.php/provide/vod/","playUrl":"","categories": []}
   ],
   "lives": [
     {
