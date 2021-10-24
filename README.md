@@ -95,7 +95,7 @@ https://github.com/tachiyomiorg/tachiyomi
 异次元｜APP
 https://yiciyuan.lanzoux.com/b00ej0kba
 异次元｜图源
-https://cdn.jsdelivr.net/gh/YuanHsing/freed/漫画｜图源｜2021.9.13有图标大整合源更新.txt
+https://cdn.jsdelivr.net/gh/YuanHsing/freed/漫画｜图源｜2021.10.24有图标大整合源更新.json
 https://github.com/wanglabk/hub/tree/c2099
 http://yck.mumuceo.com/yiciyuan/tuyuan/index.html
 ```
