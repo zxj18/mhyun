@@ -410,7 +410,7 @@
 ],
 "parses":[
 {"name":"Json并发","type":2,"url":"Parallel"},
-{"name":"Json轮询","type":2,"url":"Sequence"}
+{"name":"Json轮询","type":2,"url":"Sequence"},
 {"name":"parwix解析","type":1,"url":"https://jx.parwix.com:4433/player/?url="},
 {"name":"纯净解析","type":1,"url":"https://z1.m1907.cn/?jx="},
 {"name":"Json.VodJX","type":1,"url":"https://www.vodjx.top/api/?key=XSQzk8KFK1I7FfPK5X&url="},
@@ -473,7 +473,7 @@
 {"name":"暮光解析","type":1,"url":"https://muguang.mgtv.com.muguangys.com/jiexi.php?url="},
 {"name":"乐多解析","type":1,"url":"https://ldy.jx.cn/wp-api/ifr.php?vid="},
 {"name":"789pan","type":1,"url":"https://vip.gaotian.love/api/?key=GiML8kaI6DnlpAahLM&url="},
-{"name":"lekanzyw","type":1,"url":"https://bak.ojbkjx.com/?url="},
+{"name":"lekanzyw","type":1,"url":"https://bak.ojbkjx.com/?url="}
 ],
 "flags":[
 "youku","qq","iqiyi","qiyi","letv","sohu","tudou","pptv","mgtv","wasu","bilibili"
