@@ -413,14 +413,12 @@
 {"name":"Json轮询","type":2,"url":"Sequence"},
 {"name":"parwix解析","type":1,"url":"https://jx.parwix.com:4433/player/?url="},
 {"name":"纯净解析","type":1,"url":"https://z1.m1907.cn/?jx="},
-{"name":"Json.VodJX","type":1,"url":"https://www.vodjx.top/api/?key=XSQzk8KFK1I7FfPK5X&url="},
 {"name":"playmgtv","type":1,"url":"https://playmgtvdata.ccyjjd.com/mgtv1206/index.php?url="},
 {"name":"titan.mgtv","type":1,"url":"https://titan.mgtv.com.o8tv.com/jiexi/?url="},
 {"name":"17kyun.zh188","type":1,"url":"https://1717yun.com.zh188.net/0828/?url="},
 {"name":"4kdv","type":1,"url":"https://jx.4kdv.com/?url="},
 {"name":"17kyun","type":1,"url":"http://17kyun.com/api.php?url="},
 {"name":"B站解析1(Parwix解析)","type":1,"url":"https://vip.parwix.com:4433/player/?url="},
-{"name":"Json.M3u8","type":1,"url":"https://json.m3u8.tv:7788/json.php?url="},
 {"name":"默认","type":1,"url":"http://api.u1o.net/?url="},
 {"name":"JHD","type":1,"url":"https://api.jhdyw.vip/?url="},
 {"name":"80tv","type":1,"url":"https://1.api.80tvs.cn/?url="},
@@ -473,7 +471,10 @@
 {"name":"暮光解析","type":1,"url":"https://muguang.mgtv.com.muguangys.com/jiexi.php?url="},
 {"name":"乐多解析","type":1,"url":"https://ldy.jx.cn/wp-api/ifr.php?vid="},
 {"name":"789pan","type":1,"url":"https://vip.gaotian.love/api/?key=GiML8kaI6DnlpAahLM&url="},
-{"name":"lekanzyw","type":1,"url":"https://bak.ojbkjx.com/?url="}
+{"name":"lekanzyw","type":1,"url":"https://bak.ojbkjx.com/?url="},
+{"name":"荣耀","type":1,"url":"https://jiexi.bdjxfw.com/home/api?type=ys&uid=226493678&key=bgmnouzCEHIKLMST29&url="},
+{"name":"人人迷","type":1,"url":"https://svip.renrenmi.cc:2222/api/?key=nn4j8rukPXSVzR78E9&url="},
+{"name":"萌欣","type":1,"url":"http://vip.mengx.vip/home/api?type=ys&uid=3249696&key=aefqrtuwxyEFHKNOQY&url="}
 ],
 "flags":[
 "youku","qq","iqiyi","qiyi","letv","sohu","tudou","pptv","mgtv","wasu","bilibili"
