@@ -77,59 +77,7 @@
         }
       ]
     },
-    {
-      "title": "直播",
-      "list": [
-        {
-          "name": "央视",
-          "pic": "https://img.alicdn.com/imgextra/i4/913168420/O1CN016MnVLV2C4PZQRzmnB_!!913168420.png",
-          "url": "https://tv.cctv.com/live/",
-          "type": "app://customWeb"
-        },
-        {
-          "name": "企鹅体育",
-          "pic": "https://img.alicdn.com/imgextra/i3/913168420/O1CN01ugSCtL2C4PZT5LHj5_!!913168420.png",
-          "url": "https://live.qq.com/directory/all",
-          "type": "app://customWeb"
-        },
-        {
-          "name": "虎牙",
-          "pic": "https://img.alicdn.com/imgextra/i3/913168420/O1CN01j397tW2C4PZPrrVTZ_!!913168420.png",
-          "url": "https://www.huya.com/",
-          "type": "app://customWeb"
-        },
-        {
-          "name": "斗鱼",
-          "pic": "https://img.alicdn.com/imgextra/i3/913168420/O1CN01tISPqb2C4PZJlI30n_!!913168420.png",
-          "url": "https://www.douyu.com/",
-          "type": "app://customWeb"
-        },
-        {
-          "name": "YY",
-          "pic": "https://img.alicdn.com/imgextra/i1/913168420/O1CN01dtwWiL2C4PZXrkCkS_!!913168420.png",
-          "url": "https://www.yy.com/",
-          "type": "app://customWeb"
-        },
-        {
-          "name": "哔哩哔哩",
-          "pic": "https://img.alicdn.com/imgextra/i4/913168420/O1CN01Y2Kpb02C4PZOOOaxK_!!913168420.png",
-          "url": "https://live.bilibili.com/",
-          "type": "app://customWeb"
-        },
-        {
-          "name": "网易CC",
-          "pic": "https://img.alicdn.com/imgextra/i1/913168420/O1CN01Ng4pLI2C4PZT5LxJd_!!913168420.png",
-          "url": "https://cc.163.com/",
-          "type": "app://customWeb"
-        },
-        {
-          "name": "企鹅电竞",
-          "pic": "https://img.alicdn.com/imgextra/i3/913168420/O1CN01ugSCtL2C4PZT5LHj5_!!913168420.png",
-          "url": "https://egame.qq.com/",
-          "type": "app://customWeb"
-        }
-      ]
-    },
+
     {
       "title": "搜索",
       "list": [
