@@ -28,7 +28,7 @@
     {
       "id": 1,
       "name": "红牛资源",
-      "url": "https://www.hongniuzy.com/inc/api.php",
+      "url": "https://www.hongniuzy2.com/api.php/provide/vod/at/xmlsea/",
       "cate": "电影,1&&连续剧,2&&综艺,3&&动漫,4&&动作片,5&&喜剧片,6&&爱情片,7&&科幻片,8&&恐怖片,9&&剧情片,10&&战争片,11&&国产剧,12&&港澳剧,13&&日剧,14&&欧美剧,15&&台湾剧,16&&泰剧,17&&韩剧,18&&纪录片,19&&动漫电影,20&&伦理片,21",
       "click": true,
       "wePlus": {}
