@@ -3,24 +3,14 @@
     {
       "name": "常用",
       "data": [
-        {
-          "name": "更新日志",
-          "type": "app://updateInfo",
-          "pic": "",
-          "url": "https://gitee.com/shuncaigao/sourceShare/raw/master/update.html"
-        },
+
         {
           "name": "小说阅读",
           "type": "app://book",
           "pic": "",
           "url": "http://www.baidu.com"
         },
-        {
-          "name": "口令查券",
-          "type": "app://chaquan",
-          "pic": "",
-          "url": "http://www.baidu.com"
-        },
+
         {
           "name": "自定义网址",
           "type": "app://custom",
@@ -44,18 +34,7 @@
     {
       "name": "在线影视",
       "data": [
-        {
-          "name": "虎牙一起看",
-          "type": "app://customWeb",
-          "pic": "https://www.huya.com/favicon.ico",
-          "url": "https://www.huya.com/g/seeTogether"
-        },
-        {
-          "name": "斗鱼一起看",
-          "type": "app://customWeb",
-          "pic": "https://www.douyu.com/favicon.ico",
-          "url": "https://m.douyu.com/list/room?type=yqk"
-        },
+
         {
           "name": "爱奇艺一起看",
           "type": "app://customWeb",
@@ -68,12 +47,7 @@
           "pic": "https://www.asdf.com/favicon.ico",
           "url": "https://h5.cc.163.com/g/65004/&&&ad-banner"
         },
-        {
-          "name": "企鹅电竞",
-          "type": "app://x5WebParse",
-          "pic": "https://egame.qq.com/favicon.ico",
-          "url": "https://cdn.egame.qq.com/pgg-play/module/livelist.html?layoutid=2000000110"
-        },
+
         {
           "name": "蓝光高清",
           "type": "app://customWeb",
@@ -229,18 +203,7 @@
     {
       "name": "在线直播",
       "data": [
-        {
-          "name": "虎牙直播",
-          "type": "app://customWeb",
-          "pic": "https://www.huya.com/favicon.ico",
-          "url": "https://www.huya.com/"
-        },
-        {
-          "name": "斗鱼直播",
-          "type": "app://customWeb",
-          "pic": "https://www.douyu.com/favicon.ico",
-          "url": "https://www.douyu.com/"
-        },
+ 
         {
           "name": "哔哩哔哩",
           "type": "app://customWeb",
